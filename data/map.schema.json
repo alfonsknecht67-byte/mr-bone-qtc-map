@@ -1,0 +1,40 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Mr. Bone Public Bubble Map",
+  "type": "object",
+  "required": ["version", "generated_at", "source", "nodes", "edges"],
+  "properties": {
+    "version": { "type": "integer" },
+    "generated_at": { "type": ["string", "null"] },
+    "source": { "type": "string" },
+    "nodes": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["id", "label", "type"],
+        "properties": {
+          "id": { "type": "string" },
+          "label": { "type": "string" },
+          "type": { "enum": ["address", "cluster", "exchange"] },
+          "value": { "type": ["number", "null"] }
+        },
+        "additionalProperties": false
+      }
+    },
+    "edges": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["from", "to"],
+        "properties": {
+          "from": { "type": "string" },
+          "to": { "type": "string" },
+          "value": { "type": ["number", "null"] },
+          "label": { "type": ["string", "null"] }
+        },
+        "additionalProperties": false
+      }
+    }
+  },
+  "additionalProperties": false
+}
