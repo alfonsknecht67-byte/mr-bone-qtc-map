@@ -1,0 +1,9 @@
+# Private/raw scan data — never publish
+data/raw/
+data/private/
+*.env
+*.env.*
+*.key
+*.pem
+*.token
+secrets/
