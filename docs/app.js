@@ -216,7 +216,7 @@ function whaleView() {
 
   document.getElementById("whale-mode").textContent =
     whaleMode
-      ? "🐋 Whale Mode: AN ≥30k"
+      ? "🐋 Whale Mode: ON ≥30k"
       : "🐋 Whale Mode ≥30k";
 
   applyFilters();
@@ -224,7 +224,7 @@ function whaleView() {
 
 function showNeighborhood() {
   if (selectedNode === null) {
-    alert("Bitte zuerst eine Adresse anklicken.");
+    alert("Bitte zuerst eine Address anklicken.");
     return;
   }
 
