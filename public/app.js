@@ -5,26 +5,45 @@ const detailsEl = document.getElementById("details");
 const datasetInfoEl = document.getElementById("dataset-info");
 const searchEl = document.getElementById("search");
 
+const analysisStatsEl = document.getElementById("analysis-stats");
+const clusterInfoEl = document.getElementById("cluster-info");
+
 let network = null;
 let nodeData = [];
 let edgeData = [];
 let nodes = null;
 let edges = null;
-let physicsEnabled = true;
 
-const number = value =>
-  Number.isFinite(Number(value))
+let physicsEnabled = true;
+let whaleMode = false;
+let neighborhoodMode = false;
+let selectedNode = null;
+
+const WHALE_THRESHOLD = 30000;
+
+function number(value) {
+  return Number.isFinite(Number(value))
     ? Number(value).toLocaleString(undefined, {
         maximumFractionDigits: 6
       })
     : "—";
+}
+
+function rawNumber(value) {
+  const n = Number(value);
+  return Number.isFinite(n) ? n : 0;
+}
 
 function nodeSize(n) {
-  const balance = Math.abs(Number(n.balance) || 0);
+  const balance = Math.abs(rawNumber(n.balance));
+
+  if (balance >= 1000000) return 52;
   if (balance >= 500000) return 42;
   if (balance >= 100000) return 32;
   if (balance >= 50000) return 25;
-  if (balance >= 10000) return 19;
+  if (balance >= 30000) return 20;
+  if (balance >= 10000) return 17;
+
   return 13;
 }
 
@@ -75,27 +94,102 @@ function showNode(id) {
 }
 
 function updateCounts() {
-  nodeCountEl.textContent = nodes ? nodes.get({
+  const visibleNodes = nodes.get({
     filter: n => !n.hidden
-  }).length : 0;
+  }).length;
 
-  edgeCountEl.textContent = edges ? edges.get({
+  const visibleEdges = edges.get({
     filter: e => !e.hidden
-  }).length : 0;
+  }).length;
+
+  nodeCountEl.textContent = visibleNodes;
+  edgeCountEl.textContent = visibleEdges;
+
+  analysisStatsEl.innerHTML =
+    `<b>Visible Analysis</b><br>` +
+    `Nodes: ${visibleNodes}<br>` +
+    `Edges: ${visibleEdges}<br>` +
+    `Whale Mode: ${whaleMode ? "ON ≥30k" : "OFF"}`;
+
+  if (selectedNode !== null) {
+    calculateCluster(selectedNode);
+  }
 }
 
 function resetVisibility() {
-  nodes.forEach(n => nodes.update({ id: n.id, hidden: false }));
-  edges.forEach(e => edges.update({ id: e.id, hidden: false }));
+  whaleMode = false;
+  neighborhoodMode = false;
+  selectedNode = null;
+
+  document.getElementById("whale-mode").textContent =
+    "🐋 Whale Mode ≥30k";
+
+  document.getElementById("flow-filter").value = "0";
+
+  nodes.forEach(n => {
+    nodes.update({
+      id: n.id,
+      hidden: false
+    });
+  });
+
+  edges.forEach(e => {
+    edges.update({
+      id: e.id,
+      hidden: false
+    });
+  });
+
+  network.unselectAll();
+
+  clusterInfoEl.innerHTML = "";
+  detailsEl.textContent = "Click a node to inspect it.";
+
   updateCounts();
-  if (network) network.fit({ animation: true });
+
+  network.fit({
+    animation: {
+      duration: 600,
+      easingFunction: "easeInOutQuad"
+    }
+  });
 }
 
-function showLargeOnly() {
+function applyFilters() {
+  const threshold =
+    rawNumber(document.getElementById("flow-filter").value);
+
+  const visibleNodeIds = new Set();
+
+  edges.forEach(e => {
+    const show = rawNumber(e.value) >= threshold;
+
+    edges.update({
+      id: e.id,
+      hidden: !show
+    });
+
+    if (show) {
+      visibleNodeIds.add(e.from);
+      visibleNodeIds.add(e.to);
+    }
+  });
+
   nodes.forEach(n => {
-    const original = nodeData.find(x => x.id === n.id);
-    const visible = Math.abs(Number(original?.balance) || 0) >= 50000;
-    nodes.update({ id: n.id, hidden: !visible });
+    let show =
+      threshold === 0 ||
+      visibleNodeIds.has(n.id);
+
+    if (whaleMode) {
+      show =
+        show &&
+        rawNumber(n.balance) >= WHALE_THRESHOLD;
+    }
+
+    nodes.update({
+      id: n.id,
+      hidden: !show
+    });
   });
 
   const visibleIds = new Set(
@@ -105,17 +199,162 @@ function showLargeOnly() {
   );
 
   edges.forEach(e => {
-    edges.update({
-      id: e.id,
-      hidden: !visibleIds.has(e.from) || !visibleIds.has(e.to)
-    });
+    if (!visibleIds.has(e.from) || !visibleIds.has(e.to)) {
+      edges.update({
+        id: e.id,
+        hidden: true
+      });
+    }
   });
 
   updateCounts();
 }
 
+function whaleView() {
+  whaleMode = !whaleMode;
+  neighborhoodMode = false;
+
+  document.getElementById("whale-mode").textContent =
+    whaleMode
+      ? "🐋 Whale Mode: ON ≥30k"
+      : "🐋 Whale Mode ≥30k";
+
+  applyFilters();
+}
+
+function showNeighborhood() {
+  if (selectedNode === null) {
+    alert("Bitte zuerst eine Address anklicken.");
+    return;
+  }
+
+  neighborhoodMode = true;
+  whaleMode = false;
+
+  document.getElementById("whale-mode").textContent =
+    "🐋 Whale Mode ≥30k";
+
+  const connected = new Set([selectedNode]);
+
+  edges.forEach(e => {
+    if (
+      e.from === selectedNode ||
+      e.to === selectedNode
+    ) {
+      connected.add(e.from);
+      connected.add(e.to);
+    }
+  });
+
+  nodes.forEach(n => {
+    nodes.update({
+      id: n.id,
+      hidden: !connected.has(n.id)
+    });
+  });
+
+  edges.forEach(e => {
+    edges.update({
+      id: e.id,
+      hidden: !(
+        connected.has(e.from) &&
+        connected.has(e.to)
+      )
+    });
+  });
+
+  network.selectNodes([selectedNode]);
+
+  network.focus(selectedNode, {
+    scale: 1.5,
+    animation: {
+      duration: 600,
+      easingFunction: "easeInOutQuad"
+    }
+  });
+
+  calculateCluster(selectedNode);
+  updateCounts();
+}
+
+function calculateCluster(id) {
+  const seen = new Set([id]);
+  const queue = [id];
+
+  while (queue.length) {
+    const current = queue.shift();
+
+    edges.forEach(e => {
+      if (e.hidden) return;
+
+      let next = null;
+
+      if (e.from === current) next = e.to;
+      if (e.to === current) next = e.from;
+
+      if (next !== null && !seen.has(next)) {
+        seen.add(next);
+        queue.push(next);
+      }
+    });
+  }
+
+  clusterInfoEl.innerHTML =
+    `<b>Connected Group</b><br>` +
+    `Addresses: ${seen.size}`;
+}
+
+function exportView() {
+  const result = {
+    title: "Mr. Bone — QTC Bubble Map Analysis",
+    generated: new Date().toISOString(),
+    whale_threshold_qtc: WHALE_THRESHOLD,
+    heuristic_notice:
+      "Flows may be heuristically reconstructed. " +
+      "A connection does not automatically prove ownership.",
+    nodes: [],
+    edges: []
+  };
+
+  nodes.forEach(n => {
+    if (!n.hidden) {
+      const original =
+        nodeData.find(x => x.id === n.id);
+
+      result.nodes.push(original || n);
+    }
+  });
+
+  edges.forEach(e => {
+    if (!e.hidden) {
+      const index =
+        Number(String(e.id).replace("edge-", ""));
+
+      result.edges.push(edgeData[index] || e);
+    }
+  });
+
+  const blob = new Blob(
+    [JSON.stringify(result, null, 2)],
+    { type: "application/json" }
+  );
+
+  const url = URL.createObjectURL(blob);
+  const a = document.createElement("a");
+
+  a.href = url;
+  a.download = "mr-bone-qtc-map-analysis.json";
+  a.click();
+
+  setTimeout(
+    () => URL.revokeObjectURL(url),
+    1000
+  );
+}
+
 function findAddress() {
-  const query = searchEl.value.trim().toLowerCase();
+  const query =
+    searchEl.value.trim().toLowerCase();
 
   if (!query) return;
 
@@ -126,42 +365,58 @@ function findAddress() {
   );
 
   if (!found) {
-    detailsEl.textContent = "No matching address found.";
+    detailsEl.textContent =
+      "No matching address found.";
     return;
   }
 
   resetVisibility();
+
+  selectedNode = found.id;
+
   network.selectNodes([found.id]);
+
   network.focus(found.id, {
     scale: 1.8,
     animation: true
   });
+
   showNode(found.id);
+  calculateCluster(found.id);
 }
 
 function render(data) {
-  nodeData = Array.isArray(data.nodes) ? data.nodes : [];
-  edgeData = Array.isArray(data.edges) ? data.edges : [];
+  nodeData =
+    Array.isArray(data.nodes) ? data.nodes : [];
 
-  nodes = new vis.DataSet(buildNodes(data));
-  edges = new vis.DataSet(buildEdges(data));
+  edgeData =
+    Array.isArray(data.edges) ? data.edges : [];
+
+  nodes =
+    new vis.DataSet(buildNodes(data));
+
+  edges =
+    new vis.DataSet(buildEdges(data));
 
   network = new vis.Network(
     document.getElementById("map"),
     { nodes, edges },
     {
       autoResize: true,
+
       interaction: {
         hover: true,
         navigationButtons: true,
         keyboard: true
       },
+
       physics: {
         enabled: physicsEnabled,
         stabilization: {
           iterations: 250
         }
       },
+
       nodes: {
         shape: "dot",
         borderWidth: 2,
@@ -170,6 +425,7 @@ function render(data) {
           size: 11
         }
       },
+
       edges: {
         width: 1,
         color: {
@@ -191,7 +447,12 @@ function render(data) {
 
   network.on("click", params => {
     if (params.nodes.length) {
-      showNode(params.nodes[0]);
+      selectedNode = params.nodes[0];
+      showNode(selectedNode);
+
+      if (!neighborhoodMode) {
+        calculateCluster(selectedNode);
+      }
     }
   });
 
@@ -204,9 +465,8 @@ function render(data) {
     }
   });
 
-  nodeCountEl.textContent = nodeData.length;
-  edgeCountEl.textContent = edgeData.length;
-  statusEl.textContent = "PUBLIC MAP ONLINE";
+  statusEl.textContent =
+    "PUBLIC MAP ONLINE";
 
   datasetInfoEl.innerHTML =
     `<div>Version: <strong>${data.version ?? "—"}</strong></div>` +
@@ -214,35 +474,49 @@ function render(data) {
     `<div>Generated: <strong>${data.generated_at ?? "—"}</strong></div>` +
     `<div>Attribution: <strong>${data.attribution ?? "Mr. Bone"}</strong></div>`;
 
-  network.fit({ animation: true });
+  updateCounts();
+
+  network.fit({
+    animation: true
+  });
 }
 
 async function loadData() {
   try {
-    const response = await fetch("data/map.json", {
-      cache: "no-store"
-    });
+    const response =
+      await fetch("data/map.json", {
+        cache: "no-store"
+      });
 
     if (!response.ok) {
       throw new Error(`HTTP ${response.status}`);
     }
 
-    const data = await response.json();
+    const data =
+      await response.json();
+
     render(data);
+
   } catch (error) {
     console.error(error);
-    statusEl.textContent = "DATA LOAD ERROR";
+
+    statusEl.textContent =
+      "DATA LOAD ERROR";
+
     datasetInfoEl.textContent =
       "The public dataset could not be loaded.";
   }
 }
 
 document.getElementById("fit").onclick = () => {
-  if (network) network.fit({ animation: true });
+  if (network) {
+    network.fit({ animation: true });
+  }
 };
 
 document.getElementById("physics").onclick = () => {
   physicsEnabled = !physicsEnabled;
+
   if (network) {
     network.setOptions({
       physics: {
@@ -252,13 +526,69 @@ document.getElementById("physics").onclick = () => {
   }
 };
 
-document.getElementById("show-all").onclick = resetVisibility;
-document.getElementById("large-only").onclick = showLargeOnly;
-document.getElementById("reset").onclick = resetVisibility;
-document.getElementById("search-btn").onclick = findAddress;
+document.getElementById("show-all").onclick =
+  resetVisibility;
+
+document.getElementById("large-only").onclick =
+  () => {
+    whaleMode = false;
+    neighborhoodMode = false;
+
+    document.getElementById("flow-filter").value = "0";
+
+    nodes.forEach(n => {
+      const original =
+        nodeData.find(x => x.id === n.id);
+
+      const visible =
+        Math.abs(rawNumber(original?.balance)) >= 50000;
+
+      nodes.update({
+        id: n.id,
+        hidden: !visible
+      });
+    });
+
+    const visibleIds = new Set(
+      nodes.get({
+        filter: n => !n.hidden
+      }).map(n => n.id)
+    );
+
+    edges.forEach(e => {
+      edges.update({
+        id: e.id,
+        hidden:
+          !visibleIds.has(e.from) ||
+          !visibleIds.has(e.to)
+      });
+    });
+
+    updateCounts();
+  };
+
+document.getElementById("whale-mode").onclick =
+  whaleView;
+
+document.getElementById("neighborhood").onclick =
+  showNeighborhood;
+
+document.getElementById("export-view").onclick =
+  exportView;
+
+document.getElementById("flow-filter").onchange =
+  applyFilters;
+
+document.getElementById("reset").onclick =
+  resetVisibility;
+
+document.getElementById("search-btn").onclick =
+  findAddress;
 
 searchEl.addEventListener("keydown", event => {
-  if (event.key === "Enter") findAddress();
+  if (event.key === "Enter") {
+    findAddress();
+  }
 });
 
 loadData();
