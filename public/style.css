@@ -1,0 +1,19 @@
+body {
+  margin: 0;
+  padding: 2rem;
+  font-family: system-ui, sans-serif;
+  background: #111;
+  color: #eee;
+}
+
+main {
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+#map-status {
+  margin-top: 1rem;
+  padding: 1rem;
+  border: 1px solid #444;
+  border-radius: 8px;
+}
