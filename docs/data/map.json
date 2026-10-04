@@ -1,0 +1,5671 @@
+{
+  "version": 2,
+  "generated_at": "2026-10-04T10:55:44.010462+00:00",
+  "source": "public-approved-on-chain-data",
+  "attribution": "Mr. Bone",
+  "nodes": [
+    {
+      "id": "bc1q257t5sel9fu4k467gkx3tkqjym3twnz5863p9k",
+      "label": "bc1q257t5sel…",
+      "full_address": "bc1q257t5sel9fu4k467gkx3tkqjym3twnz5863p9k",
+      "type": "address",
+      "balance": 777343.2075820001,
+      "received": 901800.0,
+      "sent": 124406.792418,
+      "tx_count": 18066,
+      "size": 55
+    },
+    {
+      "id": "bc1qj6s4a20mdnzap5e8uhag3w6psvts737w89nc4f",
+      "label": "bc1qj6s4a20m…",
+      "full_address": "bc1qj6s4a20mdnzap5e8uhag3w6psvts737w89nc4f",
+      "type": "address",
+      "balance": -243871.13363825076,
+      "received": 1170328.5,
+      "sent": 1414150.133638242,
+      "tx_count": 31100,
+      "size": 8
+    },
+    {
+      "id": "bc1qye5427zsvmzf8f6g3z53v6tydwxv6j86jc7mf7",
+      "label": "bc1qye5427zs…",
+      "full_address": "bc1qye5427zsvmzf8f6g3z53v6tydwxv6j86jc7mf7",
+      "type": "address",
+      "balance": -327554.16450542083,
+      "received": 770483.7905825935,
+      "sent": 1098036.955099018,
+      "tx_count": 18857,
+      "size": 8
+    },
+    {
+      "id": "bc1q8uazq3c6xurc8pn5ss3vaquhm8u7fccujlhwz9",
+      "label": "bc1q8uazq3c6…",
+      "full_address": "bc1q8uazq3c6xurc8pn5ss3vaquhm8u7fccujlhwz9",
+      "type": "address",
+      "balance": 133772.898603,
+      "received": 166619.898603,
+      "sent": 30848.0,
+      "tx_count": 85,
+      "size": 55
+    },
+    {
+      "id": "19qaN2bCWz3TQwe2semuwEph9dC8wRYq4M",
+      "label": "19qaN2bCWz3T…",
+      "full_address": "19qaN2bCWz3TQwe2semuwEph9dC8wRYq4M",
+      "type": "address",
+      "balance": 99950.36095091,
+      "received": 103336.38651985,
+      "sent": 0.0,
+      "tx_count": 5,
+      "size": 55
+    },
+    {
+      "id": "bc1qr329r4jnqfa2zacpzyrdvaj7tuejgra0ttnkps",
+      "label": "bc1qr329r4jn…",
+      "full_address": "bc1qr329r4jnqfa2zacpzyrdvaj7tuejgra0ttnkps",
+      "type": "address",
+      "balance": 99449.35116706,
+      "received": 146300.0,
+      "sent": 46800.648832939994,
+      "tx_count": 2961,
+      "size": 55
+    },
+    {
+      "id": "bc1qlznzzsasfclzc8384r96hv5jmvxfzd6z6pv4x4",
+      "label": "bc1qlznzzsas…",
+      "full_address": "bc1qlznzzsasfclzc8384r96hv5jmvxfzd6z6pv4x4",
+      "type": "address",
+      "balance": 74114.356034,
+      "received": 80114.356034,
+      "sent": 0.0,
+      "tx_count": 43,
+      "size": 55
+    },
+    {
+      "id": "37cDFs2oU1Wqx3BWhjeQQR5vLePAubkPXU",
+      "label": "37cDFs2oU1Wq…",
+      "full_address": "37cDFs2oU1Wqx3BWhjeQQR5vLePAubkPXU",
+      "type": "address",
+      "balance": 72784.0120111,
+      "received": 72794.0020111,
+      "sent": 0.0,
+      "tx_count": 2,
+      "size": 55
+    },
+    {
+      "id": "bc1q27ehszslzlh45jlwvt9rrkl2mu37afe8vm25g9",
+      "label": "bc1q27ehszsl…",
+      "full_address": "bc1q27ehszslzlh45jlwvt9rrkl2mu37afe8vm25g9",
+      "type": "address",
+      "balance": 59836.0,
+      "received": 60336.0,
+      "sent": 0.0,
+      "tx_count": 14,
+      "size": 55
+    },
+    {
+      "id": "bc1qgc48799w3pney8s2ye2zrfh6xlca2fgftxfj6h",
+      "label": "bc1qgc48799w…",
+      "full_address": "bc1qgc48799w3pney8s2ye2zrfh6xlca2fgftxfj6h",
+      "type": "address",
+      "balance": 49415.160225,
+      "received": 54531.01424,
+      "sent": 0.0,
+      "tx_count": 16,
+      "size": 55
+    },
+    {
+      "id": "3KF6F2i5iG6BCKZ7Avw58DZaKmrB1BWAu8",
+      "label": "3KF6F2i5iG6B…",
+      "full_address": "3KF6F2i5iG6BCKZ7Avw58DZaKmrB1BWAu8",
+      "type": "address",
+      "balance": 46148.704890700006,
+      "received": 46153.694890700004,
+      "sent": 0.0,
+      "tx_count": 10,
+      "size": 55
+    },
+    {
+      "id": "3D4c7ur4sZXVtiCUSXEpLXqdeh2UpsC7YY",
+      "label": "3D4c7ur4sZXV…",
+      "full_address": "3D4c7ur4sZXVtiCUSXEpLXqdeh2UpsC7YY",
+      "type": "address",
+      "balance": 42295.786480399984,
+      "received": 139524.2897567,
+      "sent": 95928.4052857,
+      "tx_count": 9,
+      "size": 55
+    },
+    {
+      "id": "bc1q2m3g0gtuztcl85kzd2dy8sz6vvlq7t6e52wl9y",
+      "label": "bc1q2m3g0gtu…",
+      "full_address": "bc1q2m3g0gtuztcl85kzd2dy8sz6vvlq7t6e52wl9y",
+      "type": "address",
+      "balance": 34978.96529999985,
+      "received": 44083.76819999983,
+      "sent": 9098.036999999997,
+      "tx_count": 1798,
+      "size": 55
+    },
+    {
+      "id": "bc1qex3s7tpm62ch6n0vmsr7s3n9kd7e3w232vqttv",
+      "label": "bc1qex3s7tpm…",
+      "full_address": "bc1qex3s7tpm62ch6n0vmsr7s3n9kd7e3w232vqttv",
+      "type": "address",
+      "balance": -167403.36853588995,
+      "received": 82783.14,
+      "sent": 250236.5086241701,
+      "tx_count": 4421,
+      "size": 8
+    },
+    {
+      "id": "bc1qewf3w2t67h9ll7ctkjm5c08sydrrg0fthaym9c",
+      "label": "bc1qewf3w2t6…",
+      "full_address": "bc1qewf3w2t67h9ll7ctkjm5c08sydrrg0fthaym9c",
+      "type": "address",
+      "balance": 32597.998504,
+      "received": 32647.998504,
+      "sent": 0.0,
+      "tx_count": 633,
+      "size": 55
+    },
+    {
+      "id": "bc1qa66qfcwq2uzduc03aqragvxmkwu3527wf537um",
+      "label": "bc1qa66qfcwq…",
+      "full_address": "bc1qa66qfcwq2uzduc03aqragvxmkwu3527wf537um",
+      "type": "address",
+      "balance": 30799.998061,
+      "received": 31799.998061,
+      "sent": 0.0,
+      "tx_count": 115,
+      "size": 55
+    },
+    {
+      "id": "bc1ql4epa9kr0m73jn6lk3gt4m27sw904j9tl0374v",
+      "label": "bc1ql4epa9kr…",
+      "full_address": "bc1ql4epa9kr0m73jn6lk3gt4m27sw904j9tl0374v",
+      "type": "address",
+      "balance": 30000.0,
+      "received": 54158.0,
+      "sent": 24157.0,
+      "tx_count": 6,
+      "size": 55
+    },
+    {
+      "id": "3LSa7VaMenK43xXqATd9udBt1qYjYGSJC5",
+      "label": "3LSa7VaMenK4…",
+      "full_address": "3LSa7VaMenK43xXqATd9udBt1qYjYGSJC5",
+      "type": "address",
+      "balance": 25528.9166191,
+      "received": 25530.9066191,
+      "sent": 0.0,
+      "tx_count": 9,
+      "size": 55
+    },
+    {
+      "id": "bc1q4vkcgsdljdlp0suxdwmj22r70fzkpy9zltt425",
+      "label": "bc1q4vkcgsdl…",
+      "full_address": "bc1q4vkcgsdljdlp0suxdwmj22r70fzkpy9zltt425",
+      "type": "address",
+      "balance": 25520.77,
+      "received": 52973.58,
+      "sent": 15158.8,
+      "tx_count": 12,
+      "size": 55
+    },
+    {
+      "id": "bc1qheg6mz09rvegxej6sstd9z24pry69du3u5qjl0",
+      "label": "bc1qheg6mz09…",
+      "full_address": "bc1qheg6mz09rvegxej6sstd9z24pry69du3u5qjl0",
+      "type": "address",
+      "balance": 23258.79025774997,
+      "received": 71138.43029999995,
+      "sent": 47829.64004225,
+      "tx_count": 1320,
+      "size": 55
+    },
+    {
+      "id": "bc1qrh46q65z0mxua294xuj8q4swksadwfnxvs59z6",
+      "label": "bc1qrh46q65z…",
+      "full_address": "bc1qrh46q65z0mxua294xuj8q4swksadwfnxvs59z6",
+      "type": "address",
+      "balance": 22365.522607550003,
+      "received": 73606.0360657,
+      "sent": 60553.6462452,
+      "tx_count": 17,
+      "size": 55
+    },
+    {
+      "id": "bc1q855mqx040u4lwhkh0r2ncafxe5ukjrt5xty7kk",
+      "label": "bc1q855mqx04…",
+      "full_address": "bc1q855mqx040u4lwhkh0r2ncafxe5ukjrt5xty7kk",
+      "type": "address",
+      "balance": 22204.86144481999,
+      "received": 24678.688804089994,
+      "sent": 2483.8273592699998,
+      "tx_count": 42,
+      "size": 55
+    },
+    {
+      "id": "bc1qnlzc7huy4cqgerke6gnlaxdze8uqsrwdt4d9s0",
+      "label": "bc1qnlzc7huy…",
+      "full_address": "bc1qnlzc7huy4cqgerke6gnlaxdze8uqsrwdt4d9s0",
+      "type": "address",
+      "balance": 22200.264394269994,
+      "received": 40693.08717530002,
+      "sent": 18017.82278103,
+      "tx_count": 51,
+      "size": 55
+    },
+    {
+      "id": "bc1qkuql5r0g5gql3fz3mjt6uksen3aa3e9fnvlpkf",
+      "label": "bc1qkuql5r0g…",
+      "full_address": "bc1qkuql5r0g5gql3fz3mjt6uksen3aa3e9fnvlpkf",
+      "type": "address",
+      "balance": -106658.575783,
+      "received": 106658.575783,
+      "sent": 106658.575783,
+      "tx_count": 2,
+      "size": 8
+    },
+    {
+      "id": "bc1qcvryh9hapjzjw3hjx5us7aynzj2thdj95pl3ea",
+      "label": "bc1qcvryh9ha…",
+      "full_address": "bc1qcvryh9hapjzjw3hjx5us7aynzj2thdj95pl3ea",
+      "type": "address",
+      "balance": -52980.36889999999,
+      "received": 79182.54899175001,
+      "sent": 130662.91789175,
+      "tx_count": 53,
+      "size": 8
+    },
+    {
+      "id": "bc1qmw2adjz82hncf2nxy2r9u6ymyscd663fakgd79",
+      "label": "bc1qmw2adjz8…",
+      "full_address": "bc1qmw2adjz82hncf2nxy2r9u6ymyscd663fakgd79",
+      "type": "address",
+      "balance": -104158.575775,
+      "received": 104158.575775,
+      "sent": 104158.575775,
+      "tx_count": 2,
+      "size": 8
+    },
+    {
+      "id": "bc1qkm86qcjxc5ad5vrq8y5xudzrcfrus2z2md8q0h",
+      "label": "bc1qkm86qcjx…",
+      "full_address": "bc1qkm86qcjxc5ad5vrq8y5xudzrcfrus2z2md8q0h",
+      "type": "address",
+      "balance": -301.6793340000004,
+      "received": 103050.0,
+      "sent": 103301.679334,
+      "tx_count": 1442,
+      "size": 8
+    },
+    {
+      "id": "bc1qynjdr8d5k4lemmld0xz4umdtnuxhkc3cmrls6u",
+      "label": "bc1qynjdr8d5…",
+      "full_address": "bc1qynjdr8d5k4lemmld0xz4umdtnuxhkc3cmrls6u",
+      "type": "address",
+      "balance": -99158.575767,
+      "received": 99158.575767,
+      "sent": 99158.575767,
+      "tx_count": 2,
+      "size": 8
+    },
+    {
+      "id": "bc1qwuqykgemu28t3yxkvw59mtk7fjnurhm4ydkfx6",
+      "label": "bc1qwuqykgem…",
+      "full_address": "bc1qwuqykgemu28t3yxkvw59mtk7fjnurhm4ydkfx6",
+      "type": "address",
+      "balance": -14301.520769589988,
+      "received": 90955.0,
+      "sent": 105306.52077628,
+      "tx_count": 3619,
+      "size": 8
+    },
+    {
+      "id": "1Ev8KxvUocKtkVdaunMiRxxVXhHPsw7wgz",
+      "label": "1Ev8KxvUocKt…",
+      "full_address": "1Ev8KxvUocKtkVdaunMiRxxVXhHPsw7wgz",
+      "type": "address",
+      "balance": 18502.08886722,
+      "received": 18802.08886722,
+      "sent": 0.0,
+      "tx_count": 3,
+      "size": 55
+    },
+    {
+      "id": "bc1qx0myxdp2axrmlhj2zh6slz2vnztv6x5casjgma",
+      "label": "bc1qx0myxdp2…",
+      "full_address": "bc1qx0myxdp2axrmlhj2zh6slz2vnztv6x5casjgma",
+      "type": "address",
+      "balance": -90409.995701,
+      "received": 90409.995701,
+      "sent": 90409.995701,
+      "tx_count": 2,
+      "size": 8
+    },
+    {
+      "id": "bc1qaavlp28yfgw8wnqdqrv8emd52036rlkvcmwj7f",
+      "label": "bc1qaavlp28y…",
+      "full_address": "bc1qaavlp28yfgw8wnqdqrv8emd52036rlkvcmwj7f",
+      "type": "address",
+      "balance": 17947.273800000003,
+      "received": 37968.4345,
+      "sent": 19971.1607,
+      "tx_count": 763,
+      "size": 55
+    },
+    {
+      "id": "bc1q8n6vm9xtn2we8rt4yqy54mkwv45ryegc4m8ess",
+      "label": "bc1q8n6vm9xt…",
+      "full_address": "bc1q8n6vm9xtn2we8rt4yqy54mkwv45ryegc4m8ess",
+      "type": "address",
+      "balance": 16920.3687517,
+      "received": 40977.3687517,
+      "sent": 25957.0,
+      "tx_count": 17,
+      "size": 55
+    },
+    {
+      "id": "bc1qn2mn87cqs50j34a8xmh7g0md2lmh57nxpf6ura",
+      "label": "bc1qn2mn87cq…",
+      "full_address": "bc1qn2mn87cqs50j34a8xmh7g0md2lmh57nxpf6ura",
+      "type": "address",
+      "balance": -84158.575741,
+      "received": 84158.575741,
+      "sent": 84158.575741,
+      "tx_count": 2,
+      "size": 8
+    },
+    {
+      "id": "bc1qejnq9r2cyd9hr9uhqxjqjl7r5m58v8zszk2rx9",
+      "label": "bc1qejnq9r2c…",
+      "full_address": "bc1qejnq9r2cyd9hr9uhqxjqjl7r5m58v8zszk2rx9",
+      "type": "address",
+      "balance": -84157.575731,
+      "received": 84157.575731,
+      "sent": 84157.575731,
+      "tx_count": 2,
+      "size": 8
+    },
+    {
+      "id": "bc1qrahqu4u6m6ysh99rfzc3wupjwfacdp23g48vz8",
+      "label": "bc1qrahqu4u6…",
+      "full_address": "bc1qrahqu4u6m6ysh99rfzc3wupjwfacdp23g48vz8",
+      "type": "address",
+      "balance": -83831.995278,
+      "received": 83831.995278,
+      "sent": 83831.995278,
+      "tx_count": 2,
+      "size": 8
+    },
+    {
+      "id": "3F4KVEpCffWHKStTC98XWihdvF2HeSkZYL",
+      "label": "3F4KVEpCffWH…",
+      "full_address": "3F4KVEpCffWHKStTC98XWihdvF2HeSkZYL",
+      "type": "address",
+      "balance": 16572.063188099997,
+      "received": 20381.128100299997,
+      "sent": 0.0,
+      "tx_count": 7,
+      "size": 55
+    },
+    {
+      "id": "bc1q305w4qkq2p8y06fa0rpmscwgv9d50vvfvg9jrf",
+      "label": "bc1q305w4qkq…",
+      "full_address": "bc1q305w4qkq2p8y06fa0rpmscwgv9d50vvfvg9jrf",
+      "type": "address",
+      "balance": 0.0,
+      "received": 0.0,
+      "sent": 163450.399954,
+      "tx_count": 1,
+      "size": 8
+    },
+    {
+      "id": "bc1qxru30rrhwn6sw37nsfwma3dg7smju5d7n33axt",
+      "label": "bc1qxru30rrh…",
+      "full_address": "bc1qxru30rrhwn6sw37nsfwma3dg7smju5d7n33axt",
+      "type": "address",
+      "balance": 0.0,
+      "received": 163439.399946,
+      "sent": 0.0,
+      "tx_count": 1,
+      "size": 8
+    },
+    {
+      "id": "bc1qq36k4l4uvj9v52zakkc4a96s5a5ha278xa3rvw",
+      "label": "bc1qq36k4l4u…",
+      "full_address": "bc1qq36k4l4uvj9v52zakkc4a96s5a5ha278xa3rvw",
+      "type": "address",
+      "balance": 16061.082514999993,
+      "received": 27387.55118908003,
+      "sent": 11324.381674080003,
+      "tx_count": 889,
+      "size": 55
+    },
+    {
+      "id": "bc1qwqwrvn9nfmrzg8mnaxwh45maa8khsm9an25wkv",
+      "label": "bc1qwqwrvn9n…",
+      "full_address": "bc1qwqwrvn9nfmrzg8mnaxwh45maa8khsm9an25wkv",
+      "type": "address",
+      "balance": 15507.31554743001,
+      "received": 19667.404328459987,
+      "sent": 4149.357981030002,
+      "tx_count": 2388,
+      "size": 55
+    },
+    {
+      "id": "bc1q5gu5uru7yu5832vj80dmjmwa04xse5lekyjrwj",
+      "label": "bc1q5gu5uru7…",
+      "full_address": "bc1q5gu5uru7yu5832vj80dmjmwa04xse5lekyjrwj",
+      "type": "address",
+      "balance": -77253.994855,
+      "received": 77253.994855,
+      "sent": 77253.994855,
+      "tx_count": 2,
+      "size": 8
+    },
+    {
+      "id": "bc1qq4522d758d6m64vtfhrkvs36ht6pq4vpn2dzdg",
+      "label": "bc1qq4522d75…",
+      "full_address": "bc1qq4522d758d6m64vtfhrkvs36ht6pq4vpn2dzdg",
+      "type": "address",
+      "balance": 0.0,
+      "received": 0.0,
+      "sent": 144937.401914,
+      "tx_count": 1,
+      "size": 8
+    },
+    {
+      "id": "bc1qcwg6k97jl4rz4msh8r47apc69pemyzz4ff4d98",
+      "label": "bc1qcwg6k97j…",
+      "full_address": "bc1qcwg6k97jl4rz4msh8r47apc69pemyzz4ff4d98",
+      "type": "address",
+      "balance": 0.0,
+      "received": 144927.402906,
+      "sent": 0.0,
+      "tx_count": 1,
+      "size": 8
+    },
+    {
+      "id": "bc1qs8t53rvs4gyaddeak6tccrv246ttcvhvarw72z",
+      "label": "bc1qs8t53rvs…",
+      "full_address": "bc1qs8t53rvs4gyaddeak6tccrv246ttcvhvarw72z",
+      "type": "address",
+      "balance": 14410.499600000006,
+      "received": 16361.343200000018,
+      "sent": 1947.1266999999998,
+      "tx_count": 1524,
+      "size": 55
+    },
+    {
+      "id": "bc1q72llsfjz6ep2m6edk85ldcdeansdmw0c0krr8a",
+      "label": "bc1q72llsfjz…",
+      "full_address": "bc1q72llsfjz6ep2m6edk85ldcdeansdmw0c0krr8a",
+      "type": "address",
+      "balance": 14328.785427150002,
+      "received": 15642.300000000001,
+      "sent": 1063.51457285,
+      "tx_count": 16,
+      "size": 55
+    },
+    {
+      "id": "bc1queyywzdtfdnep3qn9pp42f9ahzu75pfdtj95pp",
+      "label": "bc1queyywzdt…",
+      "full_address": "bc1queyywzdtfdnep3qn9pp42f9ahzu75pfdtj95pp",
+      "type": "address",
+      "balance": 14138.081699729999,
+      "received": 15988.08173498,
+      "sent": 1750.00003525,
+      "tx_count": 86,
+      "size": 55
+    },
+    {
+      "id": "bc1qylkjnx59tgt0wam4x87j2txa50dx3m7fdytk2f",
+      "label": "bc1qylkjnx59…",
+      "full_address": "bc1qylkjnx59tgt0wam4x87j2txa50dx3m7fdytk2f",
+      "type": "address",
+      "balance": -70411.994432,
+      "received": 70411.994432,
+      "sent": 70411.994432,
+      "tx_count": 2,
+      "size": 8
+    },
+    {
+      "id": "3FZXhnv7yXXJSXRf85NJ2YcKbsPD19EFXu",
+      "label": "3FZXhnv7yXXJ…",
+      "full_address": "3FZXhnv7yXXJSXRf85NJ2YcKbsPD19EFXu",
+      "type": "address",
+      "balance": 14002.049812000001,
+      "received": 25992.9184963,
+      "sent": 10000.8681968,
+      "tx_count": 7,
+      "size": 55
+    },
+    {
+      "id": "bc1qe7nju53tpff6gfffgu3nvayy0zc2txzrv57wyz",
+      "label": "bc1qe7nju53t…",
+      "full_address": "bc1qe7nju53tpff6gfffgu3nvayy0zc2txzrv57wyz",
+      "type": "address",
+      "balance": -70000.575721,
+      "received": 70000.575721,
+      "sent": 70000.575721,
+      "tx_count": 2,
+      "size": 8
+    },
+    {
+      "id": "bc1q7z2678wg8r792len8luwt42udzd9p8e9nj7l7t",
+      "label": "bc1q7z2678wg…",
+      "full_address": "bc1q7z2678wg8r792len8luwt42udzd9p8e9nj7l7t",
+      "type": "address",
+      "balance": 13613.315899999996,
+      "received": 19895.00350000001,
+      "sent": 6284.1943,
+      "tx_count": 1511,
+      "size": 55
+    },
+    {
+      "id": "bc1qg9h74d233ltm26gsw6kv8zs9nsn38dj6xufjen",
+      "label": "bc1qg9h74d23…",
+      "full_address": "bc1qg9h74d233ltm26gsw6kv8zs9nsn38dj6xufjen",
+      "type": "address",
+      "balance": 13350.0,
+      "received": 36250.0,
+      "sent": 17900.0,
+      "tx_count": 7,
+      "size": 55
+    },
+    {
+      "id": "3FHixW6AgDTCScdFdrZ8mP3y5tMyr9oNpt",
+      "label": "3FHixW6AgDTC…",
+      "full_address": "3FHixW6AgDTCScdFdrZ8mP3y5tMyr9oNpt",
+      "type": "address",
+      "balance": -11215.02901067,
+      "received": 61119.787367020006,
+      "sent": 72336.81638769,
+      "tx_count": 35,
+      "size": 8
+    },
+    {
+      "id": "bc1qatk5lwc2p3ftkx75yz27qxqpz8htrf6mnnev0a",
+      "label": "bc1qatk5lwc2…",
+      "full_address": "bc1qatk5lwc2p3ftkx75yz27qxqpz8htrf6mnnev0a",
+      "type": "address",
+      "balance": 13326.876900000001,
+      "received": 28493.726899999998,
+      "sent": 15156.85,
+      "tx_count": 43,
+      "size": 55
+    },
+    {
+      "id": "bc1qu9st489vjptqu7x2d4n6nfap6mfpxrz22egs0j",
+      "label": "bc1qu9st489v…",
+      "full_address": "bc1qu9st489vjptqu7x2d4n6nfap6mfpxrz22egs0j",
+      "type": "address",
+      "balance": 13257.029999999993,
+      "received": 19466.57,
+      "sent": 5973.89,
+      "tx_count": 159,
+      "size": 55
+    },
+    {
+      "id": "bc1qg0a07ftjz7f722hau978kf8mf655sa7nvlg7wk",
+      "label": "bc1qg0a07ftj…",
+      "full_address": "bc1qg0a07ftjz7f722hau978kf8mf655sa7nvlg7wk",
+      "type": "address",
+      "balance": 13133.60666942,
+      "received": 30313.0281,
+      "sent": 17129.421430579998,
+      "tx_count": 342,
+      "size": 55
+    },
+    {
+      "id": "bc1qywzldqyw2y4dkeq2zstspeqzrw39vaxxxveqds",
+      "label": "bc1qywzldqyw…",
+      "full_address": "bc1qywzldqyw2y4dkeq2zstspeqzrw39vaxxxveqds",
+      "type": "address",
+      "balance": 12665.035086970005,
+      "received": 15374.188274120008,
+      "sent": 2712.9231871500006,
+      "tx_count": 876,
+      "size": 55
+    },
+    {
+      "id": "bc1qvxn7xq396f0mla2s7rcp6dzvd8hs7ef7fas7jt",
+      "label": "bc1qvxn7xq39…",
+      "full_address": "bc1qvxn7xq396f0mla2s7rcp6dzvd8hs7ef7fas7jt",
+      "type": "address",
+      "balance": 12066.91471503997,
+      "received": 24707.24348699991,
+      "sent": 12635.636371960001,
+      "tx_count": 4766,
+      "size": 55
+    },
+    {
+      "id": "bc1q9nsrnlrwev96flvfh8vhp7e2p34grdp45relxl",
+      "label": "bc1q9nsrnlrw…",
+      "full_address": "bc1q9nsrnlrwev96flvfh8vhp7e2p34grdp45relxl",
+      "type": "address",
+      "balance": 11890.171727699992,
+      "received": 16314.97656601999,
+      "sent": 4386.784938319998,
+      "tx_count": 4380,
+      "size": 55
+    },
+    {
+      "id": "bc1qec20ng67v3vxgfr6aq560am0wq0weg0wsurl2k",
+      "label": "bc1qec20ng67…",
+      "full_address": "bc1qec20ng67v3vxgfr6aq560am0wq0weg0wsurl2k",
+      "type": "address",
+      "balance": 11415.725046750013,
+      "received": 15462.215723380014,
+      "sent": 4038.14027663,
+      "tx_count": 2146,
+      "size": 55
+    },
+    {
+      "id": "bc1qqmplxqtqggtgqw78l987dfarwfx47lxsps5ppg",
+      "label": "bc1qqmplxqtq…",
+      "full_address": "bc1qqmplxqtqggtgqw78l987dfarwfx47lxsps5ppg",
+      "type": "address",
+      "balance": 11389.891222249984,
+      "received": 14207.723575599965,
+      "sent": 2812.9355533499997,
+      "tx_count": 3318,
+      "size": 55
+    },
+    {
+      "id": "bc1q2tdp9vq2g34wggeqvuxstlyw0tkda8llave5el",
+      "label": "bc1q2tdp9vq2…",
+      "full_address": "bc1q2tdp9vq2g34wggeqvuxstlyw0tkda8llave5el",
+      "type": "address",
+      "balance": 11232.392452799999,
+      "received": 11233.2924528,
+      "sent": 0.0,
+      "tx_count": 3,
+      "size": 55
+    },
+    {
+      "id": "bc1q0qgmprc4lelgqrppch878q9yrqpryr2u5e6s3l",
+      "label": "bc1q0qgmprc4…",
+      "full_address": "bc1q0qgmprc4lelgqrppch878q9yrqpryr2u5e6s3l",
+      "type": "address",
+      "balance": 11076.326446279994,
+      "received": 26411.81579119,
+      "sent": 15316.53443091,
+      "tx_count": 258,
+      "size": 55
+    },
+    {
+      "id": "bc1q4vjjyr6vwjh76cf3pgh24q4utj0r9mc3zjz0q5",
+      "label": "bc1q4vjjyr6v…",
+      "full_address": "bc1q4vjjyr6vwjh76cf3pgh24q4utj0r9mc3zjz0q5",
+      "type": "address",
+      "balance": 0.0,
+      "received": 0.0,
+      "sent": 109158.575791,
+      "tx_count": 1,
+      "size": 8
+    },
+    {
+      "id": "bc1qr7g6klk0r935wmq54sm0qhmweccg6hyvvvrfzm",
+      "label": "bc1qr7g6klk0…",
+      "full_address": "bc1qr7g6klk0r935wmq54sm0qhmweccg6hyvvvrfzm",
+      "type": "address",
+      "balance": 0.0,
+      "received": 105420.0,
+      "sent": 0.0,
+      "tx_count": 1,
+      "size": 8
+    },
+    {
+      "id": "bc1qwurdnf95z3wpppa48xu0ljdq7l2c9282hwg7ha",
+      "label": "bc1qwurdnf95…",
+      "full_address": "bc1qwurdnf95z3wpppa48xu0ljdq7l2c9282hwg7ha",
+      "type": "address",
+      "balance": 9899.859999999999,
+      "received": 15899.779999999997,
+      "sent": 6199.909999999999,
+      "tx_count": 31,
+      "size": 55
+    },
+    {
+      "id": "bc1qyymylq0sejuhza0cu2u8lg9y2sqj7ses6vv4my",
+      "label": "bc1qyymylq0s…",
+      "full_address": "bc1qyymylq0sejuhza0cu2u8lg9y2sqj7ses6vv4my",
+      "type": "address",
+      "balance": 9711.965018469971,
+      "received": 14449.55151846997,
+      "sent": 4732.179099999998,
+      "tx_count": 3231,
+      "size": 55
+    },
+    {
+      "id": "146jCcRXDZrXbgxUrxe6BKZWxL8S3nz9bY",
+      "label": "146jCcRXDZrX…",
+      "full_address": "146jCcRXDZrXbgxUrxe6BKZWxL8S3nz9bY",
+      "type": "address",
+      "balance": -4600.706508140001,
+      "received": 46150.0,
+      "sent": 50700.70650814001,
+      "tx_count": 1553,
+      "size": 8
+    },
+    {
+      "id": "bc1q56pmv3wkn664chwzjez0xter4564ueulky46et",
+      "label": "bc1q56pmv3wk…",
+      "full_address": "bc1q56pmv3wkn664chwzjez0xter4564ueulky46et",
+      "type": "address",
+      "balance": 9598.611099999996,
+      "received": 10802.488399999998,
+      "sent": 1186.7769,
+      "tx_count": 441,
+      "size": 55
+    },
+    {
+      "id": "3EyLo6BtUbLPFVrFYP1FtBrobswxSA8mmB",
+      "label": "3EyLo6BtUbLP…",
+      "full_address": "3EyLo6BtUbLPFVrFYP1FtBrobswxSA8mmB",
+      "type": "address",
+      "balance": 9566.8879155,
+      "received": 10648.5628277,
+      "sent": 0.0,
+      "tx_count": 13,
+      "size": 55
+    },
+    {
+      "id": "bc1qf9xwz9c8d05u6tx6kp0v3hg4k8ywmtv5g632ap",
+      "label": "bc1qf9xwz9c8…",
+      "full_address": "bc1qf9xwz9c8d05u6tx6kp0v3hg4k8ywmtv5g632ap",
+      "type": "address",
+      "balance": 0.0,
+      "received": 94158.575759,
+      "sent": 0.0,
+      "tx_count": 1,
+      "size": 8
+    },
+    {
+      "id": "bc1q3anhwap2r0cjjzs9rezk7ayaydzstuww3wv0tf",
+      "label": "bc1q3anhwap2…",
+      "full_address": "bc1q3anhwap2r0cjjzs9rezk7ayaydzstuww3wv0tf",
+      "type": "address",
+      "balance": 9369.0,
+      "received": 10150.67,
+      "sent": 780.6700000000001,
+      "tx_count": 13,
+      "size": 55
+    },
+    {
+      "id": "bc1qzckk4lcrahcfvfam7ty5u3tp2flulr808stkmd",
+      "label": "bc1qzckk4lcr…",
+      "full_address": "bc1qzckk4lcrahcfvfam7ty5u3tp2flulr808stkmd",
+      "type": "address",
+      "balance": 9349.988966969997,
+      "received": 25900.0,
+      "sent": 16500.01103303,
+      "tx_count": 543,
+      "size": 55
+    },
+    {
+      "id": "bc1q4kgtjqw5m9upst30zkl4vm4w9trp0j6a5t32j7",
+      "label": "bc1q4kgtjqw5…",
+      "full_address": "bc1q4kgtjqw5m9upst30zkl4vm4w9trp0j6a5t32j7",
+      "type": "address",
+      "balance": 9239.366,
+      "received": 15114.366,
+      "sent": 5855.0,
+      "tx_count": 14,
+      "size": 55
+    },
+    {
+      "id": "bc1qxdv6ue2fa7qycskkk7n4mw2r4u79e9qgjta4ev",
+      "label": "bc1qxdv6ue2f…",
+      "full_address": "bc1qxdv6ue2fa7qycskkk7n4mw2r4u79e9qgjta4ev",
+      "type": "address",
+      "balance": 0.0,
+      "received": 0.0,
+      "sent": 89158.57575,
+      "tx_count": 1,
+      "size": 8
+    },
+    {
+      "id": "bc1qx57ht20ul4a9wy9q0khxqtqv9edg4vcyr29vta",
+      "label": "bc1qx57ht20u…",
+      "full_address": "bc1qx57ht20ul4a9wy9q0khxqtqv9edg4vcyr29vta",
+      "type": "address",
+      "balance": 0.0,
+      "received": 0.0,
+      "sent": 86521.953685,
+      "tx_count": 1,
+      "size": 8
+    },
+    {
+      "id": "35FkHKVseZRzBwqDRJjw2EwD71m4rKjMSL",
+      "label": "35FkHKVseZRz…",
+      "full_address": "35FkHKVseZRzBwqDRJjw2EwD71m4rKjMSL",
+      "type": "address",
+      "balance": 8200.9616457,
+      "received": 8304.951645699999,
+      "sent": 0.0,
+      "tx_count": 3,
+      "size": 55
+    },
+    {
+      "id": "bc1qh0aa6d05yrpe9rtxg9xfg66wtcy9fv26pvwu6f",
+      "label": "bc1qh0aa6d05…",
+      "full_address": "bc1qh0aa6d05yrpe9rtxg9xfg66wtcy9fv26pvwu6f",
+      "type": "address",
+      "balance": 8122.1178292500035,
+      "received": 9215.830781909994,
+      "sent": 1093.7127426600005,
+      "tx_count": 1358,
+      "size": 55
+    },
+    {
+      "id": "bc1q5mahcghuqvwjh9s5jnr92xflu0fv4d5yakeppj",
+      "label": "bc1q5mahcghu…",
+      "full_address": "bc1q5mahcghuqvwjh9s5jnr92xflu0fv4d5yakeppj",
+      "type": "address",
+      "balance": 8118.0219,
+      "received": 8415.022599999998,
+      "sent": 0.0,
+      "tx_count": 7,
+      "size": 55
+    },
+    {
+      "id": "bc1qkv5y9nxh47mgm7nrk89tq32ht3lqx6njycvhzc",
+      "label": "bc1qkv5y9nxh…",
+      "full_address": "bc1qkv5y9nxh47mgm7nrk89tq32ht3lqx6njycvhzc",
+      "type": "address",
+      "balance": -40167.322079,
+      "received": 40167.322079,
+      "sent": 40167.322079,
+      "tx_count": 2,
+      "size": 8
+    },
+    {
+      "id": "bc1qxhj4xs8rqq5fyvhsqtard7e9snt7hvney7k86m",
+      "label": "bc1qxhj4xs8r…",
+      "full_address": "bc1qxhj4xs8rqq5fyvhsqtard7e9snt7hvney7k86m",
+      "type": "address",
+      "balance": 0.0,
+      "received": 0.0,
+      "sent": 80167.322112,
+      "tx_count": 1,
+      "size": 8
+    },
+    {
+      "id": "bc1q2gee8xeepyq7zyg02t2qfgmcmf3zcdxnx0cfu9",
+      "label": "bc1q2gee8xee…",
+      "full_address": "bc1q2gee8xeepyq7zyg02t2qfgmcmf3zcdxnx0cfu9",
+      "type": "address",
+      "balance": -45000.0,
+      "received": 27517.0,
+      "sent": 52517.0,
+      "tx_count": 4,
+      "size": 8
+    },
+    {
+      "id": "bc1qvkhjsavfwk5vjm5vyg9krzuuunpr7ef6ndahha",
+      "label": "bc1qvkhjsavf…",
+      "full_address": "bc1qvkhjsavfwk5vjm5vyg9krzuuunpr7ef6ndahha",
+      "type": "address",
+      "balance": -40000.575709,
+      "received": 40000.575709,
+      "sent": 40000.575709,
+      "tx_count": 2,
+      "size": 8
+    },
+    {
+      "id": "bc1q5pc365mdzcdh9ps0vdrz9jrxnvxmyhgv4pcvcu",
+      "label": "bc1q5pc365md…",
+      "full_address": "bc1q5pc365mdzcdh9ps0vdrz9jrxnvxmyhgv4pcvcu",
+      "type": "address",
+      "balance": 8000.000080000002,
+      "received": 18001.10008,
+      "sent": 10000.0,
+      "tx_count": 6,
+      "size": 55
+    },
+    {
+      "id": "36RnWVnQRr5X6xoxiDs9E2GMsDsiBUhBbZ",
+      "label": "36RnWVnQRr5X…",
+      "full_address": "36RnWVnQRr5X6xoxiDs9E2GMsDsiBUhBbZ",
+      "type": "address",
+      "balance": -4176.267577100005,
+      "received": 37984.28465262,
+      "sent": 40047.04116642001,
+      "tx_count": 5,
+      "size": 8
+    },
+    {
+      "id": "3KcbbzXfgPJg7RLfuTgxTNhnCZDAwJCkyr",
+      "label": "3KcbbzXfgPJg…",
+      "full_address": "3KcbbzXfgPJg7RLfuTgxTNhnCZDAwJCkyr",
+      "type": "address",
+      "balance": 7774.960247,
+      "received": 32866.330864,
+      "sent": 0.0,
+      "tx_count": 2,
+      "size": 55
+    },
+    {
+      "id": "bc1qp9kxzckjdv79qd9x729phvuhe7zmkufrjqce0n",
+      "label": "bc1qp9kxzckj…",
+      "full_address": "bc1qp9kxzckjdv79qd9x729phvuhe7zmkufrjqce0n",
+      "type": "address",
+      "balance": 7675.0,
+      "received": 12892.0,
+      "sent": 5212.0,
+      "tx_count": 12,
+      "size": 55
+    },
+    {
+      "id": "bc1qdsqdv52lsyms6q3pmmxs3ezkpqgueg6u5q3krw",
+      "label": "bc1qdsqdv52l…",
+      "full_address": "bc1qdsqdv52lsyms6q3pmmxs3ezkpqgueg6u5q3krw",
+      "type": "address",
+      "balance": 7542.317977879992,
+      "received": 13191.53846925999,
+      "sent": 5583.33155628,
+      "tx_count": 206,
+      "size": 55
+    },
+    {
+      "id": "bc1qy20xrzz7tm6us0xvmpcv0yam005kqav8j6yptn",
+      "label": "bc1qy20xrzz7…",
+      "full_address": "bc1qy20xrzz7tm6us0xvmpcv0yam005kqav8j6yptn",
+      "type": "address",
+      "balance": -19475.393601500014,
+      "received": 27739.194485500004,
+      "sent": 47213.58808700002,
+      "tx_count": 40,
+      "size": 8
+    },
+    {
+      "id": "bc1qek74haul008mfcf6waswsq3rplz54yjyz6ssyr",
+      "label": "bc1qek74haul…",
+      "full_address": "bc1qek74haul008mfcf6waswsq3rplz54yjyz6ssyr",
+      "type": "address",
+      "balance": 7419.489987190001,
+      "received": 8904.521473300001,
+      "sent": 1430.1114861100002,
+      "tx_count": 352,
+      "size": 55
+    },
+    {
+      "id": "bc1q4t0vdl534ks7a73a09mn9wskg3y54xk7vumxjy",
+      "label": "bc1q4t0vdl53…",
+      "full_address": "bc1q4t0vdl534ks7a73a09mn9wskg3y54xk7vumxjy",
+      "type": "address",
+      "balance": 7295.590799999993,
+      "received": 17072.555676000007,
+      "sent": 9826.964875999996,
+      "tx_count": 308,
+      "size": 55
+    },
+    {
+      "id": "bc1q2ysaes7xlzac7s7dkmppsrkedkzllgs8u5rle0",
+      "label": "bc1q2ysaes7x…",
+      "full_address": "bc1q2ysaes7xlzac7s7dkmppsrkedkzllgs8u5rle0",
+      "type": "address",
+      "balance": 7256.538700000006,
+      "received": 10738.419700000024,
+      "sent": 3453.0552999999986,
+      "tx_count": 1003,
+      "size": 55
+    },
+    {
+      "id": "bc1qpktx7afusaf3j2l50wh73atr0ka3a9q0qgkwvp",
+      "label": "bc1qpktx7afu…",
+      "full_address": "bc1qpktx7afusaf3j2l50wh73atr0ka3a9q0qgkwvp",
+      "type": "address",
+      "balance": 7249.957152039997,
+      "received": 30750.0,
+      "sent": 23450.042847959994,
+      "tx_count": 639,
+      "size": 55
+    },
+    {
+      "id": "34beiJxdQxuesGjNB5P1JB4dnxKtqDktSs",
+      "label": "34beiJxdQxue…",
+      "full_address": "34beiJxdQxuesGjNB5P1JB4dnxKtqDktSs",
+      "type": "address",
+      "balance": 7224.999970000001,
+      "received": 111502.54008511,
+      "sent": 99277.54011511001,
+      "tx_count": 5,
+      "size": 55
+    },
+    {
+      "id": "bc1qj68h50wxq97847r4pty4mjj5mc7kfwhkdajljn",
+      "label": "bc1qj68h50wx…",
+      "full_address": "bc1qj68h50wxq97847r4pty4mjj5mc7kfwhkdajljn",
+      "type": "address",
+      "balance": 7166.8657,
+      "received": 11994.396799999999,
+      "sent": 4750.716899999999,
+      "tx_count": 161,
+      "size": 55
+    },
+    {
+      "id": "3BczeDcSHMXJ3JJRqMQvePzWcW8kVEug2F",
+      "label": "3BczeDcSHMXJ…",
+      "full_address": "3BczeDcSHMXJ3JJRqMQvePzWcW8kVEug2F",
+      "type": "address",
+      "balance": 7000.0,
+      "received": 9000.041949409999,
+      "sent": 2153.04195941,
+      "tx_count": 4,
+      "size": 55
+    },
+    {
+      "id": "bc1q48tku56w9tnaezw4rfgkyr09dyegwhd0jek8cm",
+      "label": "bc1q48tku56w…",
+      "full_address": "bc1q48tku56w9tnaezw4rfgkyr09dyegwhd0jek8cm",
+      "type": "address",
+      "balance": 6905.644400000009,
+      "received": 9938.300699999987,
+      "sent": 3028.7198000000003,
+      "tx_count": 2011,
+      "size": 55
+    },
+    {
+      "id": "bc1qvqkxx7fxm3ntwegs6pqh8ec7egjk0asjs5ddeq",
+      "label": "bc1qvqkxx7fx…",
+      "full_address": "bc1qvqkxx7fxm3ntwegs6pqh8ec7egjk0asjs5ddeq",
+      "type": "address",
+      "balance": 0.0,
+      "received": 68411.994009,
+      "sent": 0.0,
+      "tx_count": 1,
+      "size": 8
+    },
+    {
+      "id": "bc1q9pv95v8vvdew5uryjqjmhu2c7a5hz53mc30pmr",
+      "label": "bc1q9pv95v8v…",
+      "full_address": "bc1q9pv95v8vvdew5uryjqjmhu2c7a5hz53mc30pmr",
+      "type": "address",
+      "balance": 6828.238514740004,
+      "received": 11346.0585792,
+      "sent": 4515.699264460001,
+      "tx_count": 1279,
+      "size": 55
+    },
+    {
+      "id": "bc1q622664aqq9wx643dl4rczpevn4qpk9z0kmzmr8",
+      "label": "bc1q622664aq…",
+      "full_address": "bc1q622664aqq9wx643dl4rczpevn4qpk9z0kmzmr8",
+      "type": "address",
+      "balance": 6822.359329049989,
+      "received": 9879.61379667,
+      "sent": 3054.89776762,
+      "tx_count": 3177,
+      "size": 55
+    },
+    {
+      "id": "3NiFP4Zv1LtFtbAzwhhc9yLvVec5V9e44X",
+      "label": "3NiFP4Zv1LtF…",
+      "full_address": "3NiFP4Zv1LtFtbAzwhhc9yLvVec5V9e44X",
+      "type": "address",
+      "balance": -8985.351094599995,
+      "received": 35209.6766452,
+      "sent": 32709.457816799997,
+      "tx_count": 4,
+      "size": 8
+    },
+    {
+      "id": "bc1q0z34gqcgtnp352gqkzrk88n7c70hjx9s8sh5sh",
+      "label": "bc1q0z34gqcg…",
+      "full_address": "bc1q0z34gqcgtnp352gqkzrk88n7c70hjx9s8sh5sh",
+      "type": "address",
+      "balance": 6668.0,
+      "received": 12428.0,
+      "sent": 6252.0,
+      "tx_count": 101,
+      "size": 55
+    },
+    {
+      "id": "bc1q58afndq6q5yn3xg3rga05vt6apa9fr6cp7g4tc",
+      "label": "bc1q58afndq6…",
+      "full_address": "bc1q58afndq6q5yn3xg3rga05vt6apa9fr6cp7g4tc",
+      "type": "address",
+      "balance": 6650.0,
+      "received": 6700.0,
+      "sent": 0.0,
+      "tx_count": 134,
+      "size": 55
+    },
+    {
+      "id": "1KvRXLdLjjgNBPqppRsKJdkNUzPeBFuSpF",
+      "label": "1KvRXLdLjjgN…",
+      "full_address": "1KvRXLdLjjgNBPqppRsKJdkNUzPeBFuSpF",
+      "type": "address",
+      "balance": -1.2395205699986036,
+      "received": 33214.624716850005,
+      "sent": 33215.86223742,
+      "tx_count": 38,
+      "size": 8
+    },
+    {
+      "id": "1Eg17Ey9qHr8BwzfLqbcSxUruXuLVnQxHF",
+      "label": "1Eg17Ey9qHr8…",
+      "full_address": "1Eg17Ey9qHr8BwzfLqbcSxUruXuLVnQxHF",
+      "type": "address",
+      "balance": 6577.744571900001,
+      "received": 9678.550636920001,
+      "sent": 3010.29447722,
+      "tx_count": 7,
+      "size": 55
+    },
+    {
+      "id": "3Bf7F2gqNBpAieX8nn2FNmdF5ogK23L9Up",
+      "label": "3Bf7F2gqNBpA…",
+      "full_address": "3Bf7F2gqNBpAieX8nn2FNmdF5ogK23L9Up",
+      "type": "address",
+      "balance": 6564.4115219999985,
+      "received": 31871.541377319998,
+      "sent": 25304.129855320003,
+      "tx_count": 17,
+      "size": 55
+    },
+    {
+      "id": "bc1q2hzck7hp8qkxh2sml2pv3h8g82nfyq940jlzns",
+      "label": "bc1q2hzck7hp…",
+      "full_address": "bc1q2hzck7hp8qkxh2sml2pv3h8g82nfyq940jlzns",
+      "type": "address",
+      "balance": -33513.02407042,
+      "received": 32000.00007042,
+      "sent": 33513.02407042,
+      "tx_count": 2,
+      "size": 8
+    },
+    {
+      "id": "bc1q07r8cm5k7czx874757eacwdhlvejc36cd9fg73",
+      "label": "bc1q07r8cm5k…",
+      "full_address": "bc1q07r8cm5k7czx874757eacwdhlvejc36cd9fg73",
+      "type": "address",
+      "balance": -32756.512054,
+      "received": 32756.512054,
+      "sent": 32756.512054,
+      "tx_count": 2,
+      "size": 8
+    },
+    {
+      "id": "bc1q5pu7q5a0vdd0fhtcvjuc4c5ehguzlm09xkavf7",
+      "label": "bc1q5pu7q5a0…",
+      "full_address": "bc1q5pu7q5a0vdd0fhtcvjuc4c5ehguzlm09xkavf7",
+      "type": "address",
+      "balance": 6443.483369059999,
+      "received": 6869.573043160002,
+      "sent": 423.88217409999993,
+      "tx_count": 1018,
+      "size": 55
+    },
+    {
+      "id": "bc1q8r3rqqtxyfynan839fmxp6nyrhayutd40seses",
+      "label": "bc1q8r3rqqtx…",
+      "full_address": "bc1q8r3rqqtxyfynan839fmxp6nyrhayutd40seses",
+      "type": "address",
+      "balance": -51.0,
+      "received": 31000.0,
+      "sent": 31001.0,
+      "tx_count": 624,
+      "size": 8
+    },
+    {
+      "id": "bc1qtpct2r9ymn29ztehv5uel3809shcuc5lx56ynh",
+      "label": "bc1qtpct2r9y…",
+      "full_address": "bc1qtpct2r9ymn29ztehv5uel3809shcuc5lx56ynh",
+      "type": "address",
+      "balance": 6188.9199004,
+      "received": 7188.9199004,
+      "sent": 0.0,
+      "tx_count": 9,
+      "size": 55
+    },
+    {
+      "id": "bc1qku0l50fpe246c5ecx8zyqgsuymmyxs6t9nzx25",
+      "label": "bc1qku0l50fp…",
+      "full_address": "bc1qku0l50fpe246c5ecx8zyqgsuymmyxs6t9nzx25",
+      "type": "address",
+      "balance": 6150.0,
+      "received": 8700.0,
+      "sent": 2500.0,
+      "tx_count": 178,
+      "size": 55
+    },
+    {
+      "id": "bc1qjrlk5f0vrfpl3lzwnuknm0kj60h738qxunx3qp",
+      "label": "bc1qjrlk5f0v…",
+      "full_address": "bc1qjrlk5f0vrfpl3lzwnuknm0kj60h738qxunx3qp",
+      "type": "address",
+      "balance": 6039.0171,
+      "received": 7326.0265,
+      "sent": 1237.5094,
+      "tx_count": 25,
+      "size": 55
+    },
+    {
+      "id": "bc1qs3c5vcpld7vu9vudweyhl4xy9n0fjlm3c9tv3u",
+      "label": "bc1qs3c5vcpl…",
+      "full_address": "bc1qs3c5vcpld7vu9vudweyhl4xy9n0fjlm3c9tv3u",
+      "type": "address",
+      "balance": 0.0,
+      "received": 60167.322101,
+      "sent": 0.0,
+      "tx_count": 1,
+      "size": 8
+    },
+    {
+      "id": "bc1qv86xh7luzx7mc95yaqr28cf688ngq9zqf80t2q",
+      "label": "bc1qv86xh7lu…",
+      "full_address": "bc1qv86xh7luzx7mc95yaqr28cf688ngq9zqf80t2q",
+      "type": "address",
+      "balance": 0.0,
+      "received": 60000.0,
+      "sent": 0.0,
+      "tx_count": 1,
+      "size": 8
+    },
+    {
+      "id": "bc1q8zt5vygu65llrqrrd0k60ld9tpzyec38wpmfzt",
+      "label": "bc1q8zt5vygu…",
+      "full_address": "bc1q8zt5vygu65llrqrrd0k60ld9tpzyec38wpmfzt",
+      "type": "address",
+      "balance": 0.0,
+      "received": 0.0,
+      "sent": 59281.99274,
+      "tx_count": 1,
+      "size": 8
+    },
+    {
+      "id": "bc1q8p8u5eesm2fvlpdd8kgp5z7v3d0lwvh0uunle8",
+      "label": "bc1q8p8u5ees…",
+      "full_address": "bc1q8p8u5eesm2fvlpdd8kgp5z7v3d0lwvh0uunle8",
+      "type": "address",
+      "balance": -29583.756828,
+      "received": 29583.756828,
+      "sent": 29583.756828,
+      "tx_count": 2,
+      "size": 8
+    },
+    {
+      "id": "bc1q4dcxhq8z7mgkerz8tym5g8glhm9gkwdnh4hd4m",
+      "label": "bc1q4dcxhq8z…",
+      "full_address": "bc1q4dcxhq8z7mgkerz8tym5g8glhm9gkwdnh4hd4m",
+      "type": "address",
+      "balance": 5818.525110500001,
+      "received": 5918.6725627,
+      "sent": 0.0,
+      "tx_count": 5,
+      "size": 55
+    },
+    {
+      "id": "bc1qufeefx64w8wx2lameju0um08rukayxamhystfe",
+      "label": "bc1qufeefx64…",
+      "full_address": "bc1qufeefx64w8wx2lameju0um08rukayxamhystfe",
+      "type": "address",
+      "balance": 5694.5023001099025,
+      "received": 1410138.46945028,
+      "sent": 1404527.6947977697,
+      "tx_count": 2197,
+      "size": 55
+    },
+    {
+      "id": "bc1q2fauuyuztah6w56qg7s6x2kct9e9cq73jvrdfn",
+      "label": "bc1q2fauuyuz…",
+      "full_address": "bc1q2fauuyuztah6w56qg7s6x2kct9e9cq73jvrdfn",
+      "type": "address",
+      "balance": 5646.286853289997,
+      "received": 6825.2104488099985,
+      "sent": 1164.53099552,
+      "tx_count": 861,
+      "size": 55
+    },
+    {
+      "id": "bc1q5rfydxt47xrc7q34ylfvqq37nh0styxpuqlj3p",
+      "label": "bc1q5rfydxt4…",
+      "full_address": "bc1q5rfydxt47xrc7q34ylfvqq37nh0styxpuqlj3p",
+      "type": "address",
+      "balance": 0.0,
+      "received": 55850.250655,
+      "sent": 0.0,
+      "tx_count": 1,
+      "size": 8
+    },
+    {
+      "id": "bc1qtrrzs0vxrcydhvk2jwcjj4c9vwqp7jf2vwumtp",
+      "label": "bc1qtrrzs0vx…",
+      "full_address": "bc1qtrrzs0vxrcydhvk2jwcjj4c9vwqp7jf2vwumtp",
+      "type": "address",
+      "balance": 5570.605307129999,
+      "received": 6999.105307129999,
+      "sent": 1426.5,
+      "tx_count": 19,
+      "size": 55
+    },
+    {
+      "id": "bc1qt8e7hn06yvr0y75dhvrwry3enh6pwzdmj0fgzr",
+      "label": "bc1qt8e7hn06…",
+      "full_address": "bc1qt8e7hn06yvr0y75dhvrwry3enh6pwzdmj0fgzr",
+      "type": "address",
+      "balance": -6486.56792414001,
+      "received": 24569.32657969001,
+      "sent": 31018.39450383001,
+      "tx_count": 233,
+      "size": 8
+    },
+    {
+      "id": "bc1qy2fk3y627gl53nu792l8sdn77fwsrnrt4smjl6",
+      "label": "bc1qy2fk3y62…",
+      "full_address": "bc1qy2fk3y627gl53nu792l8sdn77fwsrnrt4smjl6",
+      "type": "address",
+      "balance": 5505.780031530002,
+      "received": 6480.128290290005,
+      "sent": 972.3274587600004,
+      "tx_count": 1548,
+      "size": 55
+    },
+    {
+      "id": "3KJwJDGuxV2pLVhuuXcEdX1r3i7FJ39PJh",
+      "label": "3KJwJDGuxV2p…",
+      "full_address": "3KJwJDGuxV2pLVhuuXcEdX1r3i7FJ39PJh",
+      "type": "address",
+      "balance": 5487.547134100001,
+      "received": 10504.4671041,
+      "sent": 5011.929969999999,
+      "tx_count": 8,
+      "size": 55
+    },
+    {
+      "id": "bc1q2jjlxeagaprs6xgwehhdlsufr6jqwf792mmwj7",
+      "label": "bc1q2jjlxeag…",
+      "full_address": "bc1q2jjlxeagaprs6xgwehhdlsufr6jqwf792mmwj7",
+      "type": "address",
+      "balance": 0.0,
+      "received": 54281.992317,
+      "sent": 0.0,
+      "tx_count": 1,
+      "size": 8
+    },
+    {
+      "id": "bc1qy6xa48w90rvff7czt7p686c0nn3lphnyu45kwr",
+      "label": "bc1qy6xa48w9…",
+      "full_address": "bc1qy6xa48w90rvff7czt7p686c0nn3lphnyu45kwr",
+      "type": "address",
+      "balance": -26583.755559,
+      "received": 26583.755559,
+      "sent": 26583.755559,
+      "tx_count": 2,
+      "size": 8
+    },
+    {
+      "id": "bc1q9u8f65xjnp5h2gdflv0prz7veg4nl7n99fpqdm",
+      "label": "bc1q9u8f65xj…",
+      "full_address": "bc1q9u8f65xjnp5h2gdflv0prz7veg4nl7n99fpqdm",
+      "type": "address",
+      "balance": 5209.812000000007,
+      "received": 6442.746500000005,
+      "sent": 1230.4119999999998,
+      "tx_count": 1089,
+      "size": 55
+    },
+    {
+      "id": "bc1qz8g0xlxj32uj6gzsmg0qarmmcc9j6jgxr85z5x",
+      "label": "bc1qz8g0xlxj…",
+      "full_address": "bc1qz8g0xlxj32uj6gzsmg0qarmmcc9j6jgxr85z5x",
+      "type": "address",
+      "balance": 0.0,
+      "received": 0.0,
+      "sent": 51659.84584469,
+      "tx_count": 1,
+      "size": 8
+    },
+    {
+      "id": "bc1q9fnugedtuwemyc4zy3fwus7fyql0zm3xm7vrz4",
+      "label": "bc1q9fnugedt…",
+      "full_address": "bc1q9fnugedtuwemyc4zy3fwus7fyql0zm3xm7vrz4",
+      "type": "address",
+      "balance": 5100.816,
+      "received": 15089.00135401,
+      "sent": 8988.18535401,
+      "tx_count": 6,
+      "size": 55
+    },
+    {
+      "id": "3Fx4bL6jxQMRxgTrzf9rHgviFV2MtsDgZm",
+      "label": "3Fx4bL6jxQMR…",
+      "full_address": "3Fx4bL6jxQMRxgTrzf9rHgviFV2MtsDgZm",
+      "type": "address",
+      "balance": 5092.246200000001,
+      "received": 5094.5322000000015,
+      "sent": 0.0,
+      "tx_count": 165,
+      "size": 55
+    },
+    {
+      "id": "bc1qf3rk6nfs8ww83prp63w974p7knyr2j3tjtkr44",
+      "label": "bc1qf3rk6nfs…",
+      "full_address": "bc1qf3rk6nfs8ww83prp63w974p7knyr2j3tjtkr44",
+      "type": "address",
+      "balance": -3999.9989681100005,
+      "received": 23513.02403189,
+      "sent": 26756.511,
+      "tx_count": 6,
+      "size": 8
+    },
+    {
+      "id": "bc1qsnc3ktncjwymr9l065rjd25m7z468cjvy4u2ew",
+      "label": "bc1qsnc3ktnc…",
+      "full_address": "bc1qsnc3ktncjwymr9l065rjd25m7z468cjvy4u2ew",
+      "type": "address",
+      "balance": 0.0,
+      "received": 0.0,
+      "sent": 50167.32209,
+      "tx_count": 1,
+      "size": 8
+    },
+    {
+      "id": "3E96yrKn9CLBMGyAnn8KVQJS6oms4UPpcK",
+      "label": "3E96yrKn9CLB…",
+      "full_address": "3E96yrKn9CLBMGyAnn8KVQJS6oms4UPpcK",
+      "type": "address",
+      "balance": 5016.3121509699995,
+      "received": 5031.3321309699995,
+      "sent": 16.509990000000002,
+      "tx_count": 6,
+      "size": 55
+    },
+    {
+      "id": "bc1q44dwq2y6r9m60yxuvyu7ln54g2wx9vlxagkp2u",
+      "label": "bc1q44dwq2y6…",
+      "full_address": "bc1q44dwq2y6r9m60yxuvyu7ln54g2wx9vlxagkp2u",
+      "type": "address",
+      "balance": 5000.0,
+      "received": 7500.0,
+      "sent": 0.0,
+      "tx_count": 3,
+      "size": 55
+    },
+    {
+      "id": "bc1qu499vya6yuzhwpq0khn0qqt4f5x5u440zpxzfe",
+      "label": "bc1qu499vya6…",
+      "full_address": "bc1qu499vya6yuzhwpq0khn0qqt4f5x5u440zpxzfe",
+      "type": "address",
+      "balance": 5000.0,
+      "received": 10000.0,
+      "sent": 0.0,
+      "tx_count": 2,
+      "size": 55
+    },
+    {
+      "id": "bc1qug2jny5dkzuzhna5zhkmywhljupxjtx09h6rkd",
+      "label": "bc1qug2jny5d…",
+      "full_address": "bc1qug2jny5dkzuzhna5zhkmywhljupxjtx09h6rkd",
+      "type": "address",
+      "balance": -23999.94889,
+      "received": 24999.896511,
+      "sent": 24999.896511,
+      "tx_count": 4,
+      "size": 8
+    },
+    {
+      "id": "398o3YmGtJuhpRB6sdb74dQEwa59nWmeQE",
+      "label": "398o3YmGtJuh…",
+      "full_address": "398o3YmGtJuhpRB6sdb74dQEwa59nWmeQE",
+      "type": "address",
+      "balance": 4996.579524200001,
+      "received": 47811.19859148,
+      "sent": 41342.047522880006,
+      "tx_count": 11,
+      "size": 55
+    },
+    {
+      "id": "bc1q096ks0zj9jl5qxe0pxzkzv9r8q6nnn39hqq4up",
+      "label": "bc1q096ks0zj…",
+      "full_address": "bc1q096ks0zj9jl5qxe0pxzkzv9r8q6nnn39hqq4up",
+      "type": "address",
+      "balance": 4995.0,
+      "received": 5000.0,
+      "sent": 0.0,
+      "tx_count": 2,
+      "size": 55
+    },
+    {
+      "id": "bc1qztjs7z84mtl2x4w9ttwfdka2peu85ur5fzwndp",
+      "label": "bc1qztjs7z84…",
+      "full_address": "bc1qztjs7z84mtl2x4w9ttwfdka2peu85ur5fzwndp",
+      "type": "address",
+      "balance": 4981.182099999997,
+      "received": 8868.913346899997,
+      "sent": 3865.960446899999,
+      "tx_count": 275,
+      "size": 55
+    },
+    {
+      "id": "bc1q7jsxzm4rn79rk3ujvsavvt94sgftkc2ytxkna8",
+      "label": "bc1q7jsxzm4r…",
+      "full_address": "bc1q7jsxzm4rn79rk3ujvsavvt94sgftkc2ytxkna8",
+      "type": "address",
+      "balance": 4981.103900000001,
+      "received": 19988.817600000002,
+      "sent": 12007.7137,
+      "tx_count": 10,
+      "size": 55
+    },
+    {
+      "id": "bc1qv2znrzr7udc59tsan2z8d38887a2d38rj7tfy6",
+      "label": "bc1qv2znrzr7…",
+      "full_address": "bc1qv2znrzr7udc59tsan2z8d38887a2d38rj7tfy6",
+      "type": "address",
+      "balance": 4950.075100000001,
+      "received": 5049.075400000001,
+      "sent": 0.0,
+      "tx_count": 50,
+      "size": 55
+    },
+    {
+      "id": "bc1qqv0a2sqaxa8ssdxfxsv3j0cv6n048h3pxw95ye",
+      "label": "bc1qqv0a2sqa…",
+      "full_address": "bc1qqv0a2sqaxa8ssdxfxsv3j0cv6n048h3pxw95ye",
+      "type": "address",
+      "balance": -24747.898928,
+      "received": 24747.898928,
+      "sent": 24747.898928,
+      "tx_count": 2,
+      "size": 8
+    },
+    {
+      "id": "bc1q6c08z39t0n4a3q6lut7zkxmf8els7ker8nac8m",
+      "label": "bc1q6c08z39t…",
+      "full_address": "bc1q6c08z39t0n4a3q6lut7zkxmf8els7ker8nac8m",
+      "type": "address",
+      "balance": 4845.3173633100005,
+      "received": 11664.72459341,
+      "sent": 8393.40959188,
+      "tx_count": 10,
+      "size": 55
+    },
+    {
+      "id": "bc1ql2sdht3dd8rmfw635mehpzxxvsvlrp0zunqvun",
+      "label": "bc1ql2sdht3d…",
+      "full_address": "bc1ql2sdht3dd8rmfw635mehpzxxvsvlrp0zunqvun",
+      "type": "address",
+      "balance": 4836.168699999999,
+      "received": 12270.947700000006,
+      "sent": 7431.475099999999,
+      "tx_count": 601,
+      "size": 55
+    },
+    {
+      "id": "bc1q4t36awl3859cqts6tuqgja2lp3lvja4qygehdu",
+      "label": "bc1q4t36awl3…",
+      "full_address": "bc1q4t36awl3859cqts6tuqgja2lp3lvja4qygehdu",
+      "type": "address",
+      "balance": 4812.127865880002,
+      "received": 5797.211855689998,
+      "sent": 980.08658981,
+      "tx_count": 392,
+      "size": 55
+    },
+    {
+      "id": "bc1qgpjrqywz33qemjv4c7cgvf0s3mjsl5tghdh5uz",
+      "label": "bc1qgpjrqywz…",
+      "full_address": "bc1qgpjrqywz33qemjv4c7cgvf0s3mjsl5tghdh5uz",
+      "type": "address",
+      "balance": 4626.513800000001,
+      "received": 9373.973199999999,
+      "sent": 4718.0002,
+      "tx_count": 77,
+      "size": 55
+    },
+    {
+      "id": "bc1qfqlwzhtycywuucpmframv9303mm959wpx6x5uw",
+      "label": "bc1qfqlwzhty…",
+      "full_address": "bc1qfqlwzhtycywuucpmframv9303mm959wpx6x5uw",
+      "type": "address",
+      "balance": 4599.852718390002,
+      "received": 5058.512564399997,
+      "sent": 456.18964601000005,
+      "tx_count": 1396,
+      "size": 55
+    },
+    {
+      "id": "bc1qcytltnptdh88am8as5jtzewmp2tmsgj9ca48l6",
+      "label": "bc1qcytltnpt…",
+      "full_address": "bc1qcytltnptdh88am8as5jtzewmp2tmsgj9ca48l6",
+      "type": "address",
+      "balance": -12883.0,
+      "received": 16365.0,
+      "sent": 29183.0,
+      "tx_count": 5,
+      "size": 8
+    },
+    {
+      "id": "bc1q4520j6rkk8fdmzylyl0032t6ahhwud3qdyd9rk",
+      "label": "bc1q4520j6rk…",
+      "full_address": "bc1q4520j6rkk8fdmzylyl0032t6ahhwud3qdyd9rk",
+      "type": "address",
+      "balance": 4443.039999999999,
+      "received": 29523.93999999999,
+      "sent": 23069.4,
+      "tx_count": 25,
+      "size": 55
+    },
+    {
+      "id": "bc1qrhg6tlsxj0wyhhthal6an7mw4my3lc36dyfzwl",
+      "label": "bc1qrhg6tlsx…",
+      "full_address": "bc1qrhg6tlsxj0wyhhthal6an7mw4my3lc36dyfzwl",
+      "type": "address",
+      "balance": 0.0,
+      "received": 44101.424776,
+      "sent": 0.0,
+      "tx_count": 1,
+      "size": 8
+    },
+    {
+      "id": "bc1q2hry8zsrrv3t6s6ngry7mdlk9htdd3j7gas49p",
+      "label": "bc1q2hry8zsr…",
+      "full_address": "bc1q2hry8zsrrv3t6s6ngry7mdlk9htdd3j7gas49p",
+      "type": "address",
+      "balance": -21998.001268999997,
+      "received": 22001.895665,
+      "sent": 21999.948467,
+      "tx_count": 3,
+      "size": 8
+    },
+    {
+      "id": "37YDoBksW2FWDcsAW53WN86qpqQYccmep3",
+      "label": "37YDoBksW2FW…",
+      "full_address": "37YDoBksW2FWDcsAW53WN86qpqQYccmep3",
+      "type": "address",
+      "balance": -3525.039801550003,
+      "received": 20102.1566417,
+      "sent": 23626.196443250003,
+      "tx_count": 3,
+      "size": 8
+    },
+    {
+      "id": "bc1q5zxmfnnte9klx49ctvrlgvsjdhcl7fzpw9upzm",
+      "label": "bc1q5zxmfnnt…",
+      "full_address": "bc1q5zxmfnnte9klx49ctvrlgvsjdhcl7fzpw9upzm",
+      "type": "address",
+      "balance": 4362.595130800001,
+      "received": 4737.497866590001,
+      "sent": 371.06033579000007,
+      "tx_count": 1364,
+      "size": 55
+    },
+    {
+      "id": "bc1qqs87w4pl8jang3xg0jzr3mcvm8hjf0kf7ake5f",
+      "label": "bc1qqs87w4pl…",
+      "full_address": "bc1qqs87w4pl8jang3xg0jzr3mcvm8hjf0kf7ake5f",
+      "type": "address",
+      "balance": 4356.0188,
+      "received": 4900.5195,
+      "sent": 495.0007,
+      "tx_count": 33,
+      "size": 55
+    },
+    {
+      "id": "3MN1tXKePydQ5tUd9wmTz4j7xKEY8pN6a4",
+      "label": "3MN1tXKePydQ…",
+      "full_address": "3MN1tXKePydQ5tUd9wmTz4j7xKEY8pN6a4",
+      "type": "address",
+      "balance": 4293.430471699998,
+      "received": 15636.54751,
+      "sent": 10500.143166000002,
+      "tx_count": 10,
+      "size": 55
+    },
+    {
+      "id": "bc1qlhh5t0ew4q9fhptvzqjsqrhm86mcp7fp9dm5uh",
+      "label": "bc1qlhh5t0ew…",
+      "full_address": "bc1qlhh5t0ew4q9fhptvzqjsqrhm86mcp7fp9dm5uh",
+      "type": "address",
+      "balance": 4291.408700000004,
+      "received": 4924.977900000008,
+      "sent": 631.2269,
+      "tx_count": 1685,
+      "size": 55
+    },
+    {
+      "id": "bc1qg48j94eqz5dypr8kkv37c4yf8hjklqj7pxel23",
+      "label": "bc1qg48j94eq…",
+      "full_address": "bc1qg48j94eqz5dypr8kkv37c4yf8hjklqj7pxel23",
+      "type": "address",
+      "balance": 4230.1383012999995,
+      "received": 22239.99337752,
+      "sent": 15672.20234624,
+      "tx_count": 9,
+      "size": 55
+    },
+    {
+      "id": "bc1qwrl3dmke58j6u3v2tct809jmc3uf3gfavlvzms",
+      "label": "bc1qwrl3dmke…",
+      "full_address": "bc1qwrl3dmke58j6u3v2tct809jmc3uf3gfavlvzms",
+      "type": "address",
+      "balance": 4211.369009769996,
+      "received": 8524.290779270006,
+      "sent": 4139.998140719999,
+      "tx_count": 1145,
+      "size": 55
+    },
+    {
+      "id": "bc1q4e6z3gaet37f72pweslasacjw2wq0az3wxjmh7",
+      "label": "bc1q4e6z3gae…",
+      "full_address": "bc1q4e6z3gaet37f72pweslasacjw2wq0az3wxjmh7",
+      "type": "address",
+      "balance": 4200.0,
+      "received": 10475.0,
+      "sent": 6150.0,
+      "tx_count": 25,
+      "size": 55
+    },
+    {
+      "id": "bc1qlhs667typ5heqpj3ryay5c7j4p4xrf5v5hgzvv",
+      "label": "bc1qlhs667ty…",
+      "full_address": "bc1qlhs667typ5heqpj3ryay5c7j4p4xrf5v5hgzvv",
+      "type": "address",
+      "balance": -7865.0,
+      "received": 17181.9,
+      "sent": 24747.9,
+      "tx_count": 12,
+      "size": 8
+    },
+    {
+      "id": "bc1q33slcj8cqjut0hkxgel5f0l2l9kwe88w7s4gu9",
+      "label": "bc1q33slcj8c…",
+      "full_address": "bc1q33slcj8cqjut0hkxgel5f0l2l9kwe88w7s4gu9",
+      "type": "address",
+      "balance": 4178.0232,
+      "received": 5378.757000000003,
+      "sent": 1190.6140000000005,
+      "tx_count": 583,
+      "size": 55
+    },
+    {
+      "id": "bc1q3q2hc9h7vsphne4ltaqedw7xt3mdd6rhhnv6jh",
+      "label": "bc1q3q2hc9h7…",
+      "full_address": "bc1q3q2hc9h7vsphne4ltaqedw7xt3mdd6rhhnv6jh",
+      "type": "address",
+      "balance": -20930.25255737,
+      "received": 20810.3762189,
+      "sent": 20930.25255737,
+      "tx_count": 4,
+      "size": 8
+    },
+    {
+      "id": "bc1qyn60p5wjla8nzzvj32r6hlrt2csl2ps6tet9qj",
+      "label": "bc1qyn60p5wj…",
+      "full_address": "bc1qyn60p5wjla8nzzvj32r6hlrt2csl2ps6tet9qj",
+      "type": "address",
+      "balance": 4174.047711780001,
+      "received": 6300.655895090001,
+      "sent": 2121.60818331,
+      "tx_count": 116,
+      "size": 55
+    },
+    {
+      "id": "bc1qf9ufpsj5k5rq3uexkke82xmeay3drw5mepmhmj",
+      "label": "bc1qf9ufpsj5…",
+      "full_address": "bc1qf9ufpsj5k5rq3uexkke82xmeay3drw5mepmhmj",
+      "type": "address",
+      "balance": 4166.497699999999,
+      "received": 5561.054900000003,
+      "sent": 1391.7339999999992,
+      "tx_count": 1983,
+      "size": 55
+    },
+    {
+      "id": "3Kveo91TspouwroT3JpFCZduWVM92dsz6p",
+      "label": "3Kveo91Tspou…",
+      "full_address": "3Kveo91TspouwroT3JpFCZduWVM92dsz6p",
+      "type": "address",
+      "balance": 4145.5175098,
+      "received": 13735.1273004,
+      "sent": 0.0,
+      "tx_count": 3,
+      "size": 55
+    },
+    {
+      "id": "bc1ql6z0skw0xnc258as23467jm0s073yrzhdrrp07",
+      "label": "bc1ql6z0skw0…",
+      "full_address": "bc1ql6z0skw0xnc258as23467jm0s073yrzhdrrp07",
+      "type": "address",
+      "balance": -20583.75429,
+      "received": 20583.75429,
+      "sent": 20583.75429,
+      "tx_count": 2,
+      "size": 8
+    },
+    {
+      "id": "bc1qf7ndp606c5m368wlywde47eg9vuan7eeekk86t",
+      "label": "bc1qf7ndp606…",
+      "full_address": "bc1qf7ndp606c5m368wlywde47eg9vuan7eeekk86t",
+      "type": "address",
+      "balance": 4090.76574021,
+      "received": 4091.76574021,
+      "sent": 0.0,
+      "tx_count": 2,
+      "size": 55
+    },
+    {
+      "id": "bc1qlznl5jrmuaw2ldlwz69tx69na8pty5933ha9cl",
+      "label": "bc1qlznl5jrm…",
+      "full_address": "bc1qlznl5jrmuaw2ldlwz69tx69na8pty5933ha9cl",
+      "type": "address",
+      "balance": 0.0,
+      "received": 40124.4,
+      "sent": 0.0,
+      "tx_count": 1,
+      "size": 8
+    },
+    {
+      "id": "bc1qsesq4yyrkch247c0genl0za92th4ku243f8z0r",
+      "label": "bc1qsesq4yyr…",
+      "full_address": "bc1qsesq4yyrkch247c0genl0za92th4ku243f8z0r",
+      "type": "address",
+      "balance": 4000.0,
+      "received": 4500.0,
+      "sent": 0.0,
+      "tx_count": 3,
+      "size": 55
+    },
+    {
+      "id": "bc1qxc7e4nyk36sypw20h0w0y464j9h7836pzx9487",
+      "label": "bc1qxc7e4nyk…",
+      "full_address": "bc1qxc7e4nyk36sypw20h0w0y464j9h7836pzx9487",
+      "type": "address",
+      "balance": -19999.948044,
+      "received": 19999.948044,
+      "sent": 19999.948044,
+      "tx_count": 2,
+      "size": 8
+    },
+    {
+      "id": "bc1q4dpj6k0t97zn4eeluu89zvanlpkk2mp0ldpdze",
+      "label": "bc1q4dpj6k0t…",
+      "full_address": "bc1q4dpj6k0t97zn4eeluu89zvanlpkk2mp0ldpdze",
+      "type": "address",
+      "balance": 0.0,
+      "received": 39994.999989,
+      "sent": 0.0,
+      "tx_count": 1,
+      "size": 8
+    },
+    {
+      "id": "bc1q2q7zq9evjjqsc2zvwvtzpw2y6ptu0n795xjl9k",
+      "label": "bc1q2q7zq9ev…",
+      "full_address": "bc1q2q7zq9evjjqsc2zvwvtzpw2y6ptu0n795xjl9k",
+      "type": "address",
+      "balance": 3945.00238388,
+      "received": 3950.00238388,
+      "sent": 0.0,
+      "tx_count": 2,
+      "size": 55
+    },
+    {
+      "id": "bc1qcxdm2uh6rcqss9p4mcm5ef65jpzue7x40s3x2y",
+      "label": "bc1qcxdm2uh6…",
+      "full_address": "bc1qcxdm2uh6rcqss9p4mcm5ef65jpzue7x40s3x2y",
+      "type": "address",
+      "balance": 3911.4344075999998,
+      "received": 5306.0297436,
+      "sent": 1296.04,
+      "tx_count": 8,
+      "size": 55
+    },
+    {
+      "id": "bc1qtckgnyd0ype4l8yz8jvg55ds235sjymkw657fd",
+      "label": "bc1qtckgnyd0…",
+      "full_address": "bc1qtckgnyd0ype4l8yz8jvg55ds235sjymkw657fd",
+      "type": "address",
+      "balance": 3888.705631939997,
+      "received": 4108.383724059998,
+      "sent": 216.46309211999997,
+      "tx_count": 1337,
+      "size": 55
+    },
+    {
+      "id": "bc1q9gsa0z8yyje9e6x6dsy7y8xdezlwjxfj3gqeq5",
+      "label": "bc1q9gsa0z8y…",
+      "full_address": "bc1q9gsa0z8yyje9e6x6dsy7y8xdezlwjxfj3gqeq5",
+      "type": "address",
+      "balance": 3870.6027169400045,
+      "received": 4329.080905340006,
+      "sent": 455.00638839999993,
+      "tx_count": 922,
+      "size": 55
+    },
+    {
+      "id": "3JRyK2PUMehy6dP7GXWicusw444QQkULpm",
+      "label": "3JRyK2PUMehy…",
+      "full_address": "3JRyK2PUMehy6dP7GXWicusw444QQkULpm",
+      "type": "address",
+      "balance": -7319.1662657199995,
+      "received": 15660.79533514,
+      "sent": 22984.961610860002,
+      "tx_count": 12,
+      "size": 8
+    },
+    {
+      "id": "bc1qp73pyyz76qu7y20e9cs2fxg3pa62m53t3hztaa",
+      "label": "bc1qp73pyyz7…",
+      "full_address": "bc1qp73pyyz76qu7y20e9cs2fxg3pa62m53t3hztaa",
+      "type": "address",
+      "balance": 3848.3790684499995,
+      "received": 5128.604010390007,
+      "sent": 1262.8049419400002,
+      "tx_count": 1106,
+      "size": 55
+    },
+    {
+      "id": "bc1qw3jjsdqg7uncf69wty78pk538p7hjp9p2xpde0",
+      "label": "bc1qw3jjsdqg…",
+      "full_address": "bc1qw3jjsdqg7uncf69wty78pk538p7hjp9p2xpde0",
+      "type": "address",
+      "balance": 3800.25603787,
+      "received": 3800.25603787,
+      "sent": 318.43802732,
+      "tx_count": 2,
+      "size": 55
+    },
+    {
+      "id": "bc1qms924778f344qjgzehxvccrzu0lnpp68m5fqn8",
+      "label": "bc1qms924778…",
+      "full_address": "bc1qms924778f344qjgzehxvccrzu0lnpp68m5fqn8",
+      "type": "address",
+      "balance": -10628.558134299998,
+      "received": 15903.743895700003,
+      "sent": 21531.9417056,
+      "tx_count": 13,
+      "size": 8
+    },
+    {
+      "id": "bc1qmdddy4m96enkz9p5ek9ret999aplrhu9r3kvdl",
+      "label": "bc1qmdddy4m9…",
+      "full_address": "bc1qmdddy4m96enkz9p5ek9ret999aplrhu9r3kvdl",
+      "type": "address",
+      "balance": 3700.8280360599974,
+      "received": 4722.034878389998,
+      "sent": 991.2068423300001,
+      "tx_count": 358,
+      "size": 55
+    },
+    {
+      "id": "bc1q0p8avr70v2lklsqnaqul4qv3a65wev9lumkgu5",
+      "label": "bc1q0p8avr70…",
+      "full_address": "bc1q0p8avr70v2lklsqnaqul4qv3a65wev9lumkgu5",
+      "type": "address",
+      "balance": 3678.5556117200003,
+      "received": 5188.9,
+      "sent": 1321.34438828,
+      "tx_count": 7,
+      "size": 55
+    },
+    {
+      "id": "bc1qm9my46cffprlwypuwj4v7d7ne0h84l2vtp8jnp",
+      "label": "bc1qm9my46cf…",
+      "full_address": "bc1qm9my46cffprlwypuwj4v7d7ne0h84l2vtp8jnp",
+      "type": "address",
+      "balance": 3662.6306654,
+      "received": 3980.6736654,
+      "sent": 441.671,
+      "tx_count": 5,
+      "size": 55
+    },
+    {
+      "id": "bc1qg3mtjcv9ghk8s9r6v2lmdypnn0tz7arrmcy92j",
+      "label": "bc1qg3mtjcv9…",
+      "full_address": "bc1qg3mtjcv9ghk8s9r6v2lmdypnn0tz7arrmcy92j",
+      "type": "address",
+      "balance": 3656.0,
+      "received": 4146.0,
+      "sent": 340.0,
+      "tx_count": 3,
+      "size": 55
+    },
+    {
+      "id": "bc1qnqu7z9m4uj2kcc9a63la5juamlcsallp8t80e4",
+      "label": "bc1qnqu7z9m4…",
+      "full_address": "bc1qnqu7z9m4uj2kcc9a63la5juamlcsallp8t80e4",
+      "type": "address",
+      "balance": 3596.67912445,
+      "received": 4233.5351790899995,
+      "sent": 318.42802732,
+      "tx_count": 4,
+      "size": 55
+    },
+    {
+      "id": "3J9yEWDuooHPCw75vvLydS4L7iJXy2KhFG",
+      "label": "3J9yEWDuooHP…",
+      "full_address": "3J9yEWDuooHPCw75vvLydS4L7iJXy2KhFG",
+      "type": "address",
+      "balance": -3648.0100299999995,
+      "received": 16140.829850000002,
+      "sent": 19789.83989,
+      "tx_count": 5,
+      "size": 8
+    },
+    {
+      "id": "bc1q2dfyw3nd63x34jn4u783w37yk9j43tjlwhqg8j",
+      "label": "bc1q2dfyw3nd…",
+      "full_address": "bc1q2dfyw3nd63x34jn4u783w37yk9j43tjlwhqg8j",
+      "type": "address",
+      "balance": 3575.2793017999998,
+      "received": 3823.0213018,
+      "sent": 0.0,
+      "tx_count": 5,
+      "size": 55
+    },
+    {
+      "id": "bc1qlxx4drdj56qju6whjfazvz9445l8dr74lcunck",
+      "label": "bc1qlxx4drdj…",
+      "full_address": "bc1qlxx4drdj56qju6whjfazvz9445l8dr74lcunck",
+      "type": "address",
+      "balance": 3545.568699999999,
+      "received": 6670.035799999997,
+      "sent": 3094.5204999999996,
+      "tx_count": 209,
+      "size": 55
+    },
+    {
+      "id": "bc1q6qty756mxrrzc5s99yvp2jpsm8ngxnhygqcqaw",
+      "label": "bc1q6qty756m…",
+      "full_address": "bc1q6qty756mxrrzc5s99yvp2jpsm8ngxnhygqcqaw",
+      "type": "address",
+      "balance": 3544.9909958,
+      "received": 4744.990995800001,
+      "sent": 600.0,
+      "tx_count": 4,
+      "size": 55
+    },
+    {
+      "id": "bc1q8pffqntquemay5ad8vxztvstjq02g9tff3p9pk",
+      "label": "bc1q8pffqntq…",
+      "full_address": "bc1q8pffqntquemay5ad8vxztvstjq02g9tff3p9pk",
+      "type": "address",
+      "balance": 3524.83,
+      "received": 8531.729999999998,
+      "sent": 4944.779999999999,
+      "tx_count": 62,
+      "size": 55
+    },
+    {
+      "id": "bc1qn4eq4krdvptm4yf5f9lsdhdm5h0u99wman3hyj",
+      "label": "bc1qn4eq4krd…",
+      "full_address": "bc1qn4eq4krdvptm4yf5f9lsdhdm5h0u99wman3hyj",
+      "type": "address",
+      "balance": -17589.998353,
+      "received": 17589.998353,
+      "sent": 17589.998353,
+      "tx_count": 2,
+      "size": 8
+    },
+    {
+      "id": "bc1qvznw3w4w9yrf8u6u4cj7ka53l9smp5lmk9qyup",
+      "label": "bc1qvznw3w4w…",
+      "full_address": "bc1qvznw3w4w9yrf8u6u4cj7ka53l9smp5lmk9qyup",
+      "type": "address",
+      "balance": 3511.847100300003,
+      "received": 5444.501842490001,
+      "sent": 1931.56221055,
+      "tx_count": 644,
+      "size": 55
+    },
+    {
+      "id": "bc1qj5n5cdvjt597vxgz478jwcthp3pcx6lfhq28lv",
+      "label": "bc1qj5n5cdvj…",
+      "full_address": "bc1qj5n5cdvjt597vxgz478jwcthp3pcx6lfhq28lv",
+      "type": "address",
+      "balance": -3164.7548239600023,
+      "received": 15918.79545013003,
+      "sent": 19081.030774090003,
+      "tx_count": 4185,
+      "size": 8
+    },
+    {
+      "id": "bc1qacyznjm6qv39xjs8ltalckh0l9mqe90960dzye",
+      "label": "bc1qacyznjm6…",
+      "full_address": "bc1qacyznjm6qv39xjs8ltalckh0l9mqe90960dzye",
+      "type": "address",
+      "balance": 3406.26,
+      "received": 3411.26,
+      "sent": 0.0,
+      "tx_count": 2,
+      "size": 55
+    },
+    {
+      "id": "bc1qmrey4tvn3m0xhwvcgxkrackuac2h7tua3f5cf2",
+      "label": "bc1qmrey4tvn…",
+      "full_address": "bc1qmrey4tvn3m0xhwvcgxkrackuac2h7tua3f5cf2",
+      "type": "address",
+      "balance": 3395.98636231,
+      "received": 3974.9901290600014,
+      "sent": 577.5352815800001,
+      "tx_count": 829,
+      "size": 55
+    },
+    {
+      "id": "bc1qtzxahvsh97jyf743uqsh0eu5raetr5xh4mshk9",
+      "label": "bc1qtzxahvsh…",
+      "full_address": "bc1qtzxahvsh97jyf743uqsh0eu5raetr5xh4mshk9",
+      "type": "address",
+      "balance": -1142.7936954000015,
+      "received": 16922.3918187,
+      "sent": 16977.9601378,
+      "tx_count": 5,
+      "size": 8
+    },
+    {
+      "id": "bc1qksr940tf004jdtltz3uvpad7t5sq9de4c0u3na",
+      "label": "bc1qksr940tf…",
+      "full_address": "bc1qksr940tf004jdtltz3uvpad7t5sq9de4c0u3na",
+      "type": "address",
+      "balance": -16939.644914,
+      "received": 16939.644914,
+      "sent": 16939.644914,
+      "tx_count": 2,
+      "size": 8
+    },
+    {
+      "id": "bc1qygwme30e88rz57pme8uf8pklkjjuqz396z227c",
+      "label": "bc1qygwme30e…",
+      "full_address": "bc1qygwme30e88rz57pme8uf8pklkjjuqz396z227c",
+      "type": "address",
+      "balance": 3385.0,
+      "received": 6004.0,
+      "sent": 2072.0,
+      "tx_count": 7,
+      "size": 55
+    },
+    {
+      "id": "bc1qdnhducdmwld86y5qy56qljxpfulf06yga2ndy0",
+      "label": "bc1qdnhducdm…",
+      "full_address": "bc1qdnhducdmwld86y5qy56qljxpfulf06yga2ndy0",
+      "type": "address",
+      "balance": -16756.512043,
+      "received": 16756.512043,
+      "sent": 16756.512043,
+      "tx_count": 2,
+      "size": 8
+    },
+    {
+      "id": "bc1q8szt66gl6u4srfwvhhm7x4mcmulyv4ae0njrel",
+      "label": "bc1q8szt66gl…",
+      "full_address": "bc1q8szt66gl6u4srfwvhhm7x4mcmulyv4ae0njrel",
+      "type": "address",
+      "balance": 3339.2068999999965,
+      "received": 5264.933700000002,
+      "sent": 1918.9660999999994,
+      "tx_count": 1882,
+      "size": 55
+    },
+    {
+      "id": "bc1qh4my8v7lla6xz6td78vczca4p6f0k8xm20ee08",
+      "label": "bc1qh4my8v7l…",
+      "full_address": "bc1qh4my8v7lla6xz6td78vczca4p6f0k8xm20ee08",
+      "type": "address",
+      "balance": 3331.99,
+      "received": 3332.99,
+      "sent": 0.0,
+      "tx_count": 2,
+      "size": 55
+    },
+    {
+      "id": "bc1qeg038nn3ssamvu04j9zfszc5gg3dydvs89fsgs",
+      "label": "bc1qeg038nn3…",
+      "full_address": "bc1qeg038nn3ssamvu04j9zfszc5gg3dydvs89fsgs",
+      "type": "address",
+      "balance": 3330.0432999999994,
+      "received": 3353.6251999999995,
+      "sent": 0.0,
+      "tx_count": 49,
+      "size": 55
+    },
+    {
+      "id": "3EgvfXhgpjuXyYNv4F3N6KpFBBtLs7FszV",
+      "label": "3EgvfXhgpjuX…",
+      "full_address": "3EgvfXhgpjuXyYNv4F3N6KpFBBtLs7FszV",
+      "type": "address",
+      "balance": 3329.88,
+      "received": 3330.879,
+      "sent": 0.0,
+      "tx_count": 2,
+      "size": 55
+    },
+    {
+      "id": "bc1qx276t0cf2jhgxlwnkr0n4suhf754k53ac90hg7",
+      "label": "bc1qx276t0cf…",
+      "full_address": "bc1qx276t0cf2jhgxlwnkr0n4suhf754k53ac90hg7",
+      "type": "address",
+      "balance": 3284.0140152699987,
+      "received": 4070.0704173299987,
+      "sent": 784.1769571100001,
+      "tx_count": 1088,
+      "size": 55
+    },
+    {
+      "id": "bc1qvqxwt4hrx0a4wxy7yrhf32wjnl2cjd0la3l46n",
+      "label": "bc1qvqxwt4hr…",
+      "full_address": "bc1qvqxwt4hrx0a4wxy7yrhf32wjnl2cjd0la3l46n",
+      "type": "address",
+      "balance": -16413.999631,
+      "received": 16413.999631,
+      "sent": 16413.999631,
+      "tx_count": 2,
+      "size": 8
+    },
+    {
+      "id": "bc1qf85gjzh5nfh69jfq9l88aavaz675taledp6avz",
+      "label": "bc1qf85gjzh5…",
+      "full_address": "bc1qf85gjzh5nfh69jfq9l88aavaz675taledp6avz",
+      "type": "address",
+      "balance": -13626.96249427,
+      "received": 13559.79162932,
+      "sent": 19186.75412359,
+      "tx_count": 8,
+      "size": 8
+    },
+    {
+      "id": "bc1q22setya6ghdt4xjhm8z0q4xqy5yww8gskkygz4",
+      "label": "bc1q22setya6…",
+      "full_address": "bc1q22setya6ghdt4xjhm8z0q4xqy5yww8gskkygz4",
+      "type": "address",
+      "balance": 3267.8952511100083,
+      "received": 4188.132028110007,
+      "sent": 918.0844770000001,
+      "tx_count": 924,
+      "size": 55
+    },
+    {
+      "id": "bc1q7jyxmwfejru5rtrz60v535aeg86mahmhdyjmwk",
+      "label": "bc1q7jyxmwfe…",
+      "full_address": "bc1q7jyxmwfejru5rtrz60v535aeg86mahmhdyjmwk",
+      "type": "address",
+      "balance": -16215.09989431,
+      "received": 16215.09989431,
+      "sent": 16215.09989431,
+      "tx_count": 2,
+      "size": 8
+    },
+    {
+      "id": "bc1quzuc3wveg292287zj6djvehgckj9xvl49psdye",
+      "label": "bc1quzuc3wve…",
+      "full_address": "bc1quzuc3wveg292287zj6djvehgckj9xvl49psdye",
+      "type": "address",
+      "balance": 3238.478685299998,
+      "received": 4440.527690439995,
+      "sent": 1200.7434511999998,
+      "tx_count": 1800,
+      "size": 55
+    },
+    {
+      "id": "bc1q864rzrtqszpmlpkvfhecv9hel9zmhfj08ptl48",
+      "label": "bc1q864rzrtq…",
+      "full_address": "bc1q864rzrtqszpmlpkvfhecv9hel9zmhfj08ptl48",
+      "type": "address",
+      "balance": 3230.108625209999,
+      "received": 4528.68422521,
+      "sent": 1292.6680999999999,
+      "tx_count": 743,
+      "size": 55
+    },
+    {
+      "id": "bc1qgpghl89m8ar39c39ul0fum5x27nkn5p3j0wgf3",
+      "label": "bc1qgpghl89m…",
+      "full_address": "bc1qgpghl89m8ar39c39ul0fum5x27nkn5p3j0wgf3",
+      "type": "address",
+      "balance": 0.0,
+      "received": 0.0,
+      "sent": 32164.997703,
+      "tx_count": 1,
+      "size": 8
+    },
+    {
+      "id": "bc1q3s53y3txgk625r7nrwewzway5neqsc80y29uny",
+      "label": "bc1q3s53y3tx…",
+      "full_address": "bc1q3s53y3txgk625r7nrwewzway5neqsc80y29uny",
+      "type": "address",
+      "balance": 3205.9226999999987,
+      "received": 3790.5314000000008,
+      "sent": 582.5559999999999,
+      "tx_count": 204,
+      "size": 55
+    },
+    {
+      "id": "bc1q8qaql46hfl6wrjkmk8vrqrwaznut7avfm7jz6s",
+      "label": "bc1q8qaql46h…",
+      "full_address": "bc1q8qaql46hfl6wrjkmk8vrqrwaznut7avfm7jz6s",
+      "type": "address",
+      "balance": 0.0,
+      "received": 0.0,
+      "sent": 32000.000079,
+      "tx_count": 1,
+      "size": 8
+    },
+    {
+      "id": "bc1q5vryg45jxs3dwej0c6hwegka8zf959v9dx72u5",
+      "label": "bc1q5vryg45j…",
+      "full_address": "bc1q5vryg45jxs3dwej0c6hwegka8zf959v9dx72u5",
+      "type": "address",
+      "balance": 3199.992102,
+      "received": 4800.0,
+      "sent": 1550.007898,
+      "tx_count": 98,
+      "size": 55
+    },
+    {
+      "id": "bc1qr4uglvn0kef5vxau6vkma8ylhmah8tkp5u9qpd",
+      "label": "bc1qr4uglvn0…",
+      "full_address": "bc1qr4uglvn0kef5vxau6vkma8ylhmah8tkp5u9qpd",
+      "type": "address",
+      "balance": 3117.6199,
+      "received": 3417.6199,
+      "sent": 0.0,
+      "tx_count": 6,
+      "size": 55
+    },
+    {
+      "id": "bc1q097x3k6y2mgx2n2udhr6teyr63x4mcnfy0xwkv",
+      "label": "bc1q097x3k6y…",
+      "full_address": "bc1q097x3k6y2mgx2n2udhr6teyr63x4mcnfy0xwkv",
+      "type": "address",
+      "balance": 3101.0,
+      "received": 3102.0,
+      "sent": 0.0,
+      "tx_count": 4,
+      "size": 55
+    },
+    {
+      "id": "bc1qwqdzuht55la6cp7ugcqezgh47u4lfvpyqu7h0x",
+      "label": "bc1qwqdzuht5…",
+      "full_address": "bc1qwqdzuht55la6cp7ugcqezgh47u4lfvpyqu7h0x",
+      "type": "address",
+      "balance": -14964.98241701,
+      "received": 8100.0,
+      "sent": 22764.98241701,
+      "tx_count": 13,
+      "size": 8
+    },
+    {
+      "id": "1EsTi3DtKbE77pFhAvST58aYpW8DGdaHW",
+      "label": "1EsTi3DtKbE7…",
+      "full_address": "1EsTi3DtKbE77pFhAvST58aYpW8DGdaHW",
+      "type": "address",
+      "balance": 3074.503066199999,
+      "received": 24956.641348099998,
+      "sent": 19382.1382819,
+      "tx_count": 12,
+      "size": 55
+    },
+    {
+      "id": "3B5NwcEVEzYvdihYeNVdEoBm9S8BQveJgQ",
+      "label": "3B5NwcEVEzYv…",
+      "full_address": "3B5NwcEVEzYvdihYeNVdEoBm9S8BQveJgQ",
+      "type": "address",
+      "balance": -1.0000099999997474,
+      "received": 19176.2484984,
+      "sent": 11493.5914661,
+      "tx_count": 2,
+      "size": 8
+    },
+    {
+      "id": "bc1qsw85qrtca9hc2l9p7q469dssz562r66wn4uscf",
+      "label": "bc1qsw85qrtc…",
+      "full_address": "bc1qsw85qrtca9hc2l9p7q469dssz562r66wn4uscf",
+      "type": "address",
+      "balance": 0.0,
+      "received": 30584.754097,
+      "sent": 0.0,
+      "tx_count": 1,
+      "size": 8
+    },
+    {
+      "id": "3QUFWRQmRMqr6JT7f2vcGgMi5KSB4uMaGn",
+      "label": "3QUFWRQmRMqr…",
+      "full_address": "3QUFWRQmRMqr6JT7f2vcGgMi5KSB4uMaGn",
+      "type": "address",
+      "balance": -24.65835810000135,
+      "received": 15215.6697931,
+      "sent": 15094.338151200001,
+      "tx_count": 7,
+      "size": 8
+    },
+    {
+      "id": "bc1q89kgtr3yyvpjygumzaclurl3p5zcgsdl8gwsk5",
+      "label": "bc1q89kgtr3y…",
+      "full_address": "bc1q89kgtr3yyvpjygumzaclurl3p5zcgsdl8gwsk5",
+      "type": "address",
+      "balance": 0.0,
+      "received": 0.0,
+      "sent": 30250.423251,
+      "tx_count": 1,
+      "size": 8
+    },
+    {
+      "id": "bc1qmcvnjmr8sklz4mskrvwqah9jmmahsprej0tv4g",
+      "label": "bc1qmcvnjmr8…",
+      "full_address": "bc1qmcvnjmr8sklz4mskrvwqah9jmmahsprej0tv4g",
+      "type": "address",
+      "balance": -15106.81233434,
+      "received": 15106.81233434,
+      "sent": 15106.81233434,
+      "tx_count": 2,
+      "size": 8
+    },
+    {
+      "id": "bc1q9j9wqavlp5exaf8hypg9prsmucugnl99fut8sd",
+      "label": "bc1q9j9wqavl…",
+      "full_address": "bc1q9j9wqavlp5exaf8hypg9prsmucugnl99fut8sd",
+      "type": "address",
+      "balance": 0.0,
+      "received": 30167.322068,
+      "sent": 0.0,
+      "tx_count": 1,
+      "size": 8
+    },
+    {
+      "id": "bc1qah79sdxvmcr2vjtje43cmkq94he8rx754x6387",
+      "label": "bc1qah79sdxv…",
+      "full_address": "bc1qah79sdxvmcr2vjtje43cmkq94he8rx754x6387",
+      "type": "address",
+      "balance": 0.0,
+      "received": 30000.575694,
+      "sent": 0.0,
+      "tx_count": 1,
+      "size": 8
+    },
+    {
+      "id": "bc1q0mzy4art309vtcds678qpxlgtfxcynvfjtrlx6",
+      "label": "bc1q0mzy4art…",
+      "full_address": "bc1q0mzy4art309vtcds678qpxlgtfxcynvfjtrlx6",
+      "type": "address",
+      "balance": 3000.0,
+      "received": 3000.0,
+      "sent": 6500.5,
+      "tx_count": 2,
+      "size": 55
+    },
+    {
+      "id": "bc1ql6fkwz93tr67zwypz7x746rewaaksufjuhnlyt",
+      "label": "bc1ql6fkwz93…",
+      "full_address": "bc1ql6fkwz93tr67zwypz7x746rewaaksufjuhnlyt",
+      "type": "address",
+      "balance": 2999.9700000000003,
+      "received": 3009.96,
+      "sent": 0.0,
+      "tx_count": 4,
+      "size": 55
+    },
+    {
+      "id": "bc1q7xmjj23849sfeu72p79nrqesv0x683fwwlmfsf",
+      "label": "bc1q7xmjj238…",
+      "full_address": "bc1q7xmjj23849sfeu72p79nrqesv0x683fwwlmfsf",
+      "type": "address",
+      "balance": 2980.2004610500003,
+      "received": 3514.172761050001,
+      "sent": 530.1325999999996,
+      "tx_count": 1427,
+      "size": 55
+    },
+    {
+      "id": "bc1qnasymwgkkszjw8gu0d00quf8hlzrtx6w9rzpa5",
+      "label": "bc1qnasymwgk…",
+      "full_address": "bc1qnasymwgkkszjw8gu0d00quf8hlzrtx6w9rzpa5",
+      "type": "address",
+      "balance": 0.0,
+      "received": 0.0,
+      "sent": 29797.40301681,
+      "tx_count": 1,
+      "size": 8
+    },
+    {
+      "id": "bc1qzumv7wegswr6mwqean60medjak2e3t576qnr2d",
+      "label": "bc1qzumv7weg…",
+      "full_address": "bc1qzumv7wegswr6mwqean60medjak2e3t576qnr2d",
+      "type": "address",
+      "balance": 0.0,
+      "received": 29787.5030016,
+      "sent": 0.0,
+      "tx_count": 1,
+      "size": 8
+    },
+    {
+      "id": "bc1qweljxnf64nuww0xwgkmdc3mdj3fexxfxsm38e7",
+      "label": "bc1qweljxnf6…",
+      "full_address": "bc1qweljxnf64nuww0xwgkmdc3mdj3fexxfxsm38e7",
+      "type": "address",
+      "balance": 0.0,
+      "received": 0.0,
+      "sent": 29775.19951348,
+      "tx_count": 1,
+      "size": 8
+    }
+  ],
+  "edges": [
+    {
+      "from": "bc1q305w4qkq2p8y06fa0rpmscwgv9d50vvfvg9jrf",
+      "to": "bc1qxru30rrhwn6sw37nsfwma3dg7smju5d7n33axt",
+      "value": 163439.39995399944,
+      "count": 1,
+      "first_block": 68765,
+      "last_block": 68765
+    },
+    {
+      "from": "bc1q257t5sel9fu4k467gkx3tkqjym3twnz5863p9k",
+      "to": "bc1qlznl5jrmuaw2ldlwz69tx69na8pty5933ha9cl",
+      "value": 159849.91217849083,
+      "count": 3197,
+      "first_block": 48538,
+      "last_block": 48538
+    },
+    {
+      "from": "bc1qq4522d758d6m64vtfhrkvs36ht6pq4vpn2dzdg",
+      "to": "bc1qcwg6k97jl4rz4msh8r47apc69pemyzz4ff4d98",
+      "value": 144927.40291399942,
+      "count": 1,
+      "first_block": 73725,
+      "last_block": 73725
+    },
+    {
+      "from": "bc1qufeefx64w8wx2lameju0um08rukayxamhystfe",
+      "to": "bc1qt8e7hn06yvr0y75dhvrwry3enh6pwzdmj0fgzr",
+      "value": 117358.83464153403,
+      "count": 2685,
+      "first_block": 53712,
+      "last_block": 108910
+    },
+    {
+      "from": "bc1q0qgmprc4lelgqrppch878q9yrqpryr2u5e6s3l",
+      "to": "bc1qufeefx64w8wx2lameju0um08rukayxamhystfe",
+      "value": 107311.55535191021,
+      "count": 647,
+      "first_block": 53149,
+      "last_block": 102237
+    },
+    {
+      "from": "bc1q4vjjyr6vwjh76cf3pgh24q4utj0r9mc3zjz0q5",
+      "to": "bc1qkuql5r0g5gql3fz3mjt6uksen3aa3e9fnvlpkf",
+      "value": 106658.57579081677,
+      "count": 1,
+      "first_block": 40719,
+      "last_block": 40719
+    },
+    {
+      "from": "bc1qcytltnptdh88am8as5jtzewmp2tmsgj9ca48l6",
+      "to": "bc1qye5427zsvmzf8f6g3z53v6tydwxv6j86jc7mf7",
+      "value": 104332.00702374932,
+      "count": 16,
+      "first_block": 41023,
+      "last_block": 47926
+    },
+    {
+      "from": "bc1qkuql5r0g5gql3fz3mjt6uksen3aa3e9fnvlpkf",
+      "to": "bc1qmw2adjz82hncf2nxy2r9u6ymyscd663fakgd79",
+      "value": 104158.57578281248,
+      "count": 1,
+      "first_block": 40730,
+      "last_block": 40730
+    },
+    {
+      "from": "bc1qmw2adjz82hncf2nxy2r9u6ymyscd663fakgd79",
+      "to": "bc1qynjdr8d5k4lemmld0xz4umdtnuxhkc3cmrls6u",
+      "value": 99158.57577461597,
+      "count": 1,
+      "first_block": 40733,
+      "last_block": 40733
+    },
+    {
+      "from": "bc1qynjdr8d5k4lemmld0xz4umdtnuxhkc3cmrls6u",
+      "to": "bc1qf9xwz9c8d05u6tx6kp0v3hg4k8ywmtv5g632ap",
+      "value": 94158.57576659661,
+      "count": 1,
+      "first_block": 40737,
+      "last_block": 40737
+    },
+    {
+      "from": "bc1qye5427zsvmzf8f6g3z53v6tydwxv6j86jc7mf7",
+      "to": "bc1qr7g6klk0r935wmq54sm0qhmweccg6hyvvvrfzm",
+      "value": 93734.26248021719,
+      "count": 1015,
+      "first_block": 45121,
+      "last_block": 45121
+    },
+    {
+      "from": "bc1qcvryh9hapjzjw3hjx5us7aynzj2thdj95pl3ea",
+      "to": "bc1qx0myxdp2axrmlhj2zh6slz2vnztv6x5casjgma",
+      "value": 90409.99922126615,
+      "count": 20,
+      "first_block": 39757,
+      "last_block": 39757
+    },
+    {
+      "from": "bc1qj6s4a20mdnzap5e8uhag3w6psvts737w89nc4f",
+      "to": "bc1q4520j6rkk8fdmzylyl0032t6ahhwud3qdyd9rk",
+      "value": 89330.37525060313,
+      "count": 1829,
+      "first_block": 69402,
+      "last_block": 92387
+    },
+    {
+      "from": "bc1qf9xwz9c8d05u6tx6kp0v3hg4k8ywmtv5g632ap",
+      "to": "bc1qxdv6ue2fa7qycskkk7n4mw2r4u79e9qgjta4ev",
+      "value": 89158.57575852209,
+      "count": 1,
+      "first_block": 40739,
+      "last_block": 40739
+    },
+    {
+      "from": "bc1qcvryh9hapjzjw3hjx5us7aynzj2thdj95pl3ea",
+      "to": "bc1qx57ht20ul4a9wy9q0khxqtqv9edg4vcyr29vta",
+      "value": 86521.96612453641,
+      "count": 74,
+      "first_block": 39370,
+      "last_block": 39370
+    },
+    {
+      "from": "bc1qxdv6ue2fa7qycskkk7n4mw2r4u79e9qgjta4ev",
+      "to": "bc1qn2mn87cqs50j34a8xmh7g0md2lmh57nxpf6ura",
+      "value": 84158.57574949528,
+      "count": 1,
+      "first_block": 40739,
+      "last_block": 40739
+    },
+    {
+      "from": "bc1qn2mn87cqs50j34a8xmh7g0md2lmh57nxpf6ura",
+      "to": "bc1qejnq9r2cyd9hr9uhqxjqjl7r5m58v8zszk2rx9",
+      "value": 84157.57574099988,
+      "count": 1,
+      "first_block": 41197,
+      "last_block": 41197
+    },
+    {
+      "from": "bc1qx0myxdp2axrmlhj2zh6slz2vnztv6x5casjgma",
+      "to": "bc1qrahqu4u6m6ysh99rfzc3wupjwfacdp23g48vz8",
+      "value": 83831.99567022361,
+      "count": 1,
+      "first_block": 40699,
+      "last_block": 40699
+    },
+    {
+      "from": "bc1qx57ht20ul4a9wy9q0khxqtqv9edg4vcyr29vta",
+      "to": "bc1q8uazq3c6xurc8pn5ss3vaquhm8u7fccujlhwz9",
+      "value": 81384.0003978809,
+      "count": 1,
+      "first_block": 39370,
+      "last_block": 39370
+    },
+    {
+      "from": "bc1qgc48799w3pney8s2ye2zrfh6xlca2fgftxfj6h",
+      "to": "bc1qxhj4xs8rqq5fyvhsqtard7e9snt7hvney7k86m",
+      "value": 80167.32724327901,
+      "count": 33,
+      "first_block": 107954,
+      "last_block": 107954
+    },
+    {
+      "from": "bc1q4vkcgsdljdlp0suxdwmj22r70fzkpy9zltt425",
+      "to": "bc1qye5427zsvmzf8f6g3z53v6tydwxv6j86jc7mf7",
+      "value": 79796.90202546697,
+      "count": 15,
+      "first_block": 42842,
+      "last_block": 50759
+    },
+    {
+      "from": "bc1qr329r4jnqfa2zacpzyrdvaj7tuejgra0ttnkps",
+      "to": "bc1qcvryh9hapjzjw3hjx5us7aynzj2thdj95pl3ea",
+      "value": 79411.61880601042,
+      "count": 1591,
+      "first_block": 39364,
+      "last_block": 40241
+    },
+    {
+      "from": "bc1qrahqu4u6m6ysh99rfzc3wupjwfacdp23g48vz8",
+      "to": "bc1q5gu5uru7yu5832vj80dmjmwa04xse5lekyjrwj",
+      "value": 77253.99524480868,
+      "count": 1,
+      "first_block": 40701,
+      "last_block": 40701
+    },
+    {
+      "from": "bc1q5gu5uru7yu5832vj80dmjmwa04xse5lekyjrwj",
+      "to": "bc1qylkjnx59tgt0wam4x87j2txa50dx3m7fdytk2f",
+      "value": 70411.99481753701,
+      "count": 1,
+      "first_block": 40703,
+      "last_block": 40703
+    },
+    {
+      "from": "bc1qejnq9r2cyd9hr9uhqxjqjl7r5m58v8zszk2rx9",
+      "to": "bc1qe7nju53tpff6gfffgu3nvayy0zc2txzrv57wyz",
+      "value": 70000.5757293178,
+      "count": 1,
+      "first_block": 41198,
+      "last_block": 41198
+    },
+    {
+      "from": "bc1q8uazq3c6xurc8pn5ss3vaquhm8u7fccujlhwz9",
+      "to": "bc1qcvryh9hapjzjw3hjx5us7aynzj2thdj95pl3ea",
+      "value": 69400.00033853196,
+      "count": 34,
+      "first_block": 39371,
+      "last_block": 39371
+    },
+    {
+      "from": "bc1qylkjnx59tgt0wam4x87j2txa50dx3m7fdytk2f",
+      "to": "bc1qvqkxx7fxm3ntwegs6pqh8ec7egjk0asjs5ddeq",
+      "value": 68411.994419985,
+      "count": 1,
+      "first_block": 41165,
+      "last_block": 41165
+    },
+    {
+      "from": "bc1qheg6mz09rvegxej6sstd9z24pry69du3u5qjl0",
+      "to": "bc1q4vkcgsdljdlp0suxdwmj22r70fzkpy9zltt425",
+      "value": 66183.47170074281,
+      "count": 1321,
+      "first_block": 42706,
+      "last_block": 46801
+    },
+    {
+      "from": "bc1qwurdnf95z3wpppa48xu0ljdq7l2c9282hwg7ha",
+      "to": "bc1qufeefx64w8wx2lameju0um08rukayxamhystfe",
+      "value": 64299.24999999997,
+      "count": 75,
+      "first_block": 58880,
+      "last_block": 97415
+    },
+    {
+      "from": "bc1qj6s4a20mdnzap5e8uhag3w6psvts737w89nc4f",
+      "to": "bc1qnlzc7huy4cqgerke6gnlaxdze8uqsrwdt4d9s0",
+      "value": 62730.379387393215,
+      "count": 1280,
+      "first_block": 51432,
+      "last_block": 68522
+    },
+    {
+      "from": "bc1qufeefx64w8wx2lameju0um08rukayxamhystfe",
+      "to": "1Ev8KxvUocKtkVdaunMiRxxVXhHPsw7wgz",
+      "value": 60480.60106023884,
+      "count": 61,
+      "first_block": 77424,
+      "last_block": 96797
+    },
+    {
+      "from": "bc1qxhj4xs8rqq5fyvhsqtard7e9snt7hvney7k86m",
+      "to": "bc1qs3c5vcpld7vu9vudweyhl4xy9n0fjlm3c9tv3u",
+      "value": 60167.32210925573,
+      "count": 1,
+      "first_block": 107974,
+      "last_block": 107974
+    },
+    {
+      "from": "bc1q257t5sel9fu4k467gkx3tkqjym3twnz5863p9k",
+      "to": "bc1qv86xh7luzx7mc95yaqr28cf688ngq9zqf80t2q",
+      "value": 59999.949978712204,
+      "count": 1200,
+      "first_block": 44123,
+      "last_block": 44123
+    },
+    {
+      "from": "bc1qufeefx64w8wx2lameju0um08rukayxamhystfe",
+      "to": "bc1qwqdzuht55la6cp7ugcqezgh47u4lfvpyqu7h0x",
+      "value": 59650.083309532034,
+      "count": 253,
+      "first_block": 68582,
+      "last_block": 108443
+    },
+    {
+      "from": "bc1qj6s4a20mdnzap5e8uhag3w6psvts737w89nc4f",
+      "to": "bc1q2m3g0gtuztcl85kzd2dy8sz6vvlq7t6e52wl9y",
+      "value": 56237.229215746665,
+      "count": 6369,
+      "first_block": 102385,
+      "last_block": 110438
+    },
+    {
+      "from": "bc1q5rfydxt47xrc7q34ylfvqq37nh0styxpuqlj3p",
+      "to": "bc1queyywzdtfdnep3qn9pp42f9ahzu75pfdtj95pp",
+      "value": 55899.24946966661,
+      "count": 2,
+      "first_block": 41312,
+      "last_block": 41312
+    },
+    {
+      "from": "bc1qkm86qcjxc5ad5vrq8y5xudzrcfrus2z2md8q0h",
+      "to": "bc1q5rfydxt47xrc7q34ylfvqq37nh0styxpuqlj3p",
+      "value": 55850.25133278613,
+      "count": 498,
+      "first_block": 40463,
+      "last_block": 40463
+    },
+    {
+      "from": "bc1q8zt5vygu65llrqrrd0k60ld9tpzyec38wpmfzt",
+      "to": "bc1q2jjlxeagaprs6xgwehhdlsufr6jqwf792mmwj7",
+      "value": 54281.992704323064,
+      "count": 1,
+      "first_block": 44181,
+      "last_block": 44181
+    },
+    {
+      "from": "bc1qye5427zsvmzf8f6g3z53v6tydwxv6j86jc7mf7",
+      "to": "bc1q0qgmprc4lelgqrppch878q9yrqpryr2u5e6s3l",
+      "value": 54152.70146714895,
+      "count": 16492,
+      "first_block": 53126,
+      "last_block": 102205
+    },
+    {
+      "from": "bc1qf85gjzh5nfh69jfq9l88aavaz675taledp6avz",
+      "to": "bc1qye5427zsvmzf8f6g3z53v6tydwxv6j86jc7mf7",
+      "value": 53632.42439144148,
+      "count": 18,
+      "first_block": 42034,
+      "last_block": 60837
+    },
+    {
+      "from": "bc1qufeefx64w8wx2lameju0um08rukayxamhystfe",
+      "to": "bc1qz8g0xlxj32uj6gzsmg0qarmmcc9j6jgxr85z5x",
+      "value": 51659.846266411405,
+      "count": 3,
+      "first_block": 102006,
+      "last_block": 102006
+    },
+    {
+      "from": "bc1qz8g0xlxj32uj6gzsmg0qarmmcc9j6jgxr85z5x",
+      "to": "bc1qufeefx64w8wx2lameju0um08rukayxamhystfe",
+      "value": 51659.84584469,
+      "count": 1,
+      "first_block": 102028,
+      "last_block": 102028
+    },
+    {
+      "from": "bc1qs3c5vcpld7vu9vudweyhl4xy9n0fjlm3c9tv3u",
+      "to": "bc1qsnc3ktncjwymr9l065rjd25m7z468cjvy4u2ew",
+      "value": 50167.32209917177,
+      "count": 1,
+      "first_block": 108080,
+      "last_block": 108080
+    },
+    {
+      "from": "bc1qdsqdv52lsyms6q3pmmxs3ezkpqgueg6u5q3krw",
+      "to": "bc1qufeefx64w8wx2lameju0um08rukayxamhystfe",
+      "value": 47289.847954990066,
+      "count": 517,
+      "first_block": 53994,
+      "last_block": 88091
+    },
+    {
+      "from": "bc1qj6s4a20mdnzap5e8uhag3w6psvts737w89nc4f",
+      "to": "bc1qs8t53rvs4gyaddeak6tccrv246ttcvhvarw72z",
+      "value": 45249.526165588155,
+      "count": 12513,
+      "first_block": 59368,
+      "last_block": 96844
+    },
+    {
+      "from": "bc1qkm86qcjxc5ad5vrq8y5xudzrcfrus2z2md8q0h",
+      "to": "bc1qrhg6tlsxj0wyhhthal6an7mw4my3lc36dyfzwl",
+      "value": 44101.42777871825,
+      "count": 947,
+      "first_block": 41310,
+      "last_block": 41310
+    },
+    {
+      "from": "bc1qrhg6tlsxj0wyhhthal6an7mw4my3lc36dyfzwl",
+      "to": "bc1queyywzdtfdnep3qn9pp42f9ahzu75pfdtj95pp",
+      "value": 44101.42425503338,
+      "count": 1,
+      "first_block": 41312,
+      "last_block": 41312
+    },
+    {
+      "from": "bc1ql4epa9kr0m73jn6lk3gt4m27sw904j9tl0374v",
+      "to": "bc1qye5427zsvmzf8f6g3z53v6tydwxv6j86jc7mf7",
+      "value": 41688.65394849692,
+      "count": 9,
+      "first_block": 41215,
+      "last_block": 70764
+    },
+    {
+      "from": "bc1q7z2678wg8r792len8luwt42udzd9p8e9nj7l7t",
+      "to": "bc1qufeefx64w8wx2lameju0um08rukayxamhystfe",
+      "value": 40922.46389999999,
+      "count": 3000,
+      "first_block": 65990,
+      "last_block": 109071
+    },
+    {
+      "from": "bc1qsnc3ktncjwymr9l065rjd25m7z468cjvy4u2ew",
+      "to": "bc1qkv5y9nxh47mgm7nrk89tq32ht3lqx6njycvhzc",
+      "value": 40167.32208780734,
+      "count": 1,
+      "first_block": 108087,
+      "last_block": 108087
+    },
+    {
+      "from": "36RnWVnQRr5X6xoxiDs9E2GMsDsiBUhBbZ",
+      "to": "bc1q5pc365mdzcdh9ps0vdrz9jrxnvxmyhgv4pcvcu",
+      "value": 40047.04103193297,
+      "count": 15,
+      "first_block": 94289,
+      "last_block": 94686
+    },
+    {
+      "from": "bc1qg9h74d233ltm26gsw6kv8zs9nsn38dj6xufjen",
+      "to": "bc1qye5427zsvmzf8f6g3z53v6tydwxv6j86jc7mf7",
+      "value": 40027.74,
+      "count": 7,
+      "first_block": 42099,
+      "last_block": 49164
+    },
+    {
+      "from": "bc1qe7nju53tpff6gfffgu3nvayy0zc2txzrv57wyz",
+      "to": "bc1qvkhjsavfwk5vjm5vyg9krzuuunpr7ef6ndahha",
+      "value": 40000.57571585718,
+      "count": 1,
+      "first_block": 42350,
+      "last_block": 42350
+    },
+    {
+      "from": "bc1qcvryh9hapjzjw3hjx5us7aynzj2thdj95pl3ea",
+      "to": "bc1q2gee8xeepyq7zyg02t2qfgmcmf3zcdxnx0cfu9",
+      "value": 40000.00365419742,
+      "count": 94,
+      "first_block": 39370,
+      "last_block": 39757
+    },
+    {
+      "from": "bc1q2gee8xeepyq7zyg02t2qfgmcmf3zcdxnx0cfu9",
+      "to": "bc1q4dpj6k0t97zn4eeluu89zvanlpkk2mp0ldpdze",
+      "value": 39994.999999998625,
+      "count": 2,
+      "first_block": 40466,
+      "last_block": 40466
+    },
+    {
+      "from": "bc1q8pffqntquemay5ad8vxztvstjq02g9tff3p9pk",
+      "to": "bc1qufeefx64w8wx2lameju0um08rukayxamhystfe",
+      "value": 39654.19017736002,
+      "count": 188,
+      "first_block": 54324,
+      "last_block": 95457
+    },
+    {
+      "from": "bc1qj6s4a20mdnzap5e8uhag3w6psvts737w89nc4f",
+      "to": "bc1q7z2678wg8r792len8luwt42udzd9p8e9nj7l7t",
+      "value": 37993.60939441201,
+      "count": 9991,
+      "first_block": 65958,
+      "last_block": 109048
+    },
+    {
+      "from": "bc1q7jsxzm4rn79rk3ujvsavvt94sgftkc2ytxkna8",
+      "to": "bc1qye5427zsvmzf8f6g3z53v6tydwxv6j86jc7mf7",
+      "value": 37990.904899999994,
+      "count": 11,
+      "first_block": 41096,
+      "last_block": 45427
+    },
+    {
+      "from": "bc1q0z34gqcgtnp352gqkzrk88n7c70hjx9s8sh5sh",
+      "to": "bc1qufeefx64w8wx2lameju0um08rukayxamhystfe",
+      "value": 37871.0,
+      "count": 212,
+      "first_block": 53174,
+      "last_block": 106815
+    },
+    {
+      "from": "bc1qaavlp28yfgw8wnqdqrv8emd52036rlkvcmwj7f",
+      "to": "bc1q7jsxzm4rn79rk3ujvsavvt94sgftkc2ytxkna8",
+      "value": 37830.06560668089,
+      "count": 762,
+      "first_block": 41079,
+      "last_block": 42809
+    },
+    {
+      "from": "bc1qvxn7xq396f0mla2s7rcp6dzvd8hs7ef7fas7jt",
+      "to": "bc1q0z34gqcgtnp352gqkzrk88n7c70hjx9s8sh5sh",
+      "value": 36897.33101966519,
+      "count": 7289,
+      "first_block": 53143,
+      "last_block": 106791
+    },
+    {
+      "from": "bc1qufeefx64w8wx2lameju0um08rukayxamhystfe",
+      "to": "34beiJxdQxuesGjNB5P1JB4dnxKtqDktSs",
+      "value": 34278.847937361126,
+      "count": 14,
+      "first_block": 93696,
+      "last_block": 108012
+    },
+    {
+      "from": "bc1q2hzck7hp8qkxh2sml2pv3h8g82nfyq940jlzns",
+      "to": "bc1q07r8cm5k7czx874757eacwdhlvejc36cd9fg73",
+      "value": 32756.51207004934,
+      "count": 2,
+      "first_block": 41827,
+      "last_block": 41827
+    },
+    {
+      "from": "3NiFP4Zv1LtFtbAzwhhc9yLvVec5V9e44X",
+      "to": "bc1q5pc365mdzcdh9ps0vdrz9jrxnvxmyhgv4pcvcu",
+      "value": 32709.457802058947,
+      "count": 11,
+      "first_block": 94101,
+      "last_block": 94261
+    },
+    {
+      "from": "bc1q8uazq3c6xurc8pn5ss3vaquhm8u7fccujlhwz9",
+      "to": "bc1qgpghl89m8ar39c39ul0fum5x27nkn5p3j0wgf3",
+      "value": 32164.998550314504,
+      "count": 43,
+      "first_block": 36605,
+      "last_block": 36605
+    },
+    {
+      "from": "bc1qewf3w2t67h9ll7ctkjm5c08sydrrg0fthaym9c",
+      "to": "bc1q8qaql46hfl6wrjkmk8vrqrwaznut7avfm7jz6s",
+      "value": 32000.00337713691,
+      "count": 650,
+      "first_block": 41606,
+      "last_block": 41606
+    },
+    {
+      "from": "bc1q8qaql46hfl6wrjkmk8vrqrwaznut7avfm7jz6s",
+      "to": "bc1q2hzck7hp8qkxh2sml2pv3h8g82nfyq940jlzns",
+      "value": 32000.000079,
+      "count": 1,
+      "first_block": 41606,
+      "last_block": 41606
+    },
+    {
+      "from": "bc1q8r3rqqtxyfynan839fmxp6nyrhayutd40seses",
+      "to": "bc1qkm86qcjxc5ad5vrq8y5xudzrcfrus2z2md8q0h",
+      "value": 30857.865862650902,
+      "count": 621,
+      "first_block": 13995,
+      "last_block": 14000
+    },
+    {
+      "from": "bc1qkv5y9nxh47mgm7nrk89tq32ht3lqx6njycvhzc",
+      "to": "bc1q9j9wqavlp5exaf8hypg9prsmucugnl99fut8sd",
+      "value": 30167.322076261455,
+      "count": 1,
+      "first_block": 108115,
+      "last_block": 108115
+    },
+    {
+      "from": "bc1qye5427zsvmzf8f6g3z53v6tydwxv6j86jc7mf7",
+      "to": "3D4c7ur4sZXVtiCUSXEpLXqdeh2UpsC7YY",
+      "value": 30159.888588836904,
+      "count": 3722,
+      "first_block": 48817,
+      "last_block": 89264
+    },
+    {
+      "from": "bc1qvkhjsavfwk5vjm5vyg9krzuuunpr7ef6ndahha",
+      "to": "bc1qah79sdxvmcr2vjtje43cmkq94he8rx754x6387",
+      "value": 30000.575705250052,
+      "count": 1,
+      "first_block": 43009,
+      "last_block": 43009
+    },
+    {
+      "from": "bc1qe7nju53tpff6gfffgu3nvayy0zc2txzrv57wyz",
+      "to": "bc1ql4epa9kr0m73jn6lk3gt4m27sw904j9tl0374v",
+      "value": 30000.000005142818,
+      "count": 1,
+      "first_block": 42350,
+      "last_block": 42350
+    },
+    {
+      "from": "bc1qnasymwgkkszjw8gu0d00quf8hlzrtx6w9rzpa5",
+      "to": "bc1qzumv7wegswr6mwqean60medjak2e3t576qnr2d",
+      "value": 29787.503016804945,
+      "count": 1,
+      "first_block": 43354,
+      "last_block": 43354
+    },
+    {
+      "from": "bc1qzumv7wegswr6mwqean60medjak2e3t576qnr2d",
+      "to": "bc1qweljxnf64nuww0xwgkmdc3mdj3fexxfxsm38e7",
+      "value": 29775.199528693713,
+      "count": 1,
+      "first_block": 43616,
+      "last_block": 43616
+    },
+    {
+      "from": "bc1qye5427zsvmzf8f6g3z53v6tydwxv6j86jc7mf7",
+      "to": "19qaN2bCWz3TQwe2semuwEph9dC8wRYq4M",
+      "value": 29738.430150127166,
+      "count": 1400,
+      "first_block": 102229,
+      "last_block": 104169
+    },
+    {
+      "from": "bc1q89kgtr3yyvpjygumzaclurl3p5zcgsdl8gwsk5",
+      "to": "bc1q8p8u5eesm2fvlpdd8kgp5z7v3d0lwvh0uunle8",
+      "value": 29583.757241677824,
+      "count": 1,
+      "first_block": 32487,
+      "last_block": 32487
+    },
+    {
+      "from": "bc1qye5427zsvmzf8f6g3z53v6tydwxv6j86jc7mf7",
+      "to": "bc1qwurdnf95z3wpppa48xu0ljdq7l2c9282hwg7ha",
+      "value": 29038.258558620168,
+      "count": 7924,
+      "first_block": 58854,
+      "last_block": 96775
+    },
+    {
+      "from": "bc1qj6s4a20mdnzap5e8uhag3w6psvts737w89nc4f",
+      "to": "bc1ql2sdht3dd8rmfw635mehpzxxvsvlrp0zunqvun",
+      "value": 28570.77603036711,
+      "count": 6948,
+      "first_block": 45630,
+      "last_block": 109201
+    },
+    {
+      "from": "bc1qu9st489vjptqu7x2d4n6nfap6mfpxrz22egs0j",
+      "to": "bc1qufeefx64w8wx2lameju0um08rukayxamhystfe",
+      "value": 27452.540000000005,
+      "count": 161,
+      "first_block": 55586,
+      "last_block": 108191
+    },
+    {
+      "from": "bc1qj6s4a20mdnzap5e8uhag3w6psvts737w89nc4f",
+      "to": "bc1qvxn7xq396f0mla2s7rcp6dzvd8hs7ef7fas7jt",
+      "value": 27359.357674616433,
+      "count": 25390,
+      "first_block": 45596,
+      "last_block": 110421
+    },
+    {
+      "from": "bc1qj6s4a20mdnzap5e8uhag3w6psvts737w89nc4f",
+      "to": "bc1qyymylq0sejuhza0cu2u8lg9y2sqj7ses6vv4my",
+      "value": 27173.59753147067,
+      "count": 23280,
+      "first_block": 45541,
+      "last_block": 107426
+    },
+    {
+      "from": "bc1qufeefx64w8wx2lameju0um08rukayxamhystfe",
+      "to": "3BczeDcSHMXJ3JJRqMQvePzWcW8kVEug2F",
+      "value": 26815.63543026891,
+      "count": 85,
+      "first_block": 79088,
+      "last_block": 96324
+    },
+    {
+      "from": "bc1qye5427zsvmzf8f6g3z53v6tydwxv6j86jc7mf7",
+      "to": "bc1qdsqdv52lsyms6q3pmmxs3ezkpqgueg6u5q3krw",
+      "value": 26414.9280396523,
+      "count": 8767,
+      "first_block": 53972,
+      "last_block": 87972
+    },
+    {
+      "from": "bc1qnlzc7huy4cqgerke6gnlaxdze8uqsrwdt4d9s0",
+      "to": "bc1qye5427zsvmzf8f6g3z53v6tydwxv6j86jc7mf7",
+      "value": 26218.64917261521,
+      "count": 43,
+      "first_block": 51446,
+      "last_block": 71150
+    },
+    {
+      "from": "bc1qlhs667typ5heqpj3ryay5c7j4p4xrf5v5hgzvv",
+      "to": "bc1qqv0a2sqaxa8ssdxfxsv3j0cv6n048h3pxw95ye",
+      "value": 24747.898999999998,
+      "count": 20,
+      "first_block": 40704,
+      "last_block": 40704
+    },
+    {
+      "from": "bc1qj6s4a20mdnzap5e8uhag3w6psvts737w89nc4f",
+      "to": "bc1q855mqx040u4lwhkh0r2ncafxe5ukjrt5xty7kk",
+      "value": 24365.50419695177,
+      "count": 497,
+      "first_block": 94994,
+      "last_block": 100526
+    },
+    {
+      "from": "bc1qye5427zsvmzf8f6g3z53v6tydwxv6j86jc7mf7",
+      "to": "bc1q8pffqntquemay5ad8vxztvstjq02g9tff3p9pk",
+      "value": 23748.0250885957,
+      "count": 7278,
+      "first_block": 54299,
+      "last_block": 95434
+    },
+    {
+      "from": "bc1q9fnugedtuwemyc4zy3fwus7fyql0zm3xm7vrz4",
+      "to": "bc1qye5427zsvmzf8f6g3z53v6tydwxv6j86jc7mf7",
+      "value": 23539.762224836246,
+      "count": 11,
+      "first_block": 45858,
+      "last_block": 54042
+    },
+    {
+      "from": "3Bf7F2gqNBpAieX8nn2FNmdF5ogK23L9Up",
+      "to": "36RnWVnQRr5X6xoxiDs9E2GMsDsiBUhBbZ",
+      "value": 23018.95482150493,
+      "count": 14,
+      "first_block": 67501,
+      "last_block": 67501
+    },
+    {
+      "from": "bc1qye5427zsvmzf8f6g3z53v6tydwxv6j86jc7mf7",
+      "to": "3KF6F2i5iG6BCKZ7Avw58DZaKmrB1BWAu8",
+      "value": 22728.899002662612,
+      "count": 4074,
+      "first_block": 49828,
+      "last_block": 109098
+    },
+    {
+      "from": "bc1qye5427zsvmzf8f6g3z53v6tydwxv6j86jc7mf7",
+      "to": "3F4KVEpCffWHKStTC98XWihdvF2HeSkZYL",
+      "value": 22574.64188079408,
+      "count": 6280,
+      "first_block": 66230,
+      "last_block": 74063
+    },
+    {
+      "from": "bc1qj6s4a20mdnzap5e8uhag3w6psvts737w89nc4f",
+      "to": "bc1q48tku56w9tnaezw4rfgkyr09dyegwhd0jek8cm",
+      "value": 22567.33926018327,
+      "count": 18000,
+      "first_block": 53529,
+      "last_block": 92310
+    },
+    {
+      "from": "bc1qye5427zsvmzf8f6g3z53v6tydwxv6j86jc7mf7",
+      "to": "bc1qgc48799w3pney8s2ye2zrfh6xlca2fgftxfj6h",
+      "value": 22192.024755074795,
+      "count": 2008,
+      "first_block": 99430,
+      "last_block": 107022
+    },
+    {
+      "from": "bc1qug2jny5dkzuzhna5zhkmywhljupxjtx09h6rkd",
+      "to": "bc1q2hry8zsrrv3t6s6ngry7mdlk9htdd3j7gas49p",
+      "value": 22001.896053573633,
+      "count": 2,
+      "first_block": 27162,
+      "last_block": 28625
+    },
+    {
+      "from": "bc1qj6s4a20mdnzap5e8uhag3w6psvts737w89nc4f",
+      "to": "bc1q2ysaes7xlzac7s7dkmppsrkedkzllgs8u5rle0",
+      "value": 21974.129606636507,
+      "count": 17305,
+      "first_block": 43904,
+      "last_block": 98119
+    },
+    {
+      "from": "bc1qye5427zsvmzf8f6g3z53v6tydwxv6j86jc7mf7",
+      "to": "3LSa7VaMenK43xXqATd9udBt1qYjYGSJC5",
+      "value": 21379.286671083613,
+      "count": 3150,
+      "first_block": 55566,
+      "last_block": 108101
+    },
+    {
+      "from": "bc1qj5n5cdvjt597vxgz478jwcthp3pcx6lfhq28lv",
+      "to": "bc1qu9st489vjptqu7x2d4n6nfap6mfpxrz22egs0j",
+      "value": 20903.510619858203,
+      "count": 5774,
+      "first_block": 55559,
+      "last_block": 108166
+    },
+    {
+      "from": "bc1q3q2hc9h7vsphne4ltaqedw7xt3mdd6rhhnv6jh",
+      "to": "bc1qye5427zsvmzf8f6g3z53v6tydwxv6j86jc7mf7",
+      "value": 20811.3762189,
+      "count": 2,
+      "first_block": 41075,
+      "last_block": 41077
+    },
+    {
+      "from": "bc1qqmplxqtqggtgqw78l987dfarwfx47lxsps5ppg",
+      "to": "bc1qye5427zsvmzf8f6g3z53v6tydwxv6j86jc7mf7",
+      "value": 20678.987818138205,
+      "count": 5314,
+      "first_block": 45429,
+      "last_block": 97799
+    },
+    {
+      "from": "bc1qj6s4a20mdnzap5e8uhag3w6psvts737w89nc4f",
+      "to": "bc1q56pmv3wkn664chwzjez0xter4564ueulky46et",
+      "value": 20495.660718170864,
+      "count": 12398,
+      "first_block": 44113,
+      "last_block": 65597
+    },
+    {
+      "from": "bc1qxhj4xs8rqq5fyvhsqtard7e9snt7hvney7k86m",
+      "to": "bc1qrh46q65z0mxua294xuj8q4swksadwfnxvs59z6",
+      "value": 20000.00000274426,
+      "count": 1,
+      "first_block": 107974,
+      "last_block": 107974
+    },
+    {
+      "from": "bc1q2hry8zsrrv3t6s6ngry7mdlk9htdd3j7gas49p",
+      "to": "bc1qxc7e4nyk36sypw20h0w0y464j9h7836pzx9487",
+      "value": 19999.948428545362,
+      "count": 1,
+      "first_block": 27164,
+      "last_block": 27164
+    },
+    {
+      "from": "3JRyK2PUMehy6dP7GXWicusw444QQkULpm",
+      "to": "bc1qp9kxzckjdv79qd9x729phvuhe7zmkufrjqce0n",
+      "value": 19387.00007954374,
+      "count": 18,
+      "first_block": 48833,
+      "last_block": 98231
+    },
+    {
+      "from": "bc1qj6s4a20mdnzap5e8uhag3w6psvts737w89nc4f",
+      "to": "bc1q9pv95v8vvdew5uryjqjmhu2c7a5hz53mc30pmr",
+      "value": 19253.31253445245,
+      "count": 11178,
+      "first_block": 46270,
+      "last_block": 107846
+    },
+    {
+      "from": "bc1qj6s4a20mdnzap5e8uhag3w6psvts737w89nc4f",
+      "to": "bc1qqmplxqtqggtgqw78l987dfarwfx47lxsps5ppg",
+      "value": 19245.391491654296,
+      "count": 21712,
+      "first_block": 45405,
+      "last_block": 94946
+    },
+    {
+      "from": "bc1qtrrzs0vxrcydhvk2jwcjj4c9vwqp7jf2vwumtp",
+      "to": "bc1qufeefx64w8wx2lameju0um08rukayxamhystfe",
+      "value": 19215.09530713,
+      "count": 35,
+      "first_block": 61959,
+      "last_block": 108525
+    },
+    {
+      "from": "bc1qcxdm2uh6rcqss9p4mcm5ef65jpzue7x40s3x2y",
+      "to": "bc1qufeefx64w8wx2lameju0um08rukayxamhystfe",
+      "value": 19164.607709800002,
+      "count": 17,
+      "first_block": 53141,
+      "last_block": 96958
+    },
+    {
+      "from": "bc1qj6s4a20mdnzap5e8uhag3w6psvts737w89nc4f",
+      "to": "bc1q622664aqq9wx643dl4rczpevn4qpk9z0kmzmr8",
+      "value": 19148.07312938598,
+      "count": 20306,
+      "first_block": 51301,
+      "last_block": 108276
+    },
+    {
+      "from": "bc1qwqwrvn9nfmrzg8mnaxwh45maa8khsm9an25wkv",
+      "to": "bc1qye5427zsvmzf8f6g3z53v6tydwxv6j86jc7mf7",
+      "value": 19093.932987294655,
+      "count": 2819,
+      "first_block": 44075,
+      "last_block": 97851
+    },
+    {
+      "from": "bc1qex3s7tpm62ch6n0vmsr7s3n9kd7e3w232vqttv",
+      "to": "bc1qq36k4l4uvj9v52zakkc4a96s5a5ha278xa3rvw",
+      "value": 18991.005361522843,
+      "count": 504,
+      "first_block": 51803,
+      "last_block": 91038
+    },
+    {
+      "from": "bc1q56pmv3wkn664chwzjez0xter4564ueulky46et",
+      "to": "bc1qye5427zsvmzf8f6g3z53v6tydwxv6j86jc7mf7",
+      "value": 18806.482486632136,
+      "count": 763,
+      "first_block": 44131,
+      "last_block": 70944
+    },
+    {
+      "from": "bc1qj6s4a20mdnzap5e8uhag3w6psvts737w89nc4f",
+      "to": "bc1q9nsrnlrwev96flvfh8vhp7e2p34grdp45relxl",
+      "value": 18750.49838872157,
+      "count": 28408,
+      "first_block": 45193,
+      "last_block": 110433
+    },
+    {
+      "from": "bc1qg0a07ftjz7f722hau978kf8mf655sa7nvlg7wk",
+      "to": "bc1q8uazq3c6xurc8pn5ss3vaquhm8u7fccujlhwz9",
+      "value": 18599.943988659747,
+      "count": 311,
+      "first_block": 34237,
+      "last_block": 38657
+    },
+    {
+      "from": "bc1qufeefx64w8wx2lameju0um08rukayxamhystfe",
+      "to": "3FHixW6AgDTCScdFdrZ8mP3y5tMyr9oNpt",
+      "value": 18336.077945241614,
+      "count": 237,
+      "first_block": 62064,
+      "last_block": 108474
+    },
+    {
+      "from": "bc1qj6s4a20mdnzap5e8uhag3w6psvts737w89nc4f",
+      "to": "bc1qwrl3dmke58j6u3v2tct809jmc3uf3gfavlvzms",
+      "value": 17961.897609787724,
+      "count": 10408,
+      "first_block": 45741,
+      "last_block": 72187
+    },
+    {
+      "from": "bc1q2ysaes7xlzac7s7dkmppsrkedkzllgs8u5rle0",
+      "to": "bc1qye5427zsvmzf8f6g3z53v6tydwxv6j86jc7mf7",
+      "value": 17930.993597985238,
+      "count": 1644,
+      "first_block": 43921,
+      "last_block": 98136
+    },
+    {
+      "from": "bc1qcvryh9hapjzjw3hjx5us7aynzj2thdj95pl3ea",
+      "to": "bc1qn4eq4krdvptm4yf5f9lsdhdm5h0u99wman3hyj",
+      "value": 17589.99979504727,
+      "count": 7,
+      "first_block": 39938,
+      "last_block": 39938
+    },
+    {
+      "from": "bc1qj6s4a20mdnzap5e8uhag3w6psvts737w89nc4f",
+      "to": "bc1qlxx4drdj56qju6whjfazvz9445l8dr74lcunck",
+      "value": 17487.515687141826,
+      "count": 6798,
+      "first_block": 45492,
+      "last_block": 97498
+    },
+    {
+      "from": "bc1qj6s4a20mdnzap5e8uhag3w6psvts737w89nc4f",
+      "to": "bc1qj5n5cdvjt597vxgz478jwcthp3pcx6lfhq28lv",
+      "value": 17408.184971715047,
+      "count": 19894,
+      "first_block": 48073,
+      "last_block": 110429
+    },
+    {
+      "from": "bc1qufeefx64w8wx2lameju0um08rukayxamhystfe",
+      "to": "bc1q6c08z39t0n4a3q6lut7zkxmf8els7ker8nac8m",
+      "value": 17328.94660491226,
+      "count": 11,
+      "first_block": 53712,
+      "last_block": 107995
+    },
+    {
+      "from": "bc1qt8e7hn06yvr0y75dhvrwry3enh6pwzdmj0fgzr",
+      "to": "bc1qye5427zsvmzf8f6g3z53v6tydwxv6j86jc7mf7",
+      "value": 17183.168002171824,
+      "count": 268,
+      "first_block": 54436,
+      "last_block": 97848
+    },
+    {
+      "from": "bc1qgc48799w3pney8s2ye2zrfh6xlca2fgftxfj6h",
+      "to": "bc1qrh46q65z0mxua294xuj8q4swksadwfnxvs59z6",
+      "value": 17000.001088120964,
+      "count": 33,
+      "first_block": 107954,
+      "last_block": 107954
+    },
+    {
+      "from": "bc1qms924778f344qjgzehxvccrzu0lnpp68m5fqn8",
+      "to": "bc1q4kgtjqw5m9upst30zkl4vm4w9trp0j6a5t32j7",
+      "value": 16859.596072862565,
+      "count": 16,
+      "first_block": 60337,
+      "last_block": 70317
+    },
+    {
+      "from": "bc1q07r8cm5k7czx874757eacwdhlvejc36cd9fg73",
+      "to": "bc1qdnhducdmwld86y5qy56qljxpfulf06yga2ndy0",
+      "value": 16756.51204862702,
+      "count": 1,
+      "first_block": 41837,
+      "last_block": 41837
+    },
+    {
+      "from": "3FHixW6AgDTCScdFdrZ8mP3y5tMyr9oNpt",
+      "to": "bc1qtrrzs0vxrcydhvk2jwcjj4c9vwqp7jf2vwumtp",
+      "value": 16619.500112787708,
+      "count": 72,
+      "first_block": 61976,
+      "last_block": 99753
+    },
+    {
+      "from": "bc1q8uazq3c6xurc8pn5ss3vaquhm8u7fccujlhwz9",
+      "to": "bc1qvqxwt4hrx0a4wxy7yrhf32wjnl2cjd0la3l46n",
+      "value": 16413.99997224548,
+      "count": 17,
+      "first_block": 35042,
+      "last_block": 35042
+    },
+    {
+      "from": "bc1q4kgtjqw5m9upst30zkl4vm4w9trp0j6a5t32j7",
+      "to": "bc1qye5427zsvmzf8f6g3z53v6tydwxv6j86jc7mf7",
+      "value": 16407.98746732768,
+      "count": 22,
+      "first_block": 43877,
+      "last_block": 77582
+    },
+    {
+      "from": "bc1qgpjrqywz33qemjv4c7cgvf0s3mjsl5tghdh5uz",
+      "to": "bc1q4vkcgsdljdlp0suxdwmj22r70fzkpy9zltt425",
+      "value": 16398.142253276073,
+      "count": 104,
+      "first_block": 43373,
+      "last_block": 46801
+    },
+    {
+      "from": "bc1qye5427zsvmzf8f6g3z53v6tydwxv6j86jc7mf7",
+      "to": "bc1q2tdp9vq2g34wggeqvuxstlyw0tkda8llave5el",
+      "value": 16324.948834475315,
+      "count": 19,
+      "first_block": 43397,
+      "last_block": 47817
+    },
+    {
+      "from": "bc1qgpghl89m8ar39c39ul0fum5x27nkn5p3j0wgf3",
+      "to": "bc1qcytltnptdh88am8as5jtzewmp2tmsgj9ca48l6",
+      "value": 16300.000021790767,
+      "count": 1,
+      "first_block": 41024,
+      "last_block": 41024
+    },
+    {
+      "from": "bc1q07r8cm5k7czx874757eacwdhlvejc36cd9fg73",
+      "to": "bc1qf3rk6nfs8ww83prp63w974p7knyr2j3tjtkr44",
+      "value": 16000.000005372976,
+      "count": 1,
+      "first_block": 41837,
+      "last_block": 41837
+    },
+    {
+      "from": "3FHixW6AgDTCScdFdrZ8mP3y5tMyr9oNpt",
+      "to": "bc1q72llsfjz6ep2m6edk85ldcdeansdmw0c0krr8a",
+      "value": 15808.400056535886,
+      "count": 32,
+      "first_block": 66664,
+      "last_block": 110242
+    },
+    {
+      "from": "bc1q48tku56w9tnaezw4rfgkyr09dyegwhd0jek8cm",
+      "to": "bc1qye5427zsvmzf8f6g3z53v6tydwxv6j86jc7mf7",
+      "value": 15388.884827981428,
+      "count": 3633,
+      "first_block": 53546,
+      "last_block": 98111
+    },
+    {
+      "from": "bc1qye5427zsvmzf8f6g3z53v6tydwxv6j86jc7mf7",
+      "to": "bc1q7jyxmwfejru5rtrz60v535aeg86mahmhdyjmwk",
+      "value": 14788.132618535885,
+      "count": 3,
+      "first_block": 41235,
+      "last_block": 41235
+    },
+    {
+      "from": "bc1qcytltnptdh88am8as5jtzewmp2tmsgj9ca48l6",
+      "to": "bc1qmcvnjmr8sklz4mskrvwqah9jmmahsprej0tv4g",
+      "value": 14784.978457583027,
+      "count": 1,
+      "first_block": 41032,
+      "last_block": 41032
+    },
+    {
+      "from": "bc1qye5427zsvmzf8f6g3z53v6tydwxv6j86jc7mf7",
+      "to": "3KcbbzXfgPJg7RLfuTgxTNhnCZDAwJCkyr",
+      "value": 14567.339659405312,
+      "count": 1436,
+      "first_block": 108399,
+      "last_block": 110225
+    },
+    {
+      "from": "bc1qufeefx64w8wx2lameju0um08rukayxamhystfe",
+      "to": "3F4KVEpCffWHKStTC98XWihdvF2HeSkZYL",
+      "value": 14470.289632533742,
+      "count": 14,
+      "first_block": 66132,
+      "last_block": 66425
+    },
+    {
+      "from": "bc1qpktx7afusaf3j2l50wh73atr0ka3a9q0qgkwvp",
+      "to": "bc1q8n6vm9xtn2we8rt4yqy54mkwv45ryegc4m8ess",
+      "value": 14224.508369363803,
+      "count": 285,
+      "first_block": 40461,
+      "last_block": 41967
+    },
+    {
+      "from": "bc1qj6s4a20mdnzap5e8uhag3w6psvts737w89nc4f",
+      "to": "bc1q4t0vdl534ks7a73a09mn9wskg3y54xk7vumxjy",
+      "value": 14222.473046617779,
+      "count": 7707,
+      "first_block": 37401,
+      "last_block": 59727
+    },
+    {
+      "from": "bc1qejnq9r2cyd9hr9uhqxjqjl7r5m58v8zszk2rx9",
+      "to": "bc1ql4epa9kr0m73jn6lk3gt4m27sw904j9tl0374v",
+      "value": 14157.000001682203,
+      "count": 1,
+      "first_block": 41198,
+      "last_block": 41198
+    },
+    {
+      "from": "bc1qufeefx64w8wx2lameju0um08rukayxamhystfe",
+      "to": "bc1qcytltnptdh88am8as5jtzewmp2tmsgj9ca48l6",
+      "value": 13976.692989433897,
+      "count": 7,
+      "first_block": 59145,
+      "last_block": 60655
+    },
+    {
+      "from": "bc1qj6s4a20mdnzap5e8uhag3w6psvts737w89nc4f",
+      "to": "bc1qgpjrqywz33qemjv4c7cgvf0s3mjsl5tghdh5uz",
+      "value": 13634.313048125037,
+      "count": 2897,
+      "first_block": 42664,
+      "last_block": 47189
+    },
+    {
+      "from": "bc1q8szt66gl6u4srfwvhhm7x4mcmulyv4ae0njrel",
+      "to": "bc1qufeefx64w8wx2lameju0um08rukayxamhystfe",
+      "value": 13532.88140000005,
+      "count": 3699,
+      "first_block": 78492,
+      "last_block": 110035
+    },
+    {
+      "from": "bc1qye5427zsvmzf8f6g3z53v6tydwxv6j86jc7mf7",
+      "to": "398o3YmGtJuhpRB6sdb74dQEwa59nWmeQE",
+      "value": 13284.814410147228,
+      "count": 2036,
+      "first_block": 57886,
+      "last_block": 102368
+    },
+    {
+      "from": "bc1qj6s4a20mdnzap5e8uhag3w6psvts737w89nc4f",
+      "to": "bc1q4e6z3gaet37f72pweslasacjw2wq0az3wxjmh7",
+      "value": 13144.451200593925,
+      "count": 284,
+      "first_block": 46451,
+      "last_block": 51171
+    },
+    {
+      "from": "bc1q0p8avr70v2lklsqnaqul4qv3a65wev9lumkgu5",
+      "to": "bc1qye5427zsvmzf8f6g3z53v6tydwxv6j86jc7mf7",
+      "value": 12874.566039227853,
+      "count": 13,
+      "first_block": 41056,
+      "last_block": 68538
+    },
+    {
+      "from": "bc1qj6s4a20mdnzap5e8uhag3w6psvts737w89nc4f",
+      "to": "bc1q9u8f65xjnp5h2gdflv0prz7veg4nl7n99fpqdm",
+      "value": 12865.664327746797,
+      "count": 11516,
+      "first_block": 46299,
+      "last_block": 108191
+    },
+    {
+      "from": "bc1qwrl3dmke58j6u3v2tct809jmc3uf3gfavlvzms",
+      "to": "bc1qye5427zsvmzf8f6g3z53v6tydwxv6j86jc7mf7",
+      "value": 12775.310018089813,
+      "count": 1898,
+      "first_block": 45621,
+      "last_block": 97098
+    },
+    {
+      "from": "bc1qj6s4a20mdnzap5e8uhag3w6psvts737w89nc4f",
+      "to": "bc1qv2znrzr7udc59tsan2z8d38887a2d38rj7tfy6",
+      "value": 12704.010538205684,
+      "count": 372,
+      "first_block": 66148,
+      "last_block": 108506
+    },
+    {
+      "from": "bc1qye5427zsvmzf8f6g3z53v6tydwxv6j86jc7mf7",
+      "to": "3Kveo91TspouwroT3JpFCZduWVM92dsz6p",
+      "value": 12672.604423504987,
+      "count": 2065,
+      "first_block": 62071,
+      "last_block": 95076
+    },
+    {
+      "from": "bc1q4e6z3gaet37f72pweslasacjw2wq0az3wxjmh7",
+      "to": "bc1qye5427zsvmzf8f6g3z53v6tydwxv6j86jc7mf7",
+      "value": 12475.0,
+      "count": 18,
+      "first_block": 46469,
+      "last_block": 51190
+    },
+    {
+      "from": "bc1qmcvnjmr8sklz4mskrvwqah9jmmahsprej0tv4g",
+      "to": "bc1qye5427zsvmzf8f6g3z53v6tydwxv6j86jc7mf7",
+      "value": 12447.409981242245,
+      "count": 1,
+      "first_block": 41041,
+      "last_block": 41041
+    },
+    {
+      "from": "bc1qye5427zsvmzf8f6g3z53v6tydwxv6j86jc7mf7",
+      "to": "3Bf7F2gqNBpAieX8nn2FNmdF5ogK23L9Up",
+      "value": 12336.069974920381,
+      "count": 2561,
+      "first_block": 51985,
+      "last_block": 91987
+    },
+    {
+      "from": "bc1qye5427zsvmzf8f6g3z53v6tydwxv6j86jc7mf7",
+      "to": "bc1qg48j94eqz5dypr8kkv37c4yf8hjklqj7pxel23",
+      "value": 12229.518403066142,
+      "count": 1341,
+      "first_block": 50313,
+      "last_block": 59339
+    },
+    {
+      "from": "bc1q9pv95v8vvdew5uryjqjmhu2c7a5hz53mc30pmr",
+      "to": "bc1qye5427zsvmzf8f6g3z53v6tydwxv6j86jc7mf7",
+      "value": 12219.612569067798,
+      "count": 1719,
+      "first_block": 46287,
+      "last_block": 97685
+    },
+    {
+      "from": "bc1qj6s4a20mdnzap5e8uhag3w6psvts737w89nc4f",
+      "to": "bc1q8szt66gl6u4srfwvhhm7x4mcmulyv4ae0njrel",
+      "value": 12215.969465424987,
+      "count": 10897,
+      "first_block": 78467,
+      "last_block": 109943
+    },
+    {
+      "from": "3Bf7F2gqNBpAieX8nn2FNmdF5ogK23L9Up",
+      "to": "bc1q5pc365mdzcdh9ps0vdrz9jrxnvxmyhgv4pcvcu",
+      "value": 12147.110702183727,
+      "count": 33,
+      "first_block": 57069,
+      "last_block": 93802
+    },
+    {
+      "from": "bc1qex3s7tpm62ch6n0vmsr7s3n9kd7e3w232vqttv",
+      "to": "bc1qwqwrvn9nfmrzg8mnaxwh45maa8khsm9an25wkv",
+      "value": 12090.373059575897,
+      "count": 2370,
+      "first_block": 51757,
+      "last_block": 91080
+    },
+    {
+      "from": "bc1qyymylq0sejuhza0cu2u8lg9y2sqj7ses6vv4my",
+      "to": "bc1qye5427zsvmzf8f6g3z53v6tydwxv6j86jc7mf7",
+      "value": 12011.174601464796,
+      "count": 3117,
+      "first_block": 45534,
+      "last_block": 98131
+    },
+    {
+      "from": "bc1qy20xrzz7tm6us0xvmpcv0yam005kqav8j6yptn",
+      "to": "bc1q8uazq3c6xurc8pn5ss3vaquhm8u7fccujlhwz9",
+      "value": 11900.753982946131,
+      "count": 67,
+      "first_block": 33216,
+      "last_block": 39231
+    },
+    {
+      "from": "bc1qg48j94eqz5dypr8kkv37c4yf8hjklqj7pxel23",
+      "to": "bc1q4kgtjqw5m9upst30zkl4vm4w9trp0j6a5t32j7",
+      "value": 11875.000027816124,
+      "count": 13,
+      "first_block": 52350,
+      "last_block": 58958
+    },
+    {
+      "from": "bc1qj6s4a20mdnzap5e8uhag3w6psvts737w89nc4f",
+      "to": "bc1qj68h50wxq97847r4pty4mjj5mc7kfwhkdajljn",
+      "value": 11725.67632277099,
+      "count": 1236,
+      "first_block": 37366,
+      "last_block": 46702
+    },
+    {
+      "from": "bc1qj6s4a20mdnzap5e8uhag3w6psvts737w89nc4f",
+      "to": "bc1qwqwrvn9nfmrzg8mnaxwh45maa8khsm9an25wkv",
+      "value": 11711.726365729171,
+      "count": 12814,
+      "first_block": 44057,
+      "last_block": 78422
+    },
+    {
+      "from": "bc1q622664aqq9wx643dl4rczpevn4qpk9z0kmzmr8",
+      "to": "bc1qye5427zsvmzf8f6g3z53v6tydwxv6j86jc7mf7",
+      "value": 11280.668145887643,
+      "count": 3965,
+      "first_block": 51319,
+      "last_block": 98131
+    },
+    {
+      "from": "bc1qt8e7hn06yvr0y75dhvrwry3enh6pwzdmj0fgzr",
+      "to": "bc1qgc48799w3pney8s2ye2zrfh6xlca2fgftxfj6h",
+      "value": 11125.006683622249,
+      "count": 210,
+      "first_block": 99430,
+      "last_block": 107289
+    },
+    {
+      "from": "bc1qufeefx64w8wx2lameju0um08rukayxamhystfe",
+      "to": "bc1qf85gjzh5nfh69jfq9l88aavaz675taledp6avz",
+      "value": 11027.27897005073,
+      "count": 7,
+      "first_block": 56291,
+      "last_block": 59399
+    },
+    {
+      "from": "bc1qatk5lwc2p3ftkx75yz27qxqpz8htrf6mnnev0a",
+      "to": "bc1qsw85qrtca9hc2l9p7q469dssz562r66wn4uscf",
+      "value": 11006.759999999998,
+      "count": 11,
+      "first_block": 32394,
+      "last_block": 32394
+    },
+    {
+      "from": "bc1qex3s7tpm62ch6n0vmsr7s3n9kd7e3w232vqttv",
+      "to": "bc1qec20ng67v3vxgfr6aq560am0wq0weg0wsurl2k",
+      "value": 10968.850032095297,
+      "count": 3028,
+      "first_block": 48257,
+      "last_block": 82918
+    },
+    {
+      "from": "bc1qj6s4a20mdnzap5e8uhag3w6psvts737w89nc4f",
+      "to": "bc1qheg6mz09rvegxej6sstd9z24pry69du3u5qjl0",
+      "value": 10457.204246077996,
+      "count": 2542,
+      "first_block": 41129,
+      "last_block": 46567
+    },
+    {
+      "from": "bc1qj6s4a20mdnzap5e8uhag3w6psvts737w89nc4f",
+      "to": "bc1qp73pyyz76qu7y20e9cs2fxg3pa62m53t3hztaa",
+      "value": 10427.888543206585,
+      "count": 8884,
+      "first_block": 46270,
+      "last_block": 88313
+    },
+    {
+      "from": "bc1qec20ng67v3vxgfr6aq560am0wq0weg0wsurl2k",
+      "to": "bc1qye5427zsvmzf8f6g3z53v6tydwxv6j86jc7mf7",
+      "value": 10425.180507512989,
+      "count": 1688,
+      "first_block": 45510,
+      "last_block": 97981
+    },
+    {
+      "from": "bc1qq36k4l4uvj9v52zakkc4a96s5a5ha278xa3rvw",
+      "to": "bc1qye5427zsvmzf8f6g3z53v6tydwxv6j86jc7mf7",
+      "value": 10374.043304866014,
+      "count": 820,
+      "first_block": 51098,
+      "last_block": 98127
+    },
+    {
+      "from": "146jCcRXDZrXbgxUrxe6BKZWxL8S3nz9bY",
+      "to": "bc1qywzldqyw2y4dkeq2zstspeqzrw39vaxxxveqds",
+      "value": 10299.52502361743,
+      "count": 426,
+      "first_block": 93818,
+      "last_block": 107931
+    },
+    {
+      "from": "bc1qye5427zsvmzf8f6g3z53v6tydwxv6j86jc7mf7",
+      "to": "3JRyK2PUMehy6dP7GXWicusw444QQkULpm",
+      "value": 10234.569266686085,
+      "count": 1161,
+      "first_block": 48831,
+      "last_block": 96911
+    },
+    {
+      "from": "bc1q3anhwap2r0cjjzs9rezk7ayaydzstuww3wv0tf",
+      "to": "bc1qye5427zsvmzf8f6g3z53v6tydwxv6j86jc7mf7",
+      "value": 10150.67,
+      "count": 11,
+      "first_block": 44048,
+      "last_block": 46260
+    },
+    {
+      "from": "bc1q4t0vdl534ks7a73a09mn9wskg3y54xk7vumxjy",
+      "to": "bc1qcvryh9hapjzjw3hjx5us7aynzj2thdj95pl3ea",
+      "value": 10126.852369782577,
+      "count": 76,
+      "first_block": 38201,
+      "last_block": 40211
+    },
+    {
+      "from": "bc1qye5427zsvmzf8f6g3z53v6tydwxv6j86jc7mf7",
+      "to": "bc1qcxdm2uh6rcqss9p4mcm5ef65jpzue7x40s3x2y",
+      "value": 10107.65917108982,
+      "count": 1846,
+      "first_block": 53114,
+      "last_block": 96935
+    },
+    {
+      "from": "bc1qr329r4jnqfa2zacpzyrdvaj7tuejgra0ttnkps",
+      "to": "bc1qu499vya6yuzhwpq0khn0qqt4f5x5u440zpxzfe",
+      "value": 10000.136959640993,
+      "count": 200,
+      "first_block": 38327,
+      "last_block": 38330
+    },
+    {
+      "from": "bc1qah79sdxvmcr2vjtje43cmkq94he8rx754x6387",
+      "to": "bc1ql4epa9kr0m73jn6lk3gt4m27sw904j9tl0374v",
+      "value": 10000.000005333231,
+      "count": 1,
+      "first_block": 43184,
+      "last_block": 43184
+    },
+    {
+      "from": "bc1qvkhjsavfwk5vjm5vyg9krzuuunpr7ef6ndahha",
+      "to": "bc1ql4epa9kr0m73jn6lk3gt4m27sw904j9tl0374v",
+      "value": 10000.000003749945,
+      "count": 1,
+      "first_block": 43009,
+      "last_block": 43009
+    },
+    {
+      "from": "bc1qkv5y9nxh47mgm7nrk89tq32ht3lqx6njycvhzc",
+      "to": "bc1qrh46q65z0mxua294xuj8q4swksadwfnxvs59z6",
+      "value": 10000.000002738543,
+      "count": 1,
+      "first_block": 108115,
+      "last_block": 108115
+    },
+    {
+      "from": "bc1qsnc3ktncjwymr9l065rjd25m7z468cjvy4u2ew",
+      "to": "bc1qrh46q65z0mxua294xuj8q4swksadwfnxvs59z6",
+      "value": 10000.000002192664,
+      "count": 1,
+      "first_block": 108087,
+      "last_block": 108087
+    },
+    {
+      "from": "bc1qs3c5vcpld7vu9vudweyhl4xy9n0fjlm3c9tv3u",
+      "to": "bc1qrh46q65z0mxua294xuj8q4swksadwfnxvs59z6",
+      "value": 10000.000001828235,
+      "count": 1,
+      "first_block": 108080,
+      "last_block": 108080
+    },
+    {
+      "from": "bc1qj6s4a20mdnzap5e8uhag3w6psvts737w89nc4f",
+      "to": "bc1qf9ufpsj5k5rq3uexkke82xmeay3drw5mepmhmj",
+      "value": 9956.655214299568,
+      "count": 12818,
+      "first_block": 46270,
+      "last_block": 110438
+    },
+    {
+      "from": "bc1qr329r4jnqfa2zacpzyrdvaj7tuejgra0ttnkps",
+      "to": "bc1q8uazq3c6xurc8pn5ss3vaquhm8u7fccujlhwz9",
+      "value": 9920.62788017924,
+      "count": 199,
+      "first_block": 39339,
+      "last_block": 39344
+    },
+    {
+      "from": "bc1qj6s4a20mdnzap5e8uhag3w6psvts737w89nc4f",
+      "to": "bc1q3anhwap2r0cjjzs9rezk7ayaydzstuww3wv0tf",
+      "value": 9663.118709970726,
+      "count": 196,
+      "first_block": 44037,
+      "last_block": 46239
+    },
+    {
+      "from": "bc1qg3mtjcv9ghk8s9r6v2lmdypnn0tz7arrmcy92j",
+      "to": "bc1qufeefx64w8wx2lameju0um08rukayxamhystfe",
+      "value": 9601.7833344,
+      "count": 11,
+      "first_block": 53141,
+      "last_block": 55624
+    },
+    {
+      "from": "bc1q257t5sel9fu4k467gkx3tkqjym3twnz5863p9k",
+      "to": "bc1qatk5lwc2p3ftkx75yz27qxqpz8htrf6mnnev0a",
+      "value": 9595.899800653946,
+      "count": 201,
+      "first_block": 32527,
+      "last_block": 32527
+    },
+    {
+      "from": "bc1q257t5sel9fu4k467gkx3tkqjym3twnz5863p9k",
+      "to": "bc1qlznzzsasfclzc8384r96hv5jmvxfzd6z6pv4x4",
+      "value": 9557.607042063337,
+      "count": 200,
+      "first_block": 30881,
+      "last_block": 30881
+    },
+    {
+      "from": "bc1qwqdzuht55la6cp7ugcqezgh47u4lfvpyqu7h0x",
+      "to": "37cDFs2oU1Wqx3BWhjeQQR5vLePAubkPXU",
+      "value": 9415.527426475932,
+      "count": 5,
+      "first_block": 108829,
+      "last_block": 108829
+    },
+    {
+      "from": "bc1qye5427zsvmzf8f6g3z53v6tydwxv6j86jc7mf7",
+      "to": "bc1qms924778f344qjgzehxvccrzu0lnpp68m5fqn8",
+      "value": 9412.338452177175,
+      "count": 2223,
+      "first_block": 60585,
+      "last_block": 68110
+    },
+    {
+      "from": "bc1qye5427zsvmzf8f6g3z53v6tydwxv6j86jc7mf7",
+      "to": "3KJwJDGuxV2pLVhuuXcEdX1r3i7FJ39PJh",
+      "value": 9391.331125629107,
+      "count": 1275,
+      "first_block": 50876,
+      "last_block": 96905
+    },
+    {
+      "from": "bc1qex3s7tpm62ch6n0vmsr7s3n9kd7e3w232vqttv",
+      "to": "bc1qvxn7xq396f0mla2s7rcp6dzvd8hs7ef7fas7jt",
+      "value": 9320.446463214283,
+      "count": 3675,
+      "first_block": 53189,
+      "last_block": 90979
+    },
+    {
+      "from": "bc1qzckk4lcrahcfvfam7ty5u3tp2flulr808stkmd",
+      "to": "bc1q8n6vm9xtn2we8rt4yqy54mkwv45ryegc4m8ess",
+      "value": 9283.841535922358,
+      "count": 186,
+      "first_block": 40461,
+      "last_block": 41967
+    },
+    {
+      "from": "bc1qmdddy4m96enkz9p5ek9ret999aplrhu9r3kvdl",
+      "to": "bc1qye5427zsvmzf8f6g3z53v6tydwxv6j86jc7mf7",
+      "value": 8951.900762478734,
+      "count": 641,
+      "first_block": 43999,
+      "last_block": 79472
+    },
+    {
+      "from": "bc1qj6s4a20mdnzap5e8uhag3w6psvts737w89nc4f",
+      "to": "bc1qg0a07ftjz7f722hau978kf8mf655sa7nvlg7wk",
+      "value": 8862.255137717772,
+      "count": 2078,
+      "first_block": 37401,
+      "last_block": 64503
+    },
+    {
+      "from": "bc1q33slcj8cqjut0hkxgel5f0l2l9kwe88w7s4gu9",
+      "to": "bc1qufeefx64w8wx2lameju0um08rukayxamhystfe",
+      "value": 8805.178099999988,
+      "count": 781,
+      "first_block": 93892,
+      "last_block": 110434
+    },
+    {
+      "from": "bc1qye5427zsvmzf8f6g3z53v6tydwxv6j86jc7mf7",
+      "to": "3EyLo6BtUbLPFVrFYP1FtBrobswxSA8mmB",
+      "value": 8777.85858975872,
+      "count": 1856,
+      "first_block": 49593,
+      "last_block": 105756
+    },
+    {
+      "from": "bc1qj6s4a20mdnzap5e8uhag3w6psvts737w89nc4f",
+      "to": "bc1q5mahcghuqvwjh9s5jnr92xflu0fv4d5yakeppj",
+      "value": 8751.0927912997,
+      "count": 180,
+      "first_block": 50661,
+      "last_block": 51058
+    },
+    {
+      "from": "bc1qj6s4a20mdnzap5e8uhag3w6psvts737w89nc4f",
+      "to": "bc1qywzldqyw2y4dkeq2zstspeqzrw39vaxxxveqds",
+      "value": 8579.115930407268,
+      "count": 6166,
+      "first_block": 45405,
+      "last_block": 107979
+    },
+    {
+      "from": "bc1q6qty756mxrrzc5s99yvp2jpsm8ngxnhygqcqaw",
+      "to": "bc1qufeefx64w8wx2lameju0um08rukayxamhystfe",
+      "value": 8507.06964552,
+      "count": 6,
+      "first_block": 53300,
+      "last_block": 100868
+    },
+    {
+      "from": "bc1q6c08z39t0n4a3q6lut7zkxmf8els7ker8nac8m",
+      "to": "bc1qye5427zsvmzf8f6g3z53v6tydwxv6j86jc7mf7",
+      "value": 8490.522635344274,
+      "count": 8,
+      "first_block": 43220,
+      "last_block": 67796
+    },
+    {
+      "from": "bc1qj6s4a20mdnzap5e8uhag3w6psvts737w89nc4f",
+      "to": "bc1q864rzrtqszpmlpkvfhecv9hel9zmhfj08ptl48",
+      "value": 8447.794866368498,
+      "count": 12025,
+      "first_block": 45405,
+      "last_block": 108478
+    },
+    {
+      "from": "bc1qku0l50fpe246c5ecx8zyqgsuymmyxs6t9nzx25",
+      "to": "bc1qcvryh9hapjzjw3hjx5us7aynzj2thdj95pl3ea",
+      "value": 8314.377956126677,
+      "count": 173,
+      "first_block": 39225,
+      "last_block": 39228
+    },
+    {
+      "from": "bc1qj6s4a20mdnzap5e8uhag3w6psvts737w89nc4f",
+      "to": "bc1q7xmjj23849sfeu72p79nrqesv0x683fwwlmfsf",
+      "value": 8245.55004773222,
+      "count": 18261,
+      "first_block": 45405,
+      "last_block": 108768
+    },
+    {
+      "from": "bc1qj6s4a20mdnzap5e8uhag3w6psvts737w89nc4f",
+      "to": "bc1q33slcj8cqjut0hkxgel5f0l2l9kwe88w7s4gu9",
+      "value": 8196.585748526024,
+      "count": 2690,
+      "first_block": 93871,
+      "last_block": 110433
+    },
+    {
+      "from": "bc1qj6s4a20mdnzap5e8uhag3w6psvts737w89nc4f",
+      "to": "bc1qjrlk5f0vrfpl3lzwnuknm0kj60h738qxunx3qp",
+      "value": 8156.710817271215,
+      "count": 170,
+      "first_block": 49076,
+      "last_block": 49845
+    },
+    {
+      "from": "bc1qh0aa6d05yrpe9rtxg9xfg66wtcy9fv26pvwu6f",
+      "to": "bc1qye5427zsvmzf8f6g3z53v6tydwxv6j86jc7mf7",
+      "value": 8115.55642043371,
+      "count": 1278,
+      "first_block": 43839,
+      "last_block": 92482
+    },
+    {
+      "from": "bc1qj6s4a20mdnzap5e8uhag3w6psvts737w89nc4f",
+      "to": "bc1qq36k4l4uvj9v52zakkc4a96s5a5ha278xa3rvw",
+      "value": 8082.494213106208,
+      "count": 5427,
+      "first_block": 51081,
+      "last_block": 91510
+    },
+    {
+      "from": "bc1qq36k4l4uvj9v52zakkc4a96s5a5ha278xa3rvw",
+      "to": "3D4c7ur4sZXVtiCUSXEpLXqdeh2UpsC7YY",
+      "value": 8022.321005722505,
+      "count": 77,
+      "first_block": 73415,
+      "last_block": 89264
+    },
+    {
+      "from": "bc1q7xmjj23849sfeu72p79nrqesv0x683fwwlmfsf",
+      "to": "bc1qye5427zsvmzf8f6g3z53v6tydwxv6j86jc7mf7",
+      "value": 7998.921945215121,
+      "count": 2933,
+      "first_block": 45427,
+      "last_block": 98111
+    },
+    {
+      "from": "bc1qtzxahvsh97jyf743uqsh0eu5raetr5xh4mshk9",
+      "to": "bc1qm9my46cffprlwypuwj4v7d7ne0h84l2vtp8jnp",
+      "value": 7972.317924426156,
+      "count": 7,
+      "first_block": 103264,
+      "last_block": 110167
+    },
+    {
+      "from": "bc1qj6s4a20mdnzap5e8uhag3w6psvts737w89nc4f",
+      "to": "bc1qlhh5t0ew4q9fhptvzqjsqrhm86mcp7fp9dm5uh",
+      "value": 7680.7565417462,
+      "count": 10904,
+      "first_block": 46325,
+      "last_block": 110438
+    },
+    {
+      "from": "bc1qj6s4a20mdnzap5e8uhag3w6psvts737w89nc4f",
+      "to": "bc1qek74haul008mfcf6waswsq3rplz54yjyz6ssyr",
+      "value": 7658.456827350342,
+      "count": 4679,
+      "first_block": 43819,
+      "last_block": 61476
+    },
+    {
+      "from": "bc1qj6s4a20mdnzap5e8uhag3w6psvts737w89nc4f",
+      "to": "bc1qmdddy4m96enkz9p5ek9ret999aplrhu9r3kvdl",
+      "value": 7638.318625338072,
+      "count": 11321,
+      "first_block": 44557,
+      "last_block": 78268
+    },
+    {
+      "from": "bc1qufeefx64w8wx2lameju0um08rukayxamhystfe",
+      "to": "bc1qm9my46cffprlwypuwj4v7d7ne0h84l2vtp8jnp",
+      "value": 7591.097709111024,
+      "count": 83,
+      "first_block": 62700,
+      "last_block": 84538
+    },
+    {
+      "from": "bc1qj6s4a20mdnzap5e8uhag3w6psvts737w89nc4f",
+      "to": "3Fx4bL6jxQMRxgTrzf9rHgviFV2MtsDgZm",
+      "value": 7587.355946458454,
+      "count": 1040,
+      "first_block": 95967,
+      "last_block": 110438
+    },
+    {
+      "from": "bc1qp9kxzckjdv79qd9x729phvuhe7zmkufrjqce0n",
+      "to": "bc1qye5427zsvmzf8f6g3z53v6tydwxv6j86jc7mf7",
+      "value": 7537.038706272323,
+      "count": 8,
+      "first_block": 47717,
+      "last_block": 95734
+    },
+    {
+      "from": "bc1qye5427zsvmzf8f6g3z53v6tydwxv6j86jc7mf7",
+      "to": "3J9yEWDuooHPCw75vvLydS4L7iJXy2KhFG",
+      "value": 7500.8661750497495,
+      "count": 39,
+      "first_block": 49735,
+      "last_block": 50023
+    },
+    {
+      "from": "bc1qg0a07ftjz7f722hau978kf8mf655sa7nvlg7wk",
+      "to": "bc1qy20xrzz7tm6us0xvmpcv0yam005kqav8j6yptn",
+      "value": 7500.001393298737,
+      "count": 15,
+      "first_block": 37833,
+      "last_block": 37874
+    },
+    {
+      "from": "bc1qj6s4a20mdnzap5e8uhag3w6psvts737w89nc4f",
+      "to": "bc1q3s53y3txgk625r7nrwewzway5neqsc80y29uny",
+      "value": 7491.90297727633,
+      "count": 5752,
+      "first_block": 46948,
+      "last_block": 67501
+    },
+    {
+      "from": "3J9yEWDuooHPCw75vvLydS4L7iJXy2KhFG",
+      "to": "bc1qg3mtjcv9ghk8s9r6v2lmdypnn0tz7arrmcy92j",
+      "value": 7490.9200157696305,
+      "count": 7,
+      "first_block": 53406,
+      "last_block": 55601
+    },
+    {
+      "from": "bc1qp73pyyz76qu7y20e9cs2fxg3pa62m53t3hztaa",
+      "to": "bc1qye5427zsvmzf8f6g3z53v6tydwxv6j86jc7mf7",
+      "value": 7440.3646386457385,
+      "count": 1475,
+      "first_block": 46287,
+      "last_block": 97975
+    },
+    {
+      "from": "bc1qy2fk3y627gl53nu792l8sdn77fwsrnrt4smjl6",
+      "to": "bc1qufeefx64w8wx2lameju0um08rukayxamhystfe",
+      "value": 7404.916355450003,
+      "count": 1557,
+      "first_block": 65462,
+      "last_block": 108030
+    },
+    {
+      "from": "bc1q2fauuyuztah6w56qg7s6x2kct9e9cq73jvrdfn",
+      "to": "bc1qye5427zsvmzf8f6g3z53v6tydwxv6j86jc7mf7",
+      "value": 7363.973085167007,
+      "count": 906,
+      "first_block": 43281,
+      "last_block": 65133
+    },
+    {
+      "from": "bc1q5pu7q5a0vdd0fhtcvjuc4c5ehguzlm09xkavf7",
+      "to": "bc1qye5427zsvmzf8f6g3z53v6tydwxv6j86jc7mf7",
+      "value": 6966.710007604334,
+      "count": 1446,
+      "first_block": 43981,
+      "last_block": 97047
+    },
+    {
+      "from": "bc1qj6s4a20mdnzap5e8uhag3w6psvts737w89nc4f",
+      "to": "bc1qztjs7z84mtl2x4w9ttwfdka2peu85ur5fzwndp",
+      "value": 6959.423589791487,
+      "count": 5799,
+      "first_block": 37611,
+      "last_block": 54629
+    },
+    {
+      "from": "bc1q5gu5uru7yu5832vj80dmjmwa04xse5lekyjrwj",
+      "to": "bc1q27ehszslzlh45jlwvt9rrkl2mu37afe8vm25g9",
+      "value": 6842.0000374629935,
+      "count": 1,
+      "first_block": 40703,
+      "last_block": 40703
+    },
+    {
+      "from": "bc1qdnhducdmwld86y5qy56qljxpfulf06yga2ndy0",
+      "to": "bc1qf3rk6nfs8ww83prp63w974p7knyr2j3tjtkr44",
+      "value": 6756.512037631811,
+      "count": 1,
+      "first_block": 42825,
+      "last_block": 42825
+    },
+    {
+      "from": "bc1qufeefx64w8wx2lameju0um08rukayxamhystfe",
+      "to": "1EsTi3DtKbE77pFhAvST58aYpW8DGdaHW",
+      "value": 6756.492209396809,
+      "count": 11,
+      "first_block": 96847,
+      "last_block": 96996
+    },
+    {
+      "from": "bc1qzckk4lcrahcfvfam7ty5u3tp2flulr808stkmd",
+      "to": "bc1qcvryh9hapjzjw3hjx5us7aynzj2thdj95pl3ea",
+      "value": 6736.24005108674,
+      "count": 135,
+      "first_block": 39756,
+      "last_block": 40241
+    },
+    {
+      "from": "bc1qye5427zsvmzf8f6g3z53v6tydwxv6j86jc7mf7",
+      "to": "3NiFP4Zv1LtFtbAzwhhc9yLvVec5V9e44X",
+      "value": 6720.934095441586,
+      "count": 1839,
+      "first_block": 85419,
+      "last_block": 93824
+    },
+    {
+      "from": "bc1qrh46q65z0mxua294xuj8q4swksadwfnxvs59z6",
+      "to": "bc1qye5427zsvmzf8f6g3z53v6tydwxv6j86jc7mf7",
+      "value": 6715.02816773575,
+      "count": 7,
+      "first_block": 92410,
+      "last_block": 95072
+    },
+    {
+      "from": "bc1qye5427zsvmzf8f6g3z53v6tydwxv6j86jc7mf7",
+      "to": "1KvRXLdLjjgNBPqppRsKJdkNUzPeBFuSpF",
+      "value": 6619.514661308917,
+      "count": 1082,
+      "first_block": 58973,
+      "last_block": 68670
+    },
+    {
+      "from": "bc1q2m3g0gtuztcl85kzd2dy8sz6vvlq7t6e52wl9y",
+      "to": "3KcbbzXfgPJg7RLfuTgxTNhnCZDAwJCkyr",
+      "value": 6592.169874254021,
+      "count": 317,
+      "first_block": 108399,
+      "last_block": 110225
+    },
+    {
+      "from": "bc1qyn60p5wjla8nzzvj32r6hlrt2csl2ps6tet9qj",
+      "to": "bc1qye5427zsvmzf8f6g3z53v6tydwxv6j86jc7mf7",
+      "value": 6589.638500823909,
+      "count": 135,
+      "first_block": 43660,
+      "last_block": 63025
+    },
+    {
+      "from": "bc1qrahqu4u6m6ysh99rfzc3wupjwfacdp23g48vz8",
+      "to": "bc1q27ehszslzlh45jlwvt9rrkl2mu37afe8vm25g9",
+      "value": 6578.000033191313,
+      "count": 1,
+      "first_block": 40701,
+      "last_block": 40701
+    },
+    {
+      "from": "bc1qx0myxdp2axrmlhj2zh6slz2vnztv6x5casjgma",
+      "to": "bc1q27ehszslzlh45jlwvt9rrkl2mu37afe8vm25g9",
+      "value": 6578.0000307763985,
+      "count": 1,
+      "first_block": 40699,
+      "last_block": 40699
+    },
+    {
+      "from": "bc1q4520j6rkk8fdmzylyl0032t6ahhwud3qdyd9rk",
+      "to": "bc1qye5427zsvmzf8f6g3z53v6tydwxv6j86jc7mf7",
+      "value": 6542.184498800253,
+      "count": 50,
+      "first_block": 69579,
+      "last_block": 91643
+    },
+    {
+      "from": "bc1ql2sdht3dd8rmfw635mehpzxxvsvlrp0zunqvun",
+      "to": "bc1qye5427zsvmzf8f6g3z53v6tydwxv6j86jc7mf7",
+      "value": 6477.125702120217,
+      "count": 930,
+      "first_block": 45651,
+      "last_block": 98125
+    },
+    {
+      "from": "bc1q9u8f65xjnp5h2gdflv0prz7veg4nl7n99fpqdm",
+      "to": "bc1qye5427zsvmzf8f6g3z53v6tydwxv6j86jc7mf7",
+      "value": 6230.629190959731,
+      "count": 2184,
+      "first_block": 46319,
+      "last_block": 97985
+    },
+    {
+      "from": "bc1q3s53y3txgk625r7nrwewzway5neqsc80y29uny",
+      "to": "bc1qye5427zsvmzf8f6g3z53v6tydwxv6j86jc7mf7",
+      "value": 6228.351190268675,
+      "count": 306,
+      "first_block": 46965,
+      "last_block": 67517
+    },
+    {
+      "from": "bc1qye5427zsvmzf8f6g3z53v6tydwxv6j86jc7mf7",
+      "to": "1Eg17Ey9qHr8BwzfLqbcSxUruXuLVnQxHF",
+      "value": 6216.7994126705225,
+      "count": 2712,
+      "first_block": 71425,
+      "last_block": 77497
+    },
+    {
+      "from": "bc1qex3s7tpm62ch6n0vmsr7s3n9kd7e3w232vqttv",
+      "to": "bc1qj5n5cdvjt597vxgz478jwcthp3pcx6lfhq28lv",
+      "value": 6163.27880594039,
+      "count": 3459,
+      "first_block": 53189,
+      "last_block": 90979
+    },
+    {
+      "from": "bc1qj6s4a20mdnzap5e8uhag3w6psvts737w89nc4f",
+      "to": "bc1qvznw3w4w9yrf8u6u4cj7ka53l9smp5lmk9qyup",
+      "value": 6148.6871405767,
+      "count": 4272,
+      "first_block": 56593,
+      "last_block": 99496
+    },
+    {
+      "from": "bc1qksr940tf004jdtltz3uvpad7t5sq9de4c0u3na",
+      "to": "bc1qlznzzsasfclzc8384r96hv5jmvxfzd6z6pv4x4",
+      "value": 6000.000049942015,
+      "count": 1,
+      "first_block": 28706,
+      "last_block": 28706
+    },
+    {
+      "from": "bc1qywzldqyw2y4dkeq2zstspeqzrw39vaxxxveqds",
+      "to": "bc1qye5427zsvmzf8f6g3z53v6tydwxv6j86jc7mf7",
+      "value": 5851.218778339066,
+      "count": 368,
+      "first_block": 44030,
+      "last_block": 98052
+    },
+    {
+      "from": "bc1qex3s7tpm62ch6n0vmsr7s3n9kd7e3w232vqttv",
+      "to": "bc1qh0aa6d05yrpe9rtxg9xfg66wtcy9fv26pvwu6f",
+      "value": 5845.624279731154,
+      "count": 1558,
+      "first_block": 54655,
+      "last_block": 91080
+    },
+    {
+      "from": "bc1qye5427zsvmzf8f6g3z53v6tydwxv6j86jc7mf7",
+      "to": "bc1q2dfyw3nd63x34jn4u783w37yk9j43tjlwhqg8j",
+      "value": 5837.422204302754,
+      "count": 1362,
+      "first_block": 59897,
+      "last_block": 65589
+    },
+    {
+      "from": "bc1qlxx4drdj56qju6whjfazvz9445l8dr74lcunck",
+      "to": "bc1qye5427zsvmzf8f6g3z53v6tydwxv6j86jc7mf7",
+      "value": 5552.039263622133,
+      "count": 367,
+      "first_block": 45510,
+      "last_block": 97985
+    },
+    {
+      "from": "bc1qj5n5cdvjt597vxgz478jwcthp3pcx6lfhq28lv",
+      "to": "bc1qyn60p5wjla8nzzvj32r6hlrt2csl2ps6tet9qj",
+      "value": 5526.148009559539,
+      "count": 519,
+      "first_block": 48490,
+      "last_block": 55392
+    },
+    {
+      "from": "bc1qex3s7tpm62ch6n0vmsr7s3n9kd7e3w232vqttv",
+      "to": "bc1qqmplxqtqggtgqw78l987dfarwfx47lxsps5ppg",
+      "value": 5487.090958326569,
+      "count": 1869,
+      "first_block": 54717,
+      "last_block": 66530
+    },
+    {
+      "from": "bc1qex3s7tpm62ch6n0vmsr7s3n9kd7e3w232vqttv",
+      "to": "bc1q9nsrnlrwev96flvfh8vhp7e2p34grdp45relxl",
+      "value": 5336.769394163889,
+      "count": 2091,
+      "first_block": 48018,
+      "last_block": 90953
+    },
+    {
+      "from": "bc1qye5427zsvmzf8f6g3z53v6tydwxv6j86jc7mf7",
+      "to": "3MN1tXKePydQ5tUd9wmTz4j7xKEY8pN6a4",
+      "value": 5314.419811612646,
+      "count": 932,
+      "first_block": 77033,
+      "last_block": 108116
+    },
+    {
+      "from": "bc1qrh46q65z0mxua294xuj8q4swksadwfnxvs59z6",
+      "to": "3KcbbzXfgPJg7RLfuTgxTNhnCZDAwJCkyr",
+      "value": 5262.957670163206,
+      "count": 1,
+      "first_block": 109798,
+      "last_block": 109798
+    },
+    {
+      "from": "bc1qye5427zsvmzf8f6g3z53v6tydwxv6j86jc7mf7",
+      "to": "bc1qtpct2r9ymn29ztehv5uel3809shcuc5lx56ynh",
+      "value": 5252.536898583728,
+      "count": 918,
+      "first_block": 70871,
+      "last_block": 81667
+    },
+    {
+      "from": "bc1qf9ufpsj5k5rq3uexkke82xmeay3drw5mepmhmj",
+      "to": "bc1qye5427zsvmzf8f6g3z53v6tydwxv6j86jc7mf7",
+      "value": 5212.5500578199,
+      "count": 1909,
+      "first_block": 46287,
+      "last_block": 98131
+    },
+    {
+      "from": "bc1qr4uglvn0kef5vxau6vkma8ylhmah8tkp5u9qpd",
+      "to": "bc1qufeefx64w8wx2lameju0um08rukayxamhystfe",
+      "value": 5152.6199,
+      "count": 11,
+      "first_block": 66646,
+      "last_block": 97299
+    },
+    {
+      "from": "bc1qr329r4jnqfa2zacpzyrdvaj7tuejgra0ttnkps",
+      "to": "bc1q8n6vm9xtn2we8rt4yqy54mkwv45ryegc4m8ess",
+      "value": 5139.262141057945,
+      "count": 103,
+      "first_block": 40461,
+      "last_block": 41967
+    },
+    {
+      "from": "bc1qufeefx64w8wx2lameju0um08rukayxamhystfe",
+      "to": "3KF6F2i5iG6BCKZ7Avw58DZaKmrB1BWAu8",
+      "value": 5099.98138829556,
+      "count": 10,
+      "first_block": 86864,
+      "last_block": 86864
+    },
+    {
+      "from": "bc1qj6s4a20mdnzap5e8uhag3w6psvts737w89nc4f",
+      "to": "bc1q22setya6ghdt4xjhm8z0q4xqy5yww8gskkygz4",
+      "value": 5025.525365124415,
+      "count": 3760,
+      "first_block": 102608,
+      "last_block": 110429
+    },
+    {
+      "from": "bc1qufeefx64w8wx2lameju0um08rukayxamhystfe",
+      "to": "3E96yrKn9CLBMGyAnn8KVQJS6oms4UPpcK",
+      "value": 5022.814204291999,
+      "count": 26,
+      "first_block": 93275,
+      "last_block": 96183
+    },
+    {
+      "from": "bc1qye5427zsvmzf8f6g3z53v6tydwxv6j86jc7mf7",
+      "to": "3FZXhnv7yXXJSXRf85NJ2YcKbsPD19EFXu",
+      "value": 5001.14787807907,
+      "count": 1710,
+      "first_block": 58978,
+      "last_block": 92298
+    },
+    {
+      "from": "bc1q8zt5vygu65llrqrrd0k60ld9tpzyec38wpmfzt",
+      "to": "bc1qf85gjzh5nfh69jfq9l88aavaz675taledp6avz",
+      "value": 5000.000035676939,
+      "count": 1,
+      "first_block": 44181,
+      "last_block": 44181
+    },
+    {
+      "from": "bc1q2gee8xeepyq7zyg02t2qfgmcmf3zcdxnx0cfu9",
+      "to": "bc1q096ks0zj9jl5qxe0pxzkzv9r8q6nnn39hqq4up",
+      "value": 5000.000004391005,
+      "count": 4,
+      "first_block": 40466,
+      "last_block": 40475
+    },
+    {
+      "from": "bc1qxdv6ue2fa7qycskkk7n4mw2r4u79e9qgjta4ev",
+      "to": "bc1q27ehszslzlh45jlwvt9rrkl2mu37afe8vm25g9",
+      "value": 5000.000000504719,
+      "count": 1,
+      "first_block": 40739,
+      "last_block": 40739
+    },
+    {
+      "from": "bc1qf9xwz9c8d05u6tx6kp0v3hg4k8ywmtv5g632ap",
+      "to": "bc1q27ehszslzlh45jlwvt9rrkl2mu37afe8vm25g9",
+      "value": 5000.000000477917,
+      "count": 1,
+      "first_block": 40739,
+      "last_block": 40739
+    },
+    {
+      "from": "bc1qynjdr8d5k4lemmld0xz4umdtnuxhkc3cmrls6u",
+      "to": "bc1q27ehszslzlh45jlwvt9rrkl2mu37afe8vm25g9",
+      "value": 5000.000000403395,
+      "count": 1,
+      "first_block": 40737,
+      "last_block": 40737
+    },
+    {
+      "from": "bc1qmw2adjz82hncf2nxy2r9u6ymyscd663fakgd79",
+      "to": "bc1q27ehszslzlh45jlwvt9rrkl2mu37afe8vm25g9",
+      "value": 5000.00000038403,
+      "count": 1,
+      "first_block": 40733,
+      "last_block": 40733
+    },
+    {
+      "from": "bc1qpktx7afusaf3j2l50wh73atr0ka3a9q0qgkwvp",
+      "to": "bc1qsesq4yyrkch247c0genl0za92th4ku243f8z0r",
+      "value": 4998.5288286416835,
+      "count": 101,
+      "first_block": 41465,
+      "last_block": 41476
+    },
+    {
+      "from": "bc1qye5427zsvmzf8f6g3z53v6tydwxv6j86jc7mf7",
+      "to": "bc1ql6fkwz93tr67zwypz7x746rewaaksufjuhnlyt",
+      "value": 4967.797693141747,
+      "count": 118,
+      "first_block": 50467,
+      "last_block": 50470
+    },
+    {
+      "from": "bc1qfqlwzhtycywuucpmframv9303mm959wpx6x5uw",
+      "to": "bc1qye5427zsvmzf8f6g3z53v6tydwxv6j86jc7mf7",
+      "value": 4810.847250027288,
+      "count": 1314,
+      "first_block": 44986,
+      "last_block": 80391
+    },
+    {
+      "from": "bc1q9gsa0z8yyje9e6x6dsy7y8xdezlwjxfj3gqeq5",
+      "to": "bc1qye5427zsvmzf8f6g3z53v6tydwxv6j86jc7mf7",
+      "value": 4783.214036530988,
+      "count": 1117,
+      "first_block": 44820,
+      "last_block": 79116
+    },
+    {
+      "from": "bc1qex3s7tpm62ch6n0vmsr7s3n9kd7e3w232vqttv",
+      "to": "bc1q2fauuyuztah6w56qg7s6x2kct9e9cq73jvrdfn",
+      "value": 4766.150151245635,
+      "count": 1460,
+      "first_block": 53850,
+      "last_block": 63205
+    },
+    {
+      "from": "bc1qufeefx64w8wx2lameju0um08rukayxamhystfe",
+      "to": "3JRyK2PUMehy6dP7GXWicusw444QQkULpm",
+      "value": 4699.215500907016,
+      "count": 3,
+      "first_block": 56976,
+      "last_block": 61120
+    },
+    {
+      "from": "bc1queyywzdtfdnep3qn9pp42f9ahzu75pfdtj95pp",
+      "to": "bc1q8uazq3c6xurc8pn5ss3vaquhm8u7fccujlhwz9",
+      "value": 4685.037141237893,
+      "count": 74,
+      "first_block": 36495,
+      "last_block": 37310
+    },
+    {
+      "from": "bc1qwuqykgemu28t3yxkvw59mtk7fjnurhm4ydkfx6",
+      "to": "bc1qy2fk3y627gl53nu792l8sdn77fwsrnrt4smjl6",
+      "value": 4679.34638698317,
+      "count": 1334,
+      "first_block": 86795,
+      "last_block": 104480
+    },
+    {
+      "from": "bc1qex3s7tpm62ch6n0vmsr7s3n9kd7e3w232vqttv",
+      "to": "bc1q4t36awl3859cqts6tuqgja2lp3lvja4qygehdu",
+      "value": 4651.246494431612,
+      "count": 754,
+      "first_block": 52916,
+      "last_block": 57229
+    },
+    {
+      "from": "bc1qye5427zsvmzf8f6g3z53v6tydwxv6j86jc7mf7",
+      "to": "36RnWVnQRr5X6xoxiDs9E2GMsDsiBUhBbZ",
+      "value": 4629.493647746717,
+      "count": 1158,
+      "first_block": 68129,
+      "last_block": 94279
+    },
+    {
+      "from": "bc1qye5427zsvmzf8f6g3z53v6tydwxv6j86jc7mf7",
+      "to": "bc1qtzxahvsh97jyf743uqsh0eu5raetr5xh4mshk9",
+      "value": 4604.662677154016,
+      "count": 197,
+      "first_block": 97387,
+      "last_block": 110368
+    },
+    {
+      "from": "bc1q8n6vm9xtn2we8rt4yqy54mkwv45ryegc4m8ess",
+      "to": "bc1qf85gjzh5nfh69jfq9l88aavaz675taledp6avz",
+      "value": 4570.401871213911,
+      "count": 2,
+      "first_block": 42017,
+      "last_block": 48486
+    },
+    {
+      "from": "bc1qnqu7z9m4uj2kcc9a63la5juamlcsallp8t80e4",
+      "to": "bc1qufeefx64w8wx2lameju0um08rukayxamhystfe",
+      "value": 4541.22134699,
+      "count": 4,
+      "first_block": 53346,
+      "last_block": 100725
+    },
+    {
+      "from": "bc1q8uazq3c6xurc8pn5ss3vaquhm8u7fccujlhwz9",
+      "to": "bc1q44dwq2y6r9m60yxuvyu7ln54g2wx9vlxagkp2u",
+      "value": 4500.000080359369,
+      "count": 49,
+      "first_block": 36605,
+      "last_block": 37227
+    },
+    {
+      "from": "bc1qye5427zsvmzf8f6g3z53v6tydwxv6j86jc7mf7",
+      "to": "37YDoBksW2FWDcsAW53WN86qpqQYccmep3",
+      "value": 4346.975419227843,
+      "count": 1305,
+      "first_block": 54542,
+      "last_block": 67445
+    },
+    {
+      "from": "bc1qex3s7tpm62ch6n0vmsr7s3n9kd7e3w232vqttv",
+      "to": "bc1qek74haul008mfcf6waswsq3rplz54yjyz6ssyr",
+      "value": 4309.235062127606,
+      "count": 705,
+      "first_block": 53719,
+      "last_block": 64079
+    },
+    {
+      "from": "bc1qj6s4a20mdnzap5e8uhag3w6psvts737w89nc4f",
+      "to": "bc1qeg038nn3ssamvu04j9zfszc5gg3dydvs89fsgs",
+      "value": 4281.109757451605,
+      "count": 2041,
+      "first_block": 42956,
+      "last_block": 45492
+    },
+    {
+      "from": "bc1qg48j94eqz5dypr8kkv37c4yf8hjklqj7pxel23",
+      "to": "bc1qms924778f344qjgzehxvccrzu0lnpp68m5fqn8",
+      "value": 4211.23641,
+      "count": 2,
+      "first_block": 59456,
+      "last_block": 59456
+    },
+    {
+      "from": "bc1qufeefx64w8wx2lameju0um08rukayxamhystfe",
+      "to": "bc1qw3jjsdqg7uncf69wty78pk538p7hjp9p2xpde0",
+      "value": 4118.696566656628,
+      "count": 20,
+      "first_block": 53561,
+      "last_block": 100557
+    },
+    {
+      "from": "bc1qex3s7tpm62ch6n0vmsr7s3n9kd7e3w232vqttv",
+      "to": "bc1qfqlwzhtycywuucpmframv9303mm959wpx6x5uw",
+      "value": 4118.460022735051,
+      "count": 2412,
+      "first_block": 46763,
+      "last_block": 80374
+    },
+    {
+      "from": "bc1qufeefx64w8wx2lameju0um08rukayxamhystfe",
+      "to": "bc1qf7ndp606c5m368wlywde47eg9vuan7eeekk86t",
+      "value": 4090.766307606611,
+      "count": 5,
+      "first_block": 101647,
+      "last_block": 101647
+    },
+    {
+      "from": "bc1q4t36awl3859cqts6tuqgja2lp3lvja4qygehdu",
+      "to": "bc1qye5427zsvmzf8f6g3z53v6tydwxv6j86jc7mf7",
+      "value": 4070.7164726745523,
+      "count": 342,
+      "first_block": 51590,
+      "last_block": 65320
+    },
+    {
+      "from": "bc1q2q7zq9evjjqsc2zvwvtzpw2y6ptu0n795xjl9k",
+      "to": "bc1qye5427zsvmzf8f6g3z53v6tydwxv6j86jc7mf7",
+      "value": 3950.00238388,
+      "count": 2,
+      "first_block": 41079,
+      "last_block": 41098
+    },
+    {
+      "from": "bc1qye5427zsvmzf8f6g3z53v6tydwxv6j86jc7mf7",
+      "to": "3FHixW6AgDTCScdFdrZ8mP3y5tMyr9oNpt",
+      "value": 3927.3851259962294,
+      "count": 972,
+      "first_block": 61981,
+      "last_block": 110188
+    },
+    {
+      "from": "bc1qex3s7tpm62ch6n0vmsr7s3n9kd7e3w232vqttv",
+      "to": "bc1quzuc3wveg292287zj6djvehgckj9xvl49psdye",
+      "value": 3923.181418585219,
+      "count": 3457,
+      "first_block": 51775,
+      "last_block": 90979
+    },
+    {
+      "from": "bc1ql2sdht3dd8rmfw635mehpzxxvsvlrp0zunqvun",
+      "to": "bc1queyywzdtfdnep3qn9pp42f9ahzu75pfdtj95pp",
+      "value": 3888.2385195411184,
+      "count": 45,
+      "first_block": 76824,
+      "last_block": 76825
+    },
+    {
+      "from": "bc1qwqdzuht55la6cp7ugcqezgh47u4lfvpyqu7h0x",
+      "to": "bc1qwurdnf95z3wpppa48xu0ljdq7l2c9282hwg7ha",
+      "value": 3861.9022323724157,
+      "count": 4,
+      "first_block": 81722,
+      "last_block": 81722
+    },
+    {
+      "from": "bc1qj6s4a20mdnzap5e8uhag3w6psvts737w89nc4f",
+      "to": "bc1qh0aa6d05yrpe9rtxg9xfg66wtcy9fv26pvwu6f",
+      "value": 3837.6022468419883,
+      "count": 5832,
+      "first_block": 46448,
+      "last_block": 78262
+    },
+    {
+      "from": "bc1qj6s4a20mdnzap5e8uhag3w6psvts737w89nc4f",
+      "to": "bc1q5pu7q5a0vdd0fhtcvjuc4c5ehguzlm09xkavf7",
+      "value": 3793.2525651899555,
+      "count": 10185,
+      "first_block": 43963,
+      "last_block": 85675
+    },
+    {
+      "from": "bc1qye5427zsvmzf8f6g3z53v6tydwxv6j86jc7mf7",
+      "to": "37cDFs2oU1Wqx3BWhjeQQR5vLePAubkPXU",
+      "value": 3761.5491661807246,
+      "count": 500,
+      "first_block": 108829,
+      "last_block": 108829
+    },
+    {
+      "from": "3QUFWRQmRMqr6JT7f2vcGgMi5KSB4uMaGn",
+      "to": "bc1q097x3k6y2mgx2n2udhr6teyr63x4mcnfy0xwkv",
+      "value": 3733.3880103563993,
+      "count": 11,
+      "first_block": 62330,
+      "last_block": 84877
+    },
+    {
+      "from": "bc1qex3s7tpm62ch6n0vmsr7s3n9kd7e3w232vqttv",
+      "to": "bc1q9pv95v8vvdew5uryjqjmhu2c7a5hz53mc30pmr",
+      "value": 3687.889705002219,
+      "count": 608,
+      "first_block": 77838,
+      "last_block": 84054
+    },
+    {
+      "from": "bc1qj6s4a20mdnzap5e8uhag3w6psvts737w89nc4f",
+      "to": "bc1qec20ng67v3vxgfr6aq560am0wq0weg0wsurl2k",
+      "value": 3663.3245621622223,
+      "count": 4221,
+      "first_block": 45492,
+      "last_block": 104792
+    },
+    {
+      "from": "bc1qtckgnyd0ype4l8yz8jvg55ds235sjymkw657fd",
+      "to": "bc1qye5427zsvmzf8f6g3z53v6tydwxv6j86jc7mf7",
+      "value": 3618.249894544233,
+      "count": 1278,
+      "first_block": 45511,
+      "last_block": 92710
+    },
+    {
+      "from": "bc1qacyznjm6qv39xjs8ltalckh0l9mqe90960dzye",
+      "to": "bc1qufeefx64w8wx2lameju0um08rukayxamhystfe",
+      "value": 3411.26,
+      "count": 2,
+      "first_block": 57056,
+      "last_block": 57059
+    },
+    {
+      "from": "bc1qufeefx64w8wx2lameju0um08rukayxamhystfe",
+      "to": "19qaN2bCWz3TQwe2semuwEph9dC8wRYq4M",
+      "value": 3386.0258087909965,
+      "count": 3,
+      "first_block": 102227,
+      "last_block": 102227
+    },
+    {
+      "from": "bc1qye5427zsvmzf8f6g3z53v6tydwxv6j86jc7mf7",
+      "to": "bc1q4dcxhq8z7mgkerz8tym5g8glhm9gkwdnh4hd4m",
+      "value": 3384.943463808217,
+      "count": 795,
+      "first_block": 43432,
+      "last_block": 100816
+    },
+    {
+      "from": "bc1qkm86qcjxc5ad5vrq8y5xudzrcfrus2z2md8q0h",
+      "to": "bc1queyywzdtfdnep3qn9pp42f9ahzu75pfdtj95pp",
+      "value": 3350.000222495153,
+      "count": 1445,
+      "first_block": 40463,
+      "last_block": 41310
+    },
+    {
+      "from": "bc1qh4my8v7lla6xz6td78vczca4p6f0k8xm20ee08",
+      "to": "bc1qufeefx64w8wx2lameju0um08rukayxamhystfe",
+      "value": 3332.99,
+      "count": 2,
+      "first_block": 53108,
+      "last_block": 53108
+    },
+    {
+      "from": "bc1qwuqykgemu28t3yxkvw59mtk7fjnurhm4ydkfx6",
+      "to": "bc1qywzldqyw2y4dkeq2zstspeqzrw39vaxxxveqds",
+      "value": 3275.588260729844,
+      "count": 199,
+      "first_block": 92662,
+      "last_block": 93737
+    },
+    {
+      "from": "bc1q864rzrtqszpmlpkvfhecv9hel9zmhfj08ptl48",
+      "to": "bc1qye5427zsvmzf8f6g3z53v6tydwxv6j86jc7mf7",
+      "value": 3260.500570654482,
+      "count": 951,
+      "first_block": 45427,
+      "last_block": 97537
+    },
+    {
+      "from": "bc1qj6s4a20mdnzap5e8uhag3w6psvts737w89nc4f",
+      "to": "bc1qqs87w4pl8jang3xg0jzr3mcvm8hjf0kf7ake5f",
+      "value": 3258.595210825796,
+      "count": 104,
+      "first_block": 47330,
+      "last_block": 48375
+    },
+    {
+      "from": "bc1qex3s7tpm62ch6n0vmsr7s3n9kd7e3w232vqttv",
+      "to": "bc1q5zxmfnnte9klx49ctvrlgvsjdhcl7fzpw9upzm",
+      "value": 3208.595400190846,
+      "count": 2362,
+      "first_block": 49849,
+      "last_block": 81680
+    },
+    {
+      "from": "bc1qufeefx64w8wx2lameju0um08rukayxamhystfe",
+      "to": "bc1q72llsfjz6ep2m6edk85ldcdeansdmw0c0krr8a",
+      "value": 3207.519712092847,
+      "count": 36,
+      "first_block": 94194,
+      "last_block": 100132
+    },
+    {
+      "from": "bc1q5vryg45jxs3dwej0c6hwegka8zf959v9dx72u5",
+      "to": "bc1qatk5lwc2p3ftkx75yz27qxqpz8htrf6mnnev0a",
+      "value": 3199.9891006689722,
+      "count": 64,
+      "first_block": 32016,
+      "last_block": 32701
+    },
+    {
+      "from": "bc1qwuqykgemu28t3yxkvw59mtk7fjnurhm4ydkfx6",
+      "to": "bc1qx276t0cf2jhgxlwnkr0n4suhf754k53ac90hg7",
+      "value": 3197.693115037248,
+      "count": 957,
+      "first_block": 92690,
+      "last_block": 107760
+    },
+    {
+      "from": "bc1qj6s4a20mdnzap5e8uhag3w6psvts737w89nc4f",
+      "to": "bc1queyywzdtfdnep3qn9pp42f9ahzu75pfdtj95pp",
+      "value": 3138.0416785557677,
+      "count": 200,
+      "first_block": 37522,
+      "last_block": 38615
+    },
+    {
+      "from": "bc1qye5427zsvmzf8f6g3z53v6tydwxv6j86jc7mf7",
+      "to": "35FkHKVseZRzBwqDRJjw2EwD71m4rKjMSL",
+      "value": 3039.3066462955203,
+      "count": 78,
+      "first_block": 109304,
+      "last_block": 109306
+    },
+    {
+      "from": "bc1q5zxmfnnte9klx49ctvrlgvsjdhcl7fzpw9upzm",
+      "to": "bc1qye5427zsvmzf8f6g3z53v6tydwxv6j86jc7mf7",
+      "value": 3020.014657312165,
+      "count": 1190,
+      "first_block": 46071,
+      "last_block": 85293
+    },
+    {
+      "from": "bc1qye5427zsvmzf8f6g3z53v6tydwxv6j86jc7mf7",
+      "to": "3B5NwcEVEzYvdihYeNVdEoBm9S8BQveJgQ",
+      "value": 2984.115417617806,
+      "count": 1054,
+      "first_block": 64699,
+      "last_block": 80198
+    },
+    {
+      "from": "bc1qzckk4lcrahcfvfam7ty5u3tp2flulr808stkmd",
+      "to": "bc1qsesq4yyrkch247c0genl0za92th4ku243f8z0r",
+      "value": 2968.3606069535977,
+      "count": 60,
+      "first_block": 41465,
+      "last_block": 41476
+    },
+    {
+      "from": "bc1qex3s7tpm62ch6n0vmsr7s3n9kd7e3w232vqttv",
+      "to": "bc1qtckgnyd0ype4l8yz8jvg55ds235sjymkw657fd",
+      "value": 2905.2888897198513,
+      "count": 1987,
+      "first_block": 47978,
+      "last_block": 80441
+    },
+    {
+      "from": "bc1qex3s7tpm62ch6n0vmsr7s3n9kd7e3w232vqttv",
+      "to": "bc1q9gsa0z8yyje9e6x6dsy7y8xdezlwjxfj3gqeq5",
+      "value": 2846.289491892216,
+      "count": 1455,
+      "first_block": 51775,
+      "last_block": 65873
+    },
+    {
+      "from": "bc1qj6s4a20mdnzap5e8uhag3w6psvts737w89nc4f",
+      "to": "bc1q2fauuyuztah6w56qg7s6x2kct9e9cq73jvrdfn",
+      "value": 2842.8124566682086,
+      "count": 5818,
+      "first_block": 43264,
+      "last_block": 53879
+    },
+    {
+      "from": "bc1qye5427zsvmzf8f6g3z53v6tydwxv6j86jc7mf7",
+      "to": "3QUFWRQmRMqr6JT7f2vcGgMi5KSB4uMaGn",
+      "value": 2739.7563411307137,
+      "count": 621,
+      "first_block": 61425,
+      "last_block": 74205
+    },
+    {
+      "from": "bc1q097x3k6y2mgx2n2udhr6teyr63x4mcnfy0xwkv",
+      "to": "bc1qye5427zsvmzf8f6g3z53v6tydwxv6j86jc7mf7",
+      "value": 2712.7732872570296,
+      "count": 7,
+      "first_block": 62347,
+      "last_block": 92801
+    },
+    {
+      "from": "bc1q4520j6rkk8fdmzylyl0032t6ahhwud3qdyd9rk",
+      "to": "1Eg17Ey9qHr8BwzfLqbcSxUruXuLVnQxHF",
+      "value": 2691.7052339734064,
+      "count": 5,
+      "first_block": 73498,
+      "last_block": 73498
+    },
+    {
+      "from": "bc1qpktx7afusaf3j2l50wh73atr0ka3a9q0qgkwvp",
+      "to": "bc1qcvryh9hapjzjw3hjx5us7aynzj2thdj95pl3ea",
+      "value": 2634.1123215197945,
+      "count": 53,
+      "first_block": 39757,
+      "last_block": 40241
+    },
+    {
+      "from": "bc1qwqdzuht55la6cp7ugcqezgh47u4lfvpyqu7h0x",
+      "to": "bc1qye5427zsvmzf8f6g3z53v6tydwxv6j86jc7mf7",
+      "value": 2524.1484233807046,
+      "count": 33,
+      "first_block": 68846,
+      "last_block": 97892
+    },
+    {
+      "from": "bc1qtpct2r9ymn29ztehv5uel3809shcuc5lx56ynh",
+      "to": "bc1q0mzy4art309vtcds678qpxlgtfxcynvfjtrlx6",
+      "value": 2500.0000121228986,
+      "count": 13,
+      "first_block": 84923,
+      "last_block": 84923
+    },
+    {
+      "from": "bc1qvqxwt4hrx0a4wxy7yrhf32wjnl2cjd0la3l46n",
+      "to": "bc1q44dwq2y6r9m60yxuvyu7ln54g2wx9vlxagkp2u",
+      "value": 2500.0000065492877,
+      "count": 1,
+      "first_block": 36602,
+      "last_block": 36602
+    },
+    {
+      "from": "bc1qkuql5r0g5gql3fz3mjt6uksen3aa3e9fnvlpkf",
+      "to": "bc1q27ehszslzlh45jlwvt9rrkl2mu37afe8vm25g9",
+      "value": 2500.0000001875137,
+      "count": 1,
+      "first_block": 40730,
+      "last_block": 40730
+    },
+    {
+      "from": "bc1q4vjjyr6vwjh76cf3pgh24q4utj0r9mc3zjz0q5",
+      "to": "bc1q27ehszslzlh45jlwvt9rrkl2mu37afe8vm25g9",
+      "value": 2500.0000001832195,
+      "count": 1,
+      "first_block": 40719,
+      "last_block": 40719
+    },
+    {
+      "from": "bc1qwuqykgemu28t3yxkvw59mtk7fjnurhm4ydkfx6",
+      "to": "bc1qq36k4l4uvj9v52zakkc4a96s5a5ha278xa3rvw",
+      "value": 2438.868252887601,
+      "count": 279,
+      "first_block": 91461,
+      "last_block": 93737
+    },
+    {
+      "from": "bc1q2m3g0gtuztcl85kzd2dy8sz6vvlq7t6e52wl9y",
+      "to": "37cDFs2oU1Wqx3BWhjeQQR5vLePAubkPXU",
+      "value": 2405.9304674101872,
+      "count": 100,
+      "first_block": 108829,
+      "last_block": 108829
+    },
+    {
+      "from": "bc1qex3s7tpm62ch6n0vmsr7s3n9kd7e3w232vqttv",
+      "to": "bc1qvznw3w4w9yrf8u6u4cj7ka53l9smp5lmk9qyup",
+      "value": 2337.489523219431,
+      "count": 895,
+      "first_block": 56362,
+      "last_block": 91080
+    },
+    {
+      "from": "bc1qf7ndp606c5m368wlywde47eg9vuan7eeekk86t",
+      "to": "bc1qye5427zsvmzf8f6g3z53v6tydwxv6j86jc7mf7",
+      "value": 2270.0798,
+      "count": 4,
+      "first_block": 47327,
+      "last_block": 47798
+    },
+    {
+      "from": "bc1q0mzy4art309vtcds678qpxlgtfxcynvfjtrlx6",
+      "to": "bc1qye5427zsvmzf8f6g3z53v6tydwxv6j86jc7mf7",
+      "value": 2266.863107755775,
+      "count": 5,
+      "first_block": 65914,
+      "last_block": 91452
+    },
+    {
+      "from": "bc1qrh46q65z0mxua294xuj8q4swksadwfnxvs59z6",
+      "to": "3EgvfXhgpjuXyYNv4F3N6KpFBBtLs7FszV",
+      "value": 2259.9130753422482,
+      "count": 1,
+      "first_block": 102339,
+      "last_block": 102339
+    },
+    {
+      "from": "bc1qj6s4a20mdnzap5e8uhag3w6psvts737w89nc4f",
+      "to": "bc1q9gsa0z8yyje9e6x6dsy7y8xdezlwjxfj3gqeq5",
+      "value": 2230.3584420594552,
+      "count": 7057,
+      "first_block": 44803,
+      "last_block": 77886
+    },
+    {
+      "from": "bc1qye5427zsvmzf8f6g3z53v6tydwxv6j86jc7mf7",
+      "to": "bc1queyywzdtfdnep3qn9pp42f9ahzu75pfdtj95pp",
+      "value": 2228.871149193505,
+      "count": 520,
+      "first_block": 67124,
+      "last_block": 76825
+    },
+    {
+      "from": "bc1q0mzy4art309vtcds678qpxlgtfxcynvfjtrlx6",
+      "to": "bc1q4dcxhq8z7mgkerz8tym5g8glhm9gkwdnh4hd4m",
+      "value": 2180.815327613917,
+      "count": 3,
+      "first_block": 85002,
+      "last_block": 85002
+    },
+    {
+      "from": "bc1qmrey4tvn3m0xhwvcgxkrackuac2h7tua3f5cf2",
+      "to": "bc1qye5427zsvmzf8f6g3z53v6tydwxv6j86jc7mf7",
+      "value": 2053.8348109366357,
+      "count": 664,
+      "first_block": 51821,
+      "last_block": 98019
+    },
+    {
+      "from": "bc1q5pc365mdzcdh9ps0vdrz9jrxnvxmyhgv4pcvcu",
+      "to": "bc1qye5427zsvmzf8f6g3z53v6tydwxv6j86jc7mf7",
+      "value": 2047.628020663287,
+      "count": 12,
+      "first_block": 57086,
+      "last_block": 96796
+    },
+    {
+      "from": "bc1qlhh5t0ew4q9fhptvzqjsqrhm86mcp7fp9dm5uh",
+      "to": "bc1qye5427zsvmzf8f6g3z53v6tydwxv6j86jc7mf7",
+      "value": 2026.4305852114614,
+      "count": 799,
+      "first_block": 46342,
+      "last_block": 98131
+    },
+    {
+      "from": "bc1qcvryh9hapjzjw3hjx5us7aynzj2thdj95pl3ea",
+      "to": "bc1qlhs667typ5heqpj3ryay5c7j4p4xrf5v5hgzvv",
+      "value": 2000.0002417561263,
+      "count": 5,
+      "first_block": 40046,
+      "last_block": 40046
+    },
+    {
+      "from": "bc1qn4eq4krdvptm4yf5f9lsdhdm5h0u99wman3hyj",
+      "to": "bc1qlhs667typ5heqpj3ryay5c7j4p4xrf5v5hgzvv",
+      "value": 2000.0000480955148,
+      "count": 1,
+      "first_block": 40046,
+      "last_block": 40046
+    },
+    {
+      "from": "bc1q2hry8zsrrv3t6s6ngry7mdlk9htdd3j7gas49p",
+      "to": "bc1qa66qfcwq2uzduc03aqragvxmkwu3527wf537um",
+      "value": 2000.0000384546363,
+      "count": 1,
+      "first_block": 27164,
+      "last_block": 27164
+    },
+    {
+      "from": "bc1qug2jny5dkzuzhna5zhkmywhljupxjtx09h6rkd",
+      "to": "bc1qa66qfcwq2uzduc03aqragvxmkwu3527wf537um",
+      "value": 2000.0000352500758,
+      "count": 1,
+      "first_block": 27162,
+      "last_block": 27162
+    },
+    {
+      "from": "bc1qy6xa48w90rvff7czt7p686c0nn3lphnyu45kwr",
+      "to": "bc1qlznzzsasfclzc8384r96hv5jmvxfzd6z6pv4x4",
+      "value": 2000.0000318239465,
+      "count": 1,
+      "first_block": 32492,
+      "last_block": 32492
+    },
+    {
+      "from": "bc1qye5427zsvmzf8f6g3z53v6tydwxv6j86jc7mf7",
+      "to": "bc1q0p8avr70v2lklsqnaqul4qv3a65wev9lumkgu5",
+      "value": 1999.8940129682637,
+      "count": 3,
+      "first_block": 44332,
+      "last_block": 44332
+    },
+    {
+      "from": "bc1q58afndq6q5yn3xg3rga05vt6apa9fr6cp7g4tc",
+      "to": "bc1qlznzzsasfclzc8384r96hv5jmvxfzd6z6pv4x4",
+      "value": 1950.0080192991416,
+      "count": 135,
+      "first_block": 30850,
+      "last_block": 30850
+    },
+    {
+      "from": "bc1qye5427zsvmzf8f6g3z53v6tydwxv6j86jc7mf7",
+      "to": "bc1qy20xrzz7tm6us0xvmpcv0yam005kqav8j6yptn",
+      "value": 1916.346443149796,
+      "count": 5,
+      "first_block": 46219,
+      "last_block": 46219
+    },
+    {
+      "from": "bc1qye5427zsvmzf8f6g3z53v6tydwxv6j86jc7mf7",
+      "to": "1EsTi3DtKbE77pFhAvST58aYpW8DGdaHW",
+      "value": 1915.7885021338786,
+      "count": 561,
+      "first_block": 96952,
+      "last_block": 109814
+    },
+    {
+      "from": "bc1qye5427zsvmzf8f6g3z53v6tydwxv6j86jc7mf7",
+      "to": "bc1q8n6vm9xtn2we8rt4yqy54mkwv45ryegc4m8ess",
+      "value": 1915.349204711447,
+      "count": 4,
+      "first_block": 47218,
+      "last_block": 47218
+    },
+    {
+      "from": "bc1qy20xrzz7tm6us0xvmpcv0yam005kqav8j6yptn",
+      "to": "bc1qf85gjzh5nfh69jfq9l88aavaz675taledp6avz",
+      "value": 1915.0004232025483,
+      "count": 1,
+      "first_block": 46558,
+      "last_block": 46558
+    },
+    {
+      "from": "bc1q855mqx040u4lwhkh0r2ncafxe5ukjrt5xty7kk",
+      "to": "bc1qye5427zsvmzf8f6g3z53v6tydwxv6j86jc7mf7",
+      "value": 1906.7661259478705,
+      "count": 6,
+      "first_block": 94905,
+      "last_block": 95504
+    },
+    {
+      "from": "bc1qex3s7tpm62ch6n0vmsr7s3n9kd7e3w232vqttv",
+      "to": "bc1qyn60p5wjla8nzzvj32r6hlrt2csl2ps6tet9qj",
+      "value": 1795.6049153626243,
+      "count": 138,
+      "first_block": 56357,
+      "last_block": 60026
+    },
+    {
+      "from": "bc1qex3s7tpm62ch6n0vmsr7s3n9kd7e3w232vqttv",
+      "to": "bc1q5pu7q5a0vdd0fhtcvjuc4c5ehguzlm09xkavf7",
+      "value": 1763.3974286485184,
+      "count": 1222,
+      "first_block": 48060,
+      "last_block": 83308
+    },
+    {
+      "from": "bc1qrh46q65z0mxua294xuj8q4swksadwfnxvs59z6",
+      "to": "3FHixW6AgDTCScdFdrZ8mP3y5tMyr9oNpt",
+      "value": 1760.0382125724545,
+      "count": 1,
+      "first_block": 109789,
+      "last_block": 109789
+    },
+    {
+      "from": "bc1q4kgtjqw5m9upst30zkl4vm4w9trp0j6a5t32j7",
+      "to": "19qaN2bCWz3TQwe2semuwEph9dC8wRYq4M",
+      "value": 1752.6770633433125,
+      "count": 2,
+      "first_block": 104169,
+      "last_block": 104169
+    },
+    {
+      "from": "bc1q72llsfjz6ep2m6edk85ldcdeansdmw0c0krr8a",
+      "to": "bc1qye5427zsvmzf8f6g3z53v6tydwxv6j86jc7mf7",
+      "value": 1705.7638963902575,
+      "count": 8,
+      "first_block": 66835,
+      "last_block": 96679
+    },
+    {
+      "from": "bc1q5vryg45jxs3dwej0c6hwegka8zf959v9dx72u5",
+      "to": "bc1qlznzzsasfclzc8384r96hv5jmvxfzd6z6pv4x4",
+      "value": 1699.9605982464373,
+      "count": 34,
+      "first_block": 31860,
+      "last_block": 32189
+    },
+    {
+      "from": "bc1qyymylq0sejuhza0cu2u8lg9y2sqj7ses6vv4my",
+      "to": "3KcbbzXfgPJg7RLfuTgxTNhnCZDAwJCkyr",
+      "value": 1660.7795949531458,
+      "count": 311,
+      "first_block": 108399,
+      "last_block": 110225
+    },
+    {
+      "from": "bc1qj6s4a20mdnzap5e8uhag3w6psvts737w89nc4f",
+      "to": "bc1q4t36awl3859cqts6tuqgja2lp3lvja4qygehdu",
+      "value": 1655.5596932161955,
+      "count": 1041,
+      "first_block": 51571,
+      "last_block": 53080
+    },
+    {
+      "from": "bc1qye5427zsvmzf8f6g3z53v6tydwxv6j86jc7mf7",
+      "to": "bc1q6qty756mxrrzc5s99yvp2jpsm8ngxnhygqcqaw",
+      "value": 1645.8740717714452,
+      "count": 462,
+      "first_block": 54237,
+      "last_block": 100848
+    },
+    {
+      "from": "bc1qufeefx64w8wx2lameju0um08rukayxamhystfe",
+      "to": "bc1q4kgtjqw5m9upst30zkl4vm4w9trp0j6a5t32j7",
+      "value": 1559.0004949703118,
+      "count": 3,
+      "first_block": 53235,
+      "last_block": 53235
+    },
+    {
+      "from": "bc1qygwme30e88rz57pme8uf8pklkjjuqz396z227c",
+      "to": "bc1qye5427zsvmzf8f6g3z53v6tydwxv6j86jc7mf7",
+      "value": 1552.2369024347154,
+      "count": 4,
+      "first_block": 64688,
+      "last_block": 72827
+    },
+    {
+      "from": "bc1qewf3w2t67h9ll7ctkjm5c08sydrrg0fthaym9c",
+      "to": "bc1q2hzck7hp8qkxh2sml2pv3h8g82nfyq940jlzns",
+      "value": 1513.0241559425194,
+      "count": 650,
+      "first_block": 41606,
+      "last_block": 41606
+    },
+    {
+      "from": "bc1qatk5lwc2p3ftkx75yz27qxqpz8htrf6mnnev0a",
+      "to": "bc1qlznzzsasfclzc8384r96hv5jmvxfzd6z6pv4x4",
+      "value": 1500.0003790993908,
+      "count": 19,
+      "first_block": 32879,
+      "last_block": 32879
+    },
+    {
+      "from": "bc1ql6z0skw0xnc258as23467jm0s073yrzhdrrp07",
+      "to": "bc1qlznzzsasfclzc8384r96hv5jmvxfzd6z6pv4x4",
+      "value": 1500.0000308252813,
+      "count": 1,
+      "first_block": 32880,
+      "last_block": 32880
+    },
+    {
+      "from": "bc1qye5427zsvmzf8f6g3z53v6tydwxv6j86jc7mf7",
+      "to": "bc1qg3mtjcv9ghk8s9r6v2lmdypnn0tz7arrmcy92j",
+      "value": 1476.363796136589,
+      "count": 311,
+      "first_block": 53112,
+      "last_block": 55601
+    },
+    {
+      "from": "bc1qex3s7tpm62ch6n0vmsr7s3n9kd7e3w232vqttv",
+      "to": "bc1qmrey4tvn3m0xhwvcgxkrackuac2h7tua3f5cf2",
+      "value": 1475.772348744738,
+      "count": 980,
+      "first_block": 51803,
+      "last_block": 91080
+    },
+    {
+      "from": "bc1qj68h50wxq97847r4pty4mjj5mc7kfwhkdajljn",
+      "to": "bc1qcvryh9hapjzjw3hjx5us7aynzj2thdj95pl3ea",
+      "value": 1390.0001225301617,
+      "count": 53,
+      "first_block": 39176,
+      "last_block": 39176
+    },
+    {
+      "from": "bc1qj6s4a20mdnzap5e8uhag3w6psvts737w89nc4f",
+      "to": "bc1qmrey4tvn3m0xhwvcgxkrackuac2h7tua3f5cf2",
+      "value": 1303.0437671685936,
+      "count": 451,
+      "first_block": 90884,
+      "last_block": 108007
+    },
+    {
+      "from": "bc1q622664aqq9wx643dl4rczpevn4qpk9z0kmzmr8",
+      "to": "37cDFs2oU1Wqx3BWhjeQQR5vLePAubkPXU",
+      "value": 1228.0184419080124,
+      "count": 300,
+      "first_block": 108829,
+      "last_block": 108829
+    },
+    {
+      "from": "bc1qztjs7z84mtl2x4w9ttwfdka2peu85ur5fzwndp",
+      "to": "bc1qlhs667typ5heqpj3ryay5c7j4p4xrf5v5hgzvv",
+      "value": 1226.3028487926892,
+      "count": 37,
+      "first_block": 39899,
+      "last_block": 40069
+    },
+    {
+      "from": "bc1qye5427zsvmzf8f6g3z53v6tydwxv6j86jc7mf7",
+      "to": "bc1q8uazq3c6xurc8pn5ss3vaquhm8u7fccujlhwz9",
+      "value": 1200.5009610981695,
+      "count": 3,
+      "first_block": 43028,
+      "last_block": 45523
+    },
+    {
+      "from": "bc1qrh46q65z0mxua294xuj8q4swksadwfnxvs59z6",
+      "to": "3EyLo6BtUbLPFVrFYP1FtBrobswxSA8mmB",
+      "value": 1199.2659691992749,
+      "count": 1,
+      "first_block": 105756,
+      "last_block": 105756
+    },
+    {
+      "from": "146jCcRXDZrXbgxUrxe6BKZWxL8S3nz9bY",
+      "to": "bc1qy2fk3y627gl53nu792l8sdn77fwsrnrt4smjl6",
+      "value": 1179.9360986909942,
+      "count": 242,
+      "first_block": 104359,
+      "last_block": 108008
+    },
+    {
+      "from": "bc1qyymylq0sejuhza0cu2u8lg9y2sqj7ses6vv4my",
+      "to": "19qaN2bCWz3TQwe2semuwEph9dC8wRYq4M",
+      "value": 1114.5872680220084,
+      "count": 200,
+      "first_block": 102229,
+      "last_block": 104169
+    },
+    {
+      "from": "bc1qye5427zsvmzf8f6g3z53v6tydwxv6j86jc7mf7",
+      "to": "bc1qj6s4a20mdnzap5e8uhag3w6psvts737w89nc4f",
+      "value": 1105.699446470408,
+      "count": 9,
+      "first_block": 47692,
+      "last_block": 51083
+    },
+    {
+      "from": "bc1q4t0vdl534ks7a73a09mn9wskg3y54xk7vumxjy",
+      "to": "bc1qy20xrzz7tm6us0xvmpcv0yam005kqav8j6yptn",
+      "value": 1076.0214436336805,
+      "count": 20,
+      "first_block": 37677,
+      "last_block": 38068
+    },
+    {
+      "from": "bc1q864rzrtqszpmlpkvfhecv9hel9zmhfj08ptl48",
+      "to": "3KcbbzXfgPJg7RLfuTgxTNhnCZDAwJCkyr",
+      "value": 1056.986907553038,
+      "count": 103,
+      "first_block": 108399,
+      "last_block": 109798
+    },
+    {
+      "from": "bc1qx276t0cf2jhgxlwnkr0n4suhf754k53ac90hg7",
+      "to": "bc1qye5427zsvmzf8f6g3z53v6tydwxv6j86jc7mf7",
+      "value": 1008.0082442397809,
+      "count": 339,
+      "first_block": 92707,
+      "last_block": 98134
+    },
+    {
+      "from": "bc1qye5427zsvmzf8f6g3z53v6tydwxv6j86jc7mf7",
+      "to": "bc1qtrrzs0vxrcydhvk2jwcjj4c9vwqp7jf2vwumtp",
+      "value": 1002.6874325446527,
+      "count": 134,
+      "first_block": 98510,
+      "last_block": 108501
+    },
+    {
+      "from": "bc1qufeefx64w8wx2lameju0um08rukayxamhystfe",
+      "to": "bc1qg48j94eqz5dypr8kkv37c4yf8hjklqj7pxel23",
+      "value": 1000.5160398697162,
+      "count": 1,
+      "first_block": 54644,
+      "last_block": 54644
+    },
+    {
+      "from": "bc1q8n6vm9xtn2we8rt4yqy54mkwv45ryegc4m8ess",
+      "to": "bc1qlhs667typ5heqpj3ryay5c7j4p4xrf5v5hgzvv",
+      "value": 1000.0003300001088,
+      "count": 2,
+      "first_block": 40043,
+      "last_block": 40043
+    },
+    {
+      "from": "bc1q8p8u5eesm2fvlpdd8kgp5z7v3d0lwvh0uunle8",
+      "to": "bc1qlznzzsasfclzc8384r96hv5jmvxfzd6z6pv4x4",
+      "value": 1000.0000142983871,
+      "count": 1,
+      "first_block": 32489,
+      "last_block": 32489
+    },
+    {
+      "from": "bc1q44dwq2y6r9m60yxuvyu7ln54g2wx9vlxagkp2u",
+      "to": "bc1qcvryh9hapjzjw3hjx5us7aynzj2thdj95pl3ea",
+      "value": 1000.0000018571428,
+      "count": 6,
+      "first_block": 38771,
+      "last_block": 38771
+    },
+    {
+      "from": "bc1qu499vya6yuzhwpq0khn0qqt4f5x5u440zpxzfe",
+      "to": "bc1qcvryh9hapjzjw3hjx5us7aynzj2thdj95pl3ea",
+      "value": 1000.0000011,
+      "count": 2,
+      "first_block": 38771,
+      "last_block": 38771
+    }
+  ]
+}
