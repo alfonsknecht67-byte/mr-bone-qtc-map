@@ -254,3 +254,53 @@ footer strong {
     width: min(65vw, 300px);
   }
 }
+
+/* =========================================================
+   MR. BONE — ON-CHAIN ADDRESS TICKER
+   ========================================================= */
+
+#wallet-ticker {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(140px, 1fr));
+  gap: 12px;
+  margin: 0 0 16px 0;
+  padding: 12px;
+}
+
+#wallet-ticker .ticker-item {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  min-height: 58px;
+  padding: 10px 14px;
+  border-radius: 10px;
+  background: rgba(255,255,255,0.04);
+  border: 1px solid rgba(255,255,255,0.10);
+}
+
+#wallet-ticker .ticker-label {
+  font-size: 11px;
+  line-height: 1.2;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  opacity: 0.65;
+  margin-bottom: 5px;
+}
+
+#wallet-ticker strong {
+  font-size: 19px;
+  line-height: 1.2;
+  font-weight: 700;
+}
+
+@media (max-width: 900px) {
+  #wallet-ticker {
+    grid-template-columns: repeat(2, minmax(140px, 1fr));
+  }
+}
+
+@media (max-width: 520px) {
+  #wallet-ticker {
+    grid-template-columns: 1fr;
+  }
+}

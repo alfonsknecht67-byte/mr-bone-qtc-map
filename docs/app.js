@@ -6,6 +6,11 @@ const datasetInfoEl = document.getElementById("dataset-info");
 const searchEl = document.getElementById("search");
 
 const analysisStatsEl = document.getElementById("analysis-stats");
+
+const tickerKnownEl = document.getElementById("ticker-known");
+const tickerFundedEl = document.getElementById("ticker-funded");
+const tickerSupplyEl = document.getElementById("ticker-supply");
+const tickerBlockEl = document.getElementById("ticker-block");
 const clusterInfoEl = document.getElementById("cluster-info");
 
 let network = null;
@@ -20,6 +25,31 @@ let neighborhoodMode = false;
 let selectedNode = null;
 
 const WHALE_THRESHOLD = 30000;
+
+function updateWalletTicker(data) {
+  const stats = data.live_stats || {};
+
+  if (tickerKnownEl) {
+    tickerKnownEl.textContent =
+      Number(stats.known_addresses || 0).toLocaleString("en-US");
+  }
+
+  if (tickerFundedEl) {
+    tickerFundedEl.textContent =
+      Number(stats.active_wallets || stats.utxo_addresses || 0)
+        .toLocaleString("en-US");
+  }
+
+  if (tickerSupplyEl) {
+    tickerSupplyEl.textContent =
+      Number(stats.total_utxo_qtc || 0).toLocaleString("en-US") + " QTC";
+  }
+
+  if (tickerBlockEl) {
+    tickerBlockEl.textContent =
+      Number(stats.latest_indexed_block || 0).toLocaleString("en-US");
+  }
+}
 
 function number(value) {
   return Number.isFinite(Number(value))
@@ -224,7 +254,7 @@ function whaleView() {
 
 function showNeighborhood() {
   if (selectedNode === null) {
-    alert("Bitte zuerst eine Click an address to inspect it.");
+    alert("Please click an address to inspect it first.");
     return;
   }
 
@@ -386,6 +416,8 @@ function findAddress() {
 }
 
 function render(data) {
+  updateWalletTicker(data);
+
   nodeData =
     Array.isArray(data.nodes) ? data.nodes : [];
 
