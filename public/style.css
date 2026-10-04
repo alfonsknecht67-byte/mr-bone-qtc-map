@@ -24,17 +24,12 @@ body {
   background: #0d0d0d;
 }
 
-.brand {
-  font-size: 1.45rem;
-  font-weight: 900;
-  letter-spacing: .2em;
-}
-
-.subtitle {
-  margin-top: 4px;
-  color: #888;
-  font-size: .78rem;
-  letter-spacing: .15em;
+.site-title {
+  font-size: clamp(1.55rem, 3vw, 2.35rem);
+  font-weight: 800;
+  letter-spacing: .16em;
+  line-height: 1.15;
+  color: #eee;
 }
 
 .status {
