@@ -299,3 +299,24 @@ footer strong {
     grid-template-columns: 1fr;
   }
 }
+
+/* =========================================================
+   MR. BONE — EXCHANGE WALLET HIGHLIGHT
+   ========================================================= */
+
+.legend .exchange-dot {
+  display: inline-block;
+  width: 11px;
+  height: 11px;
+  border-radius: 50%;
+  margin-right: 5px;
+  background: #f2c94c;
+  border: 2px solid #fff1a8;
+  box-shadow: 0 0 9px rgba(242, 201, 76, 0.9);
+  vertical-align: -1px;
+}
+
+.legend .exchange-legend {
+  color: #f4df91;
+  font-weight: 700;
+}

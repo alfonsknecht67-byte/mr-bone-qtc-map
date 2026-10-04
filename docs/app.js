@@ -78,17 +78,60 @@ function nodeSize(n) {
 }
 
 function buildNodes(data) {
-  return data.nodes.map(n => ({
-    ...n,
-    label: n.label || n.id,
-    title:
-      `<b>${n.full_address || n.id}</b><br>` +
-      `Balance: ${number(n.balance)} QTC<br>` +
-      `Received: ${number(n.received)} QTC<br>` +
-      `Sent: ${number(n.sent)} QTC<br>` +
-      `Transactions: ${number(n.tx_count)}`,
-    size: nodeSize(n)
-  }));
+  return data.nodes.map(n => {
+    const isExchange =
+      n.label === "CoinEx Exchange Wallet" ||
+      n.label === "SafeTrade Exchange Wallet";
+
+    return {
+      ...n,
+      label: n.label || n.id,
+      group: isExchange ? "exchange" : undefined,
+      title:
+        `<b>${n.label || n.full_address || n.id}</b><br>` +
+        `${n.full_address || n.id}<br>` +
+        `Balance: ${number(n.balance)} QTC<br>` +
+        `Received: ${number(n.received)} QTC<br>` +
+        `Sent: ${number(n.sent)} QTC<br>` +
+        `Transactions: ${number(n.tx_count)}`,
+      size: isExchange
+        ? Math.max(nodeSize(n), 20)
+        : nodeSize(n),
+      borderWidth: isExchange ? 4 : 2,
+      color: isExchange
+        ? {
+            background: "#f2c94c",
+            border: "#fff1a8",
+            highlight: {
+              background: "#ffe082",
+              border: "#ffffff"
+            },
+            hover: {
+              background: "#ffd54f",
+              border: "#ffffff"
+            }
+          }
+        : undefined,
+      shadow: isExchange
+        ? {
+            enabled: true,
+            color: "rgba(242, 201, 76, 0.85)",
+            size: 22,
+            x: 0,
+            y: 0
+          }
+        : undefined,
+      font: isExchange
+        ? {
+            color: "#ffffff",
+            size: 13,
+            face: "Inter",
+            strokeWidth: 3,
+            strokeColor: "#000000"
+          }
+        : undefined
+    };
+  });
 }
 
 function buildEdges(data) {
@@ -455,6 +498,40 @@ function render(data) {
         font: {
           color: "#e8e8e8",
           size: 11
+        }
+      },
+
+      groups: {
+        exchange: {
+          shape: "dot",
+          size: 30,
+          borderWidth: 5,
+          color: {
+            background: "#f2c94c",
+            border: "#fff4b0",
+            highlight: {
+              background: "#ffe082",
+              border: "#ffffff"
+            },
+            hover: {
+              background: "#ffd54f",
+              border: "#ffffff"
+            }
+          },
+          font: {
+            color: "#ffffff",
+            size: 14,
+            face: "Inter",
+            strokeWidth: 4,
+            strokeColor: "#000000"
+          },
+          shadow: {
+            enabled: true,
+            color: "rgba(242, 201, 76, 0.95)",
+            size: 30,
+            x: 0,
+            y: 0
+          }
         }
       },
 
