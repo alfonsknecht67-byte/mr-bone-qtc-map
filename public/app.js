@@ -224,7 +224,7 @@ function whaleView() {
 
 function showNeighborhood() {
   if (selectedNode === null) {
-    alert("Bitte zuerst eine Address anklicken.");
+    alert("Bitte zuerst eine Click an address to inspect it.");
     return;
   }
 
