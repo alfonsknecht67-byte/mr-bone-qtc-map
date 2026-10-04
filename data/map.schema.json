@@ -2,21 +2,65 @@
   "$schema": "https://json-schema.org/draft/2020-12/schema",
   "title": "Mr. Bone Public Bubble Map",
   "type": "object",
-  "required": ["version", "generated_at", "source", "nodes", "edges"],
+  "required": [
+    "version",
+    "generated_at",
+    "source",
+    "attribution",
+    "nodes",
+    "edges"
+  ],
   "properties": {
-    "version": { "type": "integer" },
-    "generated_at": { "type": ["string", "null"] },
-    "source": { "type": "string" },
+    "version": {
+      "type": "integer"
+    },
+    "generated_at": {
+      "type": ["string", "null"]
+    },
+    "source": {
+      "type": "string"
+    },
+    "attribution": {
+      "type": "string"
+    },
     "nodes": {
       "type": "array",
       "items": {
         "type": "object",
-        "required": ["id", "label", "type"],
+        "required": [
+          "id",
+          "label",
+          "full_address",
+          "type"
+        ],
         "properties": {
-          "id": { "type": "string" },
-          "label": { "type": "string" },
-          "type": { "enum": ["address", "cluster", "exchange"] },
-          "value": { "type": ["number", "null"] }
+          "id": {
+            "type": "string"
+          },
+          "label": {
+            "type": "string"
+          },
+          "full_address": {
+            "type": "string"
+          },
+          "type": {
+            "const": "address"
+          },
+          "balance": {
+            "type": ["number", "null"]
+          },
+          "received": {
+            "type": ["number", "null"]
+          },
+          "sent": {
+            "type": ["number", "null"]
+          },
+          "tx_count": {
+            "type": ["number", "null"]
+          },
+          "size": {
+            "type": ["number", "null"]
+          }
         },
         "additionalProperties": false
       }
@@ -25,12 +69,29 @@
       "type": "array",
       "items": {
         "type": "object",
-        "required": ["from", "to"],
+        "required": [
+          "from",
+          "to"
+        ],
         "properties": {
-          "from": { "type": "string" },
-          "to": { "type": "string" },
-          "value": { "type": ["number", "null"] },
-          "label": { "type": ["string", "null"] }
+          "from": {
+            "type": "string"
+          },
+          "to": {
+            "type": "string"
+          },
+          "value": {
+            "type": ["number", "null"]
+          },
+          "count": {
+            "type": ["number", "null"]
+          },
+          "first_block": {
+            "type": ["integer", "null"]
+          },
+          "last_block": {
+            "type": ["integer", "null"]
+          }
         },
         "additionalProperties": false
       }

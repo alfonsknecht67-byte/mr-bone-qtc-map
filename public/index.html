@@ -3,52 +3,89 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="description" content="Mr. Bone — public QTC on-chain Bubble Map">
+  <meta name="description" content="Mr. Bone — QTC public on-chain Bubble Map">
   <meta name="author" content="Mr. Bone">
-  <title>Mr. Bone | QTC Bubble Map</title>
+  <title>Mr. Bone — QTC Bubble Map</title>
   <link rel="stylesheet" href="style.css">
   <script src="https://unpkg.com/vis-network@9.1.9/standalone/umd/vis-network.min.js"></script>
 </head>
 <body>
-  <header class="topbar">
-    <div>
-      <div class="brand">MR. BONE</div>
-      <div class="subtitle">QTC BUBBLE MAP</div>
+<header class="topbar">
+  <div>
+    <div class="brand">MR. BONE</div>
+    <div class="subtitle">QTC ON-CHAIN BUBBLE MAP</div>
+  </div>
+  <div class="status" id="status">Loading…</div>
+</header>
+
+<main class="layout">
+  <section class="map-panel">
+    <div id="map"></div>
+
+    <div class="map-tools">
+      <input id="search"
+             type="text"
+             placeholder="Search QTC address…"
+             autocomplete="off">
+      <button id="search-btn">Search</button>
+      <button id="fit">Fit</button>
+      <button id="physics">Physics</button>
     </div>
-    <div class="status" id="status">Loading public dataset…</div>
-  </header>
 
-  <main class="layout">
-    <section class="map-panel">
-      <div id="map"></div>
-      <div class="legend">
-        <span><i class="dot address"></i> Address</span>
-        <span><i class="dot cluster"></i> Cluster</span>
-        <span><i class="dot exchange"></i> Exchange</span>
+    <div class="legend">
+      <span><i class="dot"></i> Public on-chain address</span>
+      <span><i class="line"></i> On-chain relationship</span>
+    </div>
+  </section>
+
+  <aside class="sidebar">
+    <h2>QTC Bubble Map</h2>
+
+    <p class="muted">
+      Public visualization of approved on-chain data.
+      Addresses shown here are blockchain identifiers and do not constitute
+      verified identity or ownership claims.
+    </p>
+
+    <div class="stats">
+      <div>
+        <strong id="node-count">0</strong>
+        <span>Nodes</span>
       </div>
-    </section>
-
-    <aside class="sidebar">
-      <h2>On-chain map</h2>
-      <p class="muted">Public visualization only. No private node or wallet-monitoring data is embedded in this application.</p>
-
-      <div class="stats">
-        <div><strong id="node-count">0</strong><span>Nodes</span></div>
-        <div><strong id="edge-count">0</strong><span>Links</span></div>
+      <div>
+        <strong id="edge-count">0</strong>
+        <span>Links</span>
       </div>
+    </div>
 
+    <div class="section">
+      <h3>Selected address</h3>
+      <div id="details" class="details">
+        Click a node to inspect it.
+      </div>
+    </div>
+
+    <div class="section">
+      <h3>View</h3>
       <div class="controls">
-        <button id="fit">Fit map</button>
-        <button id="physics">Toggle physics</button>
+        <button id="show-all">Show all</button>
+        <button id="large-only">≥ 50k QTC</button>
+        <button id="reset">Reset</button>
       </div>
+    </div>
 
-      <div class="notice" id="notice">
-        The public dataset is currently empty. Approved on-chain data can be added later to <code>data/map.json</code>.
-      </div>
-    </aside>
-  </main>
+    <div class="section">
+      <h3>Dataset</h3>
+      <div id="dataset-info" class="dataset-info">Loading…</div>
+    </div>
+  </aside>
+</main>
 
-  <footer>© 2026 Mr. Bone · On-chain analysis &amp; visualization</footer>
-  <script src="app.js"></script>
+<footer>
+  <div><strong>Mr. Bone</strong> — Created &amp; maintained by Mr. Bone</div>
+  <div>© 2026 Mr. Bone · QTC On-chain Analysis &amp; Visualization</div>
+</footer>
+
+<script src="app.js"></script>
 </body>
 </html>
