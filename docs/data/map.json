@@ -1,415 +1,514 @@
 {
-  "version": 2,
-  "generated_at": "2026-10-04T10:55:44.010462+00:00",
+  "version": 3,
+  "generated_at": "2026-10-04T14:56:33.618324+00:00",
   "source": "public-approved-on-chain-data",
   "attribution": "Mr. Bone",
+  "balance_definition": {
+    "field": "balance",
+    "source": "chain_utxos",
+    "rule": "SUM(amount) WHERE spent = 0 GROUP BY address",
+    "verified_against_node": true,
+    "verified_block": 110486,
+    "verified_total_qtc": 5524300.0
+  },
+  "live_stats": {
+    "known_addresses": 45714,
+    "active_wallets": 5280,
+    "utxo_addresses": 5280,
+    "utxo_only_addresses": 1854,
+    "wallet_only_addresses": 40434,
+    "latest_indexed_block": 110486,
+    "total_utxo_qtc": 5524300.0
+  },
+  "heuristic_notice": "Flows may be heuristically reconstructed. A connection does not automatically prove ownership.",
+  "graph_scope": {
+    "visualized_nodes": 231,
+    "visualized_edges": 390,
+    "known_addresses": 45714,
+    "funded_addresses": 5280,
+    "note": "The public graph visualizes the approved graph subset. Network-wide address statistics are provided separately."
+  },
   "nodes": [
     {
       "id": "bc1q257t5sel9fu4k467gkx3tkqjym3twnz5863p9k",
       "label": "bc1q257t5sel…",
       "full_address": "bc1q257t5sel9fu4k467gkx3tkqjym3twnz5863p9k",
       "type": "address",
-      "balance": 777343.2075820001,
+      "balance": 0.0,
       "received": 901800.0,
       "sent": 124406.792418,
       "tx_count": 18066,
-      "size": 55
+      "size": 55,
+      "balance_source": "chain_utxos_unspent",
+      "unspent_utxos": 0
     },
     {
       "id": "bc1qj6s4a20mdnzap5e8uhag3w6psvts737w89nc4f",
       "label": "bc1qj6s4a20m…",
       "full_address": "bc1qj6s4a20mdnzap5e8uhag3w6psvts737w89nc4f",
       "type": "address",
-      "balance": -243871.13363825076,
+      "balance": 20839.51785427,
       "received": 1170328.5,
       "sent": 1414150.133638242,
       "tx_count": 31100,
-      "size": 8
+      "size": 8,
+      "balance_source": "chain_utxos_unspent",
+      "unspent_utxos": 421
     },
     {
       "id": "bc1qye5427zsvmzf8f6g3z53v6tydwxv6j86jc7mf7",
       "label": "bc1qye5427zs…",
       "full_address": "bc1qye5427zsvmzf8f6g3z53v6tydwxv6j86jc7mf7",
       "type": "address",
-      "balance": -327554.16450542083,
+      "balance": 81998.74269417,
       "received": 770483.7905825935,
       "sent": 1098036.955099018,
       "tx_count": 18857,
-      "size": 8
+      "size": 8,
+      "balance_source": "chain_utxos_unspent",
+      "unspent_utxos": 11855
     },
     {
       "id": "bc1q8uazq3c6xurc8pn5ss3vaquhm8u7fccujlhwz9",
       "label": "bc1q8uazq3c6…",
       "full_address": "bc1q8uazq3c6xurc8pn5ss3vaquhm8u7fccujlhwz9",
       "type": "address",
-      "balance": 133772.898603,
+      "balance": 0.0,
       "received": 166619.898603,
       "sent": 30848.0,
       "tx_count": 85,
-      "size": 55
+      "size": 55,
+      "balance_source": "chain_utxos_unspent",
+      "unspent_utxos": 0
     },
     {
       "id": "19qaN2bCWz3TQwe2semuwEph9dC8wRYq4M",
       "label": "19qaN2bCWz3T…",
       "full_address": "19qaN2bCWz3TQwe2semuwEph9dC8wRYq4M",
       "type": "address",
-      "balance": 99950.36095091,
+      "balance": 160254.18920739,
       "received": 103336.38651985,
       "sent": 0.0,
       "tx_count": 5,
-      "size": 55
+      "size": 55,
+      "balance_source": "chain_utxos_unspent",
+      "unspent_utxos": 8
     },
     {
       "id": "bc1qr329r4jnqfa2zacpzyrdvaj7tuejgra0ttnkps",
       "label": "bc1qr329r4jn…",
       "full_address": "bc1qr329r4jnqfa2zacpzyrdvaj7tuejgra0ttnkps",
       "type": "address",
-      "balance": 99449.35116706,
+      "balance": 0.0,
       "received": 146300.0,
       "sent": 46800.648832939994,
       "tx_count": 2961,
-      "size": 55
+      "size": 55,
+      "balance_source": "chain_utxos_unspent",
+      "unspent_utxos": 0
     },
     {
       "id": "bc1qlznzzsasfclzc8384r96hv5jmvxfzd6z6pv4x4",
       "label": "bc1qlznzzsas…",
       "full_address": "bc1qlznzzsasfclzc8384r96hv5jmvxfzd6z6pv4x4",
       "type": "address",
-      "balance": 74114.356034,
+      "balance": 0.0,
       "received": 80114.356034,
       "sent": 0.0,
       "tx_count": 43,
-      "size": 55
+      "size": 55,
+      "balance_source": "chain_utxos_unspent",
+      "unspent_utxos": 0
     },
     {
       "id": "37cDFs2oU1Wqx3BWhjeQQR5vLePAubkPXU",
       "label": "37cDFs2oU1Wq…",
       "full_address": "37cDFs2oU1Wqx3BWhjeQQR5vLePAubkPXU",
       "type": "address",
-      "balance": 72784.0120111,
+      "balance": 72794.0020111,
       "received": 72794.0020111,
       "sent": 0.0,
       "tx_count": 2,
-      "size": 55
+      "size": 55,
+      "balance_source": "chain_utxos_unspent",
+      "unspent_utxos": 2
     },
     {
       "id": "bc1q27ehszslzlh45jlwvt9rrkl2mu37afe8vm25g9",
       "label": "bc1q27ehszsl…",
       "full_address": "bc1q27ehszslzlh45jlwvt9rrkl2mu37afe8vm25g9",
       "type": "address",
-      "balance": 59836.0,
+      "balance": 0.0,
       "received": 60336.0,
       "sent": 0.0,
       "tx_count": 14,
-      "size": 55
+      "size": 55,
+      "balance_source": "chain_utxos_unspent",
+      "unspent_utxos": 0
     },
     {
       "id": "bc1qgc48799w3pney8s2ye2zrfh6xlca2fgftxfj6h",
       "label": "bc1qgc48799w…",
       "full_address": "bc1qgc48799w3pney8s2ye2zrfh6xlca2fgftxfj6h",
       "type": "address",
-      "balance": 49415.160225,
+      "balance": 0.0,
       "received": 54531.01424,
       "sent": 0.0,
       "tx_count": 16,
-      "size": 55
+      "size": 55,
+      "balance_source": "chain_utxos_unspent",
+      "unspent_utxos": 0
     },
     {
       "id": "3KF6F2i5iG6BCKZ7Avw58DZaKmrB1BWAu8",
       "label": "3KF6F2i5iG6B…",
       "full_address": "3KF6F2i5iG6BCKZ7Avw58DZaKmrB1BWAu8",
       "type": "address",
-      "balance": 46148.704890700006,
+      "balance": 157765.0212924,
       "received": 46153.694890700004,
       "sent": 0.0,
       "tx_count": 10,
-      "size": 55
+      "size": 55,
+      "balance_source": "chain_utxos_unspent",
+      "unspent_utxos": 16
     },
     {
       "id": "3D4c7ur4sZXVtiCUSXEpLXqdeh2UpsC7YY",
       "label": "3D4c7ur4sZXV…",
       "full_address": "3D4c7ur4sZXVtiCUSXEpLXqdeh2UpsC7YY",
       "type": "address",
-      "balance": 42295.786480399984,
+      "balance": 65000.8796769,
       "received": 139524.2897567,
       "sent": 95928.4052857,
       "tx_count": 9,
-      "size": 55
+      "size": 55,
+      "balance_source": "chain_utxos_unspent",
+      "unspent_utxos": 1
     },
     {
       "id": "bc1q2m3g0gtuztcl85kzd2dy8sz6vvlq7t6e52wl9y",
       "label": "bc1q2m3g0gtu…",
       "full_address": "bc1q2m3g0gtuztcl85kzd2dy8sz6vvlq7t6e52wl9y",
       "type": "address",
-      "balance": 34978.96529999985,
+      "balance": 42683.7436,
       "received": 44083.76819999983,
       "sent": 9098.036999999997,
       "tx_count": 1798,
-      "size": 55
+      "size": 55,
+      "balance_source": "chain_utxos_unspent",
+      "unspent_utxos": 1640
     },
     {
       "id": "bc1qex3s7tpm62ch6n0vmsr7s3n9kd7e3w232vqttv",
       "label": "bc1qex3s7tpm…",
       "full_address": "bc1qex3s7tpm62ch6n0vmsr7s3n9kd7e3w232vqttv",
       "type": "address",
-      "balance": -167403.36853588995,
+      "balance": 0.0,
       "received": 82783.14,
       "sent": 250236.5086241701,
       "tx_count": 4421,
-      "size": 8
+      "size": 8,
+      "balance_source": "chain_utxos_unspent",
+      "unspent_utxos": 0
     },
     {
       "id": "bc1qewf3w2t67h9ll7ctkjm5c08sydrrg0fthaym9c",
       "label": "bc1qewf3w2t6…",
       "full_address": "bc1qewf3w2t67h9ll7ctkjm5c08sydrrg0fthaym9c",
       "type": "address",
-      "balance": 32597.998504,
+      "balance": 0.0,
       "received": 32647.998504,
       "sent": 0.0,
       "tx_count": 633,
-      "size": 55
+      "size": 55,
+      "balance_source": "chain_utxos_unspent",
+      "unspent_utxos": 0
     },
     {
       "id": "bc1qa66qfcwq2uzduc03aqragvxmkwu3527wf537um",
       "label": "bc1qa66qfcwq…",
       "full_address": "bc1qa66qfcwq2uzduc03aqragvxmkwu3527wf537um",
       "type": "address",
-      "balance": 30799.998061,
+      "balance": 0.0,
       "received": 31799.998061,
       "sent": 0.0,
       "tx_count": 115,
-      "size": 55
+      "size": 55,
+      "balance_source": "chain_utxos_unspent",
+      "unspent_utxos": 0
     },
     {
       "id": "bc1ql4epa9kr0m73jn6lk3gt4m27sw904j9tl0374v",
       "label": "bc1ql4epa9kr…",
       "full_address": "bc1ql4epa9kr0m73jn6lk3gt4m27sw904j9tl0374v",
       "type": "address",
-      "balance": 30000.0,
+      "balance": 0.0,
       "received": 54158.0,
       "sent": 24157.0,
       "tx_count": 6,
-      "size": 55
+      "size": 55,
+      "balance_source": "chain_utxos_unspent",
+      "unspent_utxos": 0
     },
     {
       "id": "3LSa7VaMenK43xXqATd9udBt1qYjYGSJC5",
       "label": "3LSa7VaMenK4…",
       "full_address": "3LSa7VaMenK43xXqATd9udBt1qYjYGSJC5",
       "type": "address",
-      "balance": 25528.9166191,
+      "balance": 59751.5682224,
       "received": 25530.9066191,
       "sent": 0.0,
       "tx_count": 9,
-      "size": 55
+      "size": 55,
+      "balance_source": "chain_utxos_unspent",
+      "unspent_utxos": 24
     },
     {
       "id": "bc1q4vkcgsdljdlp0suxdwmj22r70fzkpy9zltt425",
       "label": "bc1q4vkcgsdl…",
       "full_address": "bc1q4vkcgsdljdlp0suxdwmj22r70fzkpy9zltt425",
       "type": "address",
-      "balance": 25520.77,
+      "balance": 0.0,
       "received": 52973.58,
       "sent": 15158.8,
       "tx_count": 12,
-      "size": 55
+      "size": 55,
+      "balance_source": "chain_utxos_unspent",
+      "unspent_utxos": 0
     },
     {
       "id": "bc1qheg6mz09rvegxej6sstd9z24pry69du3u5qjl0",
       "label": "bc1qheg6mz09…",
       "full_address": "bc1qheg6mz09rvegxej6sstd9z24pry69du3u5qjl0",
       "type": "address",
-      "balance": 23258.79025774997,
+      "balance": 0.0,
       "received": 71138.43029999995,
       "sent": 47829.64004225,
       "tx_count": 1320,
-      "size": 55
+      "size": 55,
+      "balance_source": "chain_utxos_unspent",
+      "unspent_utxos": 0
     },
     {
       "id": "bc1qrh46q65z0mxua294xuj8q4swksadwfnxvs59z6",
       "label": "bc1qrh46q65z…",
       "full_address": "bc1qrh46q65z0mxua294xuj8q4swksadwfnxvs59z6",
       "type": "address",
-      "balance": 22365.522607550003,
+      "balance": 131952.41684905,
       "received": 73606.0360657,
       "sent": 60553.6462452,
       "tx_count": 17,
-      "size": 55
+      "size": 55,
+      "balance_source": "chain_utxos_unspent",
+      "unspent_utxos": 17
     },
     {
       "id": "bc1q855mqx040u4lwhkh0r2ncafxe5ukjrt5xty7kk",
       "label": "bc1q855mqx04…",
       "full_address": "bc1q855mqx040u4lwhkh0r2ncafxe5ukjrt5xty7kk",
       "type": "address",
-      "balance": 22204.86144481999,
+      "balance": 29906.61143744,
       "received": 24678.688804089994,
       "sent": 2483.8273592699998,
       "tx_count": 42,
-      "size": 55
+      "size": 55,
+      "balance_source": "chain_utxos_unspent",
+      "unspent_utxos": 50
     },
     {
       "id": "bc1qnlzc7huy4cqgerke6gnlaxdze8uqsrwdt4d9s0",
       "label": "bc1qnlzc7huy…",
       "full_address": "bc1qnlzc7huy4cqgerke6gnlaxdze8uqsrwdt4d9s0",
       "type": "address",
-      "balance": 22200.264394269994,
+      "balance": 0.0,
       "received": 40693.08717530002,
       "sent": 18017.82278103,
       "tx_count": 51,
-      "size": 55
+      "size": 55,
+      "balance_source": "chain_utxos_unspent",
+      "unspent_utxos": 0
     },
     {
       "id": "bc1qkuql5r0g5gql3fz3mjt6uksen3aa3e9fnvlpkf",
       "label": "bc1qkuql5r0g…",
       "full_address": "bc1qkuql5r0g5gql3fz3mjt6uksen3aa3e9fnvlpkf",
       "type": "address",
-      "balance": -106658.575783,
+      "balance": 0.0,
       "received": 106658.575783,
       "sent": 106658.575783,
       "tx_count": 2,
-      "size": 8
+      "size": 8,
+      "balance_source": "chain_utxos_unspent",
+      "unspent_utxos": 0
     },
     {
       "id": "bc1qcvryh9hapjzjw3hjx5us7aynzj2thdj95pl3ea",
       "label": "bc1qcvryh9ha…",
       "full_address": "bc1qcvryh9hapjzjw3hjx5us7aynzj2thdj95pl3ea",
       "type": "address",
-      "balance": -52980.36889999999,
+      "balance": 0.0,
       "received": 79182.54899175001,
       "sent": 130662.91789175,
       "tx_count": 53,
-      "size": 8
+      "size": 8,
+      "balance_source": "chain_utxos_unspent",
+      "unspent_utxos": 0
     },
     {
       "id": "bc1qmw2adjz82hncf2nxy2r9u6ymyscd663fakgd79",
       "label": "bc1qmw2adjz8…",
       "full_address": "bc1qmw2adjz82hncf2nxy2r9u6ymyscd663fakgd79",
       "type": "address",
-      "balance": -104158.575775,
+      "balance": 0.0,
       "received": 104158.575775,
       "sent": 104158.575775,
       "tx_count": 2,
-      "size": 8
+      "size": 8,
+      "balance_source": "chain_utxos_unspent",
+      "unspent_utxos": 0
     },
     {
       "id": "bc1qkm86qcjxc5ad5vrq8y5xudzrcfrus2z2md8q0h",
       "label": "bc1qkm86qcjx…",
       "full_address": "bc1qkm86qcjxc5ad5vrq8y5xudzrcfrus2z2md8q0h",
       "type": "address",
-      "balance": -301.6793340000004,
+      "balance": 0.0,
       "received": 103050.0,
       "sent": 103301.679334,
       "tx_count": 1442,
-      "size": 8
+      "size": 8,
+      "balance_source": "chain_utxos_unspent",
+      "unspent_utxos": 0
     },
     {
       "id": "bc1qynjdr8d5k4lemmld0xz4umdtnuxhkc3cmrls6u",
       "label": "bc1qynjdr8d5…",
       "full_address": "bc1qynjdr8d5k4lemmld0xz4umdtnuxhkc3cmrls6u",
       "type": "address",
-      "balance": -99158.575767,
+      "balance": 0.0,
       "received": 99158.575767,
       "sent": 99158.575767,
       "tx_count": 2,
-      "size": 8
+      "size": 8,
+      "balance_source": "chain_utxos_unspent",
+      "unspent_utxos": 0
     },
     {
       "id": "bc1qwuqykgemu28t3yxkvw59mtk7fjnurhm4ydkfx6",
       "label": "bc1qwuqykgem…",
       "full_address": "bc1qwuqykgemu28t3yxkvw59mtk7fjnurhm4ydkfx6",
       "type": "address",
-      "balance": -14301.520769589988,
+      "balance": 1450.0001216,
       "received": 90955.0,
       "sent": 105306.52077628,
       "tx_count": 3619,
-      "size": 8
+      "size": 8,
+      "balance_source": "chain_utxos_unspent",
+      "unspent_utxos": 29
     },
     {
       "id": "1Ev8KxvUocKtkVdaunMiRxxVXhHPsw7wgz",
       "label": "1Ev8KxvUocKt…",
       "full_address": "1Ev8KxvUocKtkVdaunMiRxxVXhHPsw7wgz",
       "type": "address",
-      "balance": 18502.08886722,
+      "balance": 60480.59520061,
       "received": 18802.08886722,
       "sent": 0.0,
       "tx_count": 3,
-      "size": 55
+      "size": 55,
+      "balance_source": "chain_utxos_unspent",
+      "unspent_utxos": 11
     },
     {
       "id": "bc1qx0myxdp2axrmlhj2zh6slz2vnztv6x5casjgma",
       "label": "bc1qx0myxdp2…",
       "full_address": "bc1qx0myxdp2axrmlhj2zh6slz2vnztv6x5casjgma",
       "type": "address",
-      "balance": -90409.995701,
+      "balance": 0.0,
       "received": 90409.995701,
       "sent": 90409.995701,
       "tx_count": 2,
-      "size": 8
+      "size": 8,
+      "balance_source": "chain_utxos_unspent",
+      "unspent_utxos": 0
     },
     {
       "id": "bc1qaavlp28yfgw8wnqdqrv8emd52036rlkvcmwj7f",
       "label": "bc1qaavlp28y…",
       "full_address": "bc1qaavlp28yfgw8wnqdqrv8emd52036rlkvcmwj7f",
       "type": "address",
-      "balance": 17947.273800000003,
+      "balance": 0.0,
       "received": 37968.4345,
       "sent": 19971.1607,
       "tx_count": 763,
-      "size": 55
+      "size": 55,
+      "balance_source": "chain_utxos_unspent",
+      "unspent_utxos": 0
     },
     {
       "id": "bc1q8n6vm9xtn2we8rt4yqy54mkwv45ryegc4m8ess",
       "label": "bc1q8n6vm9xt…",
       "full_address": "bc1q8n6vm9xtn2we8rt4yqy54mkwv45ryegc4m8ess",
       "type": "address",
-      "balance": 16920.3687517,
+      "balance": 0.0,
       "received": 40977.3687517,
       "sent": 25957.0,
       "tx_count": 17,
-      "size": 55
+      "size": 55,
+      "balance_source": "chain_utxos_unspent",
+      "unspent_utxos": 0
     },
     {
       "id": "bc1qn2mn87cqs50j34a8xmh7g0md2lmh57nxpf6ura",
       "label": "bc1qn2mn87cq…",
       "full_address": "bc1qn2mn87cqs50j34a8xmh7g0md2lmh57nxpf6ura",
       "type": "address",
-      "balance": -84158.575741,
+      "balance": 0.0,
       "received": 84158.575741,
       "sent": 84158.575741,
       "tx_count": 2,
-      "size": 8
+      "size": 8,
+      "balance_source": "chain_utxos_unspent",
+      "unspent_utxos": 0
     },
     {
       "id": "bc1qejnq9r2cyd9hr9uhqxjqjl7r5m58v8zszk2rx9",
       "label": "bc1qejnq9r2c…",
       "full_address": "bc1qejnq9r2cyd9hr9uhqxjqjl7r5m58v8zszk2rx9",
       "type": "address",
-      "balance": -84157.575731,
+      "balance": 0.0,
       "received": 84157.575731,
       "sent": 84157.575731,
       "tx_count": 2,
-      "size": 8
+      "size": 8,
+      "balance_source": "chain_utxos_unspent",
+      "unspent_utxos": 0
     },
     {
       "id": "bc1qrahqu4u6m6ysh99rfzc3wupjwfacdp23g48vz8",
       "label": "bc1qrahqu4u6…",
       "full_address": "bc1qrahqu4u6m6ysh99rfzc3wupjwfacdp23g48vz8",
       "type": "address",
-      "balance": -83831.995278,
+      "balance": 0.0,
       "received": 83831.995278,
       "sent": 83831.995278,
       "tx_count": 2,
-      "size": 8
+      "size": 8,
+      "balance_source": "chain_utxos_unspent",
+      "unspent_utxos": 0
     },
     {
       "id": "3F4KVEpCffWHKStTC98XWihdvF2HeSkZYL",
       "label": "3F4KVEpCffWH…",
       "full_address": "3F4KVEpCffWHKStTC98XWihdvF2HeSkZYL",
       "type": "address",
-      "balance": 16572.063188099997,
+      "balance": 68746.06162311,
       "received": 20381.128100299997,
       "sent": 0.0,
       "tx_count": 7,
-      "size": 55
+      "size": 55,
+      "balance_source": "chain_utxos_unspent",
+      "unspent_utxos": 26
     },
     {
       "id": "bc1q305w4qkq2p8y06fa0rpmscwgv9d50vvfvg9jrf",
@@ -420,7 +519,9 @@
       "received": 0.0,
       "sent": 163450.399954,
       "tx_count": 1,
-      "size": 8
+      "size": 8,
+      "balance_source": "chain_utxos_unspent",
+      "unspent_utxos": 0
     },
     {
       "id": "bc1qxru30rrhwn6sw37nsfwma3dg7smju5d7n33axt",
@@ -431,40 +532,48 @@
       "received": 163439.399946,
       "sent": 0.0,
       "tx_count": 1,
-      "size": 8
+      "size": 8,
+      "balance_source": "chain_utxos_unspent",
+      "unspent_utxos": 0
     },
     {
       "id": "bc1qq36k4l4uvj9v52zakkc4a96s5a5ha278xa3rvw",
       "label": "bc1qq36k4l4u…",
       "full_address": "bc1qq36k4l4uvj9v52zakkc4a96s5a5ha278xa3rvw",
       "type": "address",
-      "balance": 16061.082514999993,
+      "balance": 1887.99029256,
       "received": 27387.55118908003,
       "sent": 11324.381674080003,
       "tx_count": 889,
-      "size": 55
+      "size": 55,
+      "balance_source": "chain_utxos_unspent",
+      "unspent_utxos": 77
     },
     {
       "id": "bc1qwqwrvn9nfmrzg8mnaxwh45maa8khsm9an25wkv",
       "label": "bc1qwqwrvn9n…",
       "full_address": "bc1qwqwrvn9nfmrzg8mnaxwh45maa8khsm9an25wkv",
       "type": "address",
-      "balance": 15507.31554743001,
+      "balance": 0.0,
       "received": 19667.404328459987,
       "sent": 4149.357981030002,
       "tx_count": 2388,
-      "size": 55
+      "size": 55,
+      "balance_source": "chain_utxos_unspent",
+      "unspent_utxos": 0
     },
     {
       "id": "bc1q5gu5uru7yu5832vj80dmjmwa04xse5lekyjrwj",
       "label": "bc1q5gu5uru7…",
       "full_address": "bc1q5gu5uru7yu5832vj80dmjmwa04xse5lekyjrwj",
       "type": "address",
-      "balance": -77253.994855,
+      "balance": 0.0,
       "received": 77253.994855,
       "sent": 77253.994855,
       "tx_count": 2,
-      "size": 8
+      "size": 8,
+      "balance_source": "chain_utxos_unspent",
+      "unspent_utxos": 0
     },
     {
       "id": "bc1qq4522d758d6m64vtfhrkvs36ht6pq4vpn2dzdg",
@@ -475,227 +584,269 @@
       "received": 0.0,
       "sent": 144937.401914,
       "tx_count": 1,
-      "size": 8
+      "size": 8,
+      "balance_source": "chain_utxos_unspent",
+      "unspent_utxos": 0
     },
     {
       "id": "bc1qcwg6k97jl4rz4msh8r47apc69pemyzz4ff4d98",
       "label": "bc1qcwg6k97j…",
       "full_address": "bc1qcwg6k97jl4rz4msh8r47apc69pemyzz4ff4d98",
       "type": "address",
-      "balance": 0.0,
+      "balance": 144927.402906,
       "received": 144927.402906,
       "sent": 0.0,
       "tx_count": 1,
-      "size": 8
+      "size": 8,
+      "balance_source": "chain_utxos_unspent",
+      "unspent_utxos": 1
     },
     {
       "id": "bc1qs8t53rvs4gyaddeak6tccrv246ttcvhvarw72z",
       "label": "bc1qs8t53rvs…",
       "full_address": "bc1qs8t53rvs4gyaddeak6tccrv246ttcvhvarw72z",
       "type": "address",
-      "balance": 14410.499600000006,
+      "balance": 2928.4413,
       "received": 16361.343200000018,
       "sent": 1947.1266999999998,
       "tx_count": 1524,
-      "size": 55
+      "size": 55,
+      "balance_source": "chain_utxos_unspent",
+      "unspent_utxos": 34
     },
     {
       "id": "bc1q72llsfjz6ep2m6edk85ldcdeansdmw0c0krr8a",
       "label": "bc1q72llsfjz…",
       "full_address": "bc1q72llsfjz6ep2m6edk85ldcdeansdmw0c0krr8a",
       "type": "address",
-      "balance": 14328.785427150002,
+      "balance": 16013.5,
       "received": 15642.300000000001,
       "sent": 1063.51457285,
       "tx_count": 16,
-      "size": 55
+      "size": 55,
+      "balance_source": "chain_utxos_unspent",
+      "unspent_utxos": 11
     },
     {
       "id": "bc1queyywzdtfdnep3qn9pp42f9ahzu75pfdtj95pp",
       "label": "bc1queyywzdt…",
       "full_address": "bc1queyywzdtfdnep3qn9pp42f9ahzu75pfdtj95pp",
       "type": "address",
-      "balance": 14138.081699729999,
+      "balance": 0.0,
       "received": 15988.08173498,
       "sent": 1750.00003525,
       "tx_count": 86,
-      "size": 55
+      "size": 55,
+      "balance_source": "chain_utxos_unspent",
+      "unspent_utxos": 0
     },
     {
       "id": "bc1qylkjnx59tgt0wam4x87j2txa50dx3m7fdytk2f",
       "label": "bc1qylkjnx59…",
       "full_address": "bc1qylkjnx59tgt0wam4x87j2txa50dx3m7fdytk2f",
       "type": "address",
-      "balance": -70411.994432,
+      "balance": 0.0,
       "received": 70411.994432,
       "sent": 70411.994432,
       "tx_count": 2,
-      "size": 8
+      "size": 8,
+      "balance_source": "chain_utxos_unspent",
+      "unspent_utxos": 0
     },
     {
       "id": "3FZXhnv7yXXJSXRf85NJ2YcKbsPD19EFXu",
       "label": "3FZXhnv7yXXJ…",
       "full_address": "3FZXhnv7yXXJSXRf85NJ2YcKbsPD19EFXu",
       "type": "address",
-      "balance": 14002.049812000001,
+      "balance": 10001.470767600002,
       "received": 25992.9184963,
       "sent": 10000.8681968,
       "tx_count": 7,
-      "size": 55
+      "size": 55,
+      "balance_source": "chain_utxos_unspent",
+      "unspent_utxos": 2
     },
     {
       "id": "bc1qe7nju53tpff6gfffgu3nvayy0zc2txzrv57wyz",
       "label": "bc1qe7nju53t…",
       "full_address": "bc1qe7nju53tpff6gfffgu3nvayy0zc2txzrv57wyz",
       "type": "address",
-      "balance": -70000.575721,
+      "balance": 0.0,
       "received": 70000.575721,
       "sent": 70000.575721,
       "tx_count": 2,
-      "size": 8
+      "size": 8,
+      "balance_source": "chain_utxos_unspent",
+      "unspent_utxos": 0
     },
     {
       "id": "bc1q7z2678wg8r792len8luwt42udzd9p8e9nj7l7t",
       "label": "bc1q7z2678wg…",
       "full_address": "bc1q7z2678wg8r792len8luwt42udzd9p8e9nj7l7t",
       "type": "address",
-      "balance": 13613.315899999996,
+      "balance": 0.0,
       "received": 19895.00350000001,
       "sent": 6284.1943,
       "tx_count": 1511,
-      "size": 55
+      "size": 55,
+      "balance_source": "chain_utxos_unspent",
+      "unspent_utxos": 0
     },
     {
       "id": "bc1qg9h74d233ltm26gsw6kv8zs9nsn38dj6xufjen",
       "label": "bc1qg9h74d23…",
       "full_address": "bc1qg9h74d233ltm26gsw6kv8zs9nsn38dj6xufjen",
       "type": "address",
-      "balance": 13350.0,
+      "balance": 0.0,
       "received": 36250.0,
       "sent": 17900.0,
       "tx_count": 7,
-      "size": 55
+      "size": 55,
+      "balance_source": "chain_utxos_unspent",
+      "unspent_utxos": 0
     },
     {
       "id": "3FHixW6AgDTCScdFdrZ8mP3y5tMyr9oNpt",
       "label": "3FHixW6AgDTC…",
       "full_address": "3FHixW6AgDTCScdFdrZ8mP3y5tMyr9oNpt",
       "type": "address",
-      "balance": -11215.02901067,
+      "balance": 757.48389002,
       "received": 61119.787367020006,
       "sent": 72336.81638769,
       "tx_count": 35,
-      "size": 8
+      "size": 8,
+      "balance_source": "chain_utxos_unspent",
+      "unspent_utxos": 1
     },
     {
       "id": "bc1qatk5lwc2p3ftkx75yz27qxqpz8htrf6mnnev0a",
       "label": "bc1qatk5lwc2…",
       "full_address": "bc1qatk5lwc2p3ftkx75yz27qxqpz8htrf6mnnev0a",
       "type": "address",
-      "balance": 13326.876900000001,
+      "balance": 0.0,
       "received": 28493.726899999998,
       "sent": 15156.85,
       "tx_count": 43,
-      "size": 55
+      "size": 55,
+      "balance_source": "chain_utxos_unspent",
+      "unspent_utxos": 0
     },
     {
       "id": "bc1qu9st489vjptqu7x2d4n6nfap6mfpxrz22egs0j",
       "label": "bc1qu9st489v…",
       "full_address": "bc1qu9st489vjptqu7x2d4n6nfap6mfpxrz22egs0j",
       "type": "address",
-      "balance": 13257.029999999993,
+      "balance": 0.0,
       "received": 19466.57,
       "sent": 5973.89,
       "tx_count": 159,
-      "size": 55
+      "size": 55,
+      "balance_source": "chain_utxos_unspent",
+      "unspent_utxos": 0
     },
     {
       "id": "bc1qg0a07ftjz7f722hau978kf8mf655sa7nvlg7wk",
       "label": "bc1qg0a07ftj…",
       "full_address": "bc1qg0a07ftjz7f722hau978kf8mf655sa7nvlg7wk",
       "type": "address",
-      "balance": 13133.60666942,
+      "balance": 6.0608,
       "received": 30313.0281,
       "sent": 17129.421430579998,
       "tx_count": 342,
-      "size": 55
+      "size": 55,
+      "balance_source": "chain_utxos_unspent",
+      "unspent_utxos": 3
     },
     {
       "id": "bc1qywzldqyw2y4dkeq2zstspeqzrw39vaxxxveqds",
       "label": "bc1qywzldqyw…",
       "full_address": "bc1qywzldqyw2y4dkeq2zstspeqzrw39vaxxxveqds",
       "type": "address",
-      "balance": 12665.035086970005,
+      "balance": 9630.58728218,
       "received": 15374.188274120008,
       "sent": 2712.9231871500006,
       "tx_count": 876,
-      "size": 55
+      "size": 55,
+      "balance_source": "chain_utxos_unspent",
+      "unspent_utxos": 585
     },
     {
       "id": "bc1qvxn7xq396f0mla2s7rcp6dzvd8hs7ef7fas7jt",
       "label": "bc1qvxn7xq39…",
       "full_address": "bc1qvxn7xq396f0mla2s7rcp6dzvd8hs7ef7fas7jt",
       "type": "address",
-      "balance": 12066.91471503997,
+      "balance": 364.75963183,
       "received": 24707.24348699991,
       "sent": 12635.636371960001,
       "tx_count": 4766,
-      "size": 55
+      "size": 55,
+      "balance_source": "chain_utxos_unspent",
+      "unspent_utxos": 106
     },
     {
       "id": "bc1q9nsrnlrwev96flvfh8vhp7e2p34grdp45relxl",
       "label": "bc1q9nsrnlrw…",
       "full_address": "bc1q9nsrnlrwev96flvfh8vhp7e2p34grdp45relxl",
       "type": "address",
-      "balance": 11890.171727699992,
+      "balance": 4353.70431945,
       "received": 16314.97656601999,
       "sent": 4386.784938319998,
       "tx_count": 4380,
-      "size": 55
+      "size": 55,
+      "balance_source": "chain_utxos_unspent",
+      "unspent_utxos": 2835
     },
     {
       "id": "bc1qec20ng67v3vxgfr6aq560am0wq0weg0wsurl2k",
       "label": "bc1qec20ng67…",
       "full_address": "bc1qec20ng67v3vxgfr6aq560am0wq0weg0wsurl2k",
       "type": "address",
-      "balance": 11415.725046750013,
+      "balance": 1143.60444811,
       "received": 15462.215723380014,
       "sent": 4038.14027663,
       "tx_count": 2146,
-      "size": 55
+      "size": 55,
+      "balance_source": "chain_utxos_unspent",
+      "unspent_utxos": 109
     },
     {
       "id": "bc1qqmplxqtqggtgqw78l987dfarwfx47lxsps5ppg",
       "label": "bc1qqmplxqtq…",
       "full_address": "bc1qqmplxqtqggtgqw78l987dfarwfx47lxsps5ppg",
       "type": "address",
-      "balance": 11389.891222249984,
+      "balance": 141.6671,
       "received": 14207.723575599965,
       "sent": 2812.9355533499997,
       "tx_count": 3318,
-      "size": 55
+      "size": 55,
+      "balance_source": "chain_utxos_unspent",
+      "unspent_utxos": 25
     },
     {
       "id": "bc1q2tdp9vq2g34wggeqvuxstlyw0tkda8llave5el",
       "label": "bc1q2tdp9vq2…",
       "full_address": "bc1q2tdp9vq2g34wggeqvuxstlyw0tkda8llave5el",
       "type": "address",
-      "balance": 11232.392452799999,
+      "balance": 16398.5581865,
       "received": 11233.2924528,
       "sent": 0.0,
       "tx_count": 3,
-      "size": 55
+      "size": 55,
+      "balance_source": "chain_utxos_unspent",
+      "unspent_utxos": 7
     },
     {
       "id": "bc1q0qgmprc4lelgqrppch878q9yrqpryr2u5e6s3l",
       "label": "bc1q0qgmprc4…",
       "full_address": "bc1q0qgmprc4lelgqrppch878q9yrqpryr2u5e6s3l",
       "type": "address",
-      "balance": 11076.326446279994,
+      "balance": 0.0,
       "received": 26411.81579119,
       "sent": 15316.53443091,
       "tx_count": 258,
-      "size": 55
+      "size": 55,
+      "balance_source": "chain_utxos_unspent",
+      "unspent_utxos": 0
     },
     {
       "id": "bc1q4vjjyr6vwjh76cf3pgh24q4utj0r9mc3zjz0q5",
@@ -706,73 +857,87 @@
       "received": 0.0,
       "sent": 109158.575791,
       "tx_count": 1,
-      "size": 8
+      "size": 8,
+      "balance_source": "chain_utxos_unspent",
+      "unspent_utxos": 0
     },
     {
       "id": "bc1qr7g6klk0r935wmq54sm0qhmweccg6hyvvvrfzm",
       "label": "bc1qr7g6klk0…",
       "full_address": "bc1qr7g6klk0r935wmq54sm0qhmweccg6hyvvvrfzm",
       "type": "address",
-      "balance": 0.0,
+      "balance": 105420.0,
       "received": 105420.0,
       "sent": 0.0,
       "tx_count": 1,
-      "size": 8
+      "size": 8,
+      "balance_source": "chain_utxos_unspent",
+      "unspent_utxos": 1
     },
     {
       "id": "bc1qwurdnf95z3wpppa48xu0ljdq7l2c9282hwg7ha",
       "label": "bc1qwurdnf95…",
       "full_address": "bc1qwurdnf95z3wpppa48xu0ljdq7l2c9282hwg7ha",
       "type": "address",
-      "balance": 9899.859999999999,
+      "balance": 0.0,
       "received": 15899.779999999997,
       "sent": 6199.909999999999,
       "tx_count": 31,
-      "size": 55
+      "size": 55,
+      "balance_source": "chain_utxos_unspent",
+      "unspent_utxos": 0
     },
     {
       "id": "bc1qyymylq0sejuhza0cu2u8lg9y2sqj7ses6vv4my",
       "label": "bc1qyymylq0s…",
       "full_address": "bc1qyymylq0sejuhza0cu2u8lg9y2sqj7ses6vv4my",
       "type": "address",
-      "balance": 9711.965018469971,
+      "balance": 7020.7857,
       "received": 14449.55151846997,
       "sent": 4732.179099999998,
       "tx_count": 3231,
-      "size": 55
+      "size": 55,
+      "balance_source": "chain_utxos_unspent",
+      "unspent_utxos": 1291
     },
     {
       "id": "146jCcRXDZrXbgxUrxe6BKZWxL8S3nz9bY",
       "label": "146jCcRXDZrX…",
       "full_address": "146jCcRXDZrXbgxUrxe6BKZWxL8S3nz9bY",
       "type": "address",
-      "balance": -4600.706508140001,
+      "balance": 200.00165072,
       "received": 46150.0,
       "sent": 50700.70650814001,
       "tx_count": 1553,
-      "size": 8
+      "size": 8,
+      "balance_source": "chain_utxos_unspent",
+      "unspent_utxos": 4
     },
     {
       "id": "bc1q56pmv3wkn664chwzjez0xter4564ueulky46et",
       "label": "bc1q56pmv3wk…",
       "full_address": "bc1q56pmv3wkn664chwzjez0xter4564ueulky46et",
       "type": "address",
-      "balance": 9598.611099999996,
+      "balance": 0.0,
       "received": 10802.488399999998,
       "sent": 1186.7769,
       "tx_count": 441,
-      "size": 55
+      "size": 55,
+      "balance_source": "chain_utxos_unspent",
+      "unspent_utxos": 0
     },
     {
       "id": "3EyLo6BtUbLPFVrFYP1FtBrobswxSA8mmB",
       "label": "3EyLo6BtUbLP…",
       "full_address": "3EyLo6BtUbLPFVrFYP1FtBrobswxSA8mmB",
       "type": "address",
-      "balance": 9566.8879155,
+      "balance": 20093.7343415,
       "received": 10648.5628277,
       "sent": 0.0,
       "tx_count": 13,
-      "size": 55
+      "size": 55,
+      "balance_source": "chain_utxos_unspent",
+      "unspent_utxos": 31
     },
     {
       "id": "bc1qf9xwz9c8d05u6tx6kp0v3hg4k8ywmtv5g632ap",
@@ -783,40 +948,48 @@
       "received": 94158.575759,
       "sent": 0.0,
       "tx_count": 1,
-      "size": 8
+      "size": 8,
+      "balance_source": "chain_utxos_unspent",
+      "unspent_utxos": 0
     },
     {
       "id": "bc1q3anhwap2r0cjjzs9rezk7ayaydzstuww3wv0tf",
       "label": "bc1q3anhwap2…",
       "full_address": "bc1q3anhwap2r0cjjzs9rezk7ayaydzstuww3wv0tf",
       "type": "address",
-      "balance": 9369.0,
+      "balance": 0.0,
       "received": 10150.67,
       "sent": 780.6700000000001,
       "tx_count": 13,
-      "size": 55
+      "size": 55,
+      "balance_source": "chain_utxos_unspent",
+      "unspent_utxos": 0
     },
     {
       "id": "bc1qzckk4lcrahcfvfam7ty5u3tp2flulr808stkmd",
       "label": "bc1qzckk4lcr…",
       "full_address": "bc1qzckk4lcrahcfvfam7ty5u3tp2flulr808stkmd",
       "type": "address",
-      "balance": 9349.988966969997,
+      "balance": 0.0,
       "received": 25900.0,
       "sent": 16500.01103303,
       "tx_count": 543,
-      "size": 55
+      "size": 55,
+      "balance_source": "chain_utxos_unspent",
+      "unspent_utxos": 0
     },
     {
       "id": "bc1q4kgtjqw5m9upst30zkl4vm4w9trp0j6a5t32j7",
       "label": "bc1q4kgtjqw5…",
       "full_address": "bc1q4kgtjqw5m9upst30zkl4vm4w9trp0j6a5t32j7",
       "type": "address",
-      "balance": 9239.366,
+      "balance": 0.0,
       "received": 15114.366,
       "sent": 5855.0,
       "tx_count": 14,
-      "size": 55
+      "size": 55,
+      "balance_source": "chain_utxos_unspent",
+      "unspent_utxos": 0
     },
     {
       "id": "bc1qxdv6ue2fa7qycskkk7n4mw2r4u79e9qgjta4ev",
@@ -827,7 +1000,9 @@
       "received": 0.0,
       "sent": 89158.57575,
       "tx_count": 1,
-      "size": 8
+      "size": 8,
+      "balance_source": "chain_utxos_unspent",
+      "unspent_utxos": 0
     },
     {
       "id": "bc1qx57ht20ul4a9wy9q0khxqtqv9edg4vcyr29vta",
@@ -838,51 +1013,61 @@
       "received": 0.0,
       "sent": 86521.953685,
       "tx_count": 1,
-      "size": 8
+      "size": 8,
+      "balance_source": "chain_utxos_unspent",
+      "unspent_utxos": 0
     },
     {
       "id": "35FkHKVseZRzBwqDRJjw2EwD71m4rKjMSL",
       "label": "35FkHKVseZRz…",
       "full_address": "35FkHKVseZRzBwqDRJjw2EwD71m4rKjMSL",
       "type": "address",
-      "balance": 8200.9616457,
+      "balance": 8304.951645699999,
       "received": 8304.951645699999,
       "sent": 0.0,
       "tx_count": 3,
-      "size": 55
+      "size": 55,
+      "balance_source": "chain_utxos_unspent",
+      "unspent_utxos": 3
     },
     {
       "id": "bc1qh0aa6d05yrpe9rtxg9xfg66wtcy9fv26pvwu6f",
       "label": "bc1qh0aa6d05…",
       "full_address": "bc1qh0aa6d05yrpe9rtxg9xfg66wtcy9fv26pvwu6f",
       "type": "address",
-      "balance": 8122.1178292500035,
+      "balance": 0.0,
       "received": 9215.830781909994,
       "sent": 1093.7127426600005,
       "tx_count": 1358,
-      "size": 55
+      "size": 55,
+      "balance_source": "chain_utxos_unspent",
+      "unspent_utxos": 0
     },
     {
       "id": "bc1q5mahcghuqvwjh9s5jnr92xflu0fv4d5yakeppj",
       "label": "bc1q5mahcghu…",
       "full_address": "bc1q5mahcghuqvwjh9s5jnr92xflu0fv4d5yakeppj",
       "type": "address",
-      "balance": 8118.0219,
+      "balance": 0.0,
       "received": 8415.022599999998,
       "sent": 0.0,
       "tx_count": 7,
-      "size": 55
+      "size": 55,
+      "balance_source": "chain_utxos_unspent",
+      "unspent_utxos": 0
     },
     {
       "id": "bc1qkv5y9nxh47mgm7nrk89tq32ht3lqx6njycvhzc",
       "label": "bc1qkv5y9nxh…",
       "full_address": "bc1qkv5y9nxh47mgm7nrk89tq32ht3lqx6njycvhzc",
       "type": "address",
-      "balance": -40167.322079,
+      "balance": 0.0,
       "received": 40167.322079,
       "sent": 40167.322079,
       "tx_count": 2,
-      "size": 8
+      "size": 8,
+      "balance_source": "chain_utxos_unspent",
+      "unspent_utxos": 0
     },
     {
       "id": "bc1qxhj4xs8rqq5fyvhsqtard7e9snt7hvney7k86m",
@@ -893,183 +1078,217 @@
       "received": 0.0,
       "sent": 80167.322112,
       "tx_count": 1,
-      "size": 8
+      "size": 8,
+      "balance_source": "chain_utxos_unspent",
+      "unspent_utxos": 0
     },
     {
       "id": "bc1q2gee8xeepyq7zyg02t2qfgmcmf3zcdxnx0cfu9",
       "label": "bc1q2gee8xee…",
       "full_address": "bc1q2gee8xeepyq7zyg02t2qfgmcmf3zcdxnx0cfu9",
       "type": "address",
-      "balance": -45000.0,
+      "balance": 0.0,
       "received": 27517.0,
       "sent": 52517.0,
       "tx_count": 4,
-      "size": 8
+      "size": 8,
+      "balance_source": "chain_utxos_unspent",
+      "unspent_utxos": 0
     },
     {
       "id": "bc1qvkhjsavfwk5vjm5vyg9krzuuunpr7ef6ndahha",
       "label": "bc1qvkhjsavf…",
       "full_address": "bc1qvkhjsavfwk5vjm5vyg9krzuuunpr7ef6ndahha",
       "type": "address",
-      "balance": -40000.575709,
+      "balance": 0.0,
       "received": 40000.575709,
       "sent": 40000.575709,
       "tx_count": 2,
-      "size": 8
+      "size": 8,
+      "balance_source": "chain_utxos_unspent",
+      "unspent_utxos": 0
     },
     {
       "id": "bc1q5pc365mdzcdh9ps0vdrz9jrxnvxmyhgv4pcvcu",
       "label": "bc1q5pc365md…",
       "full_address": "bc1q5pc365mdzcdh9ps0vdrz9jrxnvxmyhgv4pcvcu",
       "type": "address",
-      "balance": 8000.000080000002,
+      "balance": 0.0,
       "received": 18001.10008,
       "sent": 10000.0,
       "tx_count": 6,
-      "size": 55
+      "size": 55,
+      "balance_source": "chain_utxos_unspent",
+      "unspent_utxos": 0
     },
     {
       "id": "36RnWVnQRr5X6xoxiDs9E2GMsDsiBUhBbZ",
       "label": "36RnWVnQRr5X…",
       "full_address": "36RnWVnQRr5X6xoxiDs9E2GMsDsiBUhBbZ",
       "type": "address",
-      "balance": -4176.267577100005,
+      "balance": 0.0,
       "received": 37984.28465262,
       "sent": 40047.04116642001,
       "tx_count": 5,
-      "size": 8
+      "size": 8,
+      "balance_source": "chain_utxos_unspent",
+      "unspent_utxos": 0
     },
     {
       "id": "3KcbbzXfgPJg7RLfuTgxTNhnCZDAwJCkyr",
       "label": "3KcbbzXfgPJg…",
       "full_address": "3KcbbzXfgPJg7RLfuTgxTNhnCZDAwJCkyr",
       "type": "address",
-      "balance": 7774.960247,
+      "balance": 65840.0813977,
       "received": 32866.330864,
       "sent": 0.0,
       "tx_count": 2,
-      "size": 55
+      "size": 55,
+      "balance_source": "chain_utxos_unspent",
+      "unspent_utxos": 6
     },
     {
       "id": "bc1qp9kxzckjdv79qd9x729phvuhe7zmkufrjqce0n",
       "label": "bc1qp9kxzckj…",
       "full_address": "bc1qp9kxzckjdv79qd9x729phvuhe7zmkufrjqce0n",
       "type": "address",
-      "balance": 7675.0,
+      "balance": 0.0,
       "received": 12892.0,
       "sent": 5212.0,
       "tx_count": 12,
-      "size": 55
+      "size": 55,
+      "balance_source": "chain_utxos_unspent",
+      "unspent_utxos": 0
     },
     {
       "id": "bc1qdsqdv52lsyms6q3pmmxs3ezkpqgueg6u5q3krw",
       "label": "bc1qdsqdv52l…",
       "full_address": "bc1qdsqdv52lsyms6q3pmmxs3ezkpqgueg6u5q3krw",
       "type": "address",
-      "balance": 7542.317977879992,
+      "balance": 0.0,
       "received": 13191.53846925999,
       "sent": 5583.33155628,
       "tx_count": 206,
-      "size": 55
+      "size": 55,
+      "balance_source": "chain_utxos_unspent",
+      "unspent_utxos": 0
     },
     {
       "id": "bc1qy20xrzz7tm6us0xvmpcv0yam005kqav8j6yptn",
       "label": "bc1qy20xrzz7…",
       "full_address": "bc1qy20xrzz7tm6us0xvmpcv0yam005kqav8j6yptn",
       "type": "address",
-      "balance": -19475.393601500014,
+      "balance": 0.0,
       "received": 27739.194485500004,
       "sent": 47213.58808700002,
       "tx_count": 40,
-      "size": 8
+      "size": 8,
+      "balance_source": "chain_utxos_unspent",
+      "unspent_utxos": 0
     },
     {
       "id": "bc1qek74haul008mfcf6waswsq3rplz54yjyz6ssyr",
       "label": "bc1qek74haul…",
       "full_address": "bc1qek74haul008mfcf6waswsq3rplz54yjyz6ssyr",
       "type": "address",
-      "balance": 7419.489987190001,
+      "balance": 7.41331922,
       "received": 8904.521473300001,
       "sent": 1430.1114861100002,
       "tx_count": 352,
-      "size": 55
+      "size": 55,
+      "balance_source": "chain_utxos_unspent",
+      "unspent_utxos": 1
     },
     {
       "id": "bc1q4t0vdl534ks7a73a09mn9wskg3y54xk7vumxjy",
       "label": "bc1q4t0vdl53…",
       "full_address": "bc1q4t0vdl534ks7a73a09mn9wskg3y54xk7vumxjy",
       "type": "address",
-      "balance": 7295.590799999993,
+      "balance": 0.0,
       "received": 17072.555676000007,
       "sent": 9826.964875999996,
       "tx_count": 308,
-      "size": 55
+      "size": 55,
+      "balance_source": "chain_utxos_unspent",
+      "unspent_utxos": 0
     },
     {
       "id": "bc1q2ysaes7xlzac7s7dkmppsrkedkzllgs8u5rle0",
       "label": "bc1q2ysaes7x…",
       "full_address": "bc1q2ysaes7xlzac7s7dkmppsrkedkzllgs8u5rle0",
       "type": "address",
-      "balance": 7256.538700000006,
+      "balance": 0.0,
       "received": 10738.419700000024,
       "sent": 3453.0552999999986,
       "tx_count": 1003,
-      "size": 55
+      "size": 55,
+      "balance_source": "chain_utxos_unspent",
+      "unspent_utxos": 0
     },
     {
       "id": "bc1qpktx7afusaf3j2l50wh73atr0ka3a9q0qgkwvp",
       "label": "bc1qpktx7afu…",
       "full_address": "bc1qpktx7afusaf3j2l50wh73atr0ka3a9q0qgkwvp",
       "type": "address",
-      "balance": 7249.957152039997,
+      "balance": 0.0,
       "received": 30750.0,
       "sent": 23450.042847959994,
       "tx_count": 639,
-      "size": 55
+      "size": 55,
+      "balance_source": "chain_utxos_unspent",
+      "unspent_utxos": 0
     },
     {
       "id": "34beiJxdQxuesGjNB5P1JB4dnxKtqDktSs",
       "label": "34beiJxdQxue…",
       "full_address": "34beiJxdQxuesGjNB5P1JB4dnxKtqDktSs",
       "type": "address",
-      "balance": 7224.999970000001,
+      "balance": 30000.84667837,
       "received": 111502.54008511,
       "sent": 99277.54011511001,
       "tx_count": 5,
-      "size": 55
+      "size": 55,
+      "balance_source": "chain_utxos_unspent",
+      "unspent_utxos": 1
     },
     {
       "id": "bc1qj68h50wxq97847r4pty4mjj5mc7kfwhkdajljn",
       "label": "bc1qj68h50wx…",
       "full_address": "bc1qj68h50wxq97847r4pty4mjj5mc7kfwhkdajljn",
       "type": "address",
-      "balance": 7166.8657,
+      "balance": 0.0,
       "received": 11994.396799999999,
       "sent": 4750.716899999999,
       "tx_count": 161,
-      "size": 55
+      "size": 55,
+      "balance_source": "chain_utxos_unspent",
+      "unspent_utxos": 0
     },
     {
       "id": "3BczeDcSHMXJ3JJRqMQvePzWcW8kVEug2F",
       "label": "3BczeDcSHMXJ…",
       "full_address": "3BczeDcSHMXJ3JJRqMQvePzWcW8kVEug2F",
       "type": "address",
-      "balance": 7000.0,
+      "balance": 25676.168098,
       "received": 9000.041949409999,
       "sent": 2153.04195941,
       "tx_count": 4,
-      "size": 55
+      "size": 55,
+      "balance_source": "chain_utxos_unspent",
+      "unspent_utxos": 14
     },
     {
       "id": "bc1q48tku56w9tnaezw4rfgkyr09dyegwhd0jek8cm",
       "label": "bc1q48tku56w…",
       "full_address": "bc1q48tku56w9tnaezw4rfgkyr09dyegwhd0jek8cm",
       "type": "address",
-      "balance": 6905.644400000009,
+      "balance": 262.3942,
       "received": 9938.300699999987,
       "sent": 3028.7198000000003,
       "tx_count": 2011,
-      "size": 55
+      "size": 55,
+      "balance_source": "chain_utxos_unspent",
+      "unspent_utxos": 16
     },
     {
       "id": "bc1qvqkxx7fxm3ntwegs6pqh8ec7egjk0asjs5ddeq",
@@ -1080,172 +1299,204 @@
       "received": 68411.994009,
       "sent": 0.0,
       "tx_count": 1,
-      "size": 8
+      "size": 8,
+      "balance_source": "chain_utxos_unspent",
+      "unspent_utxos": 0
     },
     {
       "id": "bc1q9pv95v8vvdew5uryjqjmhu2c7a5hz53mc30pmr",
       "label": "bc1q9pv95v8v…",
       "full_address": "bc1q9pv95v8vvdew5uryjqjmhu2c7a5hz53mc30pmr",
       "type": "address",
-      "balance": 6828.238514740004,
+      "balance": 4.1279,
       "received": 11346.0585792,
       "sent": 4515.699264460001,
       "tx_count": 1279,
-      "size": 55
+      "size": 55,
+      "balance_source": "chain_utxos_unspent",
+      "unspent_utxos": 2
     },
     {
       "id": "bc1q622664aqq9wx643dl4rczpevn4qpk9z0kmzmr8",
       "label": "bc1q622664aq…",
       "full_address": "bc1q622664aqq9wx643dl4rczpevn4qpk9z0kmzmr8",
       "type": "address",
-      "balance": 6822.359329049989,
+      "balance": 4418.1263,
       "received": 9879.61379667,
       "sent": 3054.89776762,
       "tx_count": 3177,
-      "size": 55
+      "size": 55,
+      "balance_source": "chain_utxos_unspent",
+      "unspent_utxos": 1115
     },
     {
       "id": "3NiFP4Zv1LtFtbAzwhhc9yLvVec5V9e44X",
       "label": "3NiFP4Zv1LtF…",
       "full_address": "3NiFP4Zv1LtFtbAzwhhc9yLvVec5V9e44X",
       "type": "address",
-      "balance": -8985.351094599995,
+      "balance": 0.0,
       "received": 35209.6766452,
       "sent": 32709.457816799997,
       "tx_count": 4,
-      "size": 8
+      "size": 8,
+      "balance_source": "chain_utxos_unspent",
+      "unspent_utxos": 0
     },
     {
       "id": "bc1q0z34gqcgtnp352gqkzrk88n7c70hjx9s8sh5sh",
       "label": "bc1q0z34gqcg…",
       "full_address": "bc1q0z34gqcgtnp352gqkzrk88n7c70hjx9s8sh5sh",
       "type": "address",
-      "balance": 6668.0,
+      "balance": 0.0,
       "received": 12428.0,
       "sent": 6252.0,
       "tx_count": 101,
-      "size": 55
+      "size": 55,
+      "balance_source": "chain_utxos_unspent",
+      "unspent_utxos": 0
     },
     {
       "id": "bc1q58afndq6q5yn3xg3rga05vt6apa9fr6cp7g4tc",
       "label": "bc1q58afndq6…",
       "full_address": "bc1q58afndq6q5yn3xg3rga05vt6apa9fr6cp7g4tc",
       "type": "address",
-      "balance": 6650.0,
+      "balance": 0.0,
       "received": 6700.0,
       "sent": 0.0,
       "tx_count": 134,
-      "size": 55
+      "size": 55,
+      "balance_source": "chain_utxos_unspent",
+      "unspent_utxos": 0
     },
     {
       "id": "1KvRXLdLjjgNBPqppRsKJdkNUzPeBFuSpF",
       "label": "1KvRXLdLjjgN…",
       "full_address": "1KvRXLdLjjgNBPqppRsKJdkNUzPeBFuSpF",
       "type": "address",
-      "balance": -1.2395205699986036,
+      "balance": 0.1780788,
       "received": 33214.624716850005,
       "sent": 33215.86223742,
       "tx_count": 38,
-      "size": 8
+      "size": 8,
+      "balance_source": "chain_utxos_unspent",
+      "unspent_utxos": 1
     },
     {
       "id": "1Eg17Ey9qHr8BwzfLqbcSxUruXuLVnQxHF",
       "label": "1Eg17Ey9qHr8…",
       "full_address": "1Eg17Ey9qHr8BwzfLqbcSxUruXuLVnQxHF",
       "type": "address",
-      "balance": 6577.744571900001,
+      "balance": 0.00066312,
       "received": 9678.550636920001,
       "sent": 3010.29447722,
       "tx_count": 7,
-      "size": 55
+      "size": 55,
+      "balance_source": "chain_utxos_unspent",
+      "unspent_utxos": 1
     },
     {
       "id": "3Bf7F2gqNBpAieX8nn2FNmdF5ogK23L9Up",
       "label": "3Bf7F2gqNBpA…",
       "full_address": "3Bf7F2gqNBpAieX8nn2FNmdF5ogK23L9Up",
       "type": "address",
-      "balance": 6564.4115219999985,
+      "balance": 9e-05,
       "received": 31871.541377319998,
       "sent": 25304.129855320003,
       "tx_count": 17,
-      "size": 55
+      "size": 55,
+      "balance_source": "chain_utxos_unspent",
+      "unspent_utxos": 1
     },
     {
       "id": "bc1q2hzck7hp8qkxh2sml2pv3h8g82nfyq940jlzns",
       "label": "bc1q2hzck7hp…",
       "full_address": "bc1q2hzck7hp8qkxh2sml2pv3h8g82nfyq940jlzns",
       "type": "address",
-      "balance": -33513.02407042,
+      "balance": 0.0,
       "received": 32000.00007042,
       "sent": 33513.02407042,
       "tx_count": 2,
-      "size": 8
+      "size": 8,
+      "balance_source": "chain_utxos_unspent",
+      "unspent_utxos": 0
     },
     {
       "id": "bc1q07r8cm5k7czx874757eacwdhlvejc36cd9fg73",
       "label": "bc1q07r8cm5k…",
       "full_address": "bc1q07r8cm5k7czx874757eacwdhlvejc36cd9fg73",
       "type": "address",
-      "balance": -32756.512054,
+      "balance": 0.0,
       "received": 32756.512054,
       "sent": 32756.512054,
       "tx_count": 2,
-      "size": 8
+      "size": 8,
+      "balance_source": "chain_utxos_unspent",
+      "unspent_utxos": 0
     },
     {
       "id": "bc1q5pu7q5a0vdd0fhtcvjuc4c5ehguzlm09xkavf7",
       "label": "bc1q5pu7q5a0…",
       "full_address": "bc1q5pu7q5a0vdd0fhtcvjuc4c5ehguzlm09xkavf7",
       "type": "address",
-      "balance": 6443.483369059999,
+      "balance": 1716.0,
       "received": 6869.573043160002,
       "sent": 423.88217409999993,
       "tx_count": 1018,
-      "size": 55
+      "size": 55,
+      "balance_source": "chain_utxos_unspent",
+      "unspent_utxos": 6
     },
     {
       "id": "bc1q8r3rqqtxyfynan839fmxp6nyrhayutd40seses",
       "label": "bc1q8r3rqqtx…",
       "full_address": "bc1q8r3rqqtxyfynan839fmxp6nyrhayutd40seses",
       "type": "address",
-      "balance": -51.0,
+      "balance": 0.0,
       "received": 31000.0,
       "sent": 31001.0,
       "tx_count": 624,
-      "size": 8
+      "size": 8,
+      "balance_source": "chain_utxos_unspent",
+      "unspent_utxos": 0
     },
     {
       "id": "bc1qtpct2r9ymn29ztehv5uel3809shcuc5lx56ynh",
       "label": "bc1qtpct2r9y…",
       "full_address": "bc1qtpct2r9ymn29ztehv5uel3809shcuc5lx56ynh",
       "type": "address",
-      "balance": 6188.9199004,
+      "balance": 0.0,
       "received": 7188.9199004,
       "sent": 0.0,
       "tx_count": 9,
-      "size": 55
+      "size": 55,
+      "balance_source": "chain_utxos_unspent",
+      "unspent_utxos": 0
     },
     {
       "id": "bc1qku0l50fpe246c5ecx8zyqgsuymmyxs6t9nzx25",
       "label": "bc1qku0l50fp…",
       "full_address": "bc1qku0l50fpe246c5ecx8zyqgsuymmyxs6t9nzx25",
       "type": "address",
-      "balance": 6150.0,
+      "balance": 0.0,
       "received": 8700.0,
       "sent": 2500.0,
       "tx_count": 178,
-      "size": 55
+      "size": 55,
+      "balance_source": "chain_utxos_unspent",
+      "unspent_utxos": 0
     },
     {
       "id": "bc1qjrlk5f0vrfpl3lzwnuknm0kj60h738qxunx3qp",
       "label": "bc1qjrlk5f0v…",
       "full_address": "bc1qjrlk5f0vrfpl3lzwnuknm0kj60h738qxunx3qp",
       "type": "address",
-      "balance": 6039.0171,
+      "balance": 0.0,
       "received": 7326.0265,
       "sent": 1237.5094,
       "tx_count": 25,
-      "size": 55
+      "size": 55,
+      "balance_source": "chain_utxos_unspent",
+      "unspent_utxos": 0
     },
     {
       "id": "bc1qs3c5vcpld7vu9vudweyhl4xy9n0fjlm3c9tv3u",
@@ -1256,18 +1507,22 @@
       "received": 60167.322101,
       "sent": 0.0,
       "tx_count": 1,
-      "size": 8
+      "size": 8,
+      "balance_source": "chain_utxos_unspent",
+      "unspent_utxos": 0
     },
     {
       "id": "bc1qv86xh7luzx7mc95yaqr28cf688ngq9zqf80t2q",
       "label": "bc1qv86xh7lu…",
       "full_address": "bc1qv86xh7luzx7mc95yaqr28cf688ngq9zqf80t2q",
       "type": "address",
-      "balance": 0.0,
+      "balance": 60000.0,
       "received": 60000.0,
       "sent": 0.0,
       "tx_count": 1,
-      "size": 8
+      "size": 8,
+      "balance_source": "chain_utxos_unspent",
+      "unspent_utxos": 1
     },
     {
       "id": "bc1q8zt5vygu65llrqrrd0k60ld9tpzyec38wpmfzt",
@@ -1278,51 +1533,61 @@
       "received": 0.0,
       "sent": 59281.99274,
       "tx_count": 1,
-      "size": 8
+      "size": 8,
+      "balance_source": "chain_utxos_unspent",
+      "unspent_utxos": 0
     },
     {
       "id": "bc1q8p8u5eesm2fvlpdd8kgp5z7v3d0lwvh0uunle8",
       "label": "bc1q8p8u5ees…",
       "full_address": "bc1q8p8u5eesm2fvlpdd8kgp5z7v3d0lwvh0uunle8",
       "type": "address",
-      "balance": -29583.756828,
+      "balance": 0.0,
       "received": 29583.756828,
       "sent": 29583.756828,
       "tx_count": 2,
-      "size": 8
+      "size": 8,
+      "balance_source": "chain_utxos_unspent",
+      "unspent_utxos": 0
     },
     {
       "id": "bc1q4dcxhq8z7mgkerz8tym5g8glhm9gkwdnh4hd4m",
       "label": "bc1q4dcxhq8z…",
       "full_address": "bc1q4dcxhq8z7mgkerz8tym5g8glhm9gkwdnh4hd4m",
       "type": "address",
-      "balance": 5818.525110500001,
+      "balance": 10087.6763457,
       "received": 5918.6725627,
       "sent": 0.0,
       "tx_count": 5,
-      "size": 55
+      "size": 55,
+      "balance_source": "chain_utxos_unspent",
+      "unspent_utxos": 9
     },
     {
       "id": "bc1qufeefx64w8wx2lameju0um08rukayxamhystfe",
       "label": "bc1qufeefx64…",
       "full_address": "bc1qufeefx64w8wx2lameju0um08rukayxamhystfe",
       "type": "address",
-      "balance": 5694.5023001099025,
+      "balance": 114380.6147275,
       "received": 1410138.46945028,
       "sent": 1404527.6947977697,
       "tx_count": 2197,
-      "size": 55
+      "size": 55,
+      "balance_source": "chain_utxos_unspent",
+      "unspent_utxos": 68
     },
     {
       "id": "bc1q2fauuyuztah6w56qg7s6x2kct9e9cq73jvrdfn",
       "label": "bc1q2fauuyuz…",
       "full_address": "bc1q2fauuyuztah6w56qg7s6x2kct9e9cq73jvrdfn",
       "type": "address",
-      "balance": 5646.286853289997,
+      "balance": 0.0,
       "received": 6825.2104488099985,
       "sent": 1164.53099552,
       "tx_count": 861,
-      "size": 55
+      "size": 55,
+      "balance_source": "chain_utxos_unspent",
+      "unspent_utxos": 0
     },
     {
       "id": "bc1q5rfydxt47xrc7q34ylfvqq37nh0styxpuqlj3p",
@@ -1333,51 +1598,61 @@
       "received": 55850.250655,
       "sent": 0.0,
       "tx_count": 1,
-      "size": 8
+      "size": 8,
+      "balance_source": "chain_utxos_unspent",
+      "unspent_utxos": 0
     },
     {
       "id": "bc1qtrrzs0vxrcydhvk2jwcjj4c9vwqp7jf2vwumtp",
       "label": "bc1qtrrzs0vx…",
       "full_address": "bc1qtrrzs0vxrcydhvk2jwcjj4c9vwqp7jf2vwumtp",
       "type": "address",
-      "balance": 5570.605307129999,
+      "balance": 0.0,
       "received": 6999.105307129999,
       "sent": 1426.5,
       "tx_count": 19,
-      "size": 55
+      "size": 55,
+      "balance_source": "chain_utxos_unspent",
+      "unspent_utxos": 0
     },
     {
       "id": "bc1qt8e7hn06yvr0y75dhvrwry3enh6pwzdmj0fgzr",
       "label": "bc1qt8e7hn06…",
       "full_address": "bc1qt8e7hn06yvr0y75dhvrwry3enh6pwzdmj0fgzr",
       "type": "address",
-      "balance": -6486.56792414001,
+      "balance": 19924.45480065,
       "received": 24569.32657969001,
       "sent": 31018.39450383001,
       "tx_count": 233,
-      "size": 8
+      "size": 8,
+      "balance_source": "chain_utxos_unspent",
+      "unspent_utxos": 90
     },
     {
       "id": "bc1qy2fk3y627gl53nu792l8sdn77fwsrnrt4smjl6",
       "label": "bc1qy2fk3y62…",
       "full_address": "bc1qy2fk3y627gl53nu792l8sdn77fwsrnrt4smjl6",
       "type": "address",
-      "balance": 5505.780031530002,
+      "balance": 0.0,
       "received": 6480.128290290005,
       "sent": 972.3274587600004,
       "tx_count": 1548,
-      "size": 55
+      "size": 55,
+      "balance_source": "chain_utxos_unspent",
+      "unspent_utxos": 0
     },
     {
       "id": "3KJwJDGuxV2pLVhuuXcEdX1r3i7FJ39PJh",
       "label": "3KJwJDGuxV2p…",
       "full_address": "3KJwJDGuxV2pLVhuuXcEdX1r3i7FJ39PJh",
       "type": "address",
-      "balance": 5487.547134100001,
+      "balance": 12442.5071241,
       "received": 10504.4671041,
       "sent": 5011.929969999999,
       "tx_count": 8,
-      "size": 55
+      "size": 55,
+      "balance_source": "chain_utxos_unspent",
+      "unspent_utxos": 4
     },
     {
       "id": "bc1q2jjlxeagaprs6xgwehhdlsufr6jqwf792mmwj7",
@@ -1388,29 +1663,35 @@
       "received": 54281.992317,
       "sent": 0.0,
       "tx_count": 1,
-      "size": 8
+      "size": 8,
+      "balance_source": "chain_utxos_unspent",
+      "unspent_utxos": 0
     },
     {
       "id": "bc1qy6xa48w90rvff7czt7p686c0nn3lphnyu45kwr",
       "label": "bc1qy6xa48w9…",
       "full_address": "bc1qy6xa48w90rvff7czt7p686c0nn3lphnyu45kwr",
       "type": "address",
-      "balance": -26583.755559,
+      "balance": 0.0,
       "received": 26583.755559,
       "sent": 26583.755559,
       "tx_count": 2,
-      "size": 8
+      "size": 8,
+      "balance_source": "chain_utxos_unspent",
+      "unspent_utxos": 0
     },
     {
       "id": "bc1q9u8f65xjnp5h2gdflv0prz7veg4nl7n99fpqdm",
       "label": "bc1q9u8f65xj…",
       "full_address": "bc1q9u8f65xjnp5h2gdflv0prz7veg4nl7n99fpqdm",
       "type": "address",
-      "balance": 5209.812000000007,
+      "balance": 4593.7525,
       "received": 6442.746500000005,
       "sent": 1230.4119999999998,
       "tx_count": 1089,
-      "size": 55
+      "size": 55,
+      "balance_source": "chain_utxos_unspent",
+      "unspent_utxos": 114
     },
     {
       "id": "bc1qz8g0xlxj32uj6gzsmg0qarmmcc9j6jgxr85z5x",
@@ -1421,40 +1702,48 @@
       "received": 0.0,
       "sent": 51659.84584469,
       "tx_count": 1,
-      "size": 8
+      "size": 8,
+      "balance_source": "chain_utxos_unspent",
+      "unspent_utxos": 0
     },
     {
       "id": "bc1q9fnugedtuwemyc4zy3fwus7fyql0zm3xm7vrz4",
       "label": "bc1q9fnugedt…",
       "full_address": "bc1q9fnugedtuwemyc4zy3fwus7fyql0zm3xm7vrz4",
       "type": "address",
-      "balance": 5100.816,
+      "balance": 0.0,
       "received": 15089.00135401,
       "sent": 8988.18535401,
       "tx_count": 6,
-      "size": 55
+      "size": 55,
+      "balance_source": "chain_utxos_unspent",
+      "unspent_utxos": 0
     },
     {
       "id": "3Fx4bL6jxQMRxgTrzf9rHgviFV2MtsDgZm",
       "label": "3Fx4bL6jxQMR…",
       "full_address": "3Fx4bL6jxQMRxgTrzf9rHgviFV2MtsDgZm",
       "type": "address",
-      "balance": 5092.246200000001,
+      "balance": 8093.4583999999995,
       "received": 5094.5322000000015,
       "sent": 0.0,
       "tx_count": 165,
-      "size": 55
+      "size": 55,
+      "balance_source": "chain_utxos_unspent",
+      "unspent_utxos": 283
     },
     {
       "id": "bc1qf3rk6nfs8ww83prp63w974p7knyr2j3tjtkr44",
       "label": "bc1qf3rk6nfs…",
       "full_address": "bc1qf3rk6nfs8ww83prp63w974p7knyr2j3tjtkr44",
       "type": "address",
-      "balance": -3999.9989681100005,
+      "balance": 0.0,
       "received": 23513.02403189,
       "sent": 26756.511,
       "tx_count": 6,
-      "size": 8
+      "size": 8,
+      "balance_source": "chain_utxos_unspent",
+      "unspent_utxos": 0
     },
     {
       "id": "bc1qsnc3ktncjwymr9l065rjd25m7z468cjvy4u2ew",
@@ -1465,194 +1754,230 @@
       "received": 0.0,
       "sent": 50167.32209,
       "tx_count": 1,
-      "size": 8
+      "size": 8,
+      "balance_source": "chain_utxos_unspent",
+      "unspent_utxos": 0
     },
     {
       "id": "3E96yrKn9CLBMGyAnn8KVQJS6oms4UPpcK",
       "label": "3E96yrKn9CLB…",
       "full_address": "3E96yrKn9CLBMGyAnn8KVQJS6oms4UPpcK",
       "type": "address",
-      "balance": 5016.3121509699995,
+      "balance": 5016.32214097,
       "received": 5031.3321309699995,
       "sent": 16.509990000000002,
       "tx_count": 6,
-      "size": 55
+      "size": 55,
+      "balance_source": "chain_utxos_unspent",
+      "unspent_utxos": 4
     },
     {
       "id": "bc1q44dwq2y6r9m60yxuvyu7ln54g2wx9vlxagkp2u",
       "label": "bc1q44dwq2y6…",
       "full_address": "bc1q44dwq2y6r9m60yxuvyu7ln54g2wx9vlxagkp2u",
       "type": "address",
-      "balance": 5000.0,
+      "balance": 0.0,
       "received": 7500.0,
       "sent": 0.0,
       "tx_count": 3,
-      "size": 55
+      "size": 55,
+      "balance_source": "chain_utxos_unspent",
+      "unspent_utxos": 0
     },
     {
       "id": "bc1qu499vya6yuzhwpq0khn0qqt4f5x5u440zpxzfe",
       "label": "bc1qu499vya6…",
       "full_address": "bc1qu499vya6yuzhwpq0khn0qqt4f5x5u440zpxzfe",
       "type": "address",
-      "balance": 5000.0,
+      "balance": 0.0,
       "received": 10000.0,
       "sent": 0.0,
       "tx_count": 2,
-      "size": 55
+      "size": 55,
+      "balance_source": "chain_utxos_unspent",
+      "unspent_utxos": 0
     },
     {
       "id": "bc1qug2jny5dkzuzhna5zhkmywhljupxjtx09h6rkd",
       "label": "bc1qug2jny5d…",
       "full_address": "bc1qug2jny5dkzuzhna5zhkmywhljupxjtx09h6rkd",
       "type": "address",
-      "balance": -23999.94889,
+      "balance": 0.0,
       "received": 24999.896511,
       "sent": 24999.896511,
       "tx_count": 4,
-      "size": 8
+      "size": 8,
+      "balance_source": "chain_utxos_unspent",
+      "unspent_utxos": 0
     },
     {
       "id": "398o3YmGtJuhpRB6sdb74dQEwa59nWmeQE",
       "label": "398o3YmGtJuh…",
       "full_address": "398o3YmGtJuhpRB6sdb74dQEwa59nWmeQE",
       "type": "address",
-      "balance": 4996.579524200001,
+      "balance": 12353.93981246,
       "received": 47811.19859148,
       "sent": 41342.047522880006,
       "tx_count": 11,
-      "size": 55
+      "size": 55,
+      "balance_source": "chain_utxos_unspent",
+      "unspent_utxos": 4
     },
     {
       "id": "bc1q096ks0zj9jl5qxe0pxzkzv9r8q6nnn39hqq4up",
       "label": "bc1q096ks0zj…",
       "full_address": "bc1q096ks0zj9jl5qxe0pxzkzv9r8q6nnn39hqq4up",
       "type": "address",
-      "balance": 4995.0,
+      "balance": 0.0,
       "received": 5000.0,
       "sent": 0.0,
       "tx_count": 2,
-      "size": 55
+      "size": 55,
+      "balance_source": "chain_utxos_unspent",
+      "unspent_utxos": 0
     },
     {
       "id": "bc1qztjs7z84mtl2x4w9ttwfdka2peu85ur5fzwndp",
       "label": "bc1qztjs7z84…",
       "full_address": "bc1qztjs7z84mtl2x4w9ttwfdka2peu85ur5fzwndp",
       "type": "address",
-      "balance": 4981.182099999997,
+      "balance": 0.0,
       "received": 8868.913346899997,
       "sent": 3865.960446899999,
       "tx_count": 275,
-      "size": 55
+      "size": 55,
+      "balance_source": "chain_utxos_unspent",
+      "unspent_utxos": 0
     },
     {
       "id": "bc1q7jsxzm4rn79rk3ujvsavvt94sgftkc2ytxkna8",
       "label": "bc1q7jsxzm4r…",
       "full_address": "bc1q7jsxzm4rn79rk3ujvsavvt94sgftkc2ytxkna8",
       "type": "address",
-      "balance": 4981.103900000001,
+      "balance": 0.0,
       "received": 19988.817600000002,
       "sent": 12007.7137,
       "tx_count": 10,
-      "size": 55
+      "size": 55,
+      "balance_source": "chain_utxos_unspent",
+      "unspent_utxos": 0
     },
     {
       "id": "bc1qv2znrzr7udc59tsan2z8d38887a2d38rj7tfy6",
       "label": "bc1qv2znrzr7…",
       "full_address": "bc1qv2znrzr7udc59tsan2z8d38887a2d38rj7tfy6",
       "type": "address",
-      "balance": 4950.075100000001,
+      "balance": 12739.8651,
       "received": 5049.075400000001,
       "sent": 0.0,
       "tx_count": 50,
-      "size": 55
+      "size": 55,
+      "balance_source": "chain_utxos_unspent",
+      "unspent_utxos": 130
     },
     {
       "id": "bc1qqv0a2sqaxa8ssdxfxsv3j0cv6n048h3pxw95ye",
       "label": "bc1qqv0a2sqa…",
       "full_address": "bc1qqv0a2sqaxa8ssdxfxsv3j0cv6n048h3pxw95ye",
       "type": "address",
-      "balance": -24747.898928,
+      "balance": 0.0,
       "received": 24747.898928,
       "sent": 24747.898928,
       "tx_count": 2,
-      "size": 8
+      "size": 8,
+      "balance_source": "chain_utxos_unspent",
+      "unspent_utxos": 0
     },
     {
       "id": "bc1q6c08z39t0n4a3q6lut7zkxmf8els7ker8nac8m",
       "label": "bc1q6c08z39t…",
       "full_address": "bc1q6c08z39t0n4a3q6lut7zkxmf8els7ker8nac8m",
       "type": "address",
-      "balance": 4845.3173633100005,
+      "balance": 7680.82853838,
       "received": 11664.72459341,
       "sent": 8393.40959188,
       "tx_count": 10,
-      "size": 55
+      "size": 55,
+      "balance_source": "chain_utxos_unspent",
+      "unspent_utxos": 1
     },
     {
       "id": "bc1ql2sdht3dd8rmfw635mehpzxxvsvlrp0zunqvun",
       "label": "bc1ql2sdht3d…",
       "full_address": "bc1ql2sdht3dd8rmfw635mehpzxxvsvlrp0zunqvun",
       "type": "address",
-      "balance": 4836.168699999999,
+      "balance": 4070.0863,
       "received": 12270.947700000006,
       "sent": 7431.475099999999,
       "tx_count": 601,
-      "size": 55
+      "size": 55,
+      "balance_source": "chain_utxos_unspent",
+      "unspent_utxos": 79
     },
     {
       "id": "bc1q4t36awl3859cqts6tuqgja2lp3lvja4qygehdu",
       "label": "bc1q4t36awl3…",
       "full_address": "bc1q4t36awl3859cqts6tuqgja2lp3lvja4qygehdu",
       "type": "address",
-      "balance": 4812.127865880002,
+      "balance": 0.0,
       "received": 5797.211855689998,
       "sent": 980.08658981,
       "tx_count": 392,
-      "size": 55
+      "size": 55,
+      "balance_source": "chain_utxos_unspent",
+      "unspent_utxos": 0
     },
     {
       "id": "bc1qgpjrqywz33qemjv4c7cgvf0s3mjsl5tghdh5uz",
       "label": "bc1qgpjrqywz…",
       "full_address": "bc1qgpjrqywz33qemjv4c7cgvf0s3mjsl5tghdh5uz",
       "type": "address",
-      "balance": 4626.513800000001,
+      "balance": 2.0704,
       "received": 9373.973199999999,
       "sent": 4718.0002,
       "tx_count": 77,
-      "size": 55
+      "size": 55,
+      "balance_source": "chain_utxos_unspent",
+      "unspent_utxos": 1
     },
     {
       "id": "bc1qfqlwzhtycywuucpmframv9303mm959wpx6x5uw",
       "label": "bc1qfqlwzhty…",
       "full_address": "bc1qfqlwzhtycywuucpmframv9303mm959wpx6x5uw",
       "type": "address",
-      "balance": 4599.852718390002,
+      "balance": 101.84903269,
       "received": 5058.512564399997,
       "sent": 456.18964601000005,
       "tx_count": 1396,
-      "size": 55
+      "size": 55,
+      "balance_source": "chain_utxos_unspent",
+      "unspent_utxos": 6
     },
     {
       "id": "bc1qcytltnptdh88am8as5jtzewmp2tmsgj9ca48l6",
       "label": "bc1qcytltnpt…",
       "full_address": "bc1qcytltnptdh88am8as5jtzewmp2tmsgj9ca48l6",
       "type": "address",
-      "balance": -12883.0,
+      "balance": 0.0,
       "received": 16365.0,
       "sent": 29183.0,
       "tx_count": 5,
-      "size": 8
+      "size": 8,
+      "balance_source": "chain_utxos_unspent",
+      "unspent_utxos": 0
     },
     {
       "id": "bc1q4520j6rkk8fdmzylyl0032t6ahhwud3qdyd9rk",
       "label": "bc1q4520j6rk…",
       "full_address": "bc1q4520j6rkk8fdmzylyl0032t6ahhwud3qdyd9rk",
       "type": "address",
-      "balance": 4443.039999999999,
+      "balance": 0.0,
       "received": 29523.93999999999,
       "sent": 23069.4,
       "tx_count": 25,
-      "size": 55
+      "size": 55,
+      "balance_source": "chain_utxos_unspent",
+      "unspent_utxos": 0
     },
     {
       "id": "bc1qrhg6tlsxj0wyhhthal6an7mw4my3lc36dyfzwl",
@@ -1663,194 +1988,230 @@
       "received": 44101.424776,
       "sent": 0.0,
       "tx_count": 1,
-      "size": 8
+      "size": 8,
+      "balance_source": "chain_utxos_unspent",
+      "unspent_utxos": 0
     },
     {
       "id": "bc1q2hry8zsrrv3t6s6ngry7mdlk9htdd3j7gas49p",
       "label": "bc1q2hry8zsr…",
       "full_address": "bc1q2hry8zsrrv3t6s6ngry7mdlk9htdd3j7gas49p",
       "type": "address",
-      "balance": -21998.001268999997,
+      "balance": 0.0,
       "received": 22001.895665,
       "sent": 21999.948467,
       "tx_count": 3,
-      "size": 8
+      "size": 8,
+      "balance_source": "chain_utxos_unspent",
+      "unspent_utxos": 0
     },
     {
       "id": "37YDoBksW2FWDcsAW53WN86qpqQYccmep3",
       "label": "37YDoBksW2FW…",
       "full_address": "37YDoBksW2FWDcsAW53WN86qpqQYccmep3",
       "type": "address",
-      "balance": -3525.039801550003,
+      "balance": 10001.19643325,
       "received": 20102.1566417,
       "sent": 23626.196443250003,
       "tx_count": 3,
-      "size": 8
+      "size": 8,
+      "balance_source": "chain_utxos_unspent",
+      "unspent_utxos": 1
     },
     {
       "id": "bc1q5zxmfnnte9klx49ctvrlgvsjdhcl7fzpw9upzm",
       "label": "bc1q5zxmfnnt…",
       "full_address": "bc1q5zxmfnnte9klx49ctvrlgvsjdhcl7fzpw9upzm",
       "type": "address",
-      "balance": 4362.595130800001,
+      "balance": 529.33968071,
       "received": 4737.497866590001,
       "sent": 371.06033579000007,
       "tx_count": 1364,
-      "size": 55
+      "size": 55,
+      "balance_source": "chain_utxos_unspent",
+      "unspent_utxos": 19
     },
     {
       "id": "bc1qqs87w4pl8jang3xg0jzr3mcvm8hjf0kf7ake5f",
       "label": "bc1qqs87w4pl…",
       "full_address": "bc1qqs87w4pl8jang3xg0jzr3mcvm8hjf0kf7ake5f",
       "type": "address",
-      "balance": 4356.0188,
+      "balance": 0.0,
       "received": 4900.5195,
       "sent": 495.0007,
       "tx_count": 33,
-      "size": 55
+      "size": 55,
+      "balance_source": "chain_utxos_unspent",
+      "unspent_utxos": 0
     },
     {
       "id": "3MN1tXKePydQ5tUd9wmTz4j7xKEY8pN6a4",
       "label": "3MN1tXKePydQ…",
       "full_address": "3MN1tXKePydQ5tUd9wmTz4j7xKEY8pN6a4",
       "type": "address",
-      "balance": 4293.430471699998,
+      "balance": 10633.8390857,
       "received": 15636.54751,
       "sent": 10500.143166000002,
       "tx_count": 10,
-      "size": 55
+      "size": 55,
+      "balance_source": "chain_utxos_unspent",
+      "unspent_utxos": 4
     },
     {
       "id": "bc1qlhh5t0ew4q9fhptvzqjsqrhm86mcp7fp9dm5uh",
       "label": "bc1qlhh5t0ew…",
       "full_address": "bc1qlhh5t0ew4q9fhptvzqjsqrhm86mcp7fp9dm5uh",
       "type": "address",
-      "balance": 4291.408700000004,
+      "balance": 4958.2918,
       "received": 4924.977900000008,
       "sent": 631.2269,
       "tx_count": 1685,
-      "size": 55
+      "size": 55,
+      "balance_source": "chain_utxos_unspent",
+      "unspent_utxos": 1561
     },
     {
       "id": "bc1qg48j94eqz5dypr8kkv37c4yf8hjklqj7pxel23",
       "label": "bc1qg48j94eq…",
       "full_address": "bc1qg48j94eqz5dypr8kkv37c4yf8hjklqj7pxel23",
       "type": "address",
-      "balance": 4230.1383012999995,
+      "balance": 2.168e-05,
       "received": 22239.99337752,
       "sent": 15672.20234624,
       "tx_count": 9,
-      "size": 55
+      "size": 55,
+      "balance_source": "chain_utxos_unspent",
+      "unspent_utxos": 1
     },
     {
       "id": "bc1qwrl3dmke58j6u3v2tct809jmc3uf3gfavlvzms",
       "label": "bc1qwrl3dmke…",
       "full_address": "bc1qwrl3dmke58j6u3v2tct809jmc3uf3gfavlvzms",
       "type": "address",
-      "balance": 4211.369009769996,
+      "balance": 0.0,
       "received": 8524.290779270006,
       "sent": 4139.998140719999,
       "tx_count": 1145,
-      "size": 55
+      "size": 55,
+      "balance_source": "chain_utxos_unspent",
+      "unspent_utxos": 0
     },
     {
       "id": "bc1q4e6z3gaet37f72pweslasacjw2wq0az3wxjmh7",
       "label": "bc1q4e6z3gae…",
       "full_address": "bc1q4e6z3gaet37f72pweslasacjw2wq0az3wxjmh7",
       "type": "address",
-      "balance": 4200.0,
+      "balance": 0.0,
       "received": 10475.0,
       "sent": 6150.0,
       "tx_count": 25,
-      "size": 55
+      "size": 55,
+      "balance_source": "chain_utxos_unspent",
+      "unspent_utxos": 0
     },
     {
       "id": "bc1qlhs667typ5heqpj3ryay5c7j4p4xrf5v5hgzvv",
       "label": "bc1qlhs667ty…",
       "full_address": "bc1qlhs667typ5heqpj3ryay5c7j4p4xrf5v5hgzvv",
       "type": "address",
-      "balance": -7865.0,
+      "balance": 0.0,
       "received": 17181.9,
       "sent": 24747.9,
       "tx_count": 12,
-      "size": 8
+      "size": 8,
+      "balance_source": "chain_utxos_unspent",
+      "unspent_utxos": 0
     },
     {
       "id": "bc1q33slcj8cqjut0hkxgel5f0l2l9kwe88w7s4gu9",
       "label": "bc1q33slcj8c…",
       "full_address": "bc1q33slcj8cqjut0hkxgel5f0l2l9kwe88w7s4gu9",
       "type": "address",
-      "balance": 4178.0232,
+      "balance": 158.1495,
       "received": 5378.757000000003,
       "sent": 1190.6140000000005,
       "tx_count": 583,
-      "size": 55
+      "size": 55,
+      "balance_source": "chain_utxos_unspent",
+      "unspent_utxos": 13
     },
     {
       "id": "bc1q3q2hc9h7vsphne4ltaqedw7xt3mdd6rhhnv6jh",
       "label": "bc1q3q2hc9h7…",
       "full_address": "bc1q3q2hc9h7vsphne4ltaqedw7xt3mdd6rhhnv6jh",
       "type": "address",
-      "balance": -20930.25255737,
+      "balance": 0.0,
       "received": 20810.3762189,
       "sent": 20930.25255737,
       "tx_count": 4,
-      "size": 8
+      "size": 8,
+      "balance_source": "chain_utxos_unspent",
+      "unspent_utxos": 0
     },
     {
       "id": "bc1qyn60p5wjla8nzzvj32r6hlrt2csl2ps6tet9qj",
       "label": "bc1qyn60p5wj…",
       "full_address": "bc1qyn60p5wjla8nzzvj32r6hlrt2csl2ps6tet9qj",
       "type": "address",
-      "balance": 4174.047711780001,
+      "balance": 0.0,
       "received": 6300.655895090001,
       "sent": 2121.60818331,
       "tx_count": 116,
-      "size": 55
+      "size": 55,
+      "balance_source": "chain_utxos_unspent",
+      "unspent_utxos": 0
     },
     {
       "id": "bc1qf9ufpsj5k5rq3uexkke82xmeay3drw5mepmhmj",
       "label": "bc1qf9ufpsj5…",
       "full_address": "bc1qf9ufpsj5k5rq3uexkke82xmeay3drw5mepmhmj",
       "type": "address",
-      "balance": 4166.497699999999,
+      "balance": 2755.6335,
       "received": 5561.054900000003,
       "sent": 1391.7339999999992,
       "tx_count": 1983,
-      "size": 55
+      "size": 55,
+      "balance_source": "chain_utxos_unspent",
+      "unspent_utxos": 919
     },
     {
       "id": "3Kveo91TspouwroT3JpFCZduWVM92dsz6p",
       "label": "3Kveo91Tspou…",
       "full_address": "3Kveo91TspouwroT3JpFCZduWVM92dsz6p",
       "type": "address",
-      "balance": 4145.5175098,
+      "balance": 22802.0246019,
       "received": 13735.1273004,
       "sent": 0.0,
       "tx_count": 3,
-      "size": 55
+      "size": 55,
+      "balance_source": "chain_utxos_unspent",
+      "unspent_utxos": 9
     },
     {
       "id": "bc1ql6z0skw0xnc258as23467jm0s073yrzhdrrp07",
       "label": "bc1ql6z0skw0…",
       "full_address": "bc1ql6z0skw0xnc258as23467jm0s073yrzhdrrp07",
       "type": "address",
-      "balance": -20583.75429,
+      "balance": 0.0,
       "received": 20583.75429,
       "sent": 20583.75429,
       "tx_count": 2,
-      "size": 8
+      "size": 8,
+      "balance_source": "chain_utxos_unspent",
+      "unspent_utxos": 0
     },
     {
       "id": "bc1qf7ndp606c5m368wlywde47eg9vuan7eeekk86t",
       "label": "bc1qf7ndp606…",
       "full_address": "bc1qf7ndp606c5m368wlywde47eg9vuan7eeekk86t",
       "type": "address",
-      "balance": 4090.76574021,
+      "balance": 0.0,
       "received": 4091.76574021,
       "sent": 0.0,
       "tx_count": 2,
-      "size": 55
+      "size": 55,
+      "balance_source": "chain_utxos_unspent",
+      "unspent_utxos": 0
     },
     {
       "id": "bc1qlznl5jrmuaw2ldlwz69tx69na8pty5933ha9cl",
@@ -1861,458 +2222,542 @@
       "received": 40124.4,
       "sent": 0.0,
       "tx_count": 1,
-      "size": 8
+      "size": 8,
+      "balance_source": "chain_utxos_unspent",
+      "unspent_utxos": 0
     },
     {
       "id": "bc1qsesq4yyrkch247c0genl0za92th4ku243f8z0r",
       "label": "bc1qsesq4yyr…",
       "full_address": "bc1qsesq4yyrkch247c0genl0za92th4ku243f8z0r",
       "type": "address",
-      "balance": 4000.0,
+      "balance": 0.0,
       "received": 4500.0,
       "sent": 0.0,
       "tx_count": 3,
-      "size": 55
+      "size": 55,
+      "balance_source": "chain_utxos_unspent",
+      "unspent_utxos": 0
     },
     {
       "id": "bc1qxc7e4nyk36sypw20h0w0y464j9h7836pzx9487",
       "label": "bc1qxc7e4nyk…",
       "full_address": "bc1qxc7e4nyk36sypw20h0w0y464j9h7836pzx9487",
       "type": "address",
-      "balance": -19999.948044,
+      "balance": 0.0,
       "received": 19999.948044,
       "sent": 19999.948044,
       "tx_count": 2,
-      "size": 8
+      "size": 8,
+      "balance_source": "chain_utxos_unspent",
+      "unspent_utxos": 0
     },
     {
       "id": "bc1q4dpj6k0t97zn4eeluu89zvanlpkk2mp0ldpdze",
       "label": "bc1q4dpj6k0t…",
       "full_address": "bc1q4dpj6k0t97zn4eeluu89zvanlpkk2mp0ldpdze",
       "type": "address",
-      "balance": 0.0,
+      "balance": 39994.999989,
       "received": 39994.999989,
       "sent": 0.0,
       "tx_count": 1,
-      "size": 8
+      "size": 8,
+      "balance_source": "chain_utxos_unspent",
+      "unspent_utxos": 1
     },
     {
       "id": "bc1q2q7zq9evjjqsc2zvwvtzpw2y6ptu0n795xjl9k",
       "label": "bc1q2q7zq9ev…",
       "full_address": "bc1q2q7zq9evjjqsc2zvwvtzpw2y6ptu0n795xjl9k",
       "type": "address",
-      "balance": 3945.00238388,
+      "balance": 0.0,
       "received": 3950.00238388,
       "sent": 0.0,
       "tx_count": 2,
-      "size": 55
+      "size": 55,
+      "balance_source": "chain_utxos_unspent",
+      "unspent_utxos": 0
     },
     {
       "id": "bc1qcxdm2uh6rcqss9p4mcm5ef65jpzue7x40s3x2y",
       "label": "bc1qcxdm2uh6…",
       "full_address": "bc1qcxdm2uh6rcqss9p4mcm5ef65jpzue7x40s3x2y",
       "type": "address",
-      "balance": 3911.4344075999998,
+      "balance": 0.0,
       "received": 5306.0297436,
       "sent": 1296.04,
       "tx_count": 8,
-      "size": 55
+      "size": 55,
+      "balance_source": "chain_utxos_unspent",
+      "unspent_utxos": 0
     },
     {
       "id": "bc1qtckgnyd0ype4l8yz8jvg55ds235sjymkw657fd",
       "label": "bc1qtckgnyd0…",
       "full_address": "bc1qtckgnyd0ype4l8yz8jvg55ds235sjymkw657fd",
       "type": "address",
-      "balance": 3888.705631939997,
+      "balance": 319.08608988,
       "received": 4108.383724059998,
       "sent": 216.46309211999997,
       "tx_count": 1337,
-      "size": 55
+      "size": 55,
+      "balance_source": "chain_utxos_unspent",
+      "unspent_utxos": 21
     },
     {
       "id": "bc1q9gsa0z8yyje9e6x6dsy7y8xdezlwjxfj3gqeq5",
       "label": "bc1q9gsa0z8y…",
       "full_address": "bc1q9gsa0z8yyje9e6x6dsy7y8xdezlwjxfj3gqeq5",
       "type": "address",
-      "balance": 3870.6027169400045,
+      "balance": 0.0,
       "received": 4329.080905340006,
       "sent": 455.00638839999993,
       "tx_count": 922,
-      "size": 55
+      "size": 55,
+      "balance_source": "chain_utxos_unspent",
+      "unspent_utxos": 0
     },
     {
       "id": "3JRyK2PUMehy6dP7GXWicusw444QQkULpm",
       "label": "3JRyK2PUMehy…",
       "full_address": "3JRyK2PUMehy6dP7GXWicusw444QQkULpm",
       "type": "address",
-      "balance": -7319.1662657199995,
+      "balance": 1.37419493,
       "received": 15660.79533514,
       "sent": 22984.961610860002,
       "tx_count": 12,
-      "size": 8
+      "size": 8,
+      "balance_source": "chain_utxos_unspent",
+      "unspent_utxos": 1
     },
     {
       "id": "bc1qp73pyyz76qu7y20e9cs2fxg3pa62m53t3hztaa",
       "label": "bc1qp73pyyz7…",
       "full_address": "bc1qp73pyyz76qu7y20e9cs2fxg3pa62m53t3hztaa",
       "type": "address",
-      "balance": 3848.3790684499995,
+      "balance": 129.8248,
       "received": 5128.604010390007,
       "sent": 1262.8049419400002,
       "tx_count": 1106,
-      "size": 55
+      "size": 55,
+      "balance_source": "chain_utxos_unspent",
+      "unspent_utxos": 21
     },
     {
       "id": "bc1qw3jjsdqg7uncf69wty78pk538p7hjp9p2xpde0",
       "label": "bc1qw3jjsdqg…",
       "full_address": "bc1qw3jjsdqg7uncf69wty78pk538p7hjp9p2xpde0",
       "type": "address",
-      "balance": 3800.25603787,
+      "balance": 0.0,
       "received": 3800.25603787,
       "sent": 318.43802732,
       "tx_count": 2,
-      "size": 55
+      "size": 55,
+      "balance_source": "chain_utxos_unspent",
+      "unspent_utxos": 0
     },
     {
       "id": "bc1qms924778f344qjgzehxvccrzu0lnpp68m5fqn8",
       "label": "bc1qms924778…",
       "full_address": "bc1qms924778f344qjgzehxvccrzu0lnpp68m5fqn8",
       "type": "address",
-      "balance": -10628.558134299998,
+      "balance": 2.4984698,
       "received": 15903.743895700003,
       "sent": 21531.9417056,
       "tx_count": 13,
-      "size": 8
+      "size": 8,
+      "balance_source": "chain_utxos_unspent",
+      "unspent_utxos": 1
     },
     {
       "id": "bc1qmdddy4m96enkz9p5ek9ret999aplrhu9r3kvdl",
       "label": "bc1qmdddy4m9…",
       "full_address": "bc1qmdddy4m96enkz9p5ek9ret999aplrhu9r3kvdl",
       "type": "address",
-      "balance": 3700.8280360599974,
+      "balance": 0.0,
       "received": 4722.034878389998,
       "sent": 991.2068423300001,
       "tx_count": 358,
-      "size": 55
+      "size": 55,
+      "balance_source": "chain_utxos_unspent",
+      "unspent_utxos": 0
     },
     {
       "id": "bc1q0p8avr70v2lklsqnaqul4qv3a65wev9lumkgu5",
       "label": "bc1q0p8avr70…",
       "full_address": "bc1q0p8avr70v2lklsqnaqul4qv3a65wev9lumkgu5",
       "type": "address",
-      "balance": 3678.5556117200003,
+      "balance": 0.0,
       "received": 5188.9,
       "sent": 1321.34438828,
       "tx_count": 7,
-      "size": 55
+      "size": 55,
+      "balance_source": "chain_utxos_unspent",
+      "unspent_utxos": 0
     },
     {
       "id": "bc1qm9my46cffprlwypuwj4v7d7ne0h84l2vtp8jnp",
       "label": "bc1qm9my46cf…",
       "full_address": "bc1qm9my46cffprlwypuwj4v7d7ne0h84l2vtp8jnp",
       "type": "address",
-      "balance": 3662.6306654,
+      "balance": 7334.99997,
       "received": 3980.6736654,
       "sent": 441.671,
       "tx_count": 5,
-      "size": 55
+      "size": 55,
+      "balance_source": "chain_utxos_unspent",
+      "unspent_utxos": 2
     },
     {
       "id": "bc1qg3mtjcv9ghk8s9r6v2lmdypnn0tz7arrmcy92j",
       "label": "bc1qg3mtjcv9…",
       "full_address": "bc1qg3mtjcv9ghk8s9r6v2lmdypnn0tz7arrmcy92j",
       "type": "address",
-      "balance": 3656.0,
+      "balance": 0.0,
       "received": 4146.0,
       "sent": 340.0,
       "tx_count": 3,
-      "size": 55
+      "size": 55,
+      "balance_source": "chain_utxos_unspent",
+      "unspent_utxos": 0
     },
     {
       "id": "bc1qnqu7z9m4uj2kcc9a63la5juamlcsallp8t80e4",
       "label": "bc1qnqu7z9m4…",
       "full_address": "bc1qnqu7z9m4uj2kcc9a63la5juamlcsallp8t80e4",
       "type": "address",
-      "balance": 3596.67912445,
+      "balance": 0.0,
       "received": 4233.5351790899995,
       "sent": 318.42802732,
       "tx_count": 4,
-      "size": 55
+      "size": 55,
+      "balance_source": "chain_utxos_unspent",
+      "unspent_utxos": 0
     },
     {
       "id": "3J9yEWDuooHPCw75vvLydS4L7iJXy2KhFG",
       "label": "3J9yEWDuooHP…",
       "full_address": "3J9yEWDuooHPCw75vvLydS4L7iJXy2KhFG",
       "type": "address",
-      "balance": -3648.0100299999995,
+      "balance": 0.00991,
       "received": 16140.829850000002,
       "sent": 19789.83989,
       "tx_count": 5,
-      "size": 8
+      "size": 8,
+      "balance_source": "chain_utxos_unspent",
+      "unspent_utxos": 1
     },
     {
       "id": "bc1q2dfyw3nd63x34jn4u783w37yk9j43tjlwhqg8j",
       "label": "bc1q2dfyw3nd…",
       "full_address": "bc1q2dfyw3nd63x34jn4u783w37yk9j43tjlwhqg8j",
       "type": "address",
-      "balance": 3575.2793017999998,
+      "balance": 0.0,
       "received": 3823.0213018,
       "sent": 0.0,
       "tx_count": 5,
-      "size": 55
+      "size": 55,
+      "balance_source": "chain_utxos_unspent",
+      "unspent_utxos": 0
     },
     {
       "id": "bc1qlxx4drdj56qju6whjfazvz9445l8dr74lcunck",
       "label": "bc1qlxx4drdj…",
       "full_address": "bc1qlxx4drdj56qju6whjfazvz9445l8dr74lcunck",
       "type": "address",
-      "balance": 3545.568699999999,
+      "balance": 4515.6996,
       "received": 6670.035799999997,
       "sent": 3094.5204999999996,
       "tx_count": 209,
-      "size": 55
+      "size": 55,
+      "balance_source": "chain_utxos_unspent",
+      "unspent_utxos": 27
     },
     {
       "id": "bc1q6qty756mxrrzc5s99yvp2jpsm8ngxnhygqcqaw",
       "label": "bc1q6qty756m…",
       "full_address": "bc1q6qty756mxrrzc5s99yvp2jpsm8ngxnhygqcqaw",
       "type": "address",
-      "balance": 3544.9909958,
+      "balance": 0.0,
       "received": 4744.990995800001,
       "sent": 600.0,
       "tx_count": 4,
-      "size": 55
+      "size": 55,
+      "balance_source": "chain_utxos_unspent",
+      "unspent_utxos": 0
     },
     {
       "id": "bc1q8pffqntquemay5ad8vxztvstjq02g9tff3p9pk",
       "label": "bc1q8pffqntq…",
       "full_address": "bc1q8pffqntquemay5ad8vxztvstjq02g9tff3p9pk",
       "type": "address",
-      "balance": 3524.83,
+      "balance": 0.0,
       "received": 8531.729999999998,
       "sent": 4944.779999999999,
       "tx_count": 62,
-      "size": 55
+      "size": 55,
+      "balance_source": "chain_utxos_unspent",
+      "unspent_utxos": 0
     },
     {
       "id": "bc1qn4eq4krdvptm4yf5f9lsdhdm5h0u99wman3hyj",
       "label": "bc1qn4eq4krd…",
       "full_address": "bc1qn4eq4krdvptm4yf5f9lsdhdm5h0u99wman3hyj",
       "type": "address",
-      "balance": -17589.998353,
+      "balance": 0.0,
       "received": 17589.998353,
       "sent": 17589.998353,
       "tx_count": 2,
-      "size": 8
+      "size": 8,
+      "balance_source": "chain_utxos_unspent",
+      "unspent_utxos": 0
     },
     {
       "id": "bc1qvznw3w4w9yrf8u6u4cj7ka53l9smp5lmk9qyup",
       "label": "bc1qvznw3w4w…",
       "full_address": "bc1qvznw3w4w9yrf8u6u4cj7ka53l9smp5lmk9qyup",
       "type": "address",
-      "balance": 3511.847100300003,
+      "balance": 2.0012,
       "received": 5444.501842490001,
       "sent": 1931.56221055,
       "tx_count": 644,
-      "size": 55
+      "size": 55,
+      "balance_source": "chain_utxos_unspent",
+      "unspent_utxos": 1
     },
     {
       "id": "bc1qj5n5cdvjt597vxgz478jwcthp3pcx6lfhq28lv",
       "label": "bc1qj5n5cdvj…",
       "full_address": "bc1qj5n5cdvjt597vxgz478jwcthp3pcx6lfhq28lv",
       "type": "address",
-      "balance": -3164.7548239600023,
+      "balance": 2.0478,
       "received": 15918.79545013003,
       "sent": 19081.030774090003,
       "tx_count": 4185,
-      "size": 8
+      "size": 8,
+      "balance_source": "chain_utxos_unspent",
+      "unspent_utxos": 1
     },
     {
       "id": "bc1qacyznjm6qv39xjs8ltalckh0l9mqe90960dzye",
       "label": "bc1qacyznjm6…",
       "full_address": "bc1qacyznjm6qv39xjs8ltalckh0l9mqe90960dzye",
       "type": "address",
-      "balance": 3406.26,
+      "balance": 0.0,
       "received": 3411.26,
       "sent": 0.0,
       "tx_count": 2,
-      "size": 55
+      "size": 55,
+      "balance_source": "chain_utxos_unspent",
+      "unspent_utxos": 0
     },
     {
       "id": "bc1qmrey4tvn3m0xhwvcgxkrackuac2h7tua3f5cf2",
       "label": "bc1qmrey4tvn…",
       "full_address": "bc1qmrey4tvn3m0xhwvcgxkrackuac2h7tua3f5cf2",
       "type": "address",
-      "balance": 3395.98636231,
+      "balance": 1488.74203299,
       "received": 3974.9901290600014,
       "sent": 577.5352815800001,
       "tx_count": 829,
-      "size": 55
+      "size": 55,
+      "balance_source": "chain_utxos_unspent",
+      "unspent_utxos": 108
     },
     {
       "id": "bc1qtzxahvsh97jyf743uqsh0eu5raetr5xh4mshk9",
       "label": "bc1qtzxahvsh…",
       "full_address": "bc1qtzxahvsh97jyf743uqsh0eu5raetr5xh4mshk9",
       "type": "address",
-      "balance": -1142.7936954000015,
+      "balance": 3365.1664723999997,
       "received": 16922.3918187,
       "sent": 16977.9601378,
       "tx_count": 5,
-      "size": 8
+      "size": 8,
+      "balance_source": "chain_utxos_unspent",
+      "unspent_utxos": 2
     },
     {
       "id": "bc1qksr940tf004jdtltz3uvpad7t5sq9de4c0u3na",
       "label": "bc1qksr940tf…",
       "full_address": "bc1qksr940tf004jdtltz3uvpad7t5sq9de4c0u3na",
       "type": "address",
-      "balance": -16939.644914,
+      "balance": 0.0,
       "received": 16939.644914,
       "sent": 16939.644914,
       "tx_count": 2,
-      "size": 8
+      "size": 8,
+      "balance_source": "chain_utxos_unspent",
+      "unspent_utxos": 0
     },
     {
       "id": "bc1qygwme30e88rz57pme8uf8pklkjjuqz396z227c",
       "label": "bc1qygwme30e…",
       "full_address": "bc1qygwme30e88rz57pme8uf8pklkjjuqz396z227c",
       "type": "address",
-      "balance": 3385.0,
+      "balance": 3000.0,
       "received": 6004.0,
       "sent": 2072.0,
       "tx_count": 7,
-      "size": 55
+      "size": 55,
+      "balance_source": "chain_utxos_unspent",
+      "unspent_utxos": 1
     },
     {
       "id": "bc1qdnhducdmwld86y5qy56qljxpfulf06yga2ndy0",
       "label": "bc1qdnhducdm…",
       "full_address": "bc1qdnhducdmwld86y5qy56qljxpfulf06yga2ndy0",
       "type": "address",
-      "balance": -16756.512043,
+      "balance": 0.0,
       "received": 16756.512043,
       "sent": 16756.512043,
       "tx_count": 2,
-      "size": 8
+      "size": 8,
+      "balance_source": "chain_utxos_unspent",
+      "unspent_utxos": 0
     },
     {
       "id": "bc1q8szt66gl6u4srfwvhhm7x4mcmulyv4ae0njrel",
       "label": "bc1q8szt66gl…",
       "full_address": "bc1q8szt66gl6u4srfwvhhm7x4mcmulyv4ae0njrel",
       "type": "address",
-      "balance": 3339.2068999999965,
+      "balance": 0.0,
       "received": 5264.933700000002,
       "sent": 1918.9660999999994,
       "tx_count": 1882,
-      "size": 55
+      "size": 55,
+      "balance_source": "chain_utxos_unspent",
+      "unspent_utxos": 0
     },
     {
       "id": "bc1qh4my8v7lla6xz6td78vczca4p6f0k8xm20ee08",
       "label": "bc1qh4my8v7l…",
       "full_address": "bc1qh4my8v7lla6xz6td78vczca4p6f0k8xm20ee08",
       "type": "address",
-      "balance": 3331.99,
+      "balance": 0.0,
       "received": 3332.99,
       "sent": 0.0,
       "tx_count": 2,
-      "size": 55
+      "size": 55,
+      "balance_source": "chain_utxos_unspent",
+      "unspent_utxos": 0
     },
     {
       "id": "bc1qeg038nn3ssamvu04j9zfszc5gg3dydvs89fsgs",
       "label": "bc1qeg038nn3…",
       "full_address": "bc1qeg038nn3ssamvu04j9zfszc5gg3dydvs89fsgs",
       "type": "address",
-      "balance": 3330.0432999999994,
+      "balance": 0.0,
       "received": 3353.6251999999995,
       "sent": 0.0,
       "tx_count": 49,
-      "size": 55
+      "size": 55,
+      "balance_source": "chain_utxos_unspent",
+      "unspent_utxos": 0
     },
     {
       "id": "3EgvfXhgpjuXyYNv4F3N6KpFBBtLs7FszV",
       "label": "3EgvfXhgpjuX…",
       "full_address": "3EgvfXhgpjuXyYNv4F3N6KpFBBtLs7FszV",
       "type": "address",
-      "balance": 3329.88,
+      "balance": 4343.36909,
       "received": 3330.879,
       "sent": 0.0,
       "tx_count": 2,
-      "size": 55
+      "size": 55,
+      "balance_source": "chain_utxos_unspent",
+      "unspent_utxos": 5
     },
     {
       "id": "bc1qx276t0cf2jhgxlwnkr0n4suhf754k53ac90hg7",
       "label": "bc1qx276t0cf…",
       "full_address": "bc1qx276t0cf2jhgxlwnkr0n4suhf754k53ac90hg7",
       "type": "address",
-      "balance": 3284.0140152699987,
+      "balance": 1938.14190103,
       "received": 4070.0704173299987,
       "sent": 784.1769571100001,
       "tx_count": 1088,
-      "size": 55
+      "size": 55,
+      "balance_source": "chain_utxos_unspent",
+      "unspent_utxos": 483
     },
     {
       "id": "bc1qvqxwt4hrx0a4wxy7yrhf32wjnl2cjd0la3l46n",
       "label": "bc1qvqxwt4hr…",
       "full_address": "bc1qvqxwt4hrx0a4wxy7yrhf32wjnl2cjd0la3l46n",
       "type": "address",
-      "balance": -16413.999631,
+      "balance": 0.0,
       "received": 16413.999631,
       "sent": 16413.999631,
       "tx_count": 2,
-      "size": 8
+      "size": 8,
+      "balance_source": "chain_utxos_unspent",
+      "unspent_utxos": 0
     },
     {
       "id": "bc1qf85gjzh5nfh69jfq9l88aavaz675taledp6avz",
       "label": "bc1qf85gjzh5…",
       "full_address": "bc1qf85gjzh5nfh69jfq9l88aavaz675taledp6avz",
       "type": "address",
-      "balance": -13626.96249427,
+      "balance": 0.0,
       "received": 13559.79162932,
       "sent": 19186.75412359,
       "tx_count": 8,
-      "size": 8
+      "size": 8,
+      "balance_source": "chain_utxos_unspent",
+      "unspent_utxos": 0
     },
     {
       "id": "bc1q22setya6ghdt4xjhm8z0q4xqy5yww8gskkygz4",
       "label": "bc1q22setya6…",
       "full_address": "bc1q22setya6ghdt4xjhm8z0q4xqy5yww8gskkygz4",
       "type": "address",
-      "balance": 3267.8952511100083,
+      "balance": 4961.82233911,
       "received": 4188.132028110007,
       "sent": 918.0844770000001,
       "tx_count": 924,
-      "size": 55
+      "size": 55,
+      "balance_source": "chain_utxos_unspent",
+      "unspent_utxos": 986
     },
     {
       "id": "bc1q7jyxmwfejru5rtrz60v535aeg86mahmhdyjmwk",
       "label": "bc1q7jyxmwfe…",
       "full_address": "bc1q7jyxmwfejru5rtrz60v535aeg86mahmhdyjmwk",
       "type": "address",
-      "balance": -16215.09989431,
+      "balance": 0.0,
       "received": 16215.09989431,
       "sent": 16215.09989431,
       "tx_count": 2,
-      "size": 8
+      "size": 8,
+      "balance_source": "chain_utxos_unspent",
+      "unspent_utxos": 0
     },
     {
       "id": "bc1quzuc3wveg292287zj6djvehgckj9xvl49psdye",
       "label": "bc1quzuc3wve…",
       "full_address": "bc1quzuc3wveg292287zj6djvehgckj9xvl49psdye",
       "type": "address",
-      "balance": 3238.478685299998,
+      "balance": 0.0,
       "received": 4440.527690439995,
       "sent": 1200.7434511999998,
       "tx_count": 1800,
-      "size": 55
+      "size": 55,
+      "balance_source": "chain_utxos_unspent",
+      "unspent_utxos": 0
     },
     {
       "id": "bc1q864rzrtqszpmlpkvfhecv9hel9zmhfj08ptl48",
       "label": "bc1q864rzrtq…",
       "full_address": "bc1q864rzrtqszpmlpkvfhecv9hel9zmhfj08ptl48",
       "type": "address",
-      "balance": 3230.108625209999,
+      "balance": 2471.0217,
       "received": 4528.68422521,
       "sent": 1292.6680999999999,
       "tx_count": 743,
-      "size": 55
+      "size": 55,
+      "balance_source": "chain_utxos_unspent",
+      "unspent_utxos": 189
     },
     {
       "id": "bc1qgpghl89m8ar39c39ul0fum5x27nkn5p3j0wgf3",
@@ -2323,18 +2768,22 @@
       "received": 0.0,
       "sent": 32164.997703,
       "tx_count": 1,
-      "size": 8
+      "size": 8,
+      "balance_source": "chain_utxos_unspent",
+      "unspent_utxos": 0
     },
     {
       "id": "bc1q3s53y3txgk625r7nrwewzway5neqsc80y29uny",
       "label": "bc1q3s53y3tx…",
       "full_address": "bc1q3s53y3txgk625r7nrwewzway5neqsc80y29uny",
       "type": "address",
-      "balance": 3205.9226999999987,
+      "balance": 0.0,
       "received": 3790.5314000000008,
       "sent": 582.5559999999999,
       "tx_count": 204,
-      "size": 55
+      "size": 55,
+      "balance_source": "chain_utxos_unspent",
+      "unspent_utxos": 0
     },
     {
       "id": "bc1q8qaql46hfl6wrjkmk8vrqrwaznut7avfm7jz6s",
@@ -2345,73 +2794,87 @@
       "received": 0.0,
       "sent": 32000.000079,
       "tx_count": 1,
-      "size": 8
+      "size": 8,
+      "balance_source": "chain_utxos_unspent",
+      "unspent_utxos": 0
     },
     {
       "id": "bc1q5vryg45jxs3dwej0c6hwegka8zf959v9dx72u5",
       "label": "bc1q5vryg45j…",
       "full_address": "bc1q5vryg45jxs3dwej0c6hwegka8zf959v9dx72u5",
       "type": "address",
-      "balance": 3199.992102,
+      "balance": 0.0,
       "received": 4800.0,
       "sent": 1550.007898,
       "tx_count": 98,
-      "size": 55
+      "size": 55,
+      "balance_source": "chain_utxos_unspent",
+      "unspent_utxos": 0
     },
     {
       "id": "bc1qr4uglvn0kef5vxau6vkma8ylhmah8tkp5u9qpd",
       "label": "bc1qr4uglvn0…",
       "full_address": "bc1qr4uglvn0kef5vxau6vkma8ylhmah8tkp5u9qpd",
       "type": "address",
-      "balance": 3117.6199,
+      "balance": 0.0,
       "received": 3417.6199,
       "sent": 0.0,
       "tx_count": 6,
-      "size": 55
+      "size": 55,
+      "balance_source": "chain_utxos_unspent",
+      "unspent_utxos": 0
     },
     {
       "id": "bc1q097x3k6y2mgx2n2udhr6teyr63x4mcnfy0xwkv",
       "label": "bc1q097x3k6y…",
       "full_address": "bc1q097x3k6y2mgx2n2udhr6teyr63x4mcnfy0xwkv",
       "type": "address",
-      "balance": 3101.0,
+      "balance": 0.0,
       "received": 3102.0,
       "sent": 0.0,
       "tx_count": 4,
-      "size": 55
+      "size": 55,
+      "balance_source": "chain_utxos_unspent",
+      "unspent_utxos": 0
     },
     {
       "id": "bc1qwqdzuht55la6cp7ugcqezgh47u4lfvpyqu7h0x",
       "label": "bc1qwqdzuht5…",
       "full_address": "bc1qwqdzuht55la6cp7ugcqezgh47u4lfvpyqu7h0x",
       "type": "address",
-      "balance": -14964.98241701,
+      "balance": 0.0,
       "received": 8100.0,
       "sent": 22764.98241701,
       "tx_count": 13,
-      "size": 8
+      "size": 8,
+      "balance_source": "chain_utxos_unspent",
+      "unspent_utxos": 0
     },
     {
       "id": "1EsTi3DtKbE77pFhAvST58aYpW8DGdaHW",
       "label": "1EsTi3DtKbE7…",
       "full_address": "1EsTi3DtKbE77pFhAvST58aYpW8DGdaHW",
       "type": "address",
-      "balance": 3074.503066199999,
+      "balance": 13526.046974,
       "received": 24956.641348099998,
       "sent": 19382.1382819,
       "tx_count": 12,
-      "size": 55
+      "size": 55,
+      "balance_source": "chain_utxos_unspent",
+      "unspent_utxos": 8
     },
     {
       "id": "3B5NwcEVEzYvdihYeNVdEoBm9S8BQveJgQ",
       "label": "3B5NwcEVEzYv…",
       "full_address": "3B5NwcEVEzYvdihYeNVdEoBm9S8BQveJgQ",
       "type": "address",
-      "balance": -1.0000099999997474,
+      "balance": 11492.5914561,
       "received": 19176.2484984,
       "sent": 11493.5914661,
       "tx_count": 2,
-      "size": 8
+      "size": 8,
+      "balance_source": "chain_utxos_unspent",
+      "unspent_utxos": 1
     },
     {
       "id": "bc1qsw85qrtca9hc2l9p7q469dssz562r66wn4uscf",
@@ -2422,18 +2885,22 @@
       "received": 30584.754097,
       "sent": 0.0,
       "tx_count": 1,
-      "size": 8
+      "size": 8,
+      "balance_source": "chain_utxos_unspent",
+      "unspent_utxos": 0
     },
     {
       "id": "3QUFWRQmRMqr6JT7f2vcGgMi5KSB4uMaGn",
       "label": "3QUFWRQmRMqr…",
       "full_address": "3QUFWRQmRMqr6JT7f2vcGgMi5KSB4uMaGn",
       "type": "address",
-      "balance": -24.65835810000135,
+      "balance": 0.0003226,
       "received": 15215.6697931,
       "sent": 15094.338151200001,
       "tx_count": 7,
-      "size": 8
+      "size": 8,
+      "balance_source": "chain_utxos_unspent",
+      "unspent_utxos": 1
     },
     {
       "id": "bc1q89kgtr3yyvpjygumzaclurl3p5zcgsdl8gwsk5",
@@ -2444,18 +2911,22 @@
       "received": 0.0,
       "sent": 30250.423251,
       "tx_count": 1,
-      "size": 8
+      "size": 8,
+      "balance_source": "chain_utxos_unspent",
+      "unspent_utxos": 0
     },
     {
       "id": "bc1qmcvnjmr8sklz4mskrvwqah9jmmahsprej0tv4g",
       "label": "bc1qmcvnjmr8…",
       "full_address": "bc1qmcvnjmr8sklz4mskrvwqah9jmmahsprej0tv4g",
       "type": "address",
-      "balance": -15106.81233434,
+      "balance": 0.0,
       "received": 15106.81233434,
       "sent": 15106.81233434,
       "tx_count": 2,
-      "size": 8
+      "size": 8,
+      "balance_source": "chain_utxos_unspent",
+      "unspent_utxos": 0
     },
     {
       "id": "bc1q9j9wqavlp5exaf8hypg9prsmucugnl99fut8sd",
@@ -2466,7 +2937,9 @@
       "received": 30167.322068,
       "sent": 0.0,
       "tx_count": 1,
-      "size": 8
+      "size": 8,
+      "balance_source": "chain_utxos_unspent",
+      "unspent_utxos": 0
     },
     {
       "id": "bc1qah79sdxvmcr2vjtje43cmkq94he8rx754x6387",
@@ -2477,40 +2950,48 @@
       "received": 30000.575694,
       "sent": 0.0,
       "tx_count": 1,
-      "size": 8
+      "size": 8,
+      "balance_source": "chain_utxos_unspent",
+      "unspent_utxos": 0
     },
     {
       "id": "bc1q0mzy4art309vtcds678qpxlgtfxcynvfjtrlx6",
       "label": "bc1q0mzy4art…",
       "full_address": "bc1q0mzy4art309vtcds678qpxlgtfxcynvfjtrlx6",
       "type": "address",
-      "balance": 3000.0,
+      "balance": 0.0,
       "received": 3000.0,
       "sent": 6500.5,
       "tx_count": 2,
-      "size": 55
+      "size": 55,
+      "balance_source": "chain_utxos_unspent",
+      "unspent_utxos": 0
     },
     {
       "id": "bc1ql6fkwz93tr67zwypz7x746rewaaksufjuhnlyt",
       "label": "bc1ql6fkwz93…",
       "full_address": "bc1ql6fkwz93tr67zwypz7x746rewaaksufjuhnlyt",
       "type": "address",
-      "balance": 2999.9700000000003,
+      "balance": 0.0,
       "received": 3009.96,
       "sent": 0.0,
       "tx_count": 4,
-      "size": 55
+      "size": 55,
+      "balance_source": "chain_utxos_unspent",
+      "unspent_utxos": 0
     },
     {
       "id": "bc1q7xmjj23849sfeu72p79nrqesv0x683fwwlmfsf",
       "label": "bc1q7xmjj238…",
       "full_address": "bc1q7xmjj23849sfeu72p79nrqesv0x683fwwlmfsf",
       "type": "address",
-      "balance": 2980.2004610500003,
+      "balance": 207.4469,
       "received": 3514.172761050001,
       "sent": 530.1325999999996,
       "tx_count": 1427,
-      "size": 55
+      "size": 55,
+      "balance_source": "chain_utxos_unspent",
+      "unspent_utxos": 96
     },
     {
       "id": "bc1qnasymwgkkszjw8gu0d00quf8hlzrtx6w9rzpa5",
@@ -2521,7 +3002,9 @@
       "received": 0.0,
       "sent": 29797.40301681,
       "tx_count": 1,
-      "size": 8
+      "size": 8,
+      "balance_source": "chain_utxos_unspent",
+      "unspent_utxos": 0
     },
     {
       "id": "bc1qzumv7wegswr6mwqean60medjak2e3t576qnr2d",
@@ -2532,7 +3015,9 @@
       "received": 29787.5030016,
       "sent": 0.0,
       "tx_count": 1,
-      "size": 8
+      "size": 8,
+      "balance_source": "chain_utxos_unspent",
+      "unspent_utxos": 0
     },
     {
       "id": "bc1qweljxnf64nuww0xwgkmdc3mdj3fexxfxsm38e7",
@@ -2543,7 +3028,9 @@
       "received": 0.0,
       "sent": 29775.19951348,
       "tx_count": 1,
-      "size": 8
+      "size": 8,
+      "balance_source": "chain_utxos_unspent",
+      "unspent_utxos": 0
     }
   ],
   "edges": [

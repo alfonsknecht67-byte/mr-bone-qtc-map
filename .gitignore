@@ -7,3 +7,6 @@ data/private/
 *.pem
 *.token
 secrets/
+
+# Local verified build — never publish
+data/verified-build/
