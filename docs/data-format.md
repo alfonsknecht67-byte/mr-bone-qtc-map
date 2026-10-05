@@ -20,6 +20,14 @@ An edge represents a public on-chain relationship and may contain:
 - `from`
 - `to`
 - optional public metadata such as transaction count or amount
+- `count` — number of transactions represented by this aggregated connection
+- `first_block` and `last_block` — observed block interval for the connection
+
+The address activity view is derived from those public connection intervals.
+It shows when each aggregated relationship was first and last observed and its
+recorded transaction count. The current public dataset does not contain
+individual transaction dates or historical balance snapshots, so it cannot
+support a daily activity histogram or balance-over-time chart.
 
 ## Security rule
 

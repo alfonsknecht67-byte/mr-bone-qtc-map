@@ -4,6 +4,7 @@ const edgeCountEl = document.getElementById("edge-count");
 const detailsEl = document.getElementById("details");
 const datasetInfoEl = document.getElementById("dataset-info");
 const searchEl = document.getElementById("search");
+const addressActivityEl = document.getElementById("address-activity");
 
 const analysisStatsEl = document.getElementById("analysis-stats");
 
@@ -114,6 +115,16 @@ function rawNumber(value) {
   return Number.isFinite(n) ? n : 0;
 }
 
+function escapeHtml(value) {
+  return String(value ?? "").replace(/[&<>\"']/g, character => ({
+    "&": "&amp;",
+    "<": "&lt;",
+    ">": "&gt;",
+    "\"": "&quot;",
+    "'": "&#39;"
+  })[character]);
+}
+
 function nodeSize(n) {
   const balance = Math.abs(rawNumber(n.balance));
 
@@ -206,7 +217,7 @@ function showNode(id) {
   }
 
   detailsEl.innerHTML =
-    `<div class="address">${n.full_address || n.id}</div>` +
+    `<div class="address">${escapeHtml(n.full_address || n.id)}</div>` +
     `<dl>` +
     `<dt>Balance</dt><dd>${number(n.balance)} QTC</dd>` +
     `<dt>Received</dt><dd>${number(n.received)} QTC</dd>` +
@@ -214,6 +225,64 @@ function showNode(id) {
     `<dt>Transactions</dt><dd>${number(n.tx_count)}</dd>` +
     `<dt>Map size</dt><dd>${n.size ?? "—"}</dd>` +
     `</dl>`;
+
+  showAddressActivity(n);
+}
+
+function showAddressActivity(node) {
+  if (!addressActivityEl) return;
+
+  const records = edgeData
+    .filter(edge => edge.from === node.id || edge.to === node.id)
+    .map(edge => ({
+      edge,
+      first: Number.isFinite(Number(edge.first_block)) ? Number(edge.first_block) : null,
+      last: Number.isFinite(Number(edge.last_block)) ? Number(edge.last_block) : null
+    }))
+    .filter(record => record.first !== null || record.last !== null)
+    .sort((a, b) => (a.first ?? a.last) - (b.first ?? b.last));
+
+  if (!records.length) {
+    addressActivityEl.textContent =
+      "No block interval data is available for this address in the public map.";
+    return;
+  }
+
+  const blocks = records.flatMap(record => [record.first, record.last])
+    .filter(Number.isFinite);
+  const minBlock = Math.min(...blocks);
+  const maxBlock = Math.max(...blocks);
+  const span = Math.max(1, maxBlock - minBlock);
+  const totalRecordedTx = records.reduce((sum, record) =>
+    sum + Math.max(0, rawNumber(record.edge.count)), 0);
+
+  const rows = records.map(({ edge, first, last }) => {
+    const start = first ?? last;
+    const end = last ?? first;
+    const left = ((start - minBlock) / span) * 100;
+    const width = Math.max(1.5, ((end - start) / span) * 100);
+    const counterpartId = edge.from === node.id ? edge.to : edge.from;
+    const counterpart = nodeData.find(item => item.id === counterpartId);
+    const address = counterpart?.full_address || counterpart?.label || counterpartId;
+
+    return `<div class="activity-row">` +
+      `<div class="activity-address" title="${escapeHtml(address)}">${escapeHtml(address)}</div>` +
+      `<div class="activity-track" aria-label="Blocks ${start} to ${end}">` +
+      `<span class="activity-range" style="left:${left}%;width:${width}%"></span></div>` +
+      `<div class="activity-meta">Blocks ${start.toLocaleString("en-US")}–${end.toLocaleString("en-US")} · ` +
+      `${Math.max(0, rawNumber(edge.count)).toLocaleString("en-US")} recorded tx</div>` +
+      `</div>`;
+  }).join("");
+
+  addressActivityEl.innerHTML =
+    `<div class="activity-summary">${records.length} recorded connections · ` +
+    `${totalRecordedTx.toLocaleString("en-US")} transactions across blocks ` +
+    `${minBlock.toLocaleString("en-US")}–${maxBlock.toLocaleString("en-US")}</div>` +
+    `<div class="activity-axis"><span>Block ${minBlock.toLocaleString("en-US")}</span>` +
+    `<span>Block ${maxBlock.toLocaleString("en-US")}</span></div>` +
+    `<div class="activity-rows">${rows}</div>` +
+    `<p class="activity-note">Intervals show the first and last recorded block for each aggregated connection. ` +
+    `The public map does not include individual transaction dates or historical balance snapshots.</p>`;
 }
 
 function updateCounts() {
@@ -239,7 +308,7 @@ function updateCounts() {
   }
 }
 
-function resetVisibility() {
+function resetVisibility(focusId = null) {
   whaleMode = false;
   neighborhoodMode = false;
   selectedNode = null;
@@ -267,15 +336,25 @@ function resetVisibility() {
 
   clusterInfoEl.innerHTML = "";
   detailsEl.textContent = "Click a node to inspect it.";
+  if (addressActivityEl) {
+    addressActivityEl.textContent = "Select an address to inspect its recorded activity intervals.";
+  }
 
   updateCounts();
 
-  network.fit({
-    animation: {
-      duration: 600,
-      easingFunction: "easeInOutQuad"
-    }
-  });
+  if (focusId !== null) {
+    network.focus(focusId, {
+      scale: 1.8,
+      animation: { duration: 600, easingFunction: "easeInOutQuad" }
+    });
+  } else {
+    network.fit({
+      animation: {
+        duration: 600,
+        easingFunction: "easeInOutQuad"
+      }
+    });
+  }
 }
 
 function applyFilters() {
@@ -483,26 +562,22 @@ function findAddress() {
 
   const found = nodeData.find(n =>
     String(n.id).toLowerCase() === query ||
-    String(n.full_address || "").toLowerCase() === query ||
-    String(n.label || "").toLowerCase().includes(query)
+    String(n.full_address || "").toLowerCase() === query
+  ) || nodeData.find(n =>
+    String(n.full_address || n.id).toLowerCase().startsWith(query)
   );
 
   if (!found) {
     detailsEl.textContent =
-      "No matching address found.";
+      "No matching address found in the public map subset.";
     return;
   }
 
-  resetVisibility();
+  resetVisibility(found.id);
 
   selectedNode = found.id;
 
   network.selectNodes([found.id]);
-
-  network.focus(found.id, {
-    scale: 1.8,
-    animation: true
-  });
 
   showNode(found.id);
   calculateCluster(found.id);
@@ -745,6 +820,8 @@ document.getElementById("reset").onclick =
 
 document.getElementById("search-btn").onclick =
   findAddress;
+
+searchEl.setAttribute("aria-label", "Search a full or beginning QTC address");
 
 searchEl.addEventListener("keydown", event => {
   if (event.key === "Enter") {

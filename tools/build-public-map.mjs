@@ -26,12 +26,21 @@ const allowedTypes = new Set(["address", "cluster", "exchange"]);
 const nodes = Array.isArray(raw.nodes)
   ? raw.nodes
       .filter(n => n && typeof n.id === "string" && allowedTypes.has(n.type))
-      .map(n => ({
-        id: n.id,
-        label: typeof n.label === "string" ? n.label : n.id,
-        type: n.type,
-        value: Number.isFinite(n.value) ? n.value : null
-      }))
+      .map(n => {
+        const node = {
+          id: n.id,
+          label: typeof n.label === "string" ? n.label : n.id,
+          type: n.type
+        };
+
+        // Keep only explicitly approved, public on-chain address fields.
+        for (const field of ["full_address", "balance", "received", "sent", "tx_count", "size"]) {
+          if (typeof n[field] === "string") node[field] = n[field];
+          else if (Number.isFinite(n[field])) node[field] = n[field];
+        }
+
+        return node;
+      })
   : [];
 
 const nodeIds = new Set(nodes.map(n => n.id));
@@ -49,7 +58,10 @@ const edges = Array.isArray(raw.edges)
         from: e.from,
         to: e.to,
         value: Number.isFinite(e.value) ? e.value : null,
-        label: typeof e.label === "string" ? e.label : null
+        label: typeof e.label === "string" ? e.label : null,
+        count: Number.isFinite(e.count) ? e.count : null,
+        first_block: Number.isSafeInteger(e.first_block) ? e.first_block : null,
+        last_block: Number.isSafeInteger(e.last_block) ? e.last_block : null
       }))
   : [];
 
