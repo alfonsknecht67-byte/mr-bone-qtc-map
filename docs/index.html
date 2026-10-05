@@ -6,7 +6,7 @@
   <meta name="description" content="Mr. Bone — QTC public on-chain Bubble Map">
   <meta name="author" content="Mr. Bone">
   <title>Mr. Bone — QTC Bubble Map</title>
-  <link rel="stylesheet" href="style.css?v=20261005-13">
+  <link rel="stylesheet" href="style.css?v=20261005-16">
   <script src="https://unpkg.com/vis-network@9.1.9/standalone/umd/vis-network.min.js"></script>
 </head>
 <body>
@@ -40,19 +40,14 @@
 
 <section class="token-overview" aria-label="Qubitcoin market data and emission">
   <div class="market-cap-card">
-    <img class="qtc-logo" id="qtc-logo" src="https://s2.coinmarketcap.com/static/img/coins/64x64/37629.png" alt="Qubitcoin logo">
-    <div class="price-copy">
-      <div class="overview-kicker">QTC / USD</div>
-      <strong id="market-price">Loading price…</strong>
-      <span class="market-change" id="market-change" hidden></span>
-      <div class="cmc-widget-fallback" id="cmc-widget-fallback" hidden>
-        <div class="coinmarketcap-currency-widget"
-             data-currencyid="37629" data-base="USD" data-secondary=""
-             data-ticker="true" data-rank="false" data-marketcap="false"
-             data-volume="false" data-statsticker="false" data-stats="USD"></div>
-      </div>
-      <a class="overview-source" href="https://coinmarketcap.com/de/currencies/superquantum-qubitcoin/" target="_blank" rel="noopener noreferrer">CoinMarketCap ↗</a>
+    <div class="overview-kicker">QTC / USD · PRICE CHANGE: 24H</div>
+    <div class="cmc-widget" aria-label="CoinMarketCap live price widget">
+      <div class="coinmarketcap-currency-widget"
+           data-currencyid="37629" data-base="USD" data-secondary=""
+           data-ticker="true" data-rank="false" data-marketcap="false"
+           data-volume="false" data-statsticker="false" data-stats="USD"></div>
     </div>
+    <a class="overview-source" href="https://coinmarketcap.com/de/currencies/superquantum-qubitcoin/" target="_blank" rel="noopener noreferrer">Data provided by CoinMarketCap.com ↗</a>
   </div>
   <div class="emission-card" aria-live="polite">
     <div class="emission-current">
@@ -62,11 +57,10 @@
       <span class="emission-current-progress" id="emission-note">Waiting for indexed block data</span>
     </div>
     <div class="supply-metrics">
-      <div><span>Estimated market cap*</span><strong id="market-cap">—</strong></div>
       <div><span>Estimated circulating supply*</span><strong id="circulating-supply">—</strong></div>
       <div><span>Max supply</span><strong>21,000,000 QTC</strong></div>
     </div>
-    <p class="supply-method">*Supply estimate uses cumulative block rewards less the unspendable genesis reward; lost, burned, or otherwise inaccessible coins cannot be identified by this calculation.</p>
+    <p class="supply-method">*Supply is estimated from block rewards less the unspendable genesis reward; lost, burned, or otherwise inaccessible coins cannot be identified.</p>
     <details class="emission-details">
       <summary>View full halving schedule</summary>
       <div class="emission-table-wrap">
@@ -232,6 +226,6 @@
 </footer>
 
 <script src="https://files.coinmarketcap.com/static/widget/currency.js"></script>
-<script src="app.js?v=20261005-10"></script>
+<script src="app.js?v=20261005-13"></script>
 </body>
 </html>
