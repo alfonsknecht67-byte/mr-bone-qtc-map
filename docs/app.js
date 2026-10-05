@@ -14,40 +14,51 @@ const tickerBlockEl = document.getElementById("ticker-block");
 const clusterInfoEl = document.getElementById("cluster-info");
 
 const liveBlockEl = document.getElementById("live-block");
+const liveDifficultyEl = document.getElementById("live-difficulty");
+const liveHashrateEl = document.getElementById("live-hashrate");
 const liveIndexedEl = document.getElementById("live-indexed");
 const liveTxEl = document.getElementById("live-tx");
 const liveDataStatusEl = document.getElementById("live-data-status");
 
+let networkStats = null;
+
 function updateBlockTicker(data) {
-  const stats = data.live_stats || {};
-  const indexed = Number(
-    stats.latest_indexed_block ||
-    data.verified_block ||
-    data.balance_definition?.verified_block ||
-    0
-  );
+  const stats = { ...(data.live_stats || {}), ...(networkStats || {}) };
 
-  const txCount = Number(
-    stats.latest_block_tx_count ||
-    stats.latest_block_transactions ||
-    0
-  );
+  const indexed = Number(stats.latest_indexed_block || stats.block || data.verified_block || data.balance_definition?.verified_block || 0);
+  const difficulty = Number(stats.difficulty || data.difficulty || 0);
+  const hashrate = Number(stats.network_hashrate || stats.network_hashps || data.network_hashrate || 0);
+  const txCount = Number(stats.latest_block_tx_count || stats.latest_block_transactions || stats.tx_count || 0);
 
-  if (liveBlockEl) liveBlockEl.textContent =
-    indexed ? "#" + indexed.toLocaleString("en-US") : "—";
-
-  if (liveIndexedEl) liveIndexedEl.textContent =
-    indexed ? indexed.toLocaleString("en-US") : "—";
-
-  if (liveTxEl) liveTxEl.textContent =
-    txCount ? txCount.toLocaleString("en-US") : "—";
+  if (liveBlockEl) liveBlockEl.textContent = indexed ? "#" + indexed.toLocaleString("en-US") : "—";
+  if (liveDifficultyEl) liveDifficultyEl.textContent = difficulty ? difficulty.toLocaleString("en-US", { maximumFractionDigits: 2 }) : "—";
+  if (liveHashrateEl) liveHashrateEl.textContent = hashrate ? formatHashrate(hashrate) : "—";
+  if (liveIndexedEl) liveIndexedEl.textContent = indexed ? indexed.toLocaleString("en-US") : "—";
+  if (liveTxEl) liveTxEl.textContent = txCount ? txCount.toLocaleString("en-US") : "—";
 
   if (liveDataStatusEl) {
-    liveDataStatusEl.textContent = "SNAPSHOT";
-    liveDataStatusEl.title =
-      data.generated_at
-        ? "Dataset generated: " + data.generated_at
-        : "Public dataset snapshot";
+    liveDataStatusEl.textContent = networkStats ? "NODE" : "SNAPSHOT";
+    liveDataStatusEl.title = networkStats?.generated_at ? "Node stats updated: " + networkStats.generated_at : "Public dataset snapshot";
+  }
+}
+
+function formatHashrate(value) {
+  if (!Number.isFinite(value) || value <= 0) return "—";
+  const units = ["H/s", "kH/s", "MH/s", "GH/s", "TH/s", "PH/s", "EH/s"];
+  let v = value;
+  let i = 0;
+  while (v >= 1000 && i < units.length - 1) { v /= 1000; i++; }
+  return v.toLocaleString("en-US", { maximumFractionDigits: 2 }) + " " + units[i];
+}
+
+async function loadNetworkStats() {
+  try {
+    const response = await fetch("data/network.json?ts=" + Date.now(), { cache: "no-store" });
+    if (!response.ok) throw new Error("HTTP " + response.status);
+    networkStats = await response.json();
+    if (window.currentMapData) updateBlockTicker(window.currentMapData);
+  } catch (error) {
+    networkStats = null;
   }
 }
 
