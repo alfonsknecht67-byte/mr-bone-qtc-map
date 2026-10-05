@@ -747,7 +747,7 @@ footer strong {
   font-size: .68rem;
 }
 
-@media (max-width: 980px) {
+@media (max-width: 1200px), (pointer: coarse) {
   .token-overview { grid-template-columns: minmax(0, 1fr); }
   .emission-table-wrap { right: 12px; left: 12px; }
 }
