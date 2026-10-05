@@ -33,6 +33,27 @@
   <div class="block-ticker-item ticker-source"><span>DATA</span><strong id="live-data-status">—</strong></div>
 </div>
 
+<section class="token-overview" aria-label="Qubitcoin market data and emission">
+  <div class="market-cap-card">
+    <div class="overview-kicker">QTC MARKET DATA · COINMARKETCAP</div>
+    <div class="coinmarketcap-currency-widget"
+         data-currencyid="37629" data-base="EUR" data-secondary=""
+         data-ticker="true" data-rank="false" data-marketcap="true"
+         data-volume="false" data-statsticker="false" data-stats="EUR"></div>
+    <a class="overview-source" href="https://coinmarketcap.com/de/currencies/superquantum-qubitcoin/" target="_blank" rel="noopener noreferrer">Open Qubitcoin on CoinMarketCap ↗</a>
+  </div>
+  <div class="emission-card" aria-live="polite">
+    <div class="overview-kicker">QTC EMISSION SCHEDULE</div>
+    <div class="emission-metrics">
+      <div><span>Reward at indexed block</span><strong id="emission-reward">—</strong></div>
+      <div><span>Scheduled issued to indexed block</span><strong id="emission-issued">—</strong></div>
+      <div><span>Remaining scheduled emission</span><strong id="emission-remaining">—</strong></div>
+      <div><span>Current halving phase</span><strong id="emission-phase">—</strong></div>
+    </div>
+    <p class="emission-note" id="emission-note">Calculated from the indexed block height and the 210,000-block halving schedule. Scheduled issuance is not the same as circulating supply.</p>
+  </div>
+</section>
+
 <main class="layout">
   <section class="map-panel">
     <div id="map"></div>
@@ -172,6 +193,7 @@
   </div>
 </footer>
 
+<script src="https://files.coinmarketcap.com/static/widget/currency.js"></script>
 <script src="app.js"></script>
 </body>
 </html>
