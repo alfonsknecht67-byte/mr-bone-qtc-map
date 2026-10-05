@@ -13,6 +13,44 @@ const tickerSupplyEl = document.getElementById("ticker-supply");
 const tickerBlockEl = document.getElementById("ticker-block");
 const clusterInfoEl = document.getElementById("cluster-info");
 
+const liveBlockEl = document.getElementById("live-block");
+const liveIndexedEl = document.getElementById("live-indexed");
+const liveTxEl = document.getElementById("live-tx");
+const liveDataStatusEl = document.getElementById("live-data-status");
+
+function updateBlockTicker(data) {
+  const stats = data.live_stats || {};
+  const indexed = Number(
+    stats.latest_indexed_block ||
+    data.verified_block ||
+    data.balance_definition?.verified_block ||
+    0
+  );
+
+  const txCount = Number(
+    stats.latest_block_tx_count ||
+    stats.latest_block_transactions ||
+    0
+  );
+
+  if (liveBlockEl) liveBlockEl.textContent =
+    indexed ? "#" + indexed.toLocaleString("en-US") : "—";
+
+  if (liveIndexedEl) liveIndexedEl.textContent =
+    indexed ? indexed.toLocaleString("en-US") : "—";
+
+  if (liveTxEl) liveTxEl.textContent =
+    txCount ? txCount.toLocaleString("en-US") : "—";
+
+  if (liveDataStatusEl) {
+    liveDataStatusEl.textContent = "SNAPSHOT";
+    liveDataStatusEl.title =
+      data.generated_at
+        ? "Dataset generated: " + data.generated_at
+        : "Public dataset snapshot";
+  }
+}
+
 let network = null;
 let nodeData = [];
 let edgeData = [];
@@ -460,6 +498,7 @@ function findAddress() {
 
 function render(data) {
   updateWalletTicker(data);
+  updateBlockTicker(data);
 
   nodeData =
     Array.isArray(data.nodes) ? data.nodes : [];
