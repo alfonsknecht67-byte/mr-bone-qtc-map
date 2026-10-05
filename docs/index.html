@@ -6,13 +6,18 @@
   <meta name="description" content="Mr. Bone — QTC public on-chain Bubble Map">
   <meta name="author" content="Mr. Bone">
   <title>Mr. Bone — QTC Bubble Map</title>
-  <link rel="stylesheet" href="style.css?v=20261005-11">
+  <link rel="stylesheet" href="style.css?v=20261005-13">
   <script src="https://unpkg.com/vis-network@9.1.9/standalone/umd/vis-network.min.js"></script>
 </head>
 <body>
 <header class="topbar">
   <div class="site-title">QTC ON-CHAIN BUBBLE MAP</div>
   <div class="topbar-actions">
+    <div class="view-switch" role="group" aria-label="Choose page layout">
+      <span class="view-switch-label">LAYOUT</span>
+      <button class="view-switch-button" id="mobile-view" type="button" aria-pressed="false">Mobile</button>
+      <button class="view-switch-button" id="desktop-view" type="button" aria-pressed="true">Desktop</button>
+    </div>
     <nav class="community-nav" aria-label="Qubitcoin community">
       <span class="community-label">FOLLOW QUBITCOIN</span>
       <a class="community-link community-telegram" href="https://t.me/qubitcoingroup" target="_blank" rel="noopener noreferrer">Telegram</a>
@@ -227,6 +232,6 @@
 </footer>
 
 <script src="https://files.coinmarketcap.com/static/widget/currency.js"></script>
-<script src="app.js?v=20261005-9"></script>
+<script src="app.js?v=20261005-10"></script>
 </body>
 </html>
