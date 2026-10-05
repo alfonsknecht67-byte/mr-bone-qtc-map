@@ -64,6 +64,7 @@ async function loadNetworkStats() {
 
 let network = null;
 let nodeData = [];
+window.currentMapData = null;
 let edgeData = [];
 let nodes = null;
 let edges = null;
@@ -508,6 +509,7 @@ function findAddress() {
 }
 
 function render(data) {
+  window.currentMapData = data;
   updateWalletTicker(data);
   updateBlockTicker(data);
 
@@ -751,3 +753,7 @@ searchEl.addEventListener("keydown", event => {
 });
 
 loadData();
+
+
+loadNetworkStats();
+setInterval(loadNetworkStats, 30000);
