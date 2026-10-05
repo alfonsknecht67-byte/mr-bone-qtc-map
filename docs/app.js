@@ -33,7 +33,7 @@ const QTC_HALVING_INTERVAL = 210000;
 const QTC_INITIAL_BLOCK_REWARD = 50;
 const QTC_SATOSHIS = 100000000;
 let indexedBlockHeight = null;
-let qtcPriceEur = null;
+let qtcPriceUsd = null;
 let hasDirectMarketQuote = false;
 
 function formatQtc(value) {
@@ -76,11 +76,11 @@ function updateSupplyMetrics() {
   const circulating = estimateCirculatingSupply(indexedBlockHeight);
   if (circulatingSupplyEl) circulatingSupplyEl.textContent = `${formatQtc(circulating)}`;
   if (marketCapEl) {
-    marketCapEl.textContent = Number.isFinite(qtcPriceEur)
-      ? new Intl.NumberFormat("en-IE", { style: "currency", currency: "EUR", notation: "compact", maximumFractionDigits: 2 }).format(qtcPriceEur * circulating)
+    marketCapEl.textContent = Number.isFinite(qtcPriceUsd)
+      ? new Intl.NumberFormat("en-US", { style: "currency", currency: "USD", notation: "compact", maximumFractionDigits: 2 }).format(qtcPriceUsd * circulating)
       : "Awaiting QTC price";
-    marketCapEl.title = Number.isFinite(qtcPriceEur)
-      ? `Calculated as ${qtcPriceEur} EUR × ${circulating} QTC estimated mined supply`
+    marketCapEl.title = Number.isFinite(qtcPriceUsd)
+      ? `Calculated as ${qtcPriceUsd} USD × ${circulating} QTC estimated mined supply`
       : "CoinMarketCap price data is not available";
   }
 }
@@ -91,13 +91,13 @@ function updateMarketCapFromCmcWidget() {
 
   const priceNode = [...widget.querySelectorAll("span")].find(span => span.style.fontSize === "20px");
   const currencyNode = [...widget.querySelectorAll("span")].find(span => span.style.fontSize === "14px" && span.textContent.trim());
-  if (!priceNode || currencyNode?.textContent.trim() !== "EUR") return;
+  if (!priceNode || currencyNode?.textContent.trim() !== "USD") return;
 
   const localizedPrice = priceNode.textContent.trim().replace(/\./g, "").replace(",", ".");
   const price = Number(localizedPrice.replace(/[^\d.+-]/g, ""));
   if (!Number.isFinite(price) || price <= 0) return;
 
-  qtcPriceEur = price;
+  qtcPriceUsd = price;
   updateSupplyMetrics();
 }
 
@@ -111,22 +111,22 @@ function watchCmcWidgetPrice() {
 
 async function loadQtcMarketPrice() {
   try {
-    const url = "https://pro-api.coinmarketcap.com/public-api/v2/simple/price?slug=superquantum-qubitcoin&convert=EUR&include_24h_change=true&include_last_updated=true";
+    const url = "https://pro-api.coinmarketcap.com/public-api/v2/simple/price?slug=superquantum-qubitcoin&convert=USD&include_24h_change=true&include_last_updated=true";
     const response = await fetch(url, { cache: "no-store" });
     if (!response.ok) throw new Error(`HTTP ${response.status}`);
     const payload = await response.json();
     const asset = Array.isArray(payload.data)
       ? payload.data.find(item => item.slug === "superquantum-qubitcoin" || Number(item.id) === 37629)
       : null;
-    const quote = asset?.quotes?.find(item => item.symbol === "EUR");
+    const quote = asset?.quotes?.find(item => item.symbol === "USD");
     const price = Number(quote?.price);
-    if (!Number.isFinite(price) || price <= 0) throw new Error("QTC/EUR quote unavailable");
+    if (!Number.isFinite(price) || price <= 0) throw new Error("QTC/USD quote unavailable");
     const change24h = quote?.percent_change_24h;
 
-    qtcPriceEur = price;
+    qtcPriceUsd = price;
     hasDirectMarketQuote = true;
     if (marketPriceEl) marketPriceEl.textContent = new Intl.NumberFormat("de-DE", {
-      style: "currency", currency: "EUR", maximumFractionDigits: 8
+      style: "currency", currency: "USD", maximumFractionDigits: 8
     }).format(price);
     if (marketChangeEl && change24h != null && Number.isFinite(Number(change24h))) {
       const formattedChange = new Intl.NumberFormat("en-US", { signDisplay: "always", minimumFractionDigits: 2, maximumFractionDigits: 2 }).format(Number(change24h));
@@ -144,7 +144,7 @@ async function loadQtcMarketPrice() {
       const fallback = document.getElementById("cmc-widget-fallback");
       if (fallback) fallback.hidden = false;
       updateMarketCapFromCmcWidget();
-      if (!Number.isFinite(qtcPriceEur) && marketCapEl) marketCapEl.textContent = "Awaiting QTC price";
+      if (!Number.isFinite(qtcPriceUsd) && marketCapEl) marketCapEl.textContent = "Awaiting QTC price";
     }
   }
 }
