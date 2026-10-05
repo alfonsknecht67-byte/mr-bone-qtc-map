@@ -947,3 +947,83 @@ footer strong {
 .status a:hover {
   text-decoration: underline;
 }
+
+.view-switch {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  padding: 4px;
+  border: 1px solid #51451e;
+  border-radius: 9px;
+  background: #14120b;
+}
+
+.view-switch-label { padding: 0 7px; color: #f2c94c; font-size: .62rem; font-weight: 800; letter-spacing: .1em; }
+.view-switch-button { min-height: 38px; padding: 7px 12px; border-color: transparent; color: #bbb; background: transparent; font-size: .78rem; font-weight: 750; }
+.view-switch-button[aria-pressed="true"] { border-color: #f2c94c; color: #16130a; background: #f2c94c; }
+.view-switch-button:focus-visible { outline: 2px solid #fff0a5; outline-offset: 2px; }
+/* ------------------------------------------------------------
+   MOBILE LAYOUT — automatically selected on narrow screens, user-overridable
+   ------------------------------------------------------------ */
+
+body.mobile-view .topbar {
+  position: relative;
+  padding: 14px 12px;
+  flex-wrap: wrap;
+}
+
+body.mobile-view .site-title {
+  font-size: clamp(1.15rem, 6vw, 1.55rem);
+  letter-spacing: .1em;
+}
+
+body.mobile-view .topbar-actions {
+  width: 100%;
+  align-items: flex-start;
+  flex-direction: column;
+  gap: 9px;
+}
+
+body.mobile-view .community-nav { width: 100%; gap: 6px; flex-wrap: wrap; }
+body.mobile-view .community-label { flex-basis: 100%; }
+body.mobile-view .community-link { min-height: 40px; padding: 8px 10px; }
+
+/* Keep all network figures visible without horizontal scrolling. */
+body.mobile-view .block-ticker {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  padding: 8px 12px;
+  overflow: hidden;
+}
+
+body.mobile-view .block-ticker-live { grid-column: 1 / -1; min-height: 32px; padding: 0 0 6px; }
+body.mobile-view .block-ticker-item { min-width: 0; min-height: 52px; padding: 7px 9px; border-top: 1px solid #292929; border-left: 0; }
+body.mobile-view .block-ticker-item:nth-of-type(odd) { border-left: 1px solid #292929; }
+body.mobile-view .block-ticker-item strong { font-size: .88rem; overflow-wrap: anywhere; }
+
+body.mobile-view .token-overview { grid-template-columns: minmax(0, 1fr); gap: 8px; padding: 9px 12px; }
+body.mobile-view .market-cap-card { justify-content: flex-start; max-width: none; min-height: 72px; }
+body.mobile-view .emission-card { align-items: flex-start; padding: 11px; }
+body.mobile-view .supply-metrics { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 6px; }
+body.mobile-view .supply-metrics > div { padding: 7px; }
+
+body.mobile-view .layout { grid-template-columns: minmax(0, 1fr); min-height: 0; }
+body.mobile-view .map-panel { height: min(64vh, 590px); min-height: 420px; border-right: 0; border-bottom: 1px solid #292929; }
+body.mobile-view .map-tools { top: 10px; right: 10px; left: 10px; gap: 6px; }
+body.mobile-view .map-tools input { flex: 1 1 100%; width: 100%; min-width: 0; min-height: 42px; }
+body.mobile-view .map-tools button { min-height: 42px; flex: 1 1 auto; padding: 8px 10px; }
+body.mobile-view .legend { right: 10px; bottom: 10px; left: 10px; justify-content: center; flex-wrap: wrap; gap: 7px 12px; padding: 8px; font-size: .68rem; }
+
+body.mobile-view .sidebar { padding: 18px 12px; overflow: visible; }
+body.mobile-view #wallet-ticker { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 7px; padding: 0; }
+body.mobile-view #wallet-ticker .ticker-item { min-width: 0; padding: 9px; }
+body.mobile-view #wallet-ticker .ticker-item strong { overflow-wrap: anywhere; }
+body.mobile-view .controls > button, body.mobile-view .controls > select { min-height: 42px; }
+body.mobile-view .site-footer { padding: 22px 12px 26px; text-align: left; }
+body.mobile-view .footer-links { gap: 12px; }
+
+@media (max-width: 360px) {
+  body.mobile-view .map-panel { min-height: 390px; }
+  body.mobile-view .block-ticker-item { padding-right: 6px; padding-left: 6px; }
+  body.mobile-view .block-ticker-item strong { font-size: .78rem; }
+}

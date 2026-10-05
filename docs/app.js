@@ -1,3 +1,29 @@
+const mobileViewButton = document.getElementById("mobile-view");
+const desktopViewButton = document.getElementById("desktop-view");
+const savedLayout = localStorage.getItem("qtc-map-layout");
+const mobileLayoutQuery = window.matchMedia("(max-width: 700px)");
+let hasManualLayout = Boolean(savedLayout);
+
+function setPageLayout(isMobile, persist = true) {
+  document.body.classList.toggle("mobile-view", isMobile);
+  mobileViewButton?.setAttribute("aria-pressed", String(isMobile));
+  desktopViewButton?.setAttribute("aria-pressed", String(!isMobile));
+  if (persist) {
+    hasManualLayout = true;
+    localStorage.setItem("qtc-map-layout", isMobile ? "mobile" : "desktop");
+  }
+  requestAnimationFrame(() => {
+    network?.setSize("100%", "100%");
+    network?.redraw();
+  });
+}
+
+mobileViewButton?.addEventListener("click", () => setPageLayout(true));
+desktopViewButton?.addEventListener("click", () => setPageLayout(false));
+setPageLayout(savedLayout ? savedLayout === "mobile" : mobileLayoutQuery.matches, false);
+mobileLayoutQuery.addEventListener("change", event => {
+  if (!hasManualLayout) setPageLayout(event.matches, false);
+});
 const statusEl = document.getElementById("status");
 const nodeCountEl = document.getElementById("node-count");
 const edgeCountEl = document.getElementById("edge-count");
