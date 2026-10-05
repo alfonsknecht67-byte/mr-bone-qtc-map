@@ -204,6 +204,66 @@ button:hover {
   color: #ddd;
 }
 
+.address-activity {
+  color: #aaa;
+  font-size: .76rem;
+  line-height: 1.5;
+}
+
+.activity-summary {
+  margin-bottom: 12px;
+  color: #ddd;
+}
+
+.activity-axis {
+  display: flex;
+  justify-content: space-between;
+  color: #747474;
+  font: .65rem ui-monospace, SFMono-Regular, Consolas, monospace;
+}
+
+.activity-row {
+  padding: 10px 0;
+  border-top: 1px solid #252525;
+}
+
+.activity-address {
+  overflow: hidden;
+  color: #c9c9c9;
+  font: .68rem ui-monospace, SFMono-Regular, Consolas, monospace;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.activity-track {
+  position: relative;
+  height: 7px;
+  margin: 7px 0 5px;
+  border-radius: 5px;
+  background: #242424;
+}
+
+.activity-range {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  min-width: 3px;
+  border-radius: 5px;
+  background: #f2c94c;
+}
+
+.activity-meta {
+  color: #858585;
+  font-size: .68rem;
+}
+
+.activity-note {
+  margin: 12px 0 0;
+  color: #777;
+  font-size: .68rem;
+  line-height: 1.5;
+}
+
 .dataset-info {
   color: #aaa;
   font-size: .78rem;
