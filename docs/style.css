@@ -715,13 +715,37 @@ footer strong {
 .emission-details {
   margin-left: auto;
   color: #ddd;
-  font-size: .72rem;
+  font-size: .86rem;
 }
 
 .emission-details summary {
-  color: #cbb65f;
+  display: inline-flex;
+  min-height: 40px;
+  align-items: center;
+  padding: 0 14px;
+  border: 1px solid #786626;
+  border-radius: 6px;
+  color: #ffe27a;
+  background: #29230f;
   cursor: pointer;
+  font-size: .86rem;
+  font-weight: 750;
+  letter-spacing: .02em;
   white-space: nowrap;
+  list-style: none;
+}
+
+.emission-details summary::-webkit-details-marker { display: none; }
+.emission-details summary::before {
+  content: "+";
+  margin-right: 9px;
+  font-size: 1.1rem;
+  line-height: 1;
+}
+.emission-details[open] summary::before { content: "−"; }
+.emission-details summary:hover {
+  border-color: #f2c94c;
+  background: #38300f;
 }
 
 .emission-table-wrap {
