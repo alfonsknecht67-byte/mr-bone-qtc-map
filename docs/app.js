@@ -140,7 +140,7 @@ function nodeSize(n) {
 
 function buildNodes(data) {
   return data.nodes.map(n => {
-    const isExchange =
+    const isExchange = n.type === "exchange" || n.group === "exchange" ||
       n.label === "CoinEx Exchange Wallet" ||
       n.label === "SafeTrade Exchange Wallet";
 
