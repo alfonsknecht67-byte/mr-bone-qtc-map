@@ -320,3 +320,90 @@ footer strong {
   color: #f4df91;
   font-weight: 700;
 }
+
+/* =========================================================
+   MR. BONE — QTC BLOCK TICKER
+   ========================================================= */
+
+.block-ticker {
+  display: flex;
+  align-items: stretch;
+  gap: 0;
+  min-height: 62px;
+  padding: 0 24px;
+  border-bottom: 1px solid #292929;
+  background: #0b0b0b;
+  font-family: ui-monospace, SFMono-Regular, Consolas, monospace;
+  overflow-x: auto;
+}
+
+.block-ticker-live {
+  display: flex;
+  align-items: center;
+  gap: 9px;
+  padding-right: 22px;
+  color: #e8e8e8;
+  font-weight: 800;
+  letter-spacing: .08em;
+  white-space: nowrap;
+}
+
+.live-dot {
+  width: 9px;
+  height: 9px;
+  border-radius: 50%;
+  background: #5cff8d;
+  box-shadow: 0 0 12px rgba(92,255,141,.8);
+  animation: qtc-live-pulse 1.5s infinite;
+}
+
+.block-ticker-item {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  min-width: 125px;
+  padding: 8px 18px;
+  border-left: 1px solid #292929;
+}
+
+.block-ticker-item span {
+  color: #777;
+  font-size: .62rem;
+  letter-spacing: .1em;
+}
+
+.block-ticker-item strong {
+  margin-top: 4px;
+  color: #eee;
+  font-size: 1rem;
+}
+
+.block-ticker-item:first-of-type strong {
+  color: #fff;
+}
+
+.ticker-source strong {
+  color: #aaa;
+  font-size: .72rem;
+}
+
+@keyframes qtc-live-pulse {
+  0%, 100% { opacity: 1; transform: scale(1); }
+  50% { opacity: .45; transform: scale(.82); }
+}
+
+@media (max-width: 700px) {
+  .block-ticker {
+    padding: 0 12px;
+  }
+
+  .block-ticker-live {
+    padding-right: 14px;
+  }
+
+  .block-ticker-item {
+    min-width: 105px;
+    padding: 8px 12px;
+  }
+}
+
