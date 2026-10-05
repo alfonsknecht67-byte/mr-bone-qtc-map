@@ -6,7 +6,7 @@
   <meta name="description" content="Mr. Bone — QTC public on-chain Bubble Map">
   <meta name="author" content="Mr. Bone">
   <title>Mr. Bone — QTC Bubble Map</title>
-  <link rel="stylesheet" href="style.css?v=20261005-5">
+  <link rel="stylesheet" href="style.css?v=20261005-6">
   <script src="https://unpkg.com/vis-network@9.1.9/standalone/umd/vis-network.min.js"></script>
 </head>
 <body>
@@ -37,8 +37,9 @@
   <div class="market-cap-card">
     <img class="qtc-logo" id="qtc-logo" src="https://s2.coinmarketcap.com/static/img/coins/64x64/37629.png" alt="Qubitcoin logo">
     <div class="price-copy">
-      <div class="overview-kicker">QTC / EUR · 24H CHANGE</div>
+      <div class="overview-kicker">QTC / EUR</div>
       <strong id="market-price">Loading price…</strong>
+      <span class="market-change" id="market-change" hidden></span>
       <div class="cmc-widget-fallback" id="cmc-widget-fallback" hidden>
         <div class="coinmarketcap-currency-widget"
              data-currencyid="37629" data-base="EUR" data-secondary=""
@@ -226,6 +227,6 @@
 </footer>
 
 <script src="https://files.coinmarketcap.com/static/widget/currency.js"></script>
-<script src="app.js?v=20261005-5"></script>
+<script src="app.js?v=20261005-6"></script>
 </body>
 </html>
