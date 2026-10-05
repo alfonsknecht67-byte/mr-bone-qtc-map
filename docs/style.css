@@ -16,6 +16,9 @@ body {
 }
 
 .topbar {
+  position: sticky;
+  top: 0;
+  z-index: 20;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -30,6 +33,70 @@ body {
   letter-spacing: .16em;
   line-height: 1.15;
   color: #eee;
+}
+
+.topbar-actions {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.community-nav {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.community-label {
+  padding: 0 3px;
+  color: #f2c94c;
+  font-size: .65rem;
+  font-weight: 800;
+  letter-spacing: .1em;
+  white-space: nowrap;
+}
+
+.community-link {
+  display: inline-flex;
+  align-items: center;
+  min-height: 36px;
+  padding: 7px 11px;
+  border: 1px solid #393939;
+  border-radius: 999px;
+  color: #f2d879;
+  background: #17150d;
+  font-size: .76rem;
+  font-weight: 700;
+  text-decoration: none;
+  white-space: nowrap;
+  transition: border-color .15s ease, background-color .15s ease, transform .15s ease;
+}
+
+.community-link:hover {
+  border-color: #f2c94c;
+  background: #28220f;
+  color: #fff;
+  transform: translateY(-1px);
+}
+
+.community-link:focus-visible {
+  outline: 2px solid #f2c94c;
+  outline-offset: 2px;
+}
+
+.community-telegram {
+  border-color: #229ed9;
+  background: #167fb2;
+  color: #fff;
+}
+
+.community-telegram:hover {
+  border-color: #63c9f6;
+  background: #168fc8;
+}
+
+.community-x {
+  border-color: #555;
 }
 
 .status {
@@ -303,6 +370,17 @@ footer strong {
     align-items: flex-start;
     gap: 12px;
     flex-direction: column;
+  }
+
+  .topbar-actions {
+    width: 100%;
+    align-items: flex-start;
+    flex-direction: column;
+  }
+
+  .community-nav {
+    width: 100%;
+    flex-wrap: wrap;
   }
 
   .map-tools input {
