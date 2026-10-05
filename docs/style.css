@@ -582,10 +582,33 @@ footer strong {
 .cmc-widget-fallback {
   width: 100%;
   max-width: 220px;
-  height: 150px;
-  overflow: hidden;
+  height: auto;
+  overflow: visible;
 }
 .cmc-widget-fallback[hidden] { display: none; }
+
+.cmc-widget-fallback .coinmarketcap-currency-widget > div {
+  width: 100% !important;
+  max-width: 100% !important;
+  min-width: 0 !important;
+  box-sizing: border-box !important;
+}
+
+.cmc-widget-fallback .coinmarketcap-currency-widget > div > div:first-child > div:first-child {
+  width: 25% !important;
+}
+
+.cmc-widget-fallback .coinmarketcap-currency-widget > div > div:first-child > div:nth-child(2) {
+  width: 75% !important;
+  padding-right: 6px;
+  box-sizing: border-box !important;
+}
+
+.cmc-widget-fallback .coinmarketcap-currency-widget span[style*="margin-left:6px"]::after {
+  content: " (24h)";
+  color: #aaa;
+  font-size: .75em;
+}
 
 .cmc-widget-fallback iframe {
   width: 100% !important;
@@ -755,7 +778,7 @@ footer strong {
 @media (max-width: 700px) {
   .token-overview { grid-template-columns: 1fr; padding: 10px 12px; }
   .market-cap-card { max-width: min(100%, 260px); min-height: 84px; }
-  .cmc-widget-fallback { max-width: 220px; height: 142px; }
+  .cmc-widget-fallback { max-width: 220px; }
   .emission-card { gap: 12px; }
   .supply-metrics { grid-template-columns: 1fr 1fr; flex-basis: 100%; }
   .emission-details { margin-left: 0; }
