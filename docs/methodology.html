@@ -1,0 +1,68 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Methodology — Mr. Bone</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header class="topbar">
+  <div class="site-title">MR. BONE</div>
+  <div class="status"><a href="index.html">← QTC BUBBLE MAP</a></div>
+</header>
+
+<main class="info-page">
+  <h1>Methodology</h1>
+
+  <h2>Balance</h2>
+  <p>
+    Current address balance is calculated from unspent transaction outputs
+    (UTXOs):
+  </p>
+
+  <pre>SUM(amount) WHERE spent = 0 GROUP BY address</pre>
+
+  <p>
+    The displayed balance therefore represents the current unspent amount
+    indexed by the local Qubitcoin node.
+  </p>
+
+  <h2>Received and Sent</h2>
+  <p>
+    Received values are derived from recorded transaction outputs.
+    Sent values are derived from recorded transaction inputs.
+  </p>
+
+  <h2>Transaction flows</h2>
+  <p>
+    The Bubble Map can reconstruct probable flows between addresses by
+    proportionally relating transaction inputs to transaction outputs.
+    This is a visualization heuristic rather than proof of ownership,
+    control or intent.
+  </p>
+
+  <div class="info-warning">
+    A visual connection between two addresses does not automatically prove
+    that the addresses belong to the same person, organization or entity.
+  </div>
+</main>
+
+<footer class="site-footer">
+  <div class="footer-brand">
+    <strong>MR. BONE</strong>
+    <span>QTC On-chain Intelligence &amp; Visualization</span>
+  </div>
+  <nav class="footer-links">
+    <a href="index.html">Bubble Map</a>
+    <a href="about.html">About</a>
+    <a href="data-sources.html">Data Sources</a>
+    <a href="imprint.html">Imprint</a>
+    <a href="privacy.html">Privacy</a>
+  </nav>
+  <div class="footer-copy">© 2026 Mr. Bone · All rights reserved.</div>
+</footer>
+
+</body>
+</html>
