@@ -550,7 +550,7 @@ footer strong {
   gap: 10px;
   justify-content: center;
   width: 100%;
-  max-width: 280px;
+  max-width: 260px;
   min-height: 84px;
   overflow: hidden;
 }
@@ -580,15 +580,16 @@ footer strong {
 .market-change[hidden] { display: none !important; }
 
 .cmc-widget-fallback {
-  width: 240px;
+  width: 100%;
+  max-width: 220px;
   height: 150px;
   overflow: hidden;
 }
 .cmc-widget-fallback[hidden] { display: none; }
 
 .cmc-widget-fallback iframe {
-  width: 240px !important;
-  max-width: 240px !important;
+  width: 100% !important;
+  max-width: 220px !important;
   height: 150px !important;
   border: 0;
 }
@@ -747,14 +748,14 @@ footer strong {
 }
 
 @media (max-width: 980px) {
-  .token-overview { grid-template-columns: 250px minmax(0, 1fr); }
+  .token-overview { grid-template-columns: minmax(0, 1fr); }
   .emission-table-wrap { right: 12px; left: 12px; }
 }
 
 @media (max-width: 700px) {
   .token-overview { grid-template-columns: 1fr; padding: 10px 12px; }
-  .market-cap-card { max-width: 280px; min-height: 84px; }
-  .cmc-widget-fallback { width: 240px; height: 150px; }
+  .market-cap-card { max-width: min(100%, 260px); min-height: 84px; }
+  .cmc-widget-fallback { max-width: 220px; height: 142px; }
   .emission-card { gap: 12px; }
   .supply-metrics { grid-template-columns: 1fr 1fr; flex-basis: 100%; }
   .emission-details { margin-left: 0; }
