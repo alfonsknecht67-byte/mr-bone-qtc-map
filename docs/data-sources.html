@@ -38,9 +38,10 @@
 
   <h2>Market data</h2>
   <p>
-    QTC price and market capitalization are provided by the CoinMarketCap
-    website widget for Qubitcoin (CMC asset ID 37629). Availability and
-    reported values depend on CoinMarketCap's coverage; consult its
+    The QTC/EUR price is fetched from CoinMarketCap's keyless public price API
+    for Qubitcoin (CMC asset ID 37629). The displayed market capitalization
+    is calculated from that price and the map's block reward supply estimate;
+    it does not use CoinMarketCap's reported supply or market cap. Consult its
     <a href="https://coinmarketcap.com/de/currencies/superquantum-qubitcoin/" target="_blank" rel="noopener noreferrer">Qubitcoin listing</a>
     for the source data.
   </p>
@@ -49,8 +50,9 @@
   <p>
     Scheduled issuance is calculated from the indexed block height using a
     starting reward of 50 QTC and a 210,000-block halving interval. It is a
-    protocol schedule estimate, not a measurement of spendable or circulating
-    supply.
+    protocol schedule estimate. The displayed circulating supply estimate
+    excludes the unspendable genesis reward, but block height alone cannot
+    identify lost, burned, or otherwise inaccessible coins.
   </p>
 
   <div class="info-warning">

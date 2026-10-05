@@ -20,44 +20,97 @@ const liveHashrateEl = document.getElementById("live-hashrate");
 const liveIndexedEl = document.getElementById("live-indexed");
 const liveTxEl = document.getElementById("live-tx");
 const liveDataStatusEl = document.getElementById("live-data-status");
+const marketPriceEl = document.getElementById("market-price");
+const marketCapEl = document.getElementById("market-cap");
+const circulatingSupplyEl = document.getElementById("circulating-supply");
 const emissionRewardEl = document.getElementById("emission-reward");
-const emissionIssuedEl = document.getElementById("emission-issued");
-const emissionRemainingEl = document.getElementById("emission-remaining");
 const emissionPhaseEl = document.getElementById("emission-phase");
 const emissionNoteEl = document.getElementById("emission-note");
+const emissionRows = document.querySelectorAll("#emission-table-body tr[data-phase]");
 
-const QTC_MAX_SCHEDULED_SUPPLY = 21000000;
 const QTC_HALVING_INTERVAL = 210000;
 const QTC_INITIAL_BLOCK_REWARD = 50;
+const QTC_SATOSHIS = 100000000;
+let indexedBlockHeight = null;
+let qtcPriceEur = null;
 
 function formatQtc(value) {
   return Number(value).toLocaleString("en-US", { maximumFractionDigits: 8 }) + " QTC";
 }
 
 function updateEmissionDisplay(blockHeight) {
-  if (![emissionRewardEl, emissionIssuedEl, emissionRemainingEl, emissionPhaseEl].every(Boolean)) return;
   if (!Number.isFinite(blockHeight) || blockHeight < 0) return;
 
   const phase = Math.floor(blockHeight / QTC_HALVING_INTERVAL);
   const reward = QTC_INITIAL_BLOCK_REWARD / (2 ** phase);
-  let issued = 0;
-  let blocksRemaining = blockHeight + 1;
+  const nextHalving = (phase + 1) * QTC_HALVING_INTERVAL;
+  indexedBlockHeight = blockHeight;
+  if (emissionRewardEl) emissionRewardEl.textContent = `${formatQtc(reward)} / block`;
+  if (emissionPhaseEl) emissionPhaseEl.textContent = `Phase ${phase}`;
+  if (emissionNoteEl) emissionNoteEl.textContent =
+    `Block #${blockHeight.toLocaleString("en-US")} · ${Math.max(0, nextHalving - blockHeight).toLocaleString("en-US")} blocks until next halving`;
+  emissionRows.forEach(row => row.classList.toggle("is-current-phase", Number(row.dataset.phase) === Math.min(phase, 10)));
+  updateSupplyMetrics();
+}
 
-  for (let phaseIndex = 0; blocksRemaining > 0; phaseIndex++) {
+function estimateCirculatingSupply(blockHeight) {
+  let blocksRemaining = blockHeight + 1;
+  let issuedSatoshis = 0;
+
+  for (let phase = 0; blocksRemaining > 0; phase++) {
     const blocksInPhase = Math.min(blocksRemaining, QTC_HALVING_INTERVAL);
-    issued += blocksInPhase * (QTC_INITIAL_BLOCK_REWARD / (2 ** phaseIndex));
+    const rewardSatoshis = Math.floor((QTC_INITIAL_BLOCK_REWARD * QTC_SATOSHIS) / (2 ** phase));
+    issuedSatoshis += blocksInPhase * rewardSatoshis;
     blocksRemaining -= blocksInPhase;
-    if (phaseIndex > 64) break;
+    if (phase >= 63 || rewardSatoshis === 0) break;
   }
 
-  const remaining = Math.max(0, QTC_MAX_SCHEDULED_SUPPLY - issued);
-  const nextHalving = (phase + 1) * QTC_HALVING_INTERVAL;
-  emissionRewardEl.textContent = formatQtc(reward);
-  emissionIssuedEl.textContent = formatQtc(issued);
-  emissionRemainingEl.textContent = formatQtc(remaining);
-  emissionPhaseEl.textContent = `Phase ${phase} · ${Math.max(0, nextHalving - blockHeight).toLocaleString("en-US")} blocks to next halving`;
-  if (emissionNoteEl) {
-    emissionNoteEl.textContent = `Based on indexed block #${blockHeight.toLocaleString("en-US")}, a 210,000-block halving interval and the 50 QTC starting reward. Scheduled issuance is not the same as circulating supply.`;
+  // The genesis coinbase is provably unspendable, so exclude its 50 QTC reward.
+  return Math.max(0, (issuedSatoshis - QTC_INITIAL_BLOCK_REWARD * QTC_SATOSHIS) / QTC_SATOSHIS);
+}
+
+function updateSupplyMetrics() {
+  if (!Number.isFinite(indexedBlockHeight)) return;
+  const circulating = estimateCirculatingSupply(indexedBlockHeight);
+  if (circulatingSupplyEl) circulatingSupplyEl.textContent = `${formatQtc(circulating)}`;
+  if (marketCapEl) {
+    marketCapEl.textContent = Number.isFinite(qtcPriceEur)
+      ? new Intl.NumberFormat("en-IE", { style: "currency", currency: "EUR", notation: "compact", maximumFractionDigits: 2 }).format(qtcPriceEur * circulating)
+      : "Awaiting QTC price";
+    marketCapEl.title = Number.isFinite(qtcPriceEur)
+      ? `Calculated as ${qtcPriceEur} EUR × ${circulating} QTC estimated mined supply`
+      : "CoinMarketCap price data is not available";
+  }
+}
+
+async function loadQtcMarketPrice() {
+  try {
+    const url = "https://pro-api.coinmarketcap.com/public-api/v2/simple/price?slug=superquantum-qubitcoin&convert=EUR&include_last_updated=true";
+    const response = await fetch(url, { cache: "no-store" });
+    if (!response.ok) throw new Error(`HTTP ${response.status}`);
+    const payload = await response.json();
+    const asset = Array.isArray(payload.data)
+      ? payload.data.find(item => item.slug === "superquantum-qubitcoin" || Number(item.id) === 37629)
+      : null;
+    const quote = asset?.quotes?.find(item => item.symbol === "EUR");
+    const price = Number(quote?.price);
+    if (!Number.isFinite(price) || price <= 0) throw new Error("QTC/EUR quote unavailable");
+
+    qtcPriceEur = price;
+    if (marketPriceEl) marketPriceEl.textContent = new Intl.NumberFormat("de-DE", {
+      style: "currency", currency: "EUR", maximumFractionDigits: 8
+    }).format(price);
+    if (marketPriceEl && quote.last_updated) marketPriceEl.title = `CMC price updated ${quote.last_updated}`;
+    updateSupplyMetrics();
+  } catch (error) {
+    if (!Number.isFinite(qtcPriceEur)) {
+      if (marketPriceEl) marketPriceEl.hidden = true;
+      const logo = document.getElementById("qtc-logo");
+      if (logo) logo.hidden = true;
+      const fallback = document.getElementById("cmc-widget-fallback");
+      if (fallback) fallback.hidden = false;
+      if (marketCapEl) marketCapEl.textContent = "Price feed unavailable";
+    }
   }
 }
 
@@ -876,3 +929,5 @@ loadData();
 
 loadNetworkStats();
 setInterval(loadNetworkStats, 30000);
+loadQtcMarketPrice();
+setInterval(loadQtcMarketPrice, 60000);

@@ -6,7 +6,7 @@
   <meta name="description" content="Mr. Bone — QTC public on-chain Bubble Map">
   <meta name="author" content="Mr. Bone">
   <title>Mr. Bone — QTC Bubble Map</title>
-  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="style.css?v=20261005-5">
   <script src="https://unpkg.com/vis-network@9.1.9/standalone/umd/vis-network.min.js"></script>
 </head>
 <body>
@@ -35,22 +35,54 @@
 
 <section class="token-overview" aria-label="Qubitcoin market data and emission">
   <div class="market-cap-card">
-    <div class="overview-kicker">QTC MARKET DATA · COINMARKETCAP</div>
-    <div class="coinmarketcap-currency-widget"
-         data-currencyid="37629" data-base="EUR" data-secondary=""
-         data-ticker="true" data-rank="false" data-marketcap="true"
-         data-volume="false" data-statsticker="false" data-stats="EUR"></div>
-    <a class="overview-source" href="https://coinmarketcap.com/de/currencies/superquantum-qubitcoin/" target="_blank" rel="noopener noreferrer">Open Qubitcoin on CoinMarketCap ↗</a>
+    <img class="qtc-logo" id="qtc-logo" src="https://s2.coinmarketcap.com/static/img/coins/64x64/37629.png" alt="Qubitcoin logo">
+    <div class="price-copy">
+      <div class="overview-kicker">QTC / EUR</div>
+      <strong id="market-price">Loading price…</strong>
+      <div class="cmc-widget-fallback" id="cmc-widget-fallback" hidden>
+        <div class="coinmarketcap-currency-widget"
+             data-currencyid="37629" data-base="EUR" data-secondary=""
+             data-ticker="true" data-rank="false" data-marketcap="false"
+             data-volume="false" data-statsticker="false" data-stats="EUR"></div>
+      </div>
+      <a class="overview-source" href="https://coinmarketcap.com/de/currencies/superquantum-qubitcoin/" target="_blank" rel="noopener noreferrer">CoinMarketCap ↗</a>
+    </div>
   </div>
   <div class="emission-card" aria-live="polite">
-    <div class="overview-kicker">QTC EMISSION SCHEDULE</div>
-    <div class="emission-metrics">
-      <div><span>Reward at indexed block</span><strong id="emission-reward">—</strong></div>
-      <div><span>Scheduled issued to indexed block</span><strong id="emission-issued">—</strong></div>
-      <div><span>Remaining scheduled emission</span><strong id="emission-remaining">—</strong></div>
-      <div><span>Current halving phase</span><strong id="emission-phase">—</strong></div>
+    <div class="emission-current">
+      <div class="overview-kicker">CURRENT EMISSION STAGE</div>
+      <strong class="emission-current-stage" id="emission-phase">Loading block…</strong>
+      <span class="emission-current-reward" id="emission-reward">—</span>
+      <span class="emission-current-progress" id="emission-note">Waiting for indexed block data</span>
     </div>
-    <p class="emission-note" id="emission-note">Calculated from the indexed block height and the 210,000-block halving schedule. Scheduled issuance is not the same as circulating supply.</p>
+    <div class="supply-metrics">
+      <div><span>Estimated market cap*</span><strong id="market-cap">—</strong></div>
+      <div><span>Estimated circulating supply*</span><strong id="circulating-supply">—</strong></div>
+      <div><span>Max supply</span><strong>21,000,000 QTC</strong></div>
+    </div>
+    <p class="supply-method">*Supply estimate uses cumulative block rewards less the unspendable genesis reward; lost, burned, or otherwise inaccessible coins cannot be identified by this calculation.</p>
+    <details class="emission-details">
+      <summary>View full halving schedule</summary>
+      <div class="emission-table-wrap">
+        <table class="emission-table">
+          <thead><tr><th>Phase</th><th>Block height</th><th>Reward / block</th><th>Est. period</th><th>QTC in phase</th><th>Cumulative</th></tr></thead>
+          <tbody id="emission-table-body">
+            <tr data-phase="0"><td>0 (Genesis)</td><td>0–209,999</td><td>50 QTC</td><td>2024–2028</td><td>10,500,000</td><td>10,500,000</td></tr>
+            <tr data-phase="1"><td>1</td><td>210,000–419,999</td><td>25 QTC</td><td>2028–2032</td><td>5,250,000</td><td>15,750,000</td></tr>
+            <tr data-phase="2"><td>2</td><td>420,000–629,999</td><td>12.5 QTC</td><td>2032–2036</td><td>2,625,000</td><td>18,375,000</td></tr>
+            <tr data-phase="3"><td>3</td><td>630,000–839,999</td><td>6.25 QTC</td><td>2036–2040</td><td>1,312,500</td><td>19,687,500</td></tr>
+            <tr data-phase="4"><td>4</td><td>840,000–1,049,999</td><td>3.125 QTC</td><td>2040–2044</td><td>656,250</td><td>20,343,750</td></tr>
+            <tr data-phase="5"><td>5</td><td>1,050,000–1,259,999</td><td>1.5625 QTC</td><td>2044–2048</td><td>328,125</td><td>20,671,875</td></tr>
+            <tr data-phase="6"><td>6</td><td>1,260,000–1,469,999</td><td>0.78125 QTC</td><td>2048–2052</td><td>164,063</td><td>20,835,938</td></tr>
+            <tr data-phase="7"><td>7</td><td>1,470,000–1,679,999</td><td>0.390625 QTC</td><td>2052–2056</td><td>82,031</td><td>20,917,969</td></tr>
+            <tr data-phase="8"><td>8</td><td>1,680,000–1,889,999</td><td>0.1953125 QTC</td><td>2056–2060</td><td>41,016</td><td>20,958,984</td></tr>
+            <tr data-phase="9"><td>9</td><td>1,890,000–2,099,999</td><td>0.09765625 QTC</td><td>2060–2064</td><td>20,508</td><td>20,979,492</td></tr>
+            <tr data-phase="10"><td>10+</td><td>2,100,000+</td><td>Continues halving</td><td>2064–2140</td><td>…</td><td>≈21 million</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <p class="emission-table-note">Approximate periods use a 10-minute target block time. Supply estimate is derived from block rewards, excludes the unspendable genesis reward, and cannot identify lost or burned coins.</p>
+    </details>
   </div>
 </section>
 
@@ -194,6 +226,6 @@
 </footer>
 
 <script src="https://files.coinmarketcap.com/static/widget/currency.js"></script>
-<script src="app.js"></script>
+<script src="app.js?v=20261005-5"></script>
 </body>
 </html>
