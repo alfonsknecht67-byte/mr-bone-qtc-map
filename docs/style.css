@@ -604,6 +604,10 @@ footer strong {
   box-sizing: border-box !important;
 }
 
+.cmc-widget-fallback .coinmarketcap-currency-widget a {
+  overflow-wrap: anywhere !important;
+}
+
 .cmc-widget-fallback .coinmarketcap-currency-widget span[style*="margin-left:6px"]::after {
   content: " (24h)";
   color: #aaa;
