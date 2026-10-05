@@ -407,3 +407,116 @@ footer strong {
   }
 }
 
+
+/* ------------------------------------------------------------
+   MR. BONE — PROFESSIONAL FOOTER
+   ------------------------------------------------------------ */
+
+.site-footer {
+  margin-top: 0;
+  padding: 28px 24px 32px;
+  border-top: 1px solid rgba(255,255,255,.10);
+  background: rgba(5,7,10,.96);
+  color: #8d98a5;
+  font-size: 12px;
+  line-height: 1.6;
+}
+
+.footer-brand {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  gap: 10px;
+  margin-bottom: 12px;
+}
+
+.footer-brand strong {
+  color: #e8edf2;
+  letter-spacing: .12em;
+  font-size: 13px;
+}
+
+.footer-brand span {
+  color: #7d8996;
+}
+
+.footer-notice {
+  max-width: 900px;
+  margin: 5px 0;
+}
+
+.footer-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 16px;
+  margin: 18px 0 14px;
+}
+
+.footer-links a {
+  color: #aeb8c2;
+  text-decoration: none;
+}
+
+.footer-links a:hover {
+  color: #ffffff;
+  text-decoration: underline;
+}
+
+.footer-copy {
+  color: #68737e;
+}
+
+/* ------------------------------------------------------------
+   MR. BONE — INFORMATION PAGES
+   ------------------------------------------------------------ */
+
+.info-page {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 48px 24px 80px;
+  min-height: calc(100vh - 180px);
+}
+
+.info-page h1 {
+  margin: 0 0 28px;
+  color: #e8edf2;
+}
+
+.info-page h2 {
+  margin: 32px 0 10px;
+  color: #d7dee5;
+  font-size: 16px;
+}
+
+.info-page p {
+  max-width: 800px;
+  color: #9ba6b1;
+  line-height: 1.75;
+}
+
+.info-page pre {
+  display: inline-block;
+  padding: 12px 16px;
+  overflow-x: auto;
+  background: rgba(255,255,255,.04);
+  border: 1px solid rgba(255,255,255,.08);
+  color: #cbd4dc;
+}
+
+.info-warning {
+  margin: 28px 0;
+  padding: 16px 18px;
+  border-left: 3px solid #596673;
+  background: rgba(255,255,255,.035);
+  color: #9da8b3;
+  line-height: 1.65;
+}
+
+.status a {
+  color: inherit;
+  text-decoration: none;
+}
+
+.status a:hover {
+  text-decoration: underline;
+}
