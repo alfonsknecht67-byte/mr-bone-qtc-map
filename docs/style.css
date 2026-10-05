@@ -525,6 +525,93 @@ footer strong {
   font-size: .72rem;
 }
 
+.token-overview {
+  display: grid;
+  grid-template-columns: minmax(250px, .8fr) minmax(440px, 1.7fr);
+  gap: 14px;
+  padding: 16px 24px;
+  border-bottom: 1px solid #292929;
+  background: linear-gradient(105deg, #15130d, #0d0d0d 45%, #101010);
+}
+
+.market-cap-card,
+.emission-card {
+  min-width: 0;
+  padding: 14px 16px;
+  border: 1px solid #393325;
+  border-radius: 10px;
+  background: rgba(12, 12, 12, .88);
+}
+
+.market-cap-card {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.overview-kicker {
+  margin-bottom: 10px;
+  color: #f2c94c;
+  font-size: .66rem;
+  font-weight: 800;
+  letter-spacing: .12em;
+}
+
+.overview-source {
+  align-self: flex-start;
+  margin-top: 8px;
+  color: #aaa;
+  font-size: .72rem;
+  text-decoration: none;
+}
+
+.overview-source:hover { color: #f2c94c; }
+
+.emission-metrics {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 10px;
+}
+
+.emission-metrics > div {
+  min-width: 0;
+  padding: 10px;
+  border-left: 2px solid #51451e;
+  background: #141414;
+}
+
+.emission-metrics span {
+  display: block;
+  min-height: 2.2em;
+  color: #888;
+  font-size: .66rem;
+  line-height: 1.35;
+}
+
+.emission-metrics strong {
+  display: block;
+  margin-top: 5px;
+  color: #eee;
+  font: 700 .86rem/1.35 ui-monospace, SFMono-Regular, Consolas, monospace;
+  overflow-wrap: anywhere;
+}
+
+.emission-note {
+  margin: 9px 0 0;
+  color: #777;
+  font-size: .65rem;
+  line-height: 1.45;
+}
+
+@media (max-width: 980px) {
+  .token-overview { grid-template-columns: 1fr; }
+}
+
+@media (max-width: 700px) {
+  .token-overview { padding: 12px; }
+  .emission-metrics { grid-template-columns: 1fr 1fr; }
+}
+
 @keyframes qtc-live-pulse {
   0%, 100% { opacity: 1; transform: scale(1); }
   50% { opacity: .45; transform: scale(.82); }

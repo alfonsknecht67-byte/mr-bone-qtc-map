@@ -20,6 +20,46 @@ const liveHashrateEl = document.getElementById("live-hashrate");
 const liveIndexedEl = document.getElementById("live-indexed");
 const liveTxEl = document.getElementById("live-tx");
 const liveDataStatusEl = document.getElementById("live-data-status");
+const emissionRewardEl = document.getElementById("emission-reward");
+const emissionIssuedEl = document.getElementById("emission-issued");
+const emissionRemainingEl = document.getElementById("emission-remaining");
+const emissionPhaseEl = document.getElementById("emission-phase");
+const emissionNoteEl = document.getElementById("emission-note");
+
+const QTC_MAX_SCHEDULED_SUPPLY = 21000000;
+const QTC_HALVING_INTERVAL = 210000;
+const QTC_INITIAL_BLOCK_REWARD = 50;
+
+function formatQtc(value) {
+  return Number(value).toLocaleString("en-US", { maximumFractionDigits: 8 }) + " QTC";
+}
+
+function updateEmissionDisplay(blockHeight) {
+  if (![emissionRewardEl, emissionIssuedEl, emissionRemainingEl, emissionPhaseEl].every(Boolean)) return;
+  if (!Number.isFinite(blockHeight) || blockHeight < 0) return;
+
+  const phase = Math.floor(blockHeight / QTC_HALVING_INTERVAL);
+  const reward = QTC_INITIAL_BLOCK_REWARD / (2 ** phase);
+  let issued = 0;
+  let blocksRemaining = blockHeight + 1;
+
+  for (let phaseIndex = 0; blocksRemaining > 0; phaseIndex++) {
+    const blocksInPhase = Math.min(blocksRemaining, QTC_HALVING_INTERVAL);
+    issued += blocksInPhase * (QTC_INITIAL_BLOCK_REWARD / (2 ** phaseIndex));
+    blocksRemaining -= blocksInPhase;
+    if (phaseIndex > 64) break;
+  }
+
+  const remaining = Math.max(0, QTC_MAX_SCHEDULED_SUPPLY - issued);
+  const nextHalving = (phase + 1) * QTC_HALVING_INTERVAL;
+  emissionRewardEl.textContent = formatQtc(reward);
+  emissionIssuedEl.textContent = formatQtc(issued);
+  emissionRemainingEl.textContent = formatQtc(remaining);
+  emissionPhaseEl.textContent = `Phase ${phase} · ${Math.max(0, nextHalving - blockHeight).toLocaleString("en-US")} blocks to next halving`;
+  if (emissionNoteEl) {
+    emissionNoteEl.textContent = `Based on indexed block #${blockHeight.toLocaleString("en-US")}, a 210,000-block halving interval and the 50 QTC starting reward. Scheduled issuance is not the same as circulating supply.`;
+  }
+}
 
 let networkStats = null;
 
@@ -30,6 +70,8 @@ function updateBlockTicker(data) {
   const difficulty = Number(stats.difficulty || data.difficulty || 0);
   const hashrate = Number(stats.network_hashrate || stats.network_hashps || data.network_hashrate || 0);
   const txCount = Number(stats.latest_block_tx_count || stats.latest_block_transactions || stats.tx_count || 0);
+
+  updateEmissionDisplay(indexed);
 
   if (liveBlockEl) liveBlockEl.textContent = indexed ? "#" + indexed.toLocaleString("en-US") : "—";
   if (liveDifficultyEl) liveDifficultyEl.textContent = difficulty ? difficulty.toLocaleString("en-US", { maximumFractionDigits: 2 }) : "—";
