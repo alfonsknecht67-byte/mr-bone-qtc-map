@@ -34,6 +34,7 @@ const QTC_INITIAL_BLOCK_REWARD = 50;
 const QTC_SATOSHIS = 100000000;
 let indexedBlockHeight = null;
 let qtcPriceEur = null;
+let hasDirectMarketQuote = false;
 
 function formatQtc(value) {
   return Number(value).toLocaleString("en-US", { maximumFractionDigits: 8 }) + " QTC";
@@ -84,6 +85,30 @@ function updateSupplyMetrics() {
   }
 }
 
+function updateMarketCapFromCmcWidget() {
+  const widget = document.querySelector(".coinmarketcap-currency-widget");
+  if (!widget) return;
+
+  const priceNode = [...widget.querySelectorAll("span")].find(span => span.style.fontSize === "20px");
+  const currencyNode = [...widget.querySelectorAll("span")].find(span => span.style.fontSize === "14px" && span.textContent.trim());
+  if (!priceNode || currencyNode?.textContent.trim() !== "EUR") return;
+
+  const localizedPrice = priceNode.textContent.trim().replace(/\./g, "").replace(",", ".");
+  const price = Number(localizedPrice.replace(/[^\d.+-]/g, ""));
+  if (!Number.isFinite(price) || price <= 0) return;
+
+  qtcPriceEur = price;
+  updateSupplyMetrics();
+}
+
+function watchCmcWidgetPrice() {
+  const widget = document.querySelector(".coinmarketcap-currency-widget");
+  if (!widget || !window.MutationObserver) return;
+  const observer = new MutationObserver(updateMarketCapFromCmcWidget);
+  observer.observe(widget, { childList: true, characterData: true, subtree: true });
+  updateMarketCapFromCmcWidget();
+}
+
 async function loadQtcMarketPrice() {
   try {
     const url = "https://pro-api.coinmarketcap.com/public-api/v2/simple/price?slug=superquantum-qubitcoin&convert=EUR&include_24h_change=true&include_last_updated=true";
@@ -99,6 +124,7 @@ async function loadQtcMarketPrice() {
     const change24h = quote?.percent_change_24h;
 
     qtcPriceEur = price;
+    hasDirectMarketQuote = true;
     if (marketPriceEl) marketPriceEl.textContent = new Intl.NumberFormat("de-DE", {
       style: "currency", currency: "EUR", maximumFractionDigits: 8
     }).format(price);
@@ -111,13 +137,14 @@ async function loadQtcMarketPrice() {
     if (marketPriceEl && quote.last_updated) marketPriceEl.title = `CMC price updated ${quote.last_updated}`;
     updateSupplyMetrics();
   } catch (error) {
-    if (!Number.isFinite(qtcPriceEur)) {
+    if (!hasDirectMarketQuote) {
       if (marketPriceEl) marketPriceEl.hidden = true;
       const logo = document.getElementById("qtc-logo");
       if (logo) logo.hidden = true;
       const fallback = document.getElementById("cmc-widget-fallback");
       if (fallback) fallback.hidden = false;
-      if (marketCapEl) marketCapEl.textContent = "Price feed unavailable";
+      updateMarketCapFromCmcWidget();
+      if (!Number.isFinite(qtcPriceEur) && marketCapEl) marketCapEl.textContent = "Awaiting QTC price";
     }
   }
 }
@@ -937,5 +964,6 @@ loadData();
 
 loadNetworkStats();
 setInterval(loadNetworkStats, 30000);
+watchCmcWidgetPrice();
 loadQtcMarketPrice();
 setInterval(loadQtcMarketPrice, 60000);
