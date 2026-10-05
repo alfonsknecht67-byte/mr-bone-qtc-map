@@ -568,6 +568,17 @@ footer strong {
 
 .price-copy strong[hidden] { display: none !important; }
 
+.market-change {
+  display: block;
+  margin-top: 1px;
+  color: #39bf91;
+  font-size: .8rem;
+  font-variant-numeric: tabular-nums;
+}
+
+.market-change.is-negative { color: #ef7777; }
+.market-change[hidden] { display: none !important; }
+
 .cmc-widget-fallback {
   width: 240px;
   height: 150px;
