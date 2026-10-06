@@ -28,6 +28,16 @@ Private scanning, node and monitoring infrastructure remains outside this reposi
 - `docs/` — public project documentation
 - `data/` — placeholder for data that is explicitly approved for public release
 
+## Funded map refresh
+
+The public graph shows addresses with a positive current unspent balance.
+`tools/refresh-funded-map.ps1` checks the local WSL scanner and refreshes and
+publishes the map when the indexed block advances. To install its per-user
+Windows scheduled task (at sign-in and every six hours), run
+`powershell -ExecutionPolicy Bypass -File tools/install-funded-map-refresh-task.ps1`
+from the repository folder. The task uses the existing Git credential manager
+login to publish updates; it does not contain credentials.
+
 ## Status
 
 Initial public project scaffold. The actual Bubble Map will be added after the public/private data boundary has been checked.

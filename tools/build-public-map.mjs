@@ -25,7 +25,14 @@ const allowedTypes = new Set(["address", "cluster", "exchange"]);
 
 const nodes = Array.isArray(raw.nodes)
   ? raw.nodes
-      .filter(n => n && typeof n.id === "string" && allowedTypes.has(n.type))
+      .filter(n =>
+        n &&
+        typeof n.id === "string" &&
+        allowedTypes.has(n.type) &&
+        n.type === "address" &&
+        Number.isFinite(n.balance) &&
+        n.balance > 0
+      )
       .map(n => {
         const node = {
           id: n.id,
@@ -86,12 +93,11 @@ const publicMap = {
   graph_scope: {
     visualized_nodes: nodes.length,
     visualized_edges: edges.length,
+    funded_addresses_only: true,
     minimum_edge_qtc: Number.isFinite(raw.graph_scope?.minimum_edge_qtc)
       ? raw.graph_scope.minimum_edge_qtc
       : null,
-    note: typeof raw.graph_scope?.note === "string"
-      ? raw.graph_scope.note
-      : "Public graph of approved on-chain data."
+    note: "Only addresses with a positive current unspent balance are shown. Links are included only when both endpoints are currently funded. Refreshing the scan adds newly funded addresses and removes addresses whose balance reaches zero."
   },
   live_stats: raw.live_stats && typeof raw.live_stats === "object"
     ? Object.fromEntries(
@@ -104,6 +110,6 @@ const publicMap = {
   edges
 };
 
-// Keep the full-map download lean; the public graph may contain over 100k nodes.
+// Keep the funded-address graph lean for reliable browser loading.
 fs.writeFileSync(output, JSON.stringify(publicMap) + "\n");
 console.log(`Wrote ${nodes.length} nodes and ${edges.length} edges to ${output}`);
