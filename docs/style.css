@@ -426,6 +426,13 @@ footer strong {
   font-weight: 700;
 }
 
+.wallet-ticker-note {
+  margin: -5px 0 12px;
+  color: #858585;
+  font-size: .7rem;
+  line-height: 1.4;
+}
+
 @media (max-width: 900px) {
   #wallet-ticker {
     grid-template-columns: repeat(2, minmax(140px, 1fr));
