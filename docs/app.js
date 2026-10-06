@@ -670,7 +670,9 @@ function render(data) {
   adjacentEdges = new Map();
 
   const largeGraph = nodeData.length > 2000;
-  physicsEnabled = !largeGraph;
+  // The funded-only map is small enough to animate; reserve the frozen layout
+  // for truly massive datasets, where a physics pass would overwhelm browsers.
+  physicsEnabled = nodeData.length <= 8000;
   const preparedNodes = buildNodes(data).map(node =>
     largeGraph
       ? { ...node, label: node.group === "exchange" ? node.label : "" }
@@ -710,9 +712,20 @@ function render(data) {
 
       physics: {
         enabled: physicsEnabled,
+        solver: "barnesHut",
+        barnesHut: {
+          gravitationalConstant: -1800,
+          centralGravity: 0.08,
+          springLength: 110,
+          springConstant: 0.02,
+          damping: 0.35,
+          avoidOverlap: 0.4
+        },
         stabilization: {
-          enabled: !largeGraph,
-          iterations: 250
+          enabled: physicsEnabled,
+          iterations: 300,
+          updateInterval: 50,
+          fit: true
         }
       },
 
@@ -798,9 +811,7 @@ function render(data) {
     }
   });
 
-  statusEl.textContent = largeGraph
-    ? `PUBLIC MAP ONLINE · ${nodeData.length.toLocaleString("en-US")} ADDRESSES · PHYSICS OFF`
-    : "PUBLIC MAP ONLINE";
+  statusEl.textContent = `PUBLIC MAP ONLINE · ${nodeData.length.toLocaleString("en-US")} ADDRESSES`;
   document.getElementById("physics").textContent =
     physicsEnabled ? "Physics: On" : "Physics: Off (large map)";
 
