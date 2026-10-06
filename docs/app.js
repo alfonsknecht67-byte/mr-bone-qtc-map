@@ -25,7 +25,6 @@ mobileLayoutQuery.addEventListener("change", event => {
   if (!hasManualLayout) setPageLayout(event.matches, false);
 });
 const statusEl = document.getElementById("status");
-const nodeCountEl = document.getElementById("node-count");
 const edgeCountEl = document.getElementById("edge-count");
 const detailsEl = document.getElementById("details");
 const datasetInfoEl = document.getElementById("dataset-info");
@@ -37,7 +36,6 @@ const analysisStatsEl = document.getElementById("analysis-stats");
 const tickerKnownEl = document.getElementById("ticker-known");
 const tickerFundedEl = document.getElementById("ticker-funded");
 const tickerSupplyEl = document.getElementById("ticker-supply");
-const tickerBlockEl = document.getElementById("ticker-block");
 const clusterInfoEl = document.getElementById("cluster-info");
 
 const liveBlockEl = document.getElementById("live-block");
@@ -177,10 +175,6 @@ function updateWalletTicker(data) {
       Number(stats.total_utxo_qtc || 0).toLocaleString("en-US") + " QTC";
   }
 
-  if (tickerBlockEl) {
-    tickerBlockEl.textContent =
-      Number(stats.latest_indexed_block || 0).toLocaleString("en-US");
-  }
 }
 
 function number(value) {
@@ -384,7 +378,6 @@ function updateCounts() {
     filter: e => !e.hidden
   }).length;
 
-  nodeCountEl.textContent = visibleNodes;
   edgeCountEl.textContent = visibleEdges;
 
   analysisStatsEl.innerHTML =
@@ -679,7 +672,9 @@ function render(data) {
   const largeGraph = nodeData.length > 2000;
   physicsEnabled = !largeGraph;
   const preparedNodes = buildNodes(data).map(node =>
-    largeGraph ? { ...node, label: "" } : node
+    largeGraph
+      ? { ...node, label: node.group === "exchange" ? node.label : "" }
+      : node
   );
   const preparedEdges = buildEdges(data);
   for (const edge of preparedEdges) {
