@@ -23,11 +23,16 @@ An edge represents a public on-chain relationship and may contain:
 - `count` — number of transactions represented by this aggregated connection
 - `first_block` and `last_block` — observed block interval for the connection
 
-The address activity view is derived from those public connection intervals.
+The full address set is built from addresses present in indexed transaction
+inputs and outputs. The address activity view is derived from public
+connection intervals.
 It shows when each aggregated relationship was first and last observed and its
 recorded transaction count. The current public dataset does not contain
 individual transaction dates or historical balance snapshots, so it cannot
 support a daily activity histogram or balance-over-time chart.
+
+The full-map exporter may omit low-value links below its configured aggregate
+QTC threshold while retaining every indexed address as a node.
 
 ## Security rule
 

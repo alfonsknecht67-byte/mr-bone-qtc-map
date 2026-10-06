@@ -20,6 +20,44 @@
     "source": {
       "type": "string"
     },
+    "verified_block": {
+      "type": ["integer", "null"]
+    },
+    "balance_definition": {
+      "type": ["object", "null"],
+      "properties": {
+        "field": { "type": "string" },
+        "source": { "type": "string" },
+        "rule": { "type": ["string", "null"] },
+        "verified_against_node": { "type": "boolean" },
+        "verified_block": { "type": ["integer", "null"] }
+      },
+      "additionalProperties": false
+    },
+    "heuristic_notice": {
+      "type": ["string", "null"]
+    },
+    "graph_scope": {
+      "type": "object",
+      "required": ["visualized_nodes", "visualized_edges", "note"],
+      "properties": {
+        "visualized_nodes": { "type": "integer", "minimum": 0 },
+        "visualized_edges": { "type": "integer", "minimum": 0 },
+        "minimum_edge_qtc": { "type": ["number", "null"], "minimum": 0 },
+        "note": { "type": "string" }
+      },
+      "additionalProperties": false
+    },
+    "live_stats": {
+      "type": ["object", "null"],
+      "properties": {
+        "known_addresses": { "type": "number", "minimum": 0 },
+        "active_wallets": { "type": "number", "minimum": 0 },
+        "total_utxo_qtc": { "type": "number", "minimum": 0 },
+        "latest_indexed_block": { "type": "number", "minimum": 0 }
+      },
+      "additionalProperties": false
+    },
     "attribution": {
       "type": "string"
     },
