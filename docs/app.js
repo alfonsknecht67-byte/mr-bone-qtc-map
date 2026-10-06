@@ -670,8 +670,8 @@ function render(data) {
   adjacentEdges = new Map();
 
   const largeGraph = nodeData.length > 2000;
-  // The funded-only map is small enough to animate; reserve the frozen layout
-  // for truly massive datasets, where a physics pass would overwhelm browsers.
+  // Performance profile: large funded maps get one stabilization pass, then
+  // physics is stopped so pan/zoom/click interactions stay responsive.
   physicsEnabled = nodeData.length <= 8000;
   const preparedNodes = buildNodes(data).map(node =>
     largeGraph
@@ -699,7 +699,9 @@ function render(data) {
       autoResize: true,
 
       interaction: {
-        hover: true,
+        // Hit-testing every frame is expensive with thousands of nodes.
+        // Large maps keep click/selection but skip continuous hover hit-tests.
+        hover: !largeGraph,
         navigationButtons: true,
         keyboard: true,
         hideEdgesOnDrag: largeGraph,
@@ -723,8 +725,9 @@ function render(data) {
         },
         stabilization: {
           enabled: physicsEnabled,
-          iterations: 300,
-          updateInterval: 50,
+          // One shorter stabilization pass is enough for the funded-only map.
+          iterations: largeGraph ? 180 : 300,
+          updateInterval: 80,
           fit: true
         }
       },
@@ -791,6 +794,16 @@ function render(data) {
     }
   );
 
+  if (largeGraph && physicsEnabled) {
+    const stopLargeGraphPhysics = () => {
+      network.off("stabilized", stopLargeGraphPhysics);
+      network.stopSimulation();
+      physicsEnabled = false;
+      document.getElementById("physics").textContent = "Physics: Off (optimized)";
+    };
+    network.on("stabilized", stopLargeGraphPhysics);
+  }
+
   network.on("click", params => {
     if (params.nodes.length) {
       selectedNode = params.nodes[0];
@@ -826,16 +839,19 @@ function render(data) {
 
   updateCounts();
 
+  // Avoid a second expensive animation pass after the initial layout.
   network.fit({
-    animation: true
+    animation: false
   });
 }
 
 async function loadData() {
   try {
     const response =
+      // Allow browser caching, while still revalidating when GitHub Pages
+      // publishes a newer dataset version.
       await fetch("data/map.json", {
-        cache: "no-store"
+        cache: "no-cache"
       });
 
     if (!response.ok) {
