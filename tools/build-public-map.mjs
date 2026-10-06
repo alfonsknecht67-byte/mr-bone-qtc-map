@@ -20,6 +20,9 @@ const input = process.argv[2] || "data/raw/approved-scan.json";
 const output = process.argv[3] || "data/map.json";
 
 const raw = JSON.parse(fs.readFileSync(input, "utf8"));
+const verifiedExchangeWallets = JSON.parse(
+  fs.readFileSync(new URL("../data/verified-exchange-wallets.json", import.meta.url), "utf8")
+);
 
 const allowedTypes = new Set(["address", "cluster", "exchange"]);
 
@@ -33,10 +36,11 @@ const nodes = Array.isArray(raw.nodes)
         Number.isFinite(n.balance) &&
         n.balance > 0
       )
-      .map(n => {
+        .map(n => {
+        const displayLabel = verifiedExchangeWallets[n.id] || n.label;
         const node = {
           id: n.id,
-          label: typeof n.label === "string" ? n.label : n.id,
+          label: typeof displayLabel === "string" ? displayLabel : n.id,
           type: n.type
         };
 
