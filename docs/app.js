@@ -687,8 +687,8 @@ function render(data) {
     return {
       ...node,
       label: isExchange ? node.label : "",
-      x: isExchange ? 0 : Math.cos(angle) * radius,
-      y: isExchange ? 0 : Math.sin(angle) * radius
+      x: isExchange ? Math.cos(angle) * 140 : Math.cos(angle) * radius,
+      y: isExchange ? Math.sin(angle) * 140 : Math.sin(angle) * radius
     };
   });
   const preparedEdges = buildEdges(data);
