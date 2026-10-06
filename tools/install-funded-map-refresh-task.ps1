@@ -13,7 +13,7 @@ $action = New-ScheduledTaskAction `
 $repeating = New-ScheduledTaskTrigger `
   -Once `
   -At (Get-Date).AddMinutes(5) `
-  -RepetitionInterval (New-TimeSpan -Hours 6) `
+  -RepetitionInterval (New-TimeSpan -Hours 1) `
   -RepetitionDuration (New-TimeSpan -Days 3650)
 $atLogon = New-ScheduledTaskTrigger -AtLogOn -User $currentUser
 $principal = New-ScheduledTaskPrincipal -UserId $currentUser -LogonType Interactive -RunLevel Limited
@@ -31,4 +31,4 @@ Register-ScheduledTask `
   -Description 'Refresh and publish the funded QTC address map when the local scanner indexes a new block.' `
   -Force | Out-Null
 
-Write-Output "Installed scheduled task '$taskName' for $currentUser (at logon and every 6 hours)."
+Write-Output "Installed scheduled task '$taskName' for $currentUser (at logon and every hour)."
