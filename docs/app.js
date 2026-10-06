@@ -670,14 +670,27 @@ function render(data) {
   adjacentEdges = new Map();
 
   const largeGraph = nodeData.length > 2000;
-  // Performance profile: large funded maps get one stabilization pass, then
-  // physics is stopped so pan/zoom/click interactions stay responsive.
-  physicsEnabled = nodeData.length <= 8000;
-  const preparedNodes = buildNodes(data).map(node =>
-    largeGraph
-      ? { ...node, label: node.group === "exchange" ? node.label : "" }
-      : node
-  );
+
+  // Performance profile: large funded maps use a deterministic spiral layout
+  // immediately instead of spending hundreds of physics iterations on first load.
+  // The positions are stable between visits and still leave physics available
+  // through the existing button when someone wants to experiment.
+  physicsEnabled = !largeGraph;
+  const preparedNodes = buildNodes(data).map((node, index) => {
+    if (!largeGraph) return node;
+
+    const goldenAngle = Math.PI * (3 - Math.sqrt(5));
+    const radius = 35 * Math.sqrt(index + 1);
+    const angle = index * goldenAngle;
+    const isExchange = node.group === "exchange";
+
+    return {
+      ...node,
+      label: isExchange ? node.label : "",
+      x: isExchange ? 0 : Math.cos(angle) * radius,
+      y: isExchange ? 0 : Math.sin(angle) * radius
+    };
+  });
   const preparedEdges = buildEdges(data);
   for (const edge of preparedEdges) {
     if (!adjacentEdges.has(edge.from)) adjacentEdges.set(edge.from, []);
@@ -725,8 +738,7 @@ function render(data) {
         },
         stabilization: {
           enabled: physicsEnabled,
-          // One shorter stabilization pass is enough for the funded-only map.
-          iterations: largeGraph ? 180 : 300,
+          iterations: largeGraph ? 1 : 300,
           updateInterval: 80,
           fit: true
         }
@@ -793,16 +805,6 @@ function render(data) {
       }
     }
   );
-
-  if (largeGraph && physicsEnabled) {
-    const stopLargeGraphPhysics = () => {
-      network.off("stabilized", stopLargeGraphPhysics);
-      network.stopSimulation();
-      physicsEnabled = false;
-      document.getElementById("physics").textContent = "Physics: Off (optimized)";
-    };
-    network.on("stabilized", stopLargeGraphPhysics);
-  }
 
   network.on("click", params => {
     if (params.nodes.length) {
