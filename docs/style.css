@@ -527,7 +527,7 @@ footer strong {
 
 .token-overview {
   display: grid;
-  grid-template-columns: minmax(230px, 280px) minmax(0, 1fr);
+  grid-template-columns: minmax(0, 340px) minmax(0, 1fr);
   gap: 14px;
   align-items: stretch;
   padding: 10px 24px;
@@ -545,17 +545,54 @@ footer strong {
 }
 
 .market-cap-card {
-  display: flex;
-  align-items: center;
-  gap: 10px;
-  justify-content: center;
+  display: grid;
+  grid-template-columns: minmax(0, 1fr);
+  align-content: center;
+  justify-items: stretch;
+  gap: 6px;
   width: 100%;
-  max-width: 260px;
-  min-height: 84px;
+  max-width: 340px;
+  min-width: 0;
+  min-height: 0;
+  margin-left: 8px;
   overflow: hidden;
 }
 
 .qtc-logo { width: 38px; height: 38px; flex: none; }
+
+.cmc-widget {
+  width: 100%;
+  max-width: 100%;
+  min-width: 0;
+  overflow: hidden;
+}
+
+.cmc-widget .coinmarketcap-currency-widget,
+.cmc-widget .coinmarketcap-currency-widget > div,
+.cmc-widget iframe {
+  display: block;
+  width: 100% !important;
+  max-width: 100% !important;
+  min-width: 0 !important;
+  box-sizing: border-box !important;
+}
+
+.cmc-widget iframe { border: 0; }
+
+.cmc-widget .coinmarketcap-currency-widget a {
+  overflow-wrap: anywhere !important;
+  word-break: break-word !important;
+}
+
+.cmc-widget .coinmarketcap-currency-widget > div > div:first-child > div:first-child {
+  width: 25% !important;
+}
+
+.cmc-widget .coinmarketcap-currency-widget > div > div:first-child > div:nth-child(2) {
+  width: 75% !important;
+  padding-right: 8px;
+  box-sizing: border-box !important;
+}
 
 .price-copy { min-width: 0; }
 
@@ -805,7 +842,7 @@ footer strong {
 
 @media (max-width: 700px) {
   .token-overview { grid-template-columns: 1fr; padding: 10px 12px; }
-  .market-cap-card { max-width: min(100%, 260px); min-height: 84px; }
+  .market-cap-card { max-width: 100%; min-height: 0; margin-left: 0; }
   .cmc-widget-fallback { max-width: 220px; }
   .emission-card { gap: 12px; }
   .supply-metrics { grid-template-columns: 1fr 1fr; flex-basis: 100%; }
@@ -1002,7 +1039,7 @@ body.mobile-view .block-ticker-item:nth-of-type(odd) { border-left: 1px solid #2
 body.mobile-view .block-ticker-item strong { font-size: .88rem; overflow-wrap: anywhere; }
 
 body.mobile-view .token-overview { grid-template-columns: minmax(0, 1fr); gap: 8px; padding: 9px 12px; }
-body.mobile-view .market-cap-card { justify-content: flex-start; max-width: none; min-height: 72px; }
+body.mobile-view .market-cap-card { justify-content: flex-start; max-width: none; min-height: 0; margin-left: 0; }
 body.mobile-view .emission-card { align-items: flex-start; padding: 11px; }
 body.mobile-view .supply-metrics { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 6px; }
 body.mobile-view .supply-metrics > div { padding: 7px; }
