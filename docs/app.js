@@ -144,6 +144,8 @@ async function loadNetworkStats() {
 
 let network = null;
 let nodeData = [];
+let nodeById = new Map();
+let adjacentEdges = new Map();
 window.currentMapData = null;
 let edgeData = [];
 let nodes = null;
@@ -288,7 +290,7 @@ function buildEdges(data) {
 }
 
 function showNode(id) {
-  const n = nodeData.find(x => x.id === id);
+  const n = nodeById.get(id);
 
   if (!n) {
     detailsEl.textContent = "Address not found.";
@@ -311,8 +313,7 @@ function showNode(id) {
 function showAddressActivity(node) {
   if (!addressActivityEl) return;
 
-  const records = edgeData
-    .filter(edge => edge.from === node.id || edge.to === node.id)
+  const records = (adjacentEdges.get(node.id) || [])
     .map(edge => ({
       edge,
       first: Number.isFinite(Number(edge.first_block)) ? Number(edge.first_block) : null,
@@ -327,21 +328,28 @@ function showAddressActivity(node) {
     return;
   }
 
-  const blocks = records.flatMap(record => [record.first, record.last])
-    .filter(Number.isFinite);
-  const minBlock = Math.min(...blocks);
-  const maxBlock = Math.max(...blocks);
+  const { minBlock, maxBlock } = records.reduce((range, record) => {
+    const first = record.first ?? record.last;
+    const last = record.last ?? record.first;
+    if (Number.isFinite(first)) range.minBlock = Math.min(range.minBlock, first);
+    if (Number.isFinite(last)) range.maxBlock = Math.max(range.maxBlock, last);
+    return range;
+  }, { minBlock: Infinity, maxBlock: -Infinity });
   const span = Math.max(1, maxBlock - minBlock);
   const totalRecordedTx = records.reduce((sum, record) =>
     sum + Math.max(0, rawNumber(record.edge.count)), 0);
 
-  const rows = records.map(({ edge, first, last }) => {
+  const visibleRecords = [...records]
+    .sort((a, b) => rawNumber(b.edge.value) - rawNumber(a.edge.value))
+    .slice(0, 40);
+
+  const rows = visibleRecords.map(({ edge, first, last }) => {
     const start = first ?? last;
     const end = last ?? first;
     const left = ((start - minBlock) / span) * 100;
     const width = Math.max(1.5, ((end - start) / span) * 100);
     const counterpartId = edge.from === node.id ? edge.to : edge.from;
-    const counterpart = nodeData.find(item => item.id === counterpartId);
+    const counterpart = nodeById.get(counterpartId);
     const address = counterpart?.full_address || counterpart?.label || counterpartId;
 
     return `<div class="activity-row">` +
@@ -360,6 +368,9 @@ function showAddressActivity(node) {
     `<div class="activity-axis"><span>Block ${minBlock.toLocaleString("en-US")}</span>` +
     `<span>Block ${maxBlock.toLocaleString("en-US")}</span></div>` +
     `<div class="activity-rows">${rows}</div>` +
+    (records.length > visibleRecords.length
+      ? `<p class="activity-note">Showing the 40 highest-value connections.</p>`
+      : "") +
     `<p class="activity-note">Intervals show the first and last recorded block for each aggregated connection. ` +
     `The public map does not include individual transaction dates or historical balance snapshots.</p>`;
 }
@@ -397,19 +408,8 @@ function resetVisibility(focusId = null) {
 
   document.getElementById("flow-filter").value = "0";
 
-  nodes.forEach(n => {
-    nodes.update({
-      id: n.id,
-      hidden: false
-    });
-  });
-
-  edges.forEach(e => {
-    edges.update({
-      id: e.id,
-      hidden: false
-    });
-  });
+  nodes.update(nodes.getIds().map(id => ({ id, hidden: false })));
+  edges.update(edges.getIds().map(id => ({ id, hidden: false })));
 
   network.unselectAll();
 
@@ -442,10 +442,11 @@ function applyFilters() {
 
   const visibleNodeIds = new Set();
 
+  const edgeUpdates = [];
   edges.forEach(e => {
     const show = rawNumber(e.value) >= threshold;
 
-    edges.update({
+    edgeUpdates.push({
       id: e.id,
       hidden: !show
     });
@@ -455,7 +456,9 @@ function applyFilters() {
       visibleNodeIds.add(e.to);
     }
   });
+  edges.update(edgeUpdates);
 
+  const nodeUpdates = [];
   nodes.forEach(n => {
     let show =
       threshold === 0 ||
@@ -467,11 +470,12 @@ function applyFilters() {
         rawNumber(n.balance) >= WHALE_THRESHOLD;
     }
 
-    nodes.update({
+    nodeUpdates.push({
       id: n.id,
       hidden: !show
     });
   });
+  nodes.update(nodeUpdates);
 
   const visibleIds = new Set(
     nodes.get({
@@ -479,14 +483,16 @@ function applyFilters() {
     }).map(n => n.id)
   );
 
+  const hiddenEdgeUpdates = [];
   edges.forEach(e => {
     if (!visibleIds.has(e.from) || !visibleIds.has(e.to)) {
-      edges.update({
+      hiddenEdgeUpdates.push({
         id: e.id,
         hidden: true
       });
     }
   });
+  edges.update(hiddenEdgeUpdates);
 
   updateCounts();
 }
@@ -561,23 +567,18 @@ function showNeighborhood() {
 function calculateCluster(id) {
   const seen = new Set([id]);
   const queue = [id];
+  let head = 0;
 
-  while (queue.length) {
-    const current = queue.shift();
-
-    edges.forEach(e => {
-      if (e.hidden) return;
-
-      let next = null;
-
-      if (e.from === current) next = e.to;
-      if (e.to === current) next = e.from;
-
-      if (next !== null && !seen.has(next)) {
+  while (head < queue.length) {
+    const current = queue[head++];
+    for (const edge of adjacentEdges.get(current) || []) {
+      if (edges.get(edge.id)?.hidden) continue;
+      const next = edge.from === current ? edge.to : edge.from;
+      if (!seen.has(next)) {
         seen.add(next);
         queue.push(next);
       }
-    });
+    }
   }
 
   clusterInfoEl.innerHTML =
@@ -599,8 +600,7 @@ function exportView() {
 
   nodes.forEach(n => {
     if (!n.hidden) {
-      const original =
-        nodeData.find(x => x.id === n.id);
+      const original = nodeById.get(n.id);
 
       result.nodes.push(original || n);
     }
@@ -639,7 +639,7 @@ function findAddress() {
 
   if (!query) return;
 
-  const found = nodeData.find(n =>
+  const found = nodeById.get(searchEl.value.trim()) || nodeData.find(n =>
     String(n.id).toLowerCase() === query ||
     String(n.full_address || "").toLowerCase() === query
   ) || nodeData.find(n =>
@@ -648,7 +648,7 @@ function findAddress() {
 
   if (!found) {
     detailsEl.textContent =
-      "No matching address found in the public map subset.";
+      "No matching address found in the published map.";
     return;
   }
 
@@ -673,11 +673,27 @@ function render(data) {
   edgeData =
     Array.isArray(data.edges) ? data.edges : [];
 
+  nodeById = new Map(nodeData.map(node => [node.id, node]));
+  adjacentEdges = new Map();
+
+  const largeGraph = nodeData.length > 2000;
+  physicsEnabled = !largeGraph;
+  const preparedNodes = buildNodes(data).map(node =>
+    largeGraph ? { ...node, label: "" } : node
+  );
+  const preparedEdges = buildEdges(data);
+  for (const edge of preparedEdges) {
+    if (!adjacentEdges.has(edge.from)) adjacentEdges.set(edge.from, []);
+    if (!adjacentEdges.has(edge.to)) adjacentEdges.set(edge.to, []);
+    adjacentEdges.get(edge.from).push(edge);
+    adjacentEdges.get(edge.to).push(edge);
+  }
+
   nodes =
-    new vis.DataSet(buildNodes(data));
+    new vis.DataSet(preparedNodes);
 
   edges =
-    new vis.DataSet(buildEdges(data));
+    new vis.DataSet(preparedEdges);
 
   network = new vis.Network(
     document.getElementById("map"),
@@ -688,12 +704,19 @@ function render(data) {
       interaction: {
         hover: true,
         navigationButtons: true,
-        keyboard: true
+        keyboard: true,
+        hideEdgesOnDrag: largeGraph,
+        hideEdgesOnZoom: largeGraph
+      },
+
+      layout: {
+        improvedLayout: !largeGraph
       },
 
       physics: {
         enabled: physicsEnabled,
         stabilization: {
+          enabled: !largeGraph,
           iterations: 250
         }
       },
@@ -753,7 +776,7 @@ function render(data) {
             scaleFactor: 0.35
           }
         },
-        smooth: {
+        smooth: largeGraph ? false : {
           type: "dynamic"
         }
       }
@@ -780,14 +803,20 @@ function render(data) {
     }
   });
 
-  statusEl.textContent =
-    "PUBLIC MAP ONLINE";
+  statusEl.textContent = largeGraph
+    ? `PUBLIC MAP ONLINE · ${nodeData.length.toLocaleString("en-US")} ADDRESSES · PHYSICS OFF`
+    : "PUBLIC MAP ONLINE";
+  document.getElementById("physics").textContent =
+    physicsEnabled ? "Physics: On" : "Physics: Off (large map)";
 
   datasetInfoEl.innerHTML =
     `<div>Version: <strong>${data.version ?? "—"}</strong></div>` +
     `<div>Source: <strong>${data.source ?? "—"}</strong></div>` +
     `<div>Generated: <strong>${data.generated_at ?? "—"}</strong></div>` +
-    `<div>Attribution: <strong>${data.attribution ?? "Mr. Bone"}</strong></div>`;
+    `<div>Attribution: <strong>${data.attribution ?? "Mr. Bone"}</strong></div>` +
+    (Number.isFinite(data.graph_scope?.minimum_edge_qtc)
+      ? `<div>Minimum link value: <strong>${formatQtc(data.graph_scope.minimum_edge_qtc)}</strong></div>`
+      : "");
 
   updateCounts();
 
@@ -831,6 +860,8 @@ document.getElementById("fit").onclick = () => {
 
 document.getElementById("physics").onclick = () => {
   physicsEnabled = !physicsEnabled;
+  document.getElementById("physics").textContent =
+    physicsEnabled ? "Physics: On" : "Physics: Off";
 
   if (network) {
     network.setOptions({
@@ -852,8 +883,7 @@ document.getElementById("large-only").onclick =
     document.getElementById("flow-filter").value = "0";
 
     nodes.forEach(n => {
-      const original =
-        nodeData.find(x => x.id === n.id);
+      const original = nodeById.get(n.id);
 
       const visible =
         Math.abs(rawNumber(original?.balance)) >= 50000;

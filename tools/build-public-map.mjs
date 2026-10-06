@@ -66,12 +66,44 @@ const edges = Array.isArray(raw.edges)
   : [];
 
 const publicMap = {
-  version: 1,
+  version: Number.isSafeInteger(raw.version) ? raw.version : 1,
   generated_at: new Date().toISOString(),
   source: "public-approved-on-chain-data",
+  attribution: "Mr. Bone",
+  verified_block: Number.isSafeInteger(raw.verified_block) ? raw.verified_block : null,
+  balance_definition: raw.balance_definition && typeof raw.balance_definition === "object"
+    ? {
+        field: typeof raw.balance_definition.field === "string" ? raw.balance_definition.field : "balance",
+        source: typeof raw.balance_definition.source === "string" ? raw.balance_definition.source : "public on-chain data",
+        rule: typeof raw.balance_definition.rule === "string" ? raw.balance_definition.rule : null,
+        verified_against_node: raw.balance_definition.verified_against_node === true,
+        verified_block: Number.isSafeInteger(raw.balance_definition.verified_block)
+          ? raw.balance_definition.verified_block
+          : null
+      }
+    : null,
+  heuristic_notice: typeof raw.heuristic_notice === "string" ? raw.heuristic_notice : null,
+  graph_scope: {
+    visualized_nodes: nodes.length,
+    visualized_edges: edges.length,
+    minimum_edge_qtc: Number.isFinite(raw.graph_scope?.minimum_edge_qtc)
+      ? raw.graph_scope.minimum_edge_qtc
+      : null,
+    note: typeof raw.graph_scope?.note === "string"
+      ? raw.graph_scope.note
+      : "Public graph of approved on-chain data."
+  },
+  live_stats: raw.live_stats && typeof raw.live_stats === "object"
+    ? Object.fromEntries(
+        ["known_addresses", "active_wallets", "total_utxo_qtc", "latest_indexed_block"]
+          .filter(key => Number.isFinite(raw.live_stats[key]))
+          .map(key => [key, raw.live_stats[key]])
+      )
+    : null,
   nodes,
   edges
 };
 
-fs.writeFileSync(output, JSON.stringify(publicMap, null, 2) + "\n");
+// Keep the full-map download lean; the public graph may contain over 100k nodes.
+fs.writeFileSync(output, JSON.stringify(publicMap) + "\n");
 console.log(`Wrote ${nodes.length} nodes and ${edges.length} edges to ${output}`);
