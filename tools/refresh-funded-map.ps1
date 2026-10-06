@@ -48,7 +48,25 @@ try {
   if ($LASTEXITCODE -ne 0 -or -not $rpcJson) { throw 'Could not query qubitcoind for network status.' }
   $rpc = $rpcJson | ConvertFrom-Json
   $networkHash = (& wsl.exe -d Qubitcoin-Ubuntu -u juliajan -- bash -lc "$cliPath getnetworkhashps 120" 2>$null).Trim()
-  if ($LASTEXITCODE -ne 0 -or $networkHash -notmatch '^[0-9.eE+\-]+$') { $networkHash = '0' }
+  if ($LASTEXITCODE -ne 0 -or $networkHash -notmatch '^[0-9.eE+\-]+  $fresh = Get-Content -Raw $mapPath | ConvertFrom-Json
+  if ([int]$fresh.verified_block -le [int]$published.verified_block) {
+    Write-Log "Export did not advance beyond block $($published.verified_block); skipping publication."
+    exit 0
+  }
+
+  & git add -- docs/data/map.json docs/data/network.json
+  if ($LASTEXITCODE -ne 0) { throw 'Could not stage the refreshed map.' }
+  & git commit -m "Refresh funded wallet map through block $($fresh.verified_block)" *>> $logPath
+  if ($LASTEXITCODE -ne 0) { throw 'Could not commit the refreshed map.' }
+  & git push origin main *>> $logPath
+  if ($LASTEXITCODE -ne 0) { throw 'Could not publish the refreshed map; it will be retried on the next scheduled run.' }
+
+  Write-Log "Published funded map through block $($fresh.verified_block): $($fresh.nodes.Count) addresses, $($fresh.edges.Count) links."
+} catch {
+  Write-Log "Refresh failed: $($_.Exception.Message)"
+  exit 1
+}
+) { $networkHash = '0' }
   $mempoolJson = (& wsl.exe -d Qubitcoin-Ubuntu -u juliajan -- bash -lc "$cliPath getmempoolinfo" 2>$null).Trim()
   $mempool = if ($mempoolJson) { $mempoolJson | ConvertFrom-Json } else { $null }
 
