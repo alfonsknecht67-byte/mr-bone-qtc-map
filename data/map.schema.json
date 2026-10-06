@@ -39,10 +39,11 @@
     },
     "graph_scope": {
       "type": "object",
-      "required": ["visualized_nodes", "visualized_edges", "note"],
+      "required": ["visualized_nodes", "visualized_edges", "funded_addresses_only", "note"],
       "properties": {
         "visualized_nodes": { "type": "integer", "minimum": 0 },
         "visualized_edges": { "type": "integer", "minimum": 0 },
+        "funded_addresses_only": { "type": "boolean" },
         "minimum_edge_qtc": { "type": ["number", "null"], "minimum": 0 },
         "note": { "type": "string" }
       },
