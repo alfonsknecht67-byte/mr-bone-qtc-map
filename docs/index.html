@@ -6,7 +6,7 @@
   <meta name="description" content="Mr. Bone — QTC public on-chain Bubble Map">
   <meta name="author" content="Mr. Bone">
   <title>Mr. Bone — QTC Bubble Map</title>
-  <link rel="stylesheet" href="style.css?v=20261010-neighborhood-3">
+  <link rel="stylesheet" href="style.css?v=20261011-low-flows-2">
   <script src="https://unpkg.com/vis-network@9.1.9/standalone/umd/vis-network.min.js"></script>
 </head>
 <body>
@@ -86,6 +86,7 @@
   </div>
 </section>
 
+<p id="wallet-index-status" class="wallet-index-status" role="status">Loading wallet index status…</p>
 <main class="layout">
   <section class="map-panel">
     <div id="map"></div>
@@ -144,6 +145,37 @@
       <div id="details" class="details">
         Click a node to inspect it.
       </div>
+      <div id="wallet-share" hidden>
+        <label for="wallet-share-url">Wallet link</label>
+        <input id="wallet-share-url" type="url" readonly aria-label="Shareable wallet link">
+        <button id="copy-wallet-link">Copy wallet link</button>
+        <button id="show-small-wallet-flows">Show all wallet flows</button>
+        <p id="wallet-share-status" class="muted" role="status"></p>
+      </div>
+    </div>
+
+    <div class="section">
+      <h3>Connection details</h3>
+      <div id="connection-details" class="details" aria-live="polite">Click a map line to inspect its recorded flow.</div>
+      <details class="wallet-links-disclosure">
+        <summary>Selected wallet connections</summary>
+        <div id="wallet-connections">Select an address to see its highest-value connections.</div>
+      </details>
+    </div>
+
+    <div class="section">
+      <h3 id="comparison-heading">Compare two wallets</h3>
+      <label for="compare-a">Wallet A</label>
+      <input id="compare-a" class="compare-address" placeholder="Full address or unique prefix" autocomplete="off" spellcheck="false">
+      <button id="use-selected-a">Use selected as A</button>
+      <label for="compare-b">Wallet B</label>
+      <input id="compare-b" class="compare-address" placeholder="Full address or unique prefix" autocomplete="off" spellcheck="false">
+      <button id="use-selected-b">Use selected as B</button>
+      <div class="compare-actions">
+        <button id="compare-run">Compare wallets</button>
+        <button id="compare-clear" hidden>Clear comparison</button>
+      </div>
+      <div id="comparison-result" aria-live="polite">Compare two wallets from this public snapshot.</div>
     </div>
 
     <div class="section">
@@ -162,9 +194,13 @@
         <button id="whale-mode">🐋 Whale Mode ≥30k</button>
         <button id="neighborhood">🔗 Show Neighborhood</button>
         <button id="export-view">📥 Export View</button>
+        <p id="small-flows-status" class="muted" role="status">Smaller flows load only when requested.</p>
         <select id="flow-filter">
-          <option value="0">All Flows</option>
-          <option value="1000">≥ 1.000 QTC</option>
+          <option value="0">All recorded flows (including &lt;1 QTC)</option>
+          <option value="1">≥ 1 QTC</option>
+          <option value="10">≥ 10 QTC</option>
+          <option value="100">≥ 100 QTC</option>
+          <option value="1000" selected>≥ 1.000 QTC</option>
           <option value="10000">≥ 10.000 QTC</option>
           <option value="50000">≥ 50.000 QTC</option>
           <option value="100000">≥ 100.000 QTC</option>
@@ -184,6 +220,20 @@
     </div>
   </aside>
 </main>
+
+<section class="telegram-community" aria-labelledby="telegram-community-heading">
+  <div>
+    <p class="community-eyebrow">EXPLORE · LEARN · DISCUSS</p>
+    <h2 id="telegram-community-heading">Qubitcoin – Bubble Map &amp; Research</h2>
+    <p>Explore on-chain connections, follow development and learn with videos, quizzes and wallet guides.</p>
+    <a class="community-join" href="https://t.me/+IsqEgaNiRw5kZDMy" target="_blank" rel="noopener noreferrer">Join the Telegram group ↗</a>
+  </div>
+  <div class="community-guides">
+    <a href="assets/telegram-command-guide.png" target="_blank" rel="noopener noreferrer"><img src="assets/telegram-command-guide.png" width="1536" height="1024" loading="lazy" decoding="async" alt="Qubitcoin Telegram command guide"><span>Command guide · Open full image ↗</span></a>
+    <a href="assets/telegram-learning-center.png" target="_blank" rel="noopener noreferrer"><img src="assets/telegram-learning-center.png" width="1536" height="1024" loading="lazy" decoding="async" alt="Qubitcoin learning center: watch, learn and practice"><span>Learning center · Open full image ↗</span></a>
+  </div>
+</section>
+
 
 <footer class="site-footer">
   <div class="footer-brand">
@@ -219,6 +269,7 @@
 </footer>
 
 <script src="https://files.coinmarketcap.com/static/widget/currency.js"></script>
-<script src="app.js?v=20261010-neighborhood-3"></script>
+<script src="wallet_relationships.js?v=20261011-1"></script>
+<script src="app.js?v=20261011-low-flows-2"></script>
 </body>
 </html>
