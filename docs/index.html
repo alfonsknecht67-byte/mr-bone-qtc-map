@@ -6,7 +6,7 @@
   <meta name="description" content="Mr. Bone — QTC public on-chain Bubble Map">
   <meta name="author" content="Mr. Bone">
   <title>Mr. Bone — QTC Bubble Map</title>
-  <link rel="stylesheet" href="style.css?v=20261006-4">
+  <link rel="stylesheet" href="style.css?v=20261010-neighborhood-3">
   <script src="https://unpkg.com/vis-network@9.1.9/standalone/umd/vis-network.min.js"></script>
 </head>
 <body>
@@ -34,7 +34,7 @@
   <div class="block-ticker-item"><span>DIFFICULTY</span><strong id="live-difficulty">—</strong></div>
   <div class="block-ticker-item"><span>HASHRATE</span><strong id="live-hashrate">—</strong></div>
   <div class="block-ticker-item"><span>TX</span><strong id="live-tx">—</strong></div>
-  <div class="block-ticker-item"><span>INDEXED</span><strong id="live-indexed">—</strong></div>
+  <div class="block-ticker-item"><span>MAP BLOCK</span><strong id="live-indexed">—</strong></div>
   <div class="block-ticker-item ticker-source"><span>DATA</span><strong id="live-data-status">—</strong></div>
 </div>
 
@@ -96,7 +96,7 @@
              placeholder="Search funded QTC address…"
              autocomplete="off">
       <button id="search-btn">Search</button>
-      <button id="fit">Fit</button>
+      <button id="fit" title="Adjust zoom to show all visible addresses">Fit to View</button>
       <button id="physics">Physics</button>
     </div>
 
@@ -219,6 +219,6 @@
 </footer>
 
 <script src="https://files.coinmarketcap.com/static/widget/currency.js"></script>
-<script src="app.js?v=20261006-perf-3"></script>
+<script src="app.js?v=20261010-neighborhood-3"></script>
 </body>
 </html>
