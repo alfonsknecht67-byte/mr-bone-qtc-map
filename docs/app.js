@@ -111,7 +111,11 @@ function updateBlockTicker(data) {
   if (liveBlockEl) liveBlockEl.textContent = indexed ? "#" + indexed.toLocaleString("en-US") : "—";
   if (liveDifficultyEl) liveDifficultyEl.textContent = difficulty ? difficulty.toLocaleString("en-US", { maximumFractionDigits: 2 }) : "—";
   if (liveHashrateEl) liveHashrateEl.textContent = hashrate ? formatHashrate(hashrate) : "—";
-  if (liveIndexedEl) liveIndexedEl.textContent = indexed ? indexed.toLocaleString("en-US") : "—";
+  const mapBlock = Number(data.verified_block || data.balance_definition?.verified_block || data.live_stats?.latest_indexed_block || 0);
+  if (liveIndexedEl) {
+    liveIndexedEl.textContent = mapBlock ? mapBlock.toLocaleString("en-US") : "—";
+    liveIndexedEl.title = "Map snapshot block; network height is shown separately";
+  }
   if (liveTxEl) liveTxEl.textContent = txCount ? txCount.toLocaleString("en-US") : "—";
 
   if (liveDataStatusEl) {
@@ -135,6 +139,8 @@ async function loadNetworkStats() {
     if (!response.ok) throw new Error("HTTP " + response.status);
     networkStats = await response.json();
     if (window.currentMapData) updateBlockTicker(window.currentMapData);
+    const updated = document.getElementById("network-updated");
+    if (updated) updated.textContent = "Network updated: " + (networkStats.generated_at || "Unavailable");
   } catch (error) {
     networkStats = null;
   }
@@ -153,6 +159,20 @@ let physicsEnabled = true;
 let whaleMode = false;
 let neighborhoodMode = false;
 let selectedNode = null;
+let neighborhoodSnapshot = null;
+
+function restoreOverview() {
+  if (!neighborhoodSnapshot) return;
+  nodes.update(neighborhoodSnapshot.nodes);
+  edges.update(neighborhoodSnapshot.edges);
+  physicsEnabled = neighborhoodSnapshot.physics;
+  network.setOptions({ physics: { enabled: physicsEnabled } });
+  document.getElementById("physics").textContent = physicsEnabled ? "Physics: On" : "Physics: Off";
+  neighborhoodSnapshot = null;
+  neighborhoodMode = false;
+  document.getElementById("neighborhood").textContent = "Show Neighborhood";
+}
+
 
 const WHALE_THRESHOLD = 30000;
 
@@ -386,12 +406,14 @@ function updateCounts() {
     `Edges: ${visibleEdges}<br>` +
     `Whale Mode: ${whaleMode ? "ON ≥30k" : "OFF"}`;
 
-  if (selectedNode !== null) {
+  if (selectedNode !== null && !neighborhoodMode) {
     calculateCluster(selectedNode);
   }
 }
 
 function resetVisibility(focusId = null) {
+  restoreOverview();
+  if (typeof focusId === "object") focusId = null;
   whaleMode = false;
   neighborhoodMode = false;
   selectedNode = null;
@@ -430,6 +452,10 @@ function resetVisibility(focusId = null) {
 }
 
 function applyFilters() {
+  if (neighborhoodMode) {
+    showNeighborhood();
+    return;
+  }
   const threshold =
     rawNumber(document.getElementById("flow-filter").value);
 
@@ -491,6 +517,7 @@ function applyFilters() {
 }
 
 function whaleView() {
+  restoreOverview();
   whaleMode = !whaleMode;
   neighborhoodMode = false;
 
@@ -504,58 +531,120 @@ function whaleView() {
 
 function showNeighborhood() {
   if (selectedNode === null) {
-    alert("Please click an address to inspect it first.");
+    detailsEl.textContent = "Select an address first, then open its neighborhood.";
     return;
   }
-
+  if (!neighborhoodSnapshot) {
+    const positions = network.getPositions();
+    neighborhoodSnapshot = {
+      physics: physicsEnabled,
+      nodes: nodes.get().map(n => ({
+        ...n, ...positions[n.id], hidden: false,
+        font: n.font || null, color: n.color || null
+      })),
+      edges: edges.get().map(e => ({
+        ...e, hidden: false, width: e.width || 1, label: e.label || "",
+        color: e.color || { color: "#555", highlight: "#aaa" },
+        font: e.font || { color: "#343434", size: 14, strokeWidth: 2, strokeColor: "#ffffff", align: "horizontal" },
+        smooth: e.smooth || (nodeData.length > 2000 ? false : { enabled: true, type: "dynamic" }),
+        arrows: e.arrows || { to: { enabled: true, scaleFactor: 0.35 } }
+      }))
+    };
+  }
   neighborhoodMode = true;
   whaleMode = false;
-
-  document.getElementById("whale-mode").textContent =
-    "🐋 Whale Mode ≥30k";
-
-  const connected = new Set([selectedNode]);
-
-  edges.forEach(e => {
-    if (
-      e.from === selectedNode ||
-      e.to === selectedNode
-    ) {
-      connected.add(e.from);
-      connected.add(e.to);
+  physicsEnabled = false;
+  network.setOptions({ physics: { enabled: false } });
+  document.getElementById("physics").textContent = "Physics: Off (neighborhood)";
+  document.getElementById("whale-mode").textContent = "🐋 Whale Mode ≥30k";
+  document.getElementById("neighborhood").textContent = "Neighborhood: ON";
+  const threshold = rawNumber(document.getElementById("flow-filter").value);
+  const links = (adjacentEdges.get(selectedNode) || [])
+    .filter(e => rawNumber(e.value) >= threshold);
+  const peers = new Map();
+  for (const e of links) {
+    const id = e.from === selectedNode ? e.to : e.from;
+    if (id === selectedNode) continue;
+    if (!peers.has(id)) peers.set(id, { id, incoming: 0, outgoing: 0, links: 0 });
+    const peer = peers.get(id);
+    peer[e.to === selectedNode ? "incoming" : "outgoing"] += rawNumber(e.value);
+    peer.links++;
+  }
+  const ordered = [...peers.values()].sort((a, b) =>
+    (b.incoming + b.outgoing) - (a.incoming + a.outgoing) || String(a.id).localeCompare(String(b.id)));
+  const positions = new Map([[selectedNode, { x: 0, y: 0 }]]);
+  // Concentric rings keep labels apart without running global graph physics.
+  let offset = 0;
+  let ring = 1;
+  while (offset < ordered.length) {
+    const capacity = Math.min(ordered.length - offset, ring * 12);
+    for (let i = 0; i < capacity; i++) {
+      const angle = -Math.PI / 2 + 2 * Math.PI * i / capacity;
+      positions.set(ordered[offset + i].id, {
+        x: Math.cos(angle) * ring * 260,
+        y: Math.sin(angle) * ring * 260
+      });
     }
-  });
-
-  nodes.forEach(n => {
-    nodes.update({
-      id: n.id,
-      hidden: !connected.has(n.id)
-    });
-  });
-
-  edges.forEach(e => {
-    edges.update({
-      id: e.id,
-      hidden: !(
-        connected.has(e.from) &&
-        connected.has(e.to)
-      )
-    });
-  });
-
+    offset += capacity;
+    ring++;
+  }
+  const baseNodes = new Map(neighborhoodSnapshot.nodes.map(n => [n.id, n]));
+  nodes.update(nodes.getIds().map(id => {
+    const base = baseNodes.get(id);
+    const visible = positions.has(id);
+    return {
+      ...base, id, hidden: !visible, ...(positions.get(id) || {}),
+      label: visible ? (nodeById.get(id)?.label || String(id)) : base.label,
+      borderWidth: id === selectedNode ? 5 : base.borderWidth,
+      font: visible ? { color: "#ffffff", size: 13, strokeWidth: 4, strokeColor: "#101010" } : base.font
+    };
+  }));
+  const ids = new Set(links.map(e => e.id));
+  edges.update(edges.getIds().map(id => {
+    const e = edges.get(id);
+    const visible = ids.has(id);
+    const color = e.to === selectedNode ? "#54d7ed" : "#f2c94c";
+    return {
+      id, hidden: !visible, width: visible ? 2.5 : 1,
+      color: { color, highlight: color, opacity: 0.85 },
+      label: visible && links.length <= 16 ? Number(e.value).toLocaleString("en-US", { maximumFractionDigits: 2 }) + " QTC" : "",
+      font: { color: "#ffffff", size: 11, strokeWidth: 3, strokeColor: "#101010", align: "middle" },
+      smooth: { enabled: true, type: "curvedCW", roundness: 0.12 },
+      arrows: { to: { enabled: true, scaleFactor: 0.65 } }
+    };
+  }));
   network.selectNodes([selectedNode]);
-
-  network.focus(selectedNode, {
-    scale: 1.5,
-    animation: {
-      duration: 600,
-      easingFunction: "easeInOutQuad"
-    }
-  });
-
-  calculateCluster(selectedNode);
+  network.fit({ nodes: [...positions.keys()], maxZoomLevel: 1.25,
+    animation: { duration: 400, easingFunction: "easeInOutQuad" } });
+  showNode(selectedNode);
   updateCounts();
+  const rows = ordered.slice(0, 40).map(peer => {
+    const node = nodeById.get(peer.id);
+    return `<button class="relationship-peer" data-peer="${escapeHtml(String(peer.id))}">` +
+      `<strong>${escapeHtml(node?.label || String(peer.id))}</strong>` +
+      `<span class="relationship-address">${escapeHtml(String(node?.full_address || peer.id))}</span>` +
+      `<span class="flow-in">← In: ${formatQtc(peer.incoming)}</span>` +
+      `<span class="flow-out">→ Out: ${formatQtc(peer.outgoing)}</span></button>`;
+  }).join("");
+  clusterInfoEl.innerHTML = `<b>Direct neighborhood · ${ordered.length} other addresses</b>` +
+    `<p class="relationship-note"><span class="flow-in">Cyan: toward selected address</span><br>` +
+    `<span class="flow-out">Gold: away from selected address</span><br>` +
+    `Arrows follow the recorded link direction. Values are heuristically allocated on-chain flows; ` +
+    `they do not prove direct transfers or common ownership.</p>` +
+    (rows ? "" : `<p>No links match this filter in the published dataset.</p>`) +
+    (ordered.length > 40 ? `<p>Showing the 40 highest-value neighbors in this list; all are on the map.</p>` : "") +
+    `<p>Click a neighbor to explore it. Use Show All to return to the overview.</p>` +
+    `<div class="relationship-list">${rows}</div>`;
 }
+
+clusterInfoEl.addEventListener("click", event => {
+  const button = event.target.closest("button[data-peer]");
+  if (!button) return;
+  const id = [...nodeById.keys()].find(key => String(key) === button.dataset.peer);
+  if (id === undefined) return;
+  selectedNode = id;
+  showNeighborhood();
+});
 
 function calculateCluster(id) {
   const seen = new Set([id]);
@@ -811,9 +900,8 @@ function render(data) {
       selectedNode = params.nodes[0];
       showNode(selectedNode);
 
-      if (!neighborhoodMode) {
-        calculateCluster(selectedNode);
-      }
+      if (neighborhoodMode) showNeighborhood();
+      else calculateCluster(selectedNode);
     }
   });
 
@@ -833,7 +921,9 @@ function render(data) {
   datasetInfoEl.innerHTML =
     `<div>Version: <strong>${data.version ?? "—"}</strong></div>` +
     `<div>Source: <strong>${data.source ?? "—"}</strong></div>` +
-    `<div>Generated: <strong>${data.generated_at ?? "—"}</strong></div>` +
+    `<div>Map generated: <strong>${escapeHtml(data.generated_at ?? "—")}</strong></div>` +
+    `<div>Map verified block: <strong>${data.verified_block ?? "—"}</strong></div>` +
+    `<div id="network-updated">Network updated: <strong>${escapeHtml(networkStats?.generated_at || "Snapshot only")}</strong></div>` +
     `<div>Attribution: <strong>${data.attribution ?? "Mr. Bone"}</strong></div>` +
     (Number.isFinite(data.graph_scope?.minimum_edge_qtc)
       ? `<div>Minimum link value: <strong>${formatQtc(data.graph_scope.minimum_edge_qtc)}</strong></div>`
@@ -883,6 +973,7 @@ document.getElementById("fit").onclick = () => {
 };
 
 document.getElementById("physics").onclick = () => {
+  if (neighborhoodMode) return;
   physicsEnabled = !physicsEnabled;
   document.getElementById("physics").textContent =
     physicsEnabled ? "Physics: On" : "Physics: Off";
@@ -896,27 +987,27 @@ document.getElementById("physics").onclick = () => {
   }
 };
 
-document.getElementById("show-all").onclick =
-  resetVisibility;
+document.getElementById("show-all").onclick = () => resetVisibility();
 
 document.getElementById("large-only").onclick =
   () => {
+    restoreOverview();
     whaleMode = false;
     neighborhoodMode = false;
 
     document.getElementById("flow-filter").value = "0";
 
-    nodes.forEach(n => {
+    const nodeUpdates = nodes.get().map(n => {
       const original = nodeById.get(n.id);
-
       const visible =
         Math.abs(rawNumber(original?.balance)) >= 50000;
 
-      nodes.update({
+      return {
         id: n.id,
         hidden: !visible
-      });
+      };
     });
+    nodes.update(nodeUpdates);
 
     const visibleIds = new Set(
       nodes.get({
@@ -924,14 +1015,13 @@ document.getElementById("large-only").onclick =
       }).map(n => n.id)
     );
 
-    edges.forEach(e => {
-      edges.update({
-        id: e.id,
-        hidden:
-          !visibleIds.has(e.from) ||
-          !visibleIds.has(e.to)
-      });
-    });
+    const edgeUpdates = edges.get().map(e => ({
+      id: e.id,
+      hidden:
+        !visibleIds.has(e.from) ||
+        !visibleIds.has(e.to)
+    }));
+    edges.update(edgeUpdates);
 
     updateCounts();
   };
@@ -948,8 +1038,7 @@ document.getElementById("export-view").onclick =
 document.getElementById("flow-filter").onchange =
   applyFilters;
 
-document.getElementById("reset").onclick =
-  resetVisibility;
+document.getElementById("reset").onclick = () => resetVisibility();
 
 document.getElementById("search-btn").onclick =
   findAddress;

@@ -1071,3 +1071,19 @@ body.mobile-view .footer-links { gap: 12px; }
   body.mobile-view .block-ticker-item { padding-right: 6px; padding-left: 6px; }
   body.mobile-view .block-ticker-item strong { font-size: .78rem; }
 }
+
+/* Focused public on-chain neighborhood. */
+.relationship-note { line-height: 1.6; font-size: 12px; }
+.flow-in { color: #54d7ed; }
+.flow-out { color: #f2c94c; }
+.relationship-list { display: grid; gap: 8px; max-height: 420px; overflow: auto; }
+.relationship-peer { display: grid; gap: 5px; width: 100%; text-align: left; padding: 10px; background: #171b1e; border: 1px solid #41484c; border-radius: 8px; cursor: pointer; }
+.relationship-peer:hover, .relationship-peer:focus-visible { border-color: #f2c94c; }
+.relationship-peer strong { color: #fff; overflow-wrap: anywhere; }
+
+/* Keep inspection panels from stretching the canvas to thousands of pixels. */
+body:not(.mobile-view) .layout { align-items: start; }
+body:not(.mobile-view) .map-panel { height: max(680px, 80vh); }
+body:not(.mobile-view) .sidebar { max-height: max(680px, 80vh); }
+.activity-rows { max-height: 280px; overflow-y: auto; }
+.relationship-address { color: #aaa; font: 11px ui-monospace, monospace; overflow-wrap: anywhere; }
