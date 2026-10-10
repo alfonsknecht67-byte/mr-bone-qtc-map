@@ -101,7 +101,7 @@ let networkStats = null;
 function updateBlockTicker(data) {
   const stats = { ...(data.live_stats || {}), ...(networkStats || {}) };
 
-  const indexed = Number(stats.latest_indexed_block || stats.block || data.verified_block || data.balance_definition?.verified_block || 0);
+  const indexed = Number(stats.block || stats.latest_indexed_block || data.verified_block || data.balance_definition?.verified_block || 0);
   const difficulty = Number(stats.difficulty || data.difficulty || 0);
   const hashrate = Number(stats.network_hashrate || stats.network_hashps || data.network_hashrate || 0);
   const txCount = Number(stats.latest_block_tx_count || stats.latest_block_transactions || stats.tx_count || 0);
@@ -115,6 +115,15 @@ function updateBlockTicker(data) {
   if (liveIndexedEl) {
     liveIndexedEl.textContent = mapBlock ? mapBlock.toLocaleString("en-US") : "—";
     liveIndexedEl.title = "Map snapshot block; network height is shown separately";
+  }
+  const indexStatus = document.getElementById("wallet-index-status");
+  if (indexStatus) {
+    const scanner = Number(networkStats?.scanner_indexed_block);
+    const stamp = networkStats?.generated_at ? Date.parse(networkStats.generated_at) : NaN;
+    const fresh = Number.isFinite(stamp) && Date.now() - stamp < 180000;
+    indexStatus.textContent = `Wallet snapshot: block ${number(mapBlock)} · Scanner indexed: ${Number.isFinite(scanner) && scanner > 0 ? number(scanner) : "unavailable"}` +
+      (networkStats && indexed > mapBlock ? ` · Snapshot is ${number(indexed - mapBlock)} blocks behind network` : "") +
+      (fresh ? " · Updates checked every 30s" : " · Live index status unavailable or stale");
   }
   if (liveTxEl) liveTxEl.textContent = txCount ? txCount.toLocaleString("en-US") : "—";
 
@@ -143,6 +152,7 @@ async function loadNetworkStats() {
     if (updated) updated.textContent = "Network updated: " + (networkStats.generated_at || "Unavailable");
   } catch (error) {
     networkStats = null;
+    if (window.currentMapData) updateBlockTicker(window.currentMapData);
   }
 }
 
@@ -158,10 +168,12 @@ let edges = null;
 let physicsEnabled = true;
 let whaleMode = false;
 let neighborhoodMode = false;
+let comparisonMode = false;
 let selectedNode = null;
 let neighborhoodSnapshot = null;
 
 function restoreOverview() {
+  comparisonMode = false;
   if (!neighborhoodSnapshot) return;
   nodes.update(neighborhoodSnapshot.nodes);
   edges.update(neighborhoodSnapshot.edges);
@@ -294,6 +306,7 @@ function buildEdges(data) {
   return data.edges.map((e, i) => ({
     ...e,
     id: `edge-${i}`,
+    hidden: rawNumber(e.value) < rawNumber(document.getElementById("flow-filter").value),
     title:
       `<b>On-chain relationship</b><br>` +
       `Value: ${number(e.value)} QTC<br>` +
@@ -321,7 +334,19 @@ function showNode(id) {
     `<dt>Map size</dt><dd>${n.size ?? "—"}</dd>` +
     `</dl>`;
 
+  updateWalletShare(n);
   showAddressActivity(n);
+  connectionList(id);
+  document.getElementById("connection-details").textContent = "Click a map line or a connection below to inspect it.";
+
+  // A previously scrolled inspector must reveal the newly selected wallet.
+  // Scroll only the independent desktop panel, never move the user's map/page.
+  const inspector = detailsEl.closest(".sidebar");
+  if (inspector && !document.body.classList.contains("mobile-view")) {
+    const heading = detailsEl.previousElementSibling || detailsEl;
+    inspector.scrollTop = Math.max(0, inspector.scrollTop +
+      heading.getBoundingClientRect().top - inspector.getBoundingClientRect().top - 16);
+  }
 }
 
 function showAddressActivity(node) {
@@ -406,7 +431,7 @@ function updateCounts() {
     `Edges: ${visibleEdges}<br>` +
     `Whale Mode: ${whaleMode ? "ON ≥30k" : "OFF"}`;
 
-  if (selectedNode !== null && !neighborhoodMode) {
+  if (selectedNode !== null && !neighborhoodMode && !comparisonMode) {
     calculateCluster(selectedNode);
   }
 }
@@ -417,16 +442,19 @@ function resetVisibility(focusId = null) {
   whaleMode = false;
   neighborhoodMode = false;
   selectedNode = null;
+  document.getElementById("wallet-share").hidden = true;
 
   document.getElementById("whale-mode").textContent =
     "🐋 Whale Mode ≥30k";
 
-  document.getElementById("flow-filter").value = "0";
+  document.getElementById("flow-filter").value = "1000";
 
   nodes.update(nodes.getIds().map(id => ({ id, hidden: false })));
-  edges.update(edges.getIds().map(id => ({ id, hidden: false })));
+  edges.update(edges.get().map(e => ({ id: e.id, hidden: rawNumber(e.value) < 1000 })));
 
   network.unselectAll();
+  document.getElementById("connection-details").textContent = "Click a map line to inspect its recorded flow.";
+  document.getElementById("wallet-connections").textContent = "Select an address to see its highest-value connections.";
 
   clusterInfoEl.innerHTML = "";
   detailsEl.textContent = "Click a node to inspect it.";
@@ -452,6 +480,10 @@ function resetVisibility(focusId = null) {
 }
 
 function applyFilters() {
+  if (comparisonMode) {
+    compareSelectedWallets();
+    return;
+  }
   if (neighborhoodMode) {
     showNeighborhood();
     return;
@@ -459,6 +491,7 @@ function applyFilters() {
   const threshold =
     rawNumber(document.getElementById("flow-filter").value);
 
+  if (threshold < 1000) materializeSmallEdges([...smallEdgesById.values()]);
   const visibleNodeIds = new Set();
 
   const edgeUpdates = [];
@@ -480,7 +513,7 @@ function applyFilters() {
   const nodeUpdates = [];
   nodes.forEach(n => {
     let show =
-      threshold === 0 ||
+      threshold <= 1000 ||
       visibleNodeIds.has(n.id);
 
     if (whaleMode) {
@@ -529,11 +562,7 @@ function whaleView() {
   applyFilters();
 }
 
-function showNeighborhood() {
-  if (selectedNode === null) {
-    detailsEl.textContent = "Select an address first, then open its neighborhood.";
-    return;
-  }
+function captureExplorerOverview() {
   if (!neighborhoodSnapshot) {
     const positions = network.getPositions();
     neighborhoodSnapshot = {
@@ -543,7 +572,7 @@ function showNeighborhood() {
         font: n.font || null, color: n.color || null
       })),
       edges: edges.get().map(e => ({
-        ...e, hidden: false, width: e.width || 1, label: e.label || "",
+        ...e, width: e.width || 1, label: e.label || "",
         color: e.color || { color: "#555", highlight: "#aaa" },
         font: e.font || { color: "#343434", size: 14, strokeWidth: 2, strokeColor: "#ffffff", align: "horizontal" },
         smooth: e.smooth || (nodeData.length > 2000 ? false : { enabled: true, type: "dynamic" }),
@@ -551,6 +580,15 @@ function showNeighborhood() {
       }))
     };
   }
+}
+
+function showNeighborhood() {
+  if (comparisonMode) restoreOverview();
+  if (selectedNode === null) {
+    detailsEl.textContent = "Select an address first, then open its neighborhood.";
+    return;
+  }
+  captureExplorerOverview();
   neighborhoodMode = true;
   whaleMode = false;
   physicsEnabled = false;
@@ -561,6 +599,7 @@ function showNeighborhood() {
   const threshold = rawNumber(document.getElementById("flow-filter").value);
   const links = (adjacentEdges.get(selectedNode) || [])
     .filter(e => rawNumber(e.value) >= threshold);
+  materializeSmallEdges(links);
   const peers = new Map();
   for (const e of links) {
     const id = e.from === selectedNode ? e.to : e.from;
@@ -901,7 +940,9 @@ function render(data) {
       showNode(selectedNode);
 
       if (neighborhoodMode) showNeighborhood();
-      else calculateCluster(selectedNode);
+      else if (!comparisonMode) calculateCluster(selectedNode);
+    } else if (params.edges.length) {
+      showConnection(params.edges[0]);
     }
   });
 
@@ -954,6 +995,7 @@ async function loadData() {
       await response.json();
 
     render(data);
+    openLinkedWallet();
 
   } catch (error) {
     console.error(error);
@@ -973,7 +1015,7 @@ document.getElementById("fit").onclick = () => {
 };
 
 document.getElementById("physics").onclick = () => {
-  if (neighborhoodMode) return;
+  if (neighborhoodMode || comparisonMode) return;
   physicsEnabled = !physicsEnabled;
   document.getElementById("physics").textContent =
     physicsEnabled ? "Physics: On" : "Physics: Off";
@@ -995,7 +1037,7 @@ document.getElementById("large-only").onclick =
     whaleMode = false;
     neighborhoodMode = false;
 
-    document.getElementById("flow-filter").value = "0";
+    document.getElementById("flow-filter").value = "1000";
 
     const nodeUpdates = nodes.get().map(n => {
       const original = nodeById.get(n.id);
@@ -1035,8 +1077,13 @@ document.getElementById("neighborhood").onclick =
 document.getElementById("export-view").onclick =
   exportView;
 
-document.getElementById("flow-filter").onchange =
-  applyFilters;
+document.getElementById("flow-filter").onchange = async () => {
+  if (rawNumber(document.getElementById("flow-filter").value) < 1000 && !(await ensureSmallFlows())) {
+    document.getElementById("flow-filter").value = "1000";
+    return;
+  }
+  applyFilters();
+};
 
 document.getElementById("reset").onclick = () => resetVisibility();
 
@@ -1050,6 +1097,247 @@ searchEl.addEventListener("keydown", event => {
     findAddress();
   }
 });
+
+function revealInspector(target) {
+  const inspector = target.closest(".sidebar");
+  if (inspector && !document.body.classList.contains("mobile-view")) {
+    inspector.scrollTop = Math.max(0, inspector.scrollTop +
+      target.getBoundingClientRect().top - inspector.getBoundingClientRect().top - 16);
+  }
+}
+
+function connectionList(id) {
+  const list = [...(adjacentEdges.get(id) || [])]
+    .sort((a, b) => rawNumber(b.value) - rawNumber(a.value));
+  const target = document.getElementById("wallet-connections");
+  target.innerHTML = `<p>${list.length} qualifying connections in this snapshot.</p>` +
+    list.slice(0, 12).map(e => {
+      const peer = e.from === id ? e.to : e.from;
+      const label = nodeById.get(peer)?.label || String(peer);
+      return `<button class="connection-choice" data-edge="${escapeHtml(e.id)}">` +
+        `<span>${e.to === id ? "← In" : "→ Out"} · ${escapeHtml(label)}</span>` +
+        `<strong>${formatQtc(e.value)}</strong></button>`;
+    }).join("") + (list.length > 12 ? "<p>Showing the 12 highest-value links. Select a map line for any other link.</p>" : "");
+}
+
+function showConnection(id) {
+  const edge = edges.get(id) || smallEdgesById.get(id);
+  if (!edge) return;
+  const target = document.getElementById("connection-details");
+  const address = key => escapeHtml(nodeById.get(key)?.full_address || String(key));
+  const block = n => n === null || n === undefined || !Number.isFinite(Number(n)) ? "Not recorded" : Number(n).toLocaleString("en-US");
+  target.innerHTML = `<p class="connection-direction"><b>From</b><br>${address(edge.from)}<br>` +
+    `<b>↓ To</b><br>${address(edge.to)}</p><dl>` +
+    `<dt>Allocated flow</dt><dd>${formatQtc(edge.value)}</dd>` +
+    `<dt>Recorded transactions</dt><dd>${edge.count == null ? "Not recorded" : number(edge.count)}</dd>` +
+    `<dt>First recorded block</dt><dd>${block(edge.first_block)}</dd>` +
+    `<dt>Last recorded block</dt><dd>${block(edge.last_block)}</dd></dl>` +
+    `<p class="muted">Aggregated, heuristically allocated on-chain flow. This is not proof of a direct payment or common ownership.</p>`;
+  revealInspector(target.previousElementSibling || target);
+}
+
+function resolveComparisonAddress(value) {
+  const query = value.trim();
+  if (!query) return null;
+  if (nodeById.has(query)) return query;
+  const matches = nodeData.filter(n => String(n.full_address || n.id).startsWith(query));
+  return matches.length === 1 ? matches[0].id : null;
+}
+
+function compareSelectedWallets() {
+  const target = document.getElementById("comparison-result");
+  const a = resolveComparisonAddress(document.getElementById("compare-a").value);
+  const b = resolveComparisonAddress(document.getElementById("compare-b").value);
+  if (a === null || b === null) {
+    target.textContent = "Enter two full addresses or unique address prefixes from this map.";
+    return;
+  }
+  if (a === b) {
+    target.textContent = "Choose two different addresses to compare.";
+    return;
+  }
+  // Reuse the existing reversible layout snapshot, never run global physics.
+  restoreOverview();
+  selectedNode = a;
+  captureExplorerOverview();
+  showNode(a);
+  physicsEnabled = false;
+  whaleMode = false;
+  network.setOptions({ physics: { enabled: false } });
+  document.getElementById("whale-mode").textContent = "🐋 Whale Mode ≥30k";
+  comparisonMode = true;
+  neighborhoodMode = false;
+  document.getElementById("neighborhood").textContent = "Show Neighborhood";
+  document.getElementById("physics").textContent = "Physics: Off (comparison)";
+  const threshold = rawNumber(document.getElementById("flow-filter").value);
+  const result = WalletRelationships.compare(a, b, adjacentEdges, threshold);
+  const displayed = result.shared.slice(0, 40);
+  const visibleIds = new Set([a, b, ...displayed.map(peer => peer.id)]);
+  const comparisonEdges = [...result.direct, ...displayed.flatMap(peer => peer.edges)];
+  materializeSmallEdges(comparisonEdges);
+  const edgeIds = new Set(comparisonEdges.map(e => e.id));
+  const spacing = 110;
+  const positions = new Map([[a, { x: -400, y: 0 }], [b, { x: 400, y: 0 }]]);
+  displayed.forEach((peer, i) => positions.set(peer.id, { x: 0, y: (i - (displayed.length - 1) / 2) * spacing }));
+  const base = new Map(neighborhoodSnapshot.nodes.map(n => [n.id, n]));
+  nodes.update(nodes.getIds().map(id => ({ ...base.get(id), id, hidden: !visibleIds.has(id),
+    ...(positions.get(id) || {}),
+    label: visibleIds.has(id) ? (id === a ? "A · " : id === b ? "B · " : "") + (nodeById.get(id)?.label || String(id)) : base.get(id).label,
+    borderWidth: id === a || id === b ? 5 : base.get(id).borderWidth,
+    font: visibleIds.has(id) ? { color: "#fff", size: 13, strokeWidth: 4, strokeColor: "#101010" } : base.get(id).font
+  })));
+  edges.update(edges.getIds().map(id => {
+    const e = edges.get(id);
+    const direct = result.direct.some(item => item.id === id);
+    const color = direct ? "#f2c94c" : "#54d7ed";
+    return { id, hidden: !edgeIds.has(id), label: "", width: direct ? 4 : 2,
+      color: { color, highlight: color, opacity: 0.9 },
+      smooth: { enabled: true, type: "curvedCW", roundness: 0.1 },
+      arrows: { to: { enabled: true, scaleFactor: 0.65 } } };
+  }));
+  network.selectNodes([a, b]);
+  network.fit({ nodes: [...visibleIds], maxZoomLevel: 1.1, animation: { duration: 400 } });
+  updateCounts();
+  clusterInfoEl.innerHTML = "";
+  document.getElementById("compare-clear").hidden = false;
+  const flow = result.direct.reduce((sum, e) => sum + rawNumber(e.value), 0);
+  target.innerHTML = `<b>${result.direct.length} direct links · ${result.shared.length} shared neighbors</b>` +
+    `<p>Direct allocated flow, both directions combined: ${formatQtc(flow)}</p>` +
+    `<p>A: ${result.aNeighbors} qualifying neighbors · B: ${result.bNeighbors} qualifying neighbors</p>` +
+    `<p>Gold: direct A/B links. Cyan: shared-neighbor links. Arrows follow recorded direction.</p>` +
+    (result.shared.length > 40 ? `<p>Map limited to the 40 highest-value shared neighbors for readability.</p>` : "") +
+    displayed.map(peer => `<div class="comparison-peer"><b>${escapeHtml(nodeById.get(peer.id)?.label || String(peer.id))}</b><br>` +
+      `<span class="relationship-address">${escapeHtml(String(peer.id))}</span><br>` +
+      `${peer.aToB ? "A → neighbor → B" : ""}${peer.aToB && peer.bToA ? " · " : ""}${peer.bToA ? "B → neighbor → A" : ""}` +
+      `${!peer.aToB && !peer.bToA ? "Shared neighbor; no directed two-link path" : ""}</div>`).join("") +
+    `<p class="muted">Only direct links and paths through one shared neighbor are checked, within this snapshot and flow filter. Longer paths, unfunded addresses and smaller flows may be absent. A connection does not establish ownership or trace specific coins.</p>`;
+  document.getElementById("connection-details").textContent = "Click a highlighted line to inspect its recorded flow.";
+  revealInspector(document.getElementById("comparison-heading"));
+}
+
+document.getElementById("wallet-connections").addEventListener("click", event => {
+  const button = event.target.closest("button[data-edge]");
+  if (button) showConnection(button.dataset.edge);
+});
+for (const slot of ["a", "b"]) {
+  document.getElementById("use-selected-" + slot).onclick = () => {
+    if (selectedNode === null) {
+      document.getElementById("comparison-result").textContent = "Select a wallet on the map first, or enter its full address.";
+      return;
+    }
+    document.getElementById("compare-" + slot).value = nodeById.get(selectedNode)?.full_address || String(selectedNode);
+  };
+  document.getElementById("compare-" + slot).addEventListener("keydown", event => {
+    if (event.key === "Enter") compareSelectedWallets();
+  });
+}
+document.getElementById("show-small-wallet-flows").onclick = async () => {
+  if (!(await ensureSmallFlows())) return;
+  document.getElementById("flow-filter").value = "0";
+  showNeighborhood();
+};
+document.getElementById("compare-run").onclick = compareSelectedWallets;
+document.getElementById("compare-clear").onclick = () => {
+  resetVisibility();
+  document.getElementById("compare-a").value = "";
+  document.getElementById("compare-b").value = "";
+  document.getElementById("comparison-result").textContent = "Compare two wallets from this public snapshot.";
+  document.getElementById("compare-clear").hidden = true;
+};
+
+
+
+function updateWalletShare(node) {
+  const address = String(node.full_address || node.id);
+  const url = new URL(window.location.pathname, window.location.origin);
+  url.searchParams.set("wallet", address);
+  const input = document.getElementById("wallet-share-url");
+  input.value = url.href;
+  document.getElementById("wallet-share").hidden = false;
+  document.getElementById("wallet-share-status").textContent = "Share this public wallet view.";
+}
+
+function openLinkedWallet() {
+  const address = new URL(window.location.href).searchParams.get("wallet");
+  if (!address) return;
+  const match = [...nodeById.values()].find(n => String(n.full_address || n.id) === address);
+  if (!match) {
+    detailsEl.textContent = "The linked wallet is not present in this funded-address snapshot.";
+    return;
+  }
+  searchEl.value = String(match.full_address || match.id);
+  findAddress();
+}
+
+document.getElementById("copy-wallet-link").onclick = async () => {
+  const input = document.getElementById("wallet-share-url");
+  const status = document.getElementById("wallet-share-status");
+  try {
+    await navigator.clipboard.writeText(input.value);
+    status.textContent = "Wallet link copied.";
+  } catch (_) {
+    input.focus();
+    input.select();
+    status.textContent = "Copy the selected link with Ctrl+C or your device's Copy menu.";
+  }
+};
+
+
+function materializeSmallEdges(candidates) {
+  const missing = candidates.filter(e => !edges.get(e.id));
+  if (!missing.length) return;
+  const hidden = missing.map(e => ({...e, hidden: true}));
+  edges.update(hidden);
+  if (neighborhoodSnapshot) neighborhoodSnapshot.edges.push(...hidden);
+}
+
+let smallFlowsReady = false;
+const smallEdgesById = new Map();
+let smallFlowsLoading = null;
+async function ensureSmallFlows() {
+  if (smallFlowsReady || !window.currentMapData?.small_flows) return true;
+  if (smallFlowsLoading) return smallFlowsLoading;
+  const status = document.getElementById("small-flows-status");
+  const started = performance.now();
+  status.textContent = "Loading smaller flows…";
+  document.getElementById("wallet-share-status").textContent = "Loading smaller flows…";
+  const snapshotBlock = window.currentMapData.verified_block;
+  smallFlowsLoading = (async () => {
+    try {
+      const response = await fetch("data/small-flows.json", { cache: "no-cache" });
+      if (!response.ok) throw new Error("HTTP " + response.status);
+      const extra = await response.json();
+      if (extra.verified_block !== snapshotBlock || !Array.isArray(extra.edges)) throw new Error("Snapshot mismatch");
+      const prepared = buildEdges({ edges: extra.edges.filter(e =>
+        nodeById.has(e.from) && nodeById.has(e.to) && Number.isFinite(e.value) && e.value > 0 && e.value < 1000
+      ) }).map((e,i) => ({...e, id: "small-edge-" + i, hidden: true}));
+      for (const edge of prepared) smallEdgesById.set(edge.id, edge);
+      for (const edge of prepared) {
+        if (!adjacentEdges.has(edge.from)) adjacentEdges.set(edge.from, []);
+        if (!adjacentEdges.has(edge.to)) adjacentEdges.set(edge.to, []);
+        adjacentEdges.get(edge.from).push(edge);
+        if (edge.to !== edge.from) adjacentEdges.get(edge.to).push(edge);
+      }
+
+      window.currentMapData.edges.push(...extra.edges);
+      edgeData = window.currentMapData.edges;
+      smallFlowsReady = true;
+      status.textContent = "Smaller flows loaded for this session.";
+      document.getElementById("wallet-share-status").textContent = status.textContent;
+      status.dataset.loadMs = String(Math.round(performance.now() - started));
+      if (selectedNode !== null) {
+        connectionList(selectedNode);
+        showAddressActivity(nodeById.get(selectedNode));
+      }
+      return true;
+    } catch (_) {
+      status.textContent = "Smaller flows could not be loaded. Please try again; a refreshed snapshot may be needed.";
+      document.getElementById("wallet-share-status").textContent = status.textContent;
+      return false;
+    } finally { smallFlowsLoading = null; }
+  })();
+  return smallFlowsLoading;
+}
 
 loadData();
 

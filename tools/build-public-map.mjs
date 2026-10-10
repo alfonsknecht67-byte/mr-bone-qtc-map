@@ -15,6 +15,7 @@
  */
 
 import fs from "node:fs";
+import path from "node:path";
 
 const input = process.argv[2] || "data/raw/approved-scan.json";
 const output = process.argv[3] || "data/map.json";
@@ -114,6 +115,16 @@ const publicMap = {
   edges
 };
 
-// Keep the funded-address graph lean for reliable browser loading.
+// Keep the first load lean; smaller funded-wallet links are fetched on demand.
+const smallEdges = publicMap.edges.filter(e => Number.isFinite(e.value) && e.value > 0 && e.value < 1000);
+publicMap.edges = publicMap.edges.filter(e => Number.isFinite(e.value) && e.value >= 1000);
+publicMap.graph_scope.visualized_edges = publicMap.edges.length;
+publicMap.graph_scope.minimum_edge_qtc = 1000;
+if (smallEdges.length) {
+  publicMap.small_flows = {file: "data/small-flows.json", count: smallEdges.length,
+    minimum_edge_qtc: raw.graph_scope?.minimum_edge_qtc ?? null, verified_block: publicMap.verified_block};
+  fs.writeFileSync(path.join(path.dirname(output), "small-flows.json"),
+    JSON.stringify({verified_block: publicMap.verified_block, edges: smallEdges}) + "\n");
+}
 fs.writeFileSync(output, JSON.stringify(publicMap) + "\n");
 console.log(`Wrote ${nodes.length} nodes and ${edges.length} edges to ${output}`);

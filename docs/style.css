@@ -1087,3 +1087,41 @@ body:not(.mobile-view) .map-panel { height: max(680px, 80vh); }
 body:not(.mobile-view) .sidebar { max-height: max(680px, 80vh); }
 .activity-rows { max-height: 280px; overflow-y: auto; }
 .relationship-address { color: #aaa; font: 11px ui-monospace, monospace; overflow-wrap: anywhere; }
+
+/* On-demand relationship explorer: no extra dataset requests or graph physics. */
+.compare-address { display: block; width: 100%; min-width: 0; margin: 6px 0; padding: 10px; color: #eee; background: #171b1e; border: 1px solid #41484c; border-radius: 8px; }
+.compare-address:focus-visible { outline: 2px solid #54d7ed; }
+.compare-actions { display: flex; gap: 8px; flex-wrap: wrap; margin: 12px 0; }
+#compare-run { border-color: #54d7ed; }
+#comparison-result { font-size: 12px; line-height: 1.6; overflow-wrap: anywhere; }
+.comparison-peer { padding: 9px 0; border-top: 1px solid #333; }
+.connection-direction { overflow-wrap: anywhere; font: 12px/1.7 ui-monospace, monospace; }
+.connection-choice { display: grid; gap: 4px; width: 100%; margin: 6px 0; text-align: left; overflow-wrap: anywhere; }
+.connection-choice strong { color: #54d7ed; }
+.wallet-links-disclosure summary { cursor: pointer; padding: 10px 0; }
+body.mobile-view .compare-actions button, body.mobile-view #use-selected-a, body.mobile-view #use-selected-b { min-height: 44px; }
+
+.sidebar #wallet-ticker { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+.sidebar #wallet-ticker .ticker-item { min-width: 0; }
+.sidebar #wallet-ticker strong { overflow-wrap: anywhere; }
+.sidebar label[for="compare-a"], .sidebar label[for="compare-b"] { display: block; margin-top: 12px; }
+.sidebar #connection-details, .sidebar #wallet-connections { overflow-wrap: anywhere; }
+
+/* Public wallet sharing and community guides. */
+#wallet-share { margin-top:16px; }
+#wallet-share label { display:block; margin-bottom:6px; }
+#wallet-share-url { box-sizing:border-box; width:100%; min-width:0; padding:10px; border:1px solid #344454; border-radius:7px; color:#dfeaf4; background:#111820; }
+#copy-wallet-link { margin-top:8px; min-height:44px; }
+.telegram-community { margin:28px 24px; padding:24px; border:1px solid #29445b; border-radius:14px; background:linear-gradient(120deg,#0b1723,#10151d); display:grid; grid-template-columns:1fr 1fr; gap:24px; align-items:center; }
+.telegram-community h2 { margin:6px 0 12px; font-size:22px; color:#f0f5fa; }
+.telegram-community p { color:#aebfce; line-height:1.6; }
+.community-eyebrow { font-size:11px; letter-spacing:2px; color:#61c8eb !important; }
+.community-join { display:inline-block; padding:12px 16px; border-radius:8px; background:#1686b3; color:white; text-decoration:none; font-weight:600; }
+.community-guides { display:grid; grid-template-columns:1fr 1fr; gap:14px; min-width:0; }
+.community-guides a { min-width:0; color:#c5d8e7; text-decoration:none; font-size:12px; }
+.community-guides img { display:block; width:100%; height:auto; border-radius:8px; border:1px solid #3a4e61; box-sizing:border-box; }
+.community-guides span { display:block; padding-top:8px; line-height:1.4; }
+@media(max-width:700px) { .telegram-community { margin:16px 12px; padding:18px; grid-template-columns:1fr; } }
+
+.wallet-index-status { margin:12px 24px; color:#b8ccd9; font-size:12px; line-height:1.6; }
+#show-small-wallet-flows { margin-top:8px; min-height:44px; }

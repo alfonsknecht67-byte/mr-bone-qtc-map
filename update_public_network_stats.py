@@ -2,6 +2,7 @@
 
 import json
 import subprocess
+import sqlite3
 from datetime import datetime, timezone
 from pathlib import Path
 
@@ -39,11 +40,19 @@ def main():
     hashrate = float(hashrate_result)
     pooledtx = int(mempool["size"])
 
+    try:
+        db = Path.home() / "qubitcoin-monitor/data/qubitcoin_monitor.db"
+        with sqlite3.connect(f"file:{db.as_posix()}?mode=ro", uri=True, timeout=2) as conn:
+            scanner_indexed = int(conn.execute("SELECT COALESCE(MAX(block_height), 0) FROM chain_index").fetchone()[0])
+    except (sqlite3.Error, OSError, ValueError):
+        scanner_indexed = None
+
     data = {
         "generated_at": datetime.now(timezone.utc).isoformat(),
         "source": "local-qubitcoin-node",
         "block": block,
-        "latest_indexed_block": block,
+        "latest_indexed_block": scanner_indexed,
+        "scanner_indexed_block": scanner_indexed,
         "difficulty": difficulty,
         "network_hashps": hashrate,
         "tx_count": pooledtx,
