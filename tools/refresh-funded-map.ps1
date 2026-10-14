@@ -14,6 +14,19 @@ function Write-Log([string]$message) {
   "$(Get-Date -Format 'yyyy-MM-dd HH:mm:ss') $message" | Tee-Object -FilePath $logPath -Append
 }
 
+function Invoke-Publish {
+  # Windows PowerShell treats Git's ordinary stderr progress as errors.
+  # Use Git's exit code to distinguish a successful push from a failure.
+  $previousPreference = $ErrorActionPreference
+  try {
+    $ErrorActionPreference = 'Continue'
+    & $gitExe push origin main *>> $logPath
+    return $LASTEXITCODE
+  } finally {
+    $ErrorActionPreference = $previousPreference
+  }
+}
+
 try {
   Set-Location $repoRoot
   $repoWsl = (& wsl.exe -d Qubitcoin-Ubuntu -u juliajan -- wslpath -a ($repoRoot.Replace('\', '/')) | Out-String).Trim()
@@ -31,8 +44,8 @@ try {
     $ahead = (& $gitExe rev-list --count origin/main..main | Out-String).Trim()
     if ($LASTEXITCODE -eq 0 -and $ahead -match '^\d+$' -and [int]$ahead -gt 0) {
       Write-Log "Retrying publication of $ahead already committed local update(s)."
-      & $gitExe push origin main *>> $logPath
-      if ($LASTEXITCODE -ne 0) { throw 'Could not publish pending commits; they will be retried on the next scheduled run.' }
+      $pushExitCode = Invoke-Publish
+      if ($pushExitCode -ne 0) { throw 'Could not publish pending commits; they will be retried on the next scheduled run.' }
     }
     Write-Log "No new indexed block (still $tip); map unchanged. This does not confirm that the scanner has reached the node tip."
     exit 0
@@ -80,8 +93,8 @@ try {
   if ($LASTEXITCODE -ne 0) { throw 'Could not stage the refreshed map.' }
   & $gitExe commit -m "Refresh funded wallet map through block $($fresh.verified_block)" *>> $logPath
   if ($LASTEXITCODE -ne 0) { throw 'Could not commit the refreshed map.' }
-  & $gitExe push origin main *>> $logPath
-  if ($LASTEXITCODE -ne 0) { throw 'Could not publish the refreshed map; it will be retried on the next scheduled run.' }
+  $pushExitCode = Invoke-Publish
+  if ($pushExitCode -ne 0) { throw 'Could not publish the refreshed map; it will be retried on the next scheduled run.' }
   Write-Log "Published funded map through block $($fresh.verified_block): $($fresh.nodes.Count) addresses, $($fresh.edges.Count) links."
 } catch {
   Write-Log "Refresh failed: $($_.Exception.Message)"
