@@ -42,6 +42,7 @@ def main() -> None:
     # temporary database while aggregating graph edges.
     conn = sqlite3.connect(f"file:{db_path.as_posix()}?mode=ro", uri=True)
     conn.row_factory = sqlite3.Row
+    conn.execute("BEGIN")  # One consistent scanner snapshot for the entire export.
 
     required = {
         "chain_utxos": {"txid", "address", "amount", "spent", "block_height"},
@@ -136,10 +137,7 @@ def main() -> None:
     """)
 
     txids = [row[0] for row in conn.execute("""
-        SELECT txid FROM chain_inputs
-        WHERE txid IS NOT NULL AND address IS NOT NULL AND address <> ''
-        UNION
-        SELECT txid FROM chain_utxos
+        SELECT DISTINCT txid FROM chain_inputs
         WHERE txid IS NOT NULL AND address IS NOT NULL AND address <> ''
     """)]
     print(f"Transactions to inspect: {len(txids):,}", flush=True)
