@@ -8,6 +8,8 @@
   <title>Mr. Bone — QTC Bubble Map</title>
   <link rel="stylesheet" href="style.css?v=20261011-low-flows-2">
   <script src="https://unpkg.com/vis-network@9.1.9/standalone/umd/vis-network.min.js"></script>
+  <link rel="stylesheet" href="birthday-countdown.css?v=20261015">
+  <script src="birthday-countdown.js?v=20261015" defer></script>
 </head>
 <body>
 <header class="topbar">
@@ -37,6 +39,18 @@
   <div class="block-ticker-item"><span>MAP BLOCK</span><strong id="live-indexed">—</strong></div>
   <div class="block-ticker-item ticker-source"><span>DATA</span><strong id="live-data-status">—</strong></div>
 </div>
+
+<section class="qtc-birthday" id="qtc-birthday" aria-labelledby="birthday-title">
+  <span class="birthday-orbit" aria-hidden="true"></span>
+  <div class="birthday-copy"><p class="birthday-eyebrow">✦ QUBITCOIN BIRTHDAY · OCTOBER 28</p><h2 id="birthday-title">The countdown is on.</h2><p class="birthday-date">Counting down to <time datetime="2026-10-28T00:00:00-04:00">October 28, 2026 · 12:00 AM EDT</time><br>New York · US Eastern Time</p></div>
+  <div class="birthday-clock" id="birthday-clock" role="timer" aria-label="Time until Qubitcoin’s birthday" aria-live="off">
+    <div class="birthday-unit"><strong id="birthday-days">—</strong><span>Days</span></div><span class="birthday-separator" aria-hidden="true">:</span>
+    <div class="birthday-unit"><strong id="birthday-hours">—</strong><span>Hours</span></div><span class="birthday-separator" aria-hidden="true">:</span>
+    <div class="birthday-unit"><strong id="birthday-minutes">—</strong><span>Minutes</span></div><span class="birthday-separator" aria-hidden="true">:</span>
+    <div class="birthday-unit"><strong id="birthday-seconds">—</strong><span>Seconds</span></div>
+  </div><p class="birthday-message" id="birthday-message" hidden></p>
+  <noscript><p class="birthday-date">Qubitcoin’s birthday is October 28. Enable JavaScript for the live countdown.</p></noscript>
+</section>
 
 <section class="token-overview" aria-label="Qubitcoin market data and emission">
   <div class="market-cap-card">
