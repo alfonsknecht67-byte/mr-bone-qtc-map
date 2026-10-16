@@ -119,16 +119,16 @@ function updateBlockTicker(data) {
   const indexStatus = document.getElementById("wallet-index-status");
   if (indexStatus) {
     const scanner = Number(networkStats?.scanner_indexed_block);
-    const stamp = networkStats?.generated_at ? Date.parse(networkStats.generated_at) : NaN;
-    const fresh = Number.isFinite(stamp) && Date.now() - stamp < 180000;
+    const timing = window.qtcSnapshotStatus(networkStats);
     indexStatus.textContent = `Wallet snapshot: block ${number(mapBlock)} · Scanner indexed: ${Number.isFinite(scanner) && scanner > 0 ? number(scanner) : "unavailable"}` +
-      (networkStats && indexed > mapBlock ? ` · Snapshot is ${number(indexed - mapBlock)} blocks behind network` : "") +
-      (fresh ? " · Updates checked every 30s" : " · Live index status unavailable or stale");
+      (networkStats && indexed > mapBlock ? ` · Snapshot is ${number(indexed - mapBlock)} blocks behind the last published node` : "") +
+      ` · Node snapshot: ${timing.ageLabel} · Source interval ~${timing.cadenceLabel} · Page checks every 30s` +
+      (timing.warning ? " · " + timing.warning : "");
   }
   if (liveTxEl) liveTxEl.textContent = txCount ? txCount.toLocaleString("en-US") : "—";
 
   if (liveDataStatusEl) {
-    liveDataStatusEl.textContent = networkStats ? "NODE" : "SNAPSHOT";
+    liveDataStatusEl.textContent = networkStats ? "NODE SNAPSHOT" : "SNAPSHOT";
     liveDataStatusEl.title = networkStats?.generated_at ? "Node stats updated: " + networkStats.generated_at : "Public dataset snapshot";
   }
 }

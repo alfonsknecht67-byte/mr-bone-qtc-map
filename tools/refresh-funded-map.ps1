@@ -7,6 +7,7 @@ $mapPath = Join-Path $repoRoot 'docs/data/map.json'
 $rawPath = Join-Path $repoRoot 'data/raw/approved-scan.json'
 $nodeExe = 'C:/Users/julia/.cache/codex-runtimes/codex-primary-runtime/dependencies/node/bin/node.exe'
 $gitExe = 'C:/Program Files/Git/cmd/git.exe'
+. (Join-Path $PSScriptRoot 'write-network-snapshot.ps1')
 
 
 New-Item -ItemType Directory -Force -Path (Split-Path $logPath) | Out-Null
@@ -58,13 +59,18 @@ try {
 
   $published = Get-Content -Raw $mapPath | ConvertFrom-Json
   if ([int]$tip -eq [int]$published.verified_block) {
-    $ahead = (& $gitExe rev-list --count origin/main..main | Out-String).Trim()
-    if ($LASTEXITCODE -eq 0 -and $ahead -match '^\d+$' -and [int]$ahead -gt 0) {
-      Write-Log "Retrying publication of $ahead already committed local update(s)."
-      $pushExitCode = Invoke-Publish
-      if ($pushExitCode -ne 0) { throw 'Could not publish pending commits; they will be retried on the next scheduled run.' }
+    Write-PublicNetworkSnapshot -ScannerHeight ([int]$tip) -MapHeight ([int]$published.verified_block)
+    Invoke-LoggedExternal { & $gitExe add -- docs/data/network.json }
+    & $gitExe diff --cached --quiet -- docs/data/network.json
+    $snapshotDiff = $LASTEXITCODE
+    if ($snapshotDiff -eq 1) {
+      Invoke-LoggedExternal { & $gitExe commit -m "Refresh node snapshot; map remains at block $tip" --only -- docs/data/network.json }
+    } elseif ($snapshotDiff -ne 0) {
+      throw 'Could not inspect the staged network snapshot.'
     }
-    Write-Log "No new indexed block (still $tip); map unchanged. This does not confirm that the scanner has reached the node tip."
+    $pushExitCode = Invoke-Publish
+    if ($pushExitCode -ne 0) { throw 'Could not publish the node snapshot; it will be retried.' }
+    Write-Log "Published a fresh node snapshot; no new indexed block (map remains at $tip)."
     exit 0
   }
 
@@ -80,35 +86,11 @@ try {
   Invoke-LoggedExternal { & wsl.exe -d Qubitcoin-Ubuntu -u juliajan -- python3 "$repoWsl/tools/observation.py" $rawWsl "$repoWsl/docs/data/map.json" --db $dbPath }
   if ($LASTEXITCODE -ne 0) { throw 'Observation export failed; inconsistent reports will not be published.' }
 
-  # Publish the same node state as a lightweight public network snapshot.
-  # qubitcoin-cli uses the existing local RPC configuration; no credentials are copied.
-  $cliPath = '$HOME/qubitcoin-source/src/qubitcoin-cli -datadir=$HOME/qubitcoin/data -conf=$HOME/qubitcoin/data/qubitcoin.conf'
-  $rpcJson = (& wsl.exe -d Qubitcoin-Ubuntu -u juliajan -- bash -lc "$cliPath getblockchaininfo" 2>$null | Out-String).Trim()
-  if ($LASTEXITCODE -ne 0 -or -not $rpcJson) { throw 'Could not query qubitcoind for network status.' }
-  $rpc = $rpcJson | ConvertFrom-Json
-  $networkHash = (& wsl.exe -d Qubitcoin-Ubuntu -u juliajan -- bash -lc "$cliPath getnetworkhashps 120" 2>$null | Out-String).Trim()
-  if ($LASTEXITCODE -ne 0 -or $networkHash -notmatch '^[0-9.eE+\-]+$') { throw 'Could not query network hashrate.' }
   $fresh = Get-Content -Raw $mapPath | ConvertFrom-Json
-  if ([int]$fresh.verified_block -le [int]$published.verified_block) {
-    Write-Log "Export did not advance beyond block $($published.verified_block); skipping publication."
-    exit 0
+  if ([int]$fresh.verified_block -lt [int]$published.verified_block) {
+    throw 'Export moved the map backwards; publication skipped.'
   }
-  $mempoolJson = (& wsl.exe -d Qubitcoin-Ubuntu -u juliajan -- bash -lc "$cliPath getmempoolinfo" 2>$null | Out-String).Trim()
-  if ($LASTEXITCODE -ne 0 -or -not $mempoolJson) { throw 'Could not query mempool status.' }
-  $mempool = $mempoolJson | ConvertFrom-Json
-  $networkSnapshot = [ordered]@{
-    generated_at = (Get-Date).ToUniversalTime().ToString('o')
-    source = 'local-qubitcoin-node'
-    block = [int]$rpc.blocks
-    latest_indexed_block = [int]$fresh.verified_block
-    scanner_indexed_block = [int]$tip
-    node_chain_tip = [int]$rpc.blocks
-    difficulty = [double]$rpc.difficulty
-    network_hashps = [double]$networkHash
-    tx_count = [int]$mempool.size
-    pooledtx = [int]$mempool.size
-  }
-  $networkSnapshot | ConvertTo-Json | Set-Content -Path (Join-Path $repoRoot 'docs/data/network.json') -Encoding utf8
+  Write-PublicNetworkSnapshot -ScannerHeight ([int]$tip) -MapHeight ([int]$fresh.verified_block)
   & $gitExe add -- docs/data/map.json docs/data/small-flows.json docs/data/network.json docs/data/history docs/data/observation.json docs/data/transactions.json
   if ($LASTEXITCODE -ne 0) { throw 'Could not stage the refreshed map.' }
   Invoke-LoggedExternal { & $gitExe commit -m "Refresh funded wallet map through block $($fresh.verified_block)" }
