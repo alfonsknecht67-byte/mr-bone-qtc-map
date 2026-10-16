@@ -10,3 +10,7 @@ secrets/
 
 # Local verified build — never publish
 data/verified-build/
+
+# Python cache
+__pycache__/
+*.pyc

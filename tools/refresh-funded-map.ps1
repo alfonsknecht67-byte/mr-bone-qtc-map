@@ -14,6 +14,23 @@ function Write-Log([string]$message) {
   "$(Get-Date -Format 'yyyy-MM-dd HH:mm:ss') $message" | Tee-Object -FilePath $logPath -Append
 }
 
+
+function Invoke-LoggedExternal([scriptblock]$Command) {
+  $savedPreference = $ErrorActionPreference
+  $nativeExit = $null
+  try {
+    $ErrorActionPreference = 'Continue'
+    & $Command *>> $logPath
+    $nativeExit = $LASTEXITCODE
+  } finally {
+    $ErrorActionPreference = $savedPreference
+  }
+  $global:LASTEXITCODE = $nativeExit
+  if ($null -eq $nativeExit -or $nativeExit -ne 0) {
+    throw "External command failed (exit $nativeExit). See $logPath for full output."
+  }
+}
+
 function Invoke-Publish {
   # Windows PowerShell treats Git's ordinary stderr progress as errors.
   # Use Git's exit code to distinguish a successful push from a failure.
@@ -33,7 +50,7 @@ try {
   if ($LASTEXITCODE -ne 0 -or -not $repoWsl) { throw 'Could not resolve the project path inside WSL.' }
 
   Write-Log "Catching up the local scanner before export."
-  & wsl.exe -d Qubitcoin-Ubuntu -u juliajan -- flock -n /tmp/mrbone-qtc-indexer.lock python3 -u /home/juliajan/qubitcoin-monitor/chain_indexer.py *>> $logPath
+  Invoke-LoggedExternal { & wsl.exe -d Qubitcoin-Ubuntu -u juliajan -- flock -n /tmp/mrbone-qtc-indexer.lock python3 -u /home/juliajan/qubitcoin-monitor/chain_indexer.py }
   if ($LASTEXITCODE -ne 0) { throw 'Scanner catch-up failed or another refresh is indexing; publication skipped.' }
 
   $tip = (& wsl.exe -d Qubitcoin-Ubuntu -u juliajan -- python3 "$repoWsl/tools/read-index-height.py" $dbPath | Out-String).Trim()
@@ -54,13 +71,13 @@ try {
   Write-Log "New indexed block detected ($($published.verified_block) -> $tip); exporting funded addresses."
   $rawWsl = (& wsl.exe -d Qubitcoin-Ubuntu -u juliajan -- wslpath -a ($rawPath.Replace('\', '/')) | Out-String).Trim()
   if ($LASTEXITCODE -ne 0 -or -not $rawWsl) { throw 'Could not resolve the export path inside WSL.' }
-  & wsl.exe -d Qubitcoin-Ubuntu -u juliajan -- python3 "$repoWsl/tools/export-full-map.py" $dbPath $rawWsl 0 *>> $logPath
+  Invoke-LoggedExternal { & wsl.exe -d Qubitcoin-Ubuntu -u juliajan -- python3 "$repoWsl/tools/export-full-map.py" $dbPath $rawWsl 0 }
   if ($LASTEXITCODE -ne 0) { throw "The blockchain export failed with exit code $LASTEXITCODE." }
 
-  & $nodeExe tools/build-public-map.mjs data/raw/approved-scan.json docs/data/map.json *>> $logPath
+  Invoke-LoggedExternal { & $nodeExe tools/build-public-map.mjs data/raw/approved-scan.json docs/data/map.json }
   if ($LASTEXITCODE -ne 0) { throw "The public map build failed with exit code $LASTEXITCODE." }
 
-  & wsl.exe -d Qubitcoin-Ubuntu -u juliajan -- python3 "$repoWsl/tools/observation.py" $rawWsl "$repoWsl/docs/data/map.json" --db $dbPath *>> $logPath
+  Invoke-LoggedExternal { & wsl.exe -d Qubitcoin-Ubuntu -u juliajan -- python3 "$repoWsl/tools/observation.py" $rawWsl "$repoWsl/docs/data/map.json" --db $dbPath }
   if ($LASTEXITCODE -ne 0) { throw 'Observation export failed; inconsistent reports will not be published.' }
 
   # Publish the same node state as a lightweight public network snapshot.
@@ -94,7 +111,7 @@ try {
   $networkSnapshot | ConvertTo-Json | Set-Content -Path (Join-Path $repoRoot 'docs/data/network.json') -Encoding utf8
   & $gitExe add -- docs/data/map.json docs/data/small-flows.json docs/data/network.json docs/data/history docs/data/observation.json docs/data/transactions.json
   if ($LASTEXITCODE -ne 0) { throw 'Could not stage the refreshed map.' }
-  & $gitExe commit -m "Refresh funded wallet map through block $($fresh.verified_block)" *>> $logPath
+  Invoke-LoggedExternal { & $gitExe commit -m "Refresh funded wallet map through block $($fresh.verified_block)" }
   if ($LASTEXITCODE -ne 0) { throw 'Could not commit the refreshed map.' }
   $pushExitCode = Invoke-Publish
   if ($pushExitCode -ne 0) { throw 'Could not publish the refreshed map; it will be retried on the next scheduled run.' }
