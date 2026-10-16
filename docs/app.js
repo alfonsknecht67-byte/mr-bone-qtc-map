@@ -147,11 +147,13 @@ async function loadNetworkStats() {
     const response = await fetch("data/network.json?ts=" + Date.now(), { cache: "no-store" });
     if (!response.ok) throw new Error("HTTP " + response.status);
     networkStats = await response.json();
+    document.dispatchEvent(new CustomEvent('qtc:network-updated'));
     if (window.currentMapData) updateBlockTicker(window.currentMapData);
     const updated = document.getElementById("network-updated");
     if (updated) updated.textContent = "Network updated: " + (networkStats.generated_at || "Unavailable");
   } catch (error) {
     networkStats = null;
+    document.dispatchEvent(new CustomEvent('qtc:network-updated'));
     if (window.currentMapData) updateBlockTicker(window.currentMapData);
   }
 }
@@ -317,6 +319,7 @@ function buildEdges(data) {
 }
 
 function showNode(id) {
+  document.dispatchEvent(new CustomEvent('qtc:wallet-selected', {detail: id}));
   const n = nodeById.get(id);
 
   if (!n) {
@@ -784,7 +787,22 @@ function findAddress() {
 }
 
 function render(data) {
+  if (network) network.destroy();
+  selectedNode = null;
+  neighborhoodSnapshot = null;
+  neighborhoodMode = comparisonMode = whaleMode = false;
+  smallFlowsReady = false;
+  smallEdgesById.clear();
+  smallFlowsLoading = null;
+  detailsEl.textContent = 'Select a wallet from this snapshot.';
+  document.getElementById('wallet-share').hidden = true;
+  document.getElementById('connection-details').textContent = 'Select a connection from this snapshot.';
+  document.getElementById('comparison-result').textContent = 'Compare two wallets from this snapshot.';
+  document.getElementById('compare-clear').hidden = true;
+  clusterInfoEl.textContent = '';
+  addressActivityEl.textContent = '';
   window.currentMapData = data;
+  queueMicrotask(() => document.dispatchEvent(new CustomEvent('qtc:map-loaded', {detail: data})));
   updateWalletTicker(data);
   updateBlockTicker(data);
 
@@ -1302,12 +1320,13 @@ async function ensureSmallFlows() {
   status.textContent = "Loading smaller flows…";
   document.getElementById("wallet-share-status").textContent = "Loading smaller flows…";
   const snapshotBlock = window.currentMapData.verified_block;
+  const snapshotData = window.currentMapData;
   smallFlowsLoading = (async () => {
     try {
       const response = await fetch("data/small-flows.json", { cache: "no-cache" });
       if (!response.ok) throw new Error("HTTP " + response.status);
       const extra = await response.json();
-      if (extra.verified_block !== snapshotBlock || !Array.isArray(extra.edges)) throw new Error("Snapshot mismatch");
+      if (window.currentMapData !== snapshotData || extra.verified_block !== snapshotBlock || !Array.isArray(extra.edges)) throw new Error("Snapshot mismatch");
       const prepared = buildEdges({ edges: extra.edges.filter(e =>
         nodeById.has(e.from) && nodeById.has(e.to) && Number.isFinite(e.value) && e.value > 0 && e.value < 1000
       ) }).map((e,i) => ({...e, id: "small-edge-" + i, hidden: true}));
@@ -1339,6 +1358,7 @@ async function ensureSmallFlows() {
   return smallFlowsLoading;
 }
 
+window.qtcObservation = {render, networkStats: () => networkStats};
 loadData();
 
 

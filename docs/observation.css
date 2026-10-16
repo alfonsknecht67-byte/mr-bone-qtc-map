@@ -1,0 +1,10 @@
+.observation-panel {margin:16px;padding:16px;border:1px solid #3d5365;border-radius:12px;background:#101820;color:#edf2f7;}
+.observation-panel h2 {font-size:1.05rem;margin:0 0 12px;}
+.observation-panel summary {cursor:pointer;overflow-wrap:anywhere;}
+.observation-panel p {line-height:1.5;overflow-wrap:anywhere;}
+.observation-panel select {max-width:100%;padding:8px;background:#182734;color:#fff;border:1px solid #657e91;border-radius:6px;}
+.observation-panel label {display:inline-block;margin:8px 18px 8px 0;}
+.observation-panel details {margin:12px 0;border-top:1px solid #344651;padding-top:10px;}
+#observation-freshness {padding:10px;border-left:3px solid #62d5a0;}
+#observation-freshness[data-warning=true] {border-color:#efbb54;color:#ffdc96;}
+#observation-wallet {max-height:440px;overflow:auto;}
