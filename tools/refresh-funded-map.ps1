@@ -60,6 +60,9 @@ try {
   & $nodeExe tools/build-public-map.mjs data/raw/approved-scan.json docs/data/map.json *>> $logPath
   if ($LASTEXITCODE -ne 0) { throw "The public map build failed with exit code $LASTEXITCODE." }
 
+  & wsl.exe -d Qubitcoin-Ubuntu -u juliajan -- python3 "$repoWsl/tools/observation.py" $rawWsl "$repoWsl/docs/data/map.json" --db $dbPath *>> $logPath
+  if ($LASTEXITCODE -ne 0) { throw 'Observation export failed; inconsistent reports will not be published.' }
+
   # Publish the same node state as a lightweight public network snapshot.
   # qubitcoin-cli uses the existing local RPC configuration; no credentials are copied.
   $cliPath = '$HOME/qubitcoin-source/src/qubitcoin-cli -datadir=$HOME/qubitcoin/data -conf=$HOME/qubitcoin/data/qubitcoin.conf'
@@ -89,7 +92,7 @@ try {
     pooledtx = [int]$mempool.size
   }
   $networkSnapshot | ConvertTo-Json | Set-Content -Path (Join-Path $repoRoot 'docs/data/network.json') -Encoding utf8
-  & $gitExe add -- docs/data/map.json docs/data/small-flows.json docs/data/network.json
+  & $gitExe add -- docs/data/map.json docs/data/small-flows.json docs/data/network.json docs/data/history docs/data/observation.json docs/data/transactions.json
   if ($LASTEXITCODE -ne 0) { throw 'Could not stage the refreshed map.' }
   & $gitExe commit -m "Refresh funded wallet map through block $($fresh.verified_block)" *>> $logPath
   if ($LASTEXITCODE -ne 0) { throw 'Could not commit the refreshed map.' }
@@ -100,3 +103,4 @@ try {
   Write-Log "Refresh failed: $($_.Exception.Message)"
   exit 1
 }
+
