@@ -10,6 +10,7 @@
   <script src="https://unpkg.com/vis-network@9.1.9/standalone/umd/vis-network.min.js"></script>
   <link rel="stylesheet" href="birthday-countdown.css?v=20261015">
   <script src="birthday-countdown.js?v=20261015" defer></script>
+  <link rel="stylesheet" href="observation.css?v=20261016">
 </head>
 <body>
 <header class="topbar">
@@ -41,6 +42,20 @@
   <div class="block-ticker-item ticker-source"><span>DATA</span><strong id="live-data-status">—</strong></div>
 </div>
 
+<section class="observation-panel" id="observation-panel" aria-labelledby="observation-heading" hidden>
+  <h2 id="observation-heading">🔎 Wallet observation</h2>
+  <p id="observation-freshness" role="status">Checking data freshness…</p>
+  <label>Map date <select id="snapshot-select"><option value="">Latest published map</option></select></label>
+  <p id="snapshot-status">Latest published graph</p>
+  <details><summary>Wallet history and transaction evidence</summary>
+    <label>Compare balance with <select id="balance-compare-date"><option value="">Choose saved date</option></select></label>
+    <div id="observation-wallet"><p>Select a wallet on the map to inspect it here.</p></div>
+  </details>
+  <details><summary>Exchange observations and large balance changes</summary>
+    <label>Evidence window <select id="exchange-window"><option value="1">24 hours</option><option value="7">7 days</option><option value="30">30 days</option></select></label>
+    <div id="exchange-observations"></div>
+  </details>
+</section>
 <section class="qtc-birthday" id="qtc-birthday" aria-labelledby="birthday-title">
   <span class="birthday-orbit" aria-hidden="true"></span>
   <div class="birthday-copy"><p class="birthday-eyebrow">✦ QUBITCOIN BIRTHDAY · OCTOBER 28</p><h2 id="birthday-title">The countdown is on.</h2><p class="birthday-date">Counting down to <time datetime="2026-10-28T00:00:00-04:00">October 28, 2026 · 12:00 AM EDT</time><br>New York · US Eastern Time</p></div>
@@ -286,6 +301,8 @@
 
 <script src="https://files.coinmarketcap.com/static/widget/currency.js"></script>
 <script src="wallet_relationships.js?v=20261011-1"></script>
-<script src="app.js?v=20261011-low-flows-2"></script>
+<script src="observation.js?v=20261016"></script>
+<script src="app.js?v=20261016-observation"></script>
 </body>
 </html>
+
