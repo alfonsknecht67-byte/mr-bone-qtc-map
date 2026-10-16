@@ -8,8 +8,8 @@ from datetime import datetime
 from pathlib import Path
 
 EXPECTED = {
-    'alert_github.py': '806f8022558e506aad26e711932711913d81317fc6dd2f9d2a4430bd8fef0d4f',
-    'alert_digest_delivery.py': '3b9bd116575eb7eb503fade002ac8e4e1f3146e01190f786d2feed8d5315d8bb',
+    'alert_github.py': 'old_alert_github.py',
+    'alert_digest_delivery.py': 'old_alert_digest_delivery.py',
 }
 
 
@@ -41,7 +41,9 @@ def prepare(target, sources):
         lines.insert(item.lineno, indent + '"github_event": event,\n')
         source = ''.join(lines)
     replacements['node_watch.py'] = source
-    for name, expected in EXPECTED.items():
+    for name, fixture in EXPECTED.items():
+        reference = (sources/'monitor-integration-fixtures'/fixture).read_text(encoding='utf-8')
+        expected = syntax_hash(reference)
         old = (target/name).read_text(encoding='utf-8')
         if syntax_hash(old) not in (expected, syntax_hash(replacements[name])):
             raise ValueError(name + ': source differs from inspected version; no files changed.')
