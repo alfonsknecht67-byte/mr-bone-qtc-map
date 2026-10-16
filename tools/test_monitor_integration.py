@@ -134,5 +134,17 @@ class MonitorIntegration(unittest.TestCase):
             (target/'alert_github.py').write_text('unknown=1\n')
             with self.assertRaises(ValueError):installer.prepare(target,ROOT)
 
+    def test_installer_computes_reference_in_current_runtime(self):
+        installer=module('installer_runtime','install-monitor-observation.py')
+        original_hash=installer.syntax_hash
+        installer.syntax_hash=lambda source:'different-runtime:'+original_hash(source)
+        with tempfile.TemporaryDirectory(dir=ROOT) as folder:
+            target=Path(folder)
+            for name,fixture in installer.EXPECTED.items():
+                (target/name).write_text((ROOT/'monitor-integration-fixtures'/fixture).read_text(encoding='utf-8'),encoding='utf-8')
+            (target/'node_watch.py').write_text('def scan(event):\n    return {\n        "type": "EVENT",\n    }\n')
+            prepared=installer.prepare(target,ROOT)
+            self.assertEqual(len(prepared),4)
+
 
 if __name__=='__main__':unittest.main()
