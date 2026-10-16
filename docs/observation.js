@@ -22,15 +22,16 @@
     const stats = window.qtcObservation?.networkStats() || {};
     const node = stats.node_chain_tip ?? stats.block;
     const scanner = stats.scanner_indexed_block;
-    const age = Date.now() - Date.parse(stats.generated_at);
-    const valid = Number.isFinite(age) && age >= -60000 && age < 180000;
+    const timing = window.qtcSnapshotStatus(stats);
     const lag = Number.isInteger(node) ? node - map.verified_block : null;
-    freshness.textContent = `Node: ${node ?? 'unknown'} · Scanner: ${scanner ?? 'unknown'} · Displayed map: ${map.verified_block} · ` +
+    freshness.textContent = `Published node: ${node ?? 'unknown'} · Scanner: ${scanner ?? 'unknown'} · Displayed map: ${map.verified_block} · ` +
       (map !== latest ? 'ARCHIVED SNAPSHOT · ' : '') +
-      (!valid ? 'Node observation unavailable or older than 3 minutes. ' : '') +
-      (lag === null ? 'Lag cannot be calculated.' : lag < 0 ? 'Inconsistent block heights; check source.' : `${fmt(lag)} blocks behind node.`);
-    freshness.dataset.warning = String(!valid || lag > 12 || lag < 0);
+      `Node snapshot: ${timing.timestampLabel} (${timing.ageLabel}; publishing interval ~${timing.cadenceLabel}). ` +
+      (timing.warning ? timing.warning + ' ' : '') +
+      (lag === null ? 'Lag cannot be calculated.' : lag < 0 ? 'Inconsistent block heights; check source.' : `${fmt(lag)} blocks behind the last published node snapshot.`);
+    freshness.dataset.warning = String(!timing.fresh || lag > 12 || lag < 0);
   }
+
   async function snapshot(entry) {
     if (!/^data\/history\/\d{4}-\d{2}-\d{2}\.json$/.test(entry.file)) throw new Error('Invalid history path');
     if (!snapshots.has(entry.file)) snapshots.set(entry.file, json(entry.file).catch(e => {snapshots.delete(entry.file); throw e;}));

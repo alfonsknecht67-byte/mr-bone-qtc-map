@@ -28,6 +28,7 @@ test('history switches graph and exposes evidence without inserting HTML', async
   };
   const window = {currentMapData:latest,qtcObservation:{networkStats:()=>({block:100,scanner_indexed_block:100,generated_at:new Date().toISOString()}),render:d=>{renders.push(d);window.currentMapData=d;events['qtc:map-loaded']({detail:d});}}};
   const context = {document,window,Date,Number,Map,Promise,console,setInterval:()=>{},fetch:async url=>({ok:true,json:async()=>responses[url]})};
+  vm.runInNewContext(fs.readFileSync(__dirname+'/../docs/network-freshness.js','utf8'), context);
   vm.runInNewContext(fs.readFileSync(__dirname+'/../docs/observation.js','utf8'), context);
   events['qtc:map-loaded']({detail:latest});
   await new Promise(r=>setImmediate(r));
