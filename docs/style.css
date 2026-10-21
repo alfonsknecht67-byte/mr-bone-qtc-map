@@ -466,6 +466,28 @@ footer strong {
   font-weight: 700;
 }
 
+.legend .candidate-dot {
+  display: inline-block;
+  width: 11px;
+  height: 11px;
+  border-radius: 50%;
+  margin-right: 5px;
+  background: #c77721;
+  border: 2px dashed #ffd29a;
+  vertical-align: -1px;
+}
+
+.candidate-attribution {
+  border: 1px dashed #ffd29a;
+  border-radius: 8px;
+  padding: 12px;
+  margin: 12px 0;
+  color: #ffd29a;
+}
+
+.candidate-attribution p { line-height: 1.5; }
+.candidate-attribution .address { overflow-wrap: anywhere; }
+
 /* =========================================================
    MR. BONE — QTC BLOCK TICKER
    ========================================================= */

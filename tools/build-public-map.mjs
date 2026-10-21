@@ -24,6 +24,9 @@ const raw = JSON.parse(fs.readFileSync(input, "utf8"));
 const verifiedExchangeWallets = JSON.parse(
   fs.readFileSync(new URL("../data/verified-exchange-wallets.json", import.meta.url), "utf8")
 );
+const walletCandidates = JSON.parse(
+  fs.readFileSync(new URL("../docs/data/wallet-candidates.json", import.meta.url), "utf8")
+);
 
 const allowedTypes = new Set(["address", "cluster", "exchange"]);
 
@@ -38,12 +41,14 @@ const nodes = Array.isArray(raw.nodes)
         n.balance > 0
       )
         .map(n => {
-        const displayLabel = verifiedExchangeWallets[n.id] || n.label;
+        const candidate = verifiedExchangeWallets[n.id] ? null : walletCandidates[n.id];
+        const displayLabel = verifiedExchangeWallets[n.id] || candidate?.label || n.label;
         const node = {
           id: n.id,
           label: typeof displayLabel === "string" ? displayLabel : n.id,
           type: n.type
         };
+        if (candidate) node.exchange_candidate = candidate;
 
         // Keep only explicitly approved, public on-chain address fields.
         for (const field of ["full_address", "balance", "received", "sent", "tx_count", "size"]) {
