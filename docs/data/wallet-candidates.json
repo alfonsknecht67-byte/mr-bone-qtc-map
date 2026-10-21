@@ -77,5 +77,43 @@
     "reason": "The published snapshot records one incoming transaction, no outgoing transactions and an allocated connection from the known SafeTrade address at block 45,121. A large holder, a team wallet and exchange cold storage can all fit this pattern. This connection does not establish shared control or exchange ownership; no independent ownership confirmation is recorded in this project.",
     "transactions": [],
     "observed_block": 45121
+  },
+  "bc1qrh46q65z0mxua294xuj8q4swksadwfnxvs59z6": {
+    "label": "Potential SafeTrade Wallet",
+    "status": "Unconfirmed attribution",
+    "reviewed": "2026-10-21",
+    "reference": "bc1qye5427zsvmzf8f6g3z53v6tydwxv6j86jc7mf7",
+    "common_input_transactions": 14,
+    "evidence_through_block": 113036,
+    "reason": "The full-chain review through block 113,036 found 14 transactions spending this address together with the known SafeTrade reference as inputs. Two examples and their relevant previous outputs were independently checked directly on the node. Repeated common inputs suggest shared wallet infrastructure, conditional on the reference label being correct. Collaborative transactions can invalidate this inference; ownership has not been independently confirmed.",
+    "transactions": [
+      {
+        "block": 93300,
+        "txid": "a881fddd8bd96cba6c50ea148b83fa33b28014e2a00168b9516fa26c40e10ae4"
+      },
+      {
+        "block": 93377,
+        "txid": "a9a0d1c34c0e0c76b194fe80c3c2453370d1bcbb368a0617aade78a879f5f950"
+      }
+    ]
+  },
+  "bc1q2m3g0gtuztcl85kzd2dy8sz6vvlq7t6e52wl9y": {
+    "label": "Potential SafeTrade Wallet",
+    "status": "Unconfirmed attribution",
+    "reviewed": "2026-10-21",
+    "reference": "bc1qye5427zsvmzf8f6g3z53v6tydwxv6j86jc7mf7",
+    "common_input_transactions": 100,
+    "evidence_through_block": 113036,
+    "reason": "The full-chain review through block 113,036 found 100 transactions spending this address together with the known SafeTrade reference as inputs. Two examples and their relevant previous outputs were independently checked directly on the node. Repeated common inputs suggest shared wallet infrastructure, conditional on the reference label being correct. Collaborative transactions can invalidate this inference; ownership has not been independently confirmed.",
+    "transactions": [
+      {
+        "block": 102768,
+        "txid": "179a356726c37a81814935f5d2a4fb28968006dbc9aab46b5eec2712e7cd5083"
+      },
+      {
+        "block": 103232,
+        "txid": "ef803cc78a36a153c8bb2a2bec3800a210b94223edaf780cb934f4c40e92342a"
+      }
+    ]
   }
 }
