@@ -164,6 +164,7 @@ let nodeById = new Map();
 let adjacentEdges = new Map();
 window.currentMapData = null;
 let edgeData = [];
+let walletCandidates = {};
 let nodes = null;
 let edges = null;
 
@@ -249,26 +250,34 @@ function nodeSize(n) {
 
 function buildNodes(data) {
   return data.nodes.map(n => {
+    const isPotential = Boolean(n.exchange_candidate);
     const isExchange = n.type === "exchange" || n.group === "exchange" ||
       n.label === "CoinEx Exchange Wallet" ||
       n.label === "SafeTrade Exchange Wallet";
+    const isMarked = isExchange || isPotential;
 
     return {
       ...n,
       label: n.label || n.id,
-      group: isExchange ? "exchange" : undefined,
+      group: isExchange ? "exchange" : isPotential ? "potential-exchange" : undefined,
       title:
         `<b>${n.label || n.full_address || n.id}</b><br>` +
         `${n.full_address || n.id}<br>` +
         `Balance: ${number(n.balance)} QTC<br>` +
         `Received: ${number(n.received)} QTC<br>` +
         `Sent: ${number(n.sent)} QTC<br>` +
-        `Transactions: ${number(n.tx_count)}`,
-      size: isExchange
+        `Transactions: ${number(n.tx_count)}` +
+        (isPotential ? `<br>${escapeHtml(n.exchange_candidate.status)}` : ""),
+      shapeProperties: { borderDashes: isPotential ? [5, 4] : false },
+      size: isMarked
         ? Math.max(nodeSize(n), 20)
         : nodeSize(n),
-      borderWidth: isExchange ? 4 : 2,
-      color: isExchange
+      borderWidth: isMarked ? 4 : 2,
+      color: isPotential
+        ? { background: "#c77721", border: "#ffd29a",
+            highlight: { background: "#e79438", border: "#ffffff" },
+            hover: { background: "#e79438", border: "#ffffff" } }
+        : isExchange
         ? {
             background: "#f2c94c",
             border: "#fff1a8",
@@ -291,7 +300,7 @@ function buildNodes(data) {
             y: 0
           }
         : undefined,
-      font: isExchange
+      font: isMarked
         ? {
             color: "#ffffff",
             size: 13,
@@ -329,6 +338,14 @@ function showNode(id) {
 
   detailsEl.innerHTML =
     `<div class="address">${escapeHtml(n.full_address || n.id)}</div>` +
+    (n.exchange_candidate ?
+      `<div class="candidate-attribution"><strong>${escapeHtml(n.label)}</strong>` +
+      `<p>${escapeHtml(n.exchange_candidate.status)} · Reviewed ${escapeHtml(n.exchange_candidate.reviewed)}</p>` +
+      `<p>${escapeHtml(n.exchange_candidate.reason)}</p>` +
+      `<details><summary>Attribution evidence</summary>` +
+      `<p>Reference address: <span class="address">${escapeHtml(n.exchange_candidate.reference)}</span></p>` +
+      n.exchange_candidate.transactions.map(tx => `<p>Block ${tx.block}: <span class="address">${escapeHtml(tx.txid)}</span></p>`).join("") +
+      `</details></div>` : "") +
     `<dl>` +
     `<dt>Balance</dt><dd>${number(n.balance)} QTC</dd>` +
     `<dt>Received</dt><dd>${number(n.received)} QTC</dd>` +
@@ -787,6 +804,11 @@ function findAddress() {
 }
 
 function render(data) {
+  // Apply current research labels independently of scanner snapshots and totals.
+  data = { ...data, nodes: (data.nodes || []).map(node => {
+    const candidate = walletCandidates[node.id];
+    return candidate ? { ...node, label: candidate.label, exchange_candidate: candidate } : node;
+  }) };
   if (network) network.destroy();
   selectedNode = null;
   neighborhoodSnapshot = null;
@@ -828,7 +850,7 @@ function render(data) {
     const goldenAngle = Math.PI * (3 - Math.sqrt(5));
     const radius = 35 * Math.sqrt(index + 1);
     const angle = index * goldenAngle;
-    const isExchange = node.group === "exchange";
+    const isExchange = node.group === "exchange" || node.group === "potential-exchange";
 
     return {
       ...node,
@@ -998,6 +1020,9 @@ function render(data) {
 
 async function loadData() {
   try {
+    const annotations = await fetch("data/wallet-candidates.json", { cache: "no-cache" });
+    if (!annotations.ok) throw new Error(`Attribution registry HTTP ${annotations.status}`);
+    walletCandidates = await annotations.json();
     const response =
       // Allow browser caching, while still revalidating when GitHub Pages
       // publishes a newer dataset version.
