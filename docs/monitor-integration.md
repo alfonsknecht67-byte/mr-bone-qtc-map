@@ -14,7 +14,7 @@ The tests replace manager and sender interfaces with in-memory stubs and write o
 
 Run in Ubuntu:
 ```bash
-repo=/mnt/c/Users/qtc-user/Documents/Codex/mr-bone-qtc-map
+repo=/path/to/mr-bone-qtc-map
 python3 -m unittest discover -s "$repo/tools" -p test_monitor_integration.py -v
 python3 "$repo/tools/install-monitor-observation.py"
 python3 "$repo/tools/install-monitor-observation.py" --apply

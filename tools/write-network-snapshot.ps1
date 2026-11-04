@@ -1,9 +1,11 @@
+. (Join-Path $PSScriptRoot 'refresh-config.ps1')
 # Called by the hourly map refresh, including runs with no new indexed block.
 function Write-PublicNetworkSnapshot([int]$ScannerHeight, [int]$MapHeight) {
-  $cliArgs = @('-d', 'Qubitcoin-Ubuntu', '-u', 'qtc-user', '--',
-    '/home/qtc-user/qubitcoin-source/src/qubitcoin-cli',
-    '-datadir=/home/qtc-user/qubitcoin/data',
-    '-conf=/home/qtc-user/qubitcoin/data/qubitcoin.conf')
+  $qtcSettings = Get-QtcRefreshConfiguration -RepositoryRoot $repoRoot
+  $cliArgs = @('-d', $qtcSettings.WslDistribution, '-u', $qtcSettings.WslUser, '--',
+    $qtcSettings.CliExecutable,
+    ('-datadir=' + $qtcSettings.CliDataDirectory),
+    ('-conf=' + $qtcSettings.CliConfigFile))
   $chainJson = (& wsl.exe @cliArgs getblockchaininfo | Out-String).Trim()
   if ($LASTEXITCODE -ne 0 -or -not $chainJson) { throw 'Could not query node blockchain status.' }
   $chain = $chainJson | ConvertFrom-Json

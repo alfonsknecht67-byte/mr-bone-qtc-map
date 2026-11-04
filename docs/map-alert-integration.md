@@ -14,7 +14,7 @@ Nine tests use in-memory manager/sender doubles; they send no Telegram messages.
 
 Run in Ubuntu, using the existing map checkout:
 ```bash
-qtc_repo=/mnt/c/Users/qtc-user/Documents/Codex/mr-bone-qtc-map
+qtc_repo=/path/to/mr-bone-qtc-map
 python3 -m unittest discover -s "$qtc_repo/tools" -p test_map_observation.py -v
 python3 "$qtc_repo/tools/install-map-observation.py" --apply
 ```

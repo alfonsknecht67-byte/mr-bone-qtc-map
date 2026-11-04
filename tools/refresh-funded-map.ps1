@@ -1,12 +1,9 @@
 $ErrorActionPreference = 'Stop'
 
 $repoRoot = (Resolve-Path (Join-Path $PSScriptRoot '..')).Path
-$dbPath = '/home/qtc-user/qubitcoin-monitor/data/qubitcoin_monitor.db'
 $logPath = Join-Path $repoRoot 'data/raw/refresh.log'
 $mapPath = Join-Path $repoRoot 'docs/data/map.json'
 $rawPath = Join-Path $repoRoot 'data/raw/approved-scan.json'
-$nodeExe = 'C:/Users/QTCUser/.cache/codex-runtimes/codex-primary-runtime/dependencies/node/bin/node.exe'
-$gitExe = 'C:/Program Files/Git/cmd/git.exe'
 . (Join-Path $PSScriptRoot 'write-network-snapshot.ps1')
 
 
@@ -47,14 +44,20 @@ function Invoke-Publish {
 
 try {
   Set-Location $repoRoot
-  $repoWsl = (& wsl.exe -d Qubitcoin-Ubuntu -u qtc-user -- wslpath -a ($repoRoot.Replace('\', '/')) | Out-String).Trim()
+  $qtcSettings = Get-QtcRefreshConfiguration -RepositoryRoot $repoRoot
+  $dbPath = $qtcSettings.DatabasePath
+  $nodeExe = $qtcSettings.NodeExe
+  $gitExe = $qtcSettings.GitExe
+  $indexerPath = $qtcSettings.IndexerPath
+  $qtcWslPrefix = @('-d', $qtcSettings.WslDistribution, '-u', $qtcSettings.WslUser)
+  $repoWsl = (& wsl.exe @qtcWslPrefix -- wslpath -a ($repoRoot.Replace('\', '/')) | Out-String).Trim()
   if ($LASTEXITCODE -ne 0 -or -not $repoWsl) { throw 'Could not resolve the project path inside WSL.' }
 
   Write-Log "Catching up the local scanner before export."
-  Invoke-LoggedExternal { & wsl.exe -d Qubitcoin-Ubuntu -u qtc-user -- flock -n /tmp/mrbone-qtc-indexer.lock python3 -u /home/qtc-user/qubitcoin-monitor/chain_indexer.py }
+  Invoke-LoggedExternal { & wsl.exe @qtcWslPrefix -- flock -n /tmp/mrbone-qtc-indexer.lock python3 -u $indexerPath }
   if ($LASTEXITCODE -ne 0) { throw 'Scanner catch-up failed or another refresh is indexing; publication skipped.' }
 
-  $tip = (& wsl.exe -d Qubitcoin-Ubuntu -u qtc-user -- python3 "$repoWsl/tools/read-index-height.py" $dbPath | Out-String).Trim()
+  $tip = (& wsl.exe @qtcWslPrefix -- python3 "$repoWsl/tools/read-index-height.py" $dbPath | Out-String).Trim()
   if ($LASTEXITCODE -ne 0 -or $tip -notmatch '^\d+$') { throw 'Could not read the indexed block height from the scanner database.' }
 
   $published = Get-Content -Raw $mapPath | ConvertFrom-Json
@@ -75,15 +78,15 @@ try {
   }
 
   Write-Log "New indexed block detected ($($published.verified_block) -> $tip); exporting funded addresses."
-  $rawWsl = (& wsl.exe -d Qubitcoin-Ubuntu -u qtc-user -- wslpath -a ($rawPath.Replace('\', '/')) | Out-String).Trim()
+  $rawWsl = (& wsl.exe @qtcWslPrefix -- wslpath -a ($rawPath.Replace('\', '/')) | Out-String).Trim()
   if ($LASTEXITCODE -ne 0 -or -not $rawWsl) { throw 'Could not resolve the export path inside WSL.' }
-  Invoke-LoggedExternal { & wsl.exe -d Qubitcoin-Ubuntu -u qtc-user -- python3 "$repoWsl/tools/export-full-map.py" $dbPath $rawWsl 0 }
+  Invoke-LoggedExternal { & wsl.exe @qtcWslPrefix -- python3 "$repoWsl/tools/export-full-map.py" $dbPath $rawWsl 0 }
   if ($LASTEXITCODE -ne 0) { throw "The blockchain export failed with exit code $LASTEXITCODE." }
 
   Invoke-LoggedExternal { & $nodeExe tools/build-public-map.mjs data/raw/approved-scan.json docs/data/map.json }
   if ($LASTEXITCODE -ne 0) { throw "The public map build failed with exit code $LASTEXITCODE." }
 
-  Invoke-LoggedExternal { & wsl.exe -d Qubitcoin-Ubuntu -u qtc-user -- python3 "$repoWsl/tools/observation.py" $rawWsl "$repoWsl/docs/data/map.json" --db $dbPath }
+  Invoke-LoggedExternal { & wsl.exe @qtcWslPrefix -- python3 "$repoWsl/tools/observation.py" $rawWsl "$repoWsl/docs/data/map.json" --db $dbPath }
   if ($LASTEXITCODE -ne 0) { throw 'Observation export failed; inconsistent reports will not be published.' }
 
   $fresh = Get-Content -Raw $mapPath | ConvertFrom-Json

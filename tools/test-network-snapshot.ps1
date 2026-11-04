@@ -3,9 +3,28 @@ $repoRoot = Join-Path $PSScriptRoot ('test-network-' + [guid]::NewGuid().ToStrin
 New-Item -ItemType Directory -Path (Join-Path $repoRoot 'docs/data') -Force | Out-Null
 try {
 . (Join-Path $PSScriptRoot 'write-network-snapshot.ps1')
+$missingRejected = $false
+try { Get-QtcRefreshConfiguration -RepositoryRoot (Join-Path $repoRoot 'missing') | Out-Null } catch { $missingRejected = $true }
+if (-not $missingRejected) { throw 'Missing local configuration was accepted' }
+$privateDirectory = Join-Path $repoRoot 'data/private'
+New-Item -ItemType Directory -Path $privateDirectory -Force | Out-Null
+@'
+@{
+  WslDistribution = 'test-distribution'
+  WslUser = 'test-user'
+  DatabasePath = '/test/monitor.db'
+  IndexerPath = '/test/indexer.py'
+  NodeExe = 'test-node'
+  GitExe = 'test-git'
+  CliExecutable = '/test/qubitcoin-cli'
+  CliDataDirectory = '/test/data'
+  CliConfigFile = '/test/config'
+}
+'@ | Set-Content -LiteralPath (Join-Path $privateDirectory 'refresh-config.psd1')
 $script:mockTip = 112381
 function wsl.exe {
   $global:LASTEXITCODE = 0
+  if (-not ($args -contains 'test-distribution') -or -not ($args -contains 'test-user') -or -not ($args -contains '/test/qubitcoin-cli')) { throw 'Local runtime configuration was not applied' }
   if ($args -contains 'getblockchaininfo') { return ('{"blocks":' + $script:mockTip + ',"difficulty":42}') }
   if ($args -contains 'getnetworkhashps') { return '123456' }
   if ($args -contains 'getmempoolinfo') { return '{"size":0}' }
@@ -43,7 +62,7 @@ $source = Get-Content -Raw -LiteralPath (Join-Path $PSScriptRoot 'refresh-funded
 $branchStart = $source.IndexOf('  if ([int]$tip -eq [int]$published.verified_block) {')
 $branchEnd = $source.IndexOf('  Write-Log "New indexed block detected', $branchStart)
 if ($branchStart -lt 0 -or $branchEnd -le $branchStart) { throw 'Updater equal-height branch not found' }
-$branch = $source.Substring($branchStart, $branchEnd-$branchStart) -replace '(?m)^    exit 0$', '    $global:qtcBranchDone = $true'
+$branch = $source.Substring($branchStart, $branchEnd-$branchStart) -replace '(?m)^    exit 0\r?$', '    $global:qtcBranchDone = $true'
 $tip = '112381'
 $published = @{verified_block=112381}
 & ([scriptblock]::Create($branch))

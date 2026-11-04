@@ -40,6 +40,15 @@ login to publish updates; it does not contain credentials.
 
 ## Status
 
+### Private refresh configuration
+
+Machine-specific usernames and executable/database paths are kept only in
+`data/private/refresh-config.psd1`, which is ignored by Git. Copy
+`tools/refresh-config.example.psd1` there and configure local values before
+running the scheduled updater. The updater stops if this configuration is
+missing or incomplete; it never selects a different node automatically.
+Never commit the completed local configuration or credentials.
+
 Initial public project scaffold. The actual Bubble Map will be added after the public/private data boundary has been checked.
 
 ## Disclaimer
