@@ -72,6 +72,8 @@ analysis=createAnalysis({
   getSettings:()=>indicatorSettings,
   setSettings:next=>{indicatorSettings=settings(next);if(rows.length)renderCandles(rows);},
 });
+function applyLayoutInteraction(){const mobile=document.body.classList.contains('layout-mobile')||(!document.body.classList.contains('layout-desktop')&&window.matchMedia('(max-width: 760px)').matches);for(const c of charts)c.applyOptions({handleScroll:{vertTouchDrag:!mobile}});}
+document.addEventListener('chartlayoutchange',applyLayoutInteraction);applyLayoutInteraction();
 document.addEventListener('visibilitychange',()=>{status();if(!document.hidden)poll();else clearTimeout(nextTimer);});window.addEventListener('online',poll);window.addEventListener('offline',status);setInterval(status,1000);poll();
 
 
