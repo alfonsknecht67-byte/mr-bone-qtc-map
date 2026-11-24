@@ -1,12 +1,12 @@
 {
-  "generated_at": "2026-11-24T00:17:47.944485+00:00",
+  "generated_at": "2026-11-24T00:18:25.177338+00:00",
   "source": "local-qubitcoin-node",
   "publishing_interval_seconds": 60,
-  "block": 117848,
+  "block": 117849,
   "latest_indexed_block": 117846,
   "scanner_indexed_block": 117846,
-  "difficulty": 1135460.563922237,
-  "network_hashps": 7802427598230.019,
+  "difficulty": 1136474.597487651,
+  "network_hashps": 8148560090386.23,
   "tx_count": 0,
   "pooledtx": 0
 }
