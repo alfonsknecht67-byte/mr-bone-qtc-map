@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-11-25T13:26:54.989772+00:00",
+  "generated_at": "2026-11-25T13:28:00.024092+00:00",
   "source": "local-qubitcoin-node",
   "publishing_interval_seconds": 60,
   "block": 118093,
@@ -7,6 +7,6 @@
   "scanner_indexed_block": 118093,
   "difficulty": 1202426.134993881,
   "network_hashps": 8491816594950.659,
-  "tx_count": 0,
-  "pooledtx": 0
+  "tx_count": 2,
+  "pooledtx": 2
 }
